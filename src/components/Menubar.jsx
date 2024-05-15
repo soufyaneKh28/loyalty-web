@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Lottie from "react-lottie";
 import animationData from "../../public"; // Replace with your JSON path
 import { motion, Variants } from "framer-motion";
@@ -47,10 +47,25 @@ export default function Menubar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimationPlaying, setIsAnimationPlaying] = useState(false);
   const animationRef = useRef(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <header className=" py-4 shadow flex flex-col  items-center ">
+      <header
+        className={` ${
+          isScrolled || isOpen ? "scrolled" : ""
+        } header py-4  flex flex-col  items-center fixed w-full bg-[#FFF7EA] z-[50] transition-all`}
+      >
         <div className="container flex justify-between ">
           <Link href="/">
             <Image src={logo} alt="logo" width={80} />
