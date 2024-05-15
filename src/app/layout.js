@@ -1,7 +1,14 @@
-import { Inter } from "next/font/google";
+import Menubar from "@/components/Menubar";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// import { GoogleFont } from "@next/font/google";
+
+// const myFont = GoogleFont({
+//   family: "Poppins",
+//   subsets: ["latin"], // Add more subsets if needed (e.g., ['latin', 'cyrillic'])
+//   display: "swap", // Controls font loading behavior
+//   variable: "--font-poppins", // Customize the variable name (optional)
+// });
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +17,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={` font-Poppins `}>
+      <body>
+        <Menubar />
+        {children}
+      </body>
     </html>
   );
 }
