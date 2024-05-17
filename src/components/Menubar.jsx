@@ -49,6 +49,8 @@ export default function Menubar() {
   const animationRef = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
+
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -113,13 +115,16 @@ export default function Menubar() {
             >
               {links.map((link, i) => (
                 <motion.li
-                  initial={{ y: "-100vh", opacity: 0 }}
-                  transition={{ delay: i * 0.45 }}
-                  animate={{ y: 0, opacity: 1 }}
+                  initial={{ x: "-100vh", opacity: 0 }}
+                  transition={{
+                    delay: i * 0.2,
+                  }}
+                  animate={{ x: 0, opacity: 1 }}
                   key={link.link}
                 >
                   <Link
                     href={link.href}
+                    onClick={() => setIsOpen(false)}
                     className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                   >
                     {link.link}
