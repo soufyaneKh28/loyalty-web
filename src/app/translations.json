@@ -1,0 +1,16 @@
+{
+  "en": {
+    "navigation_link_1": "Home",
+    "navigation_link_2": "About",
+    "navigation_link_3": "Contact",
+    "page_title": "My Multilingual Website",
+    "page_content": "This is the content in English."
+  },
+  "ar": {
+    "navigation_link_1": "الرئيسية", // Arabic translation for Home
+    "navigation_link_2": "من نحن", // Arabic translation for About
+    "navigation_link_3": "اتصل بنا", // Arabic translation for Contact
+    "page_title": "موقعي الإلكتروني متعدد اللغات", // Arabic translation for title
+    "page_content": "هذا هو المحتوى باللغة العربية." // Arabic translation for content
+  }
+}

@@ -24,7 +24,7 @@ const links = [
   },
   {
     link: "About Us",
-    href: "/About-Us",
+    href: "/about",
   },
   {
     link: "Services",
@@ -36,7 +36,7 @@ const links = [
   },
   {
     link: "Blog",
-    href: "/Blog",
+    href: "/blogs",
   },
   {
     link: "Contact Us",
