@@ -2,12 +2,20 @@
 
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
-import Lottie from "react-lottie";
-import animationData from "../../public"; // Replace with your JSON path
-import { motion, Variants } from "framer-motion";
+import { Cairo } from "next/font/google";
+import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 import { logo, menu, close } from "../../public";
 import Link from "next/link";
-import { redirect, usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
+import { Router } from "next/router";
+const cairo = Cairo({
+  subsets: ["arabic"],
+
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
 const itemVariants = {
   open: {
     opacity: 1,
@@ -19,28 +27,28 @@ const itemVariants = {
 
 const links = [
   {
-    link: "Home",
-    href: "/en/home",
+    link: "الرئيسية",
+    href: "/ar/home",
   },
   {
-    link: "About Us",
-    href: "/en/about",
+    link: "من نحن",
+    href: "/ar/about",
   },
   {
-    link: "Services",
-    href: "/en/Services",
+    link: "خدماتنا",
+    href: "/ar/Services",
   },
   {
-    link: "Projects",
-    href: "/Projects",
+    link: "المشاريع",
+    href: "/ar/Projects",
   },
   {
-    link: "Blogs",
-    href: "/en/blogs",
+    link: "المدونة",
+    href: "/ar/blogs",
   },
   {
-    link: "Contact Us",
-    href: "/en/Contact-Us",
+    link: "تواصل معنا",
+    href: "/ar/Contact-Us",
   },
 ];
 
@@ -56,14 +64,12 @@ const links = [
 //   };
 // }
 
-export default function Menubar() {
+export default function MenubarAr() {
   const [isOpen, setIsOpen] = useState(false);
-
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
+  const [selectedLanguage, setSelectedLanguage] = useState("ar");
   const router = useRouter();
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -74,12 +80,10 @@ export default function Menubar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // console.log(pathname);
+
   function onChange(e) {
     setSelectedLanguage(e.target.value);
-
-    if (pathname === "/") {
-      router.push(`/${selectedLanguage}/home`);
-    }
   }
 
   useEffect(
@@ -92,25 +96,18 @@ export default function Menubar() {
       if (pathname.includes("en")) {
         const newPath = pathname.replace("en", selectedLanguage);
         console.log(newPath);
-        router.push(newPath);
       }
-      // if (!pathname.includes("en") || !pathname.includes("ar")) {
-      //   const newPath = pathname.replace("/", `/${selectedLanguage}`);
-      //   console.log(newPath);
-      //   router.push(newPath);
-      // }
     },
     [selectedLanguage, pathname, router]
   );
 
-  console.log(pathname);
-
+  // console.log(pathname);
   return (
     <>
       <header
-        className={` ${
-          isScrolled || isOpen ? "scrolled" : ""
-        } header py-4  flex flex-col  items-center fixed w-full bg-[#FFF7EA] z-[50] transition-all`}
+        className={` ${isScrolled || isOpen ? "scrolled" : ""}  ${
+          cairo.className
+        } header py-4  flex flex-col  items-center font-Ibm fixed w-full bg-[#FFF7EA] z-[50] transition-all`}
       >
         <div className="container flex justify-between ">
           <Link href="/">
@@ -123,7 +120,7 @@ export default function Menubar() {
                 <Link
                   href={link.href}
                   key={link.link}
-                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   {link.link}
                 </Link>
@@ -153,8 +150,8 @@ export default function Menubar() {
         </div>
         {isOpen && (
           <motion.div
-            initial={{ y: -250, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            initial={{ x: -250, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
             // transition={{ duration: 0.3, type: "spring" }}
             className={` w-[100%]  mobileNav md:hidden`}
           >
@@ -164,7 +161,7 @@ export default function Menubar() {
             >
               {links.map((link, i) => (
                 <motion.li
-                  initial={{ x: "-100vh", opacity: 0 }}
+                  initial={{ x: "100vh", opacity: 0 }}
                   transition={{
                     delay: i * 0.2,
                   }}
@@ -174,7 +171,7 @@ export default function Menubar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                    className="  text-[17px] text-[#27272F] hover:text-[#F8360A] font-bold transition-colors"
                   >
                     {link.link}
                   </Link>

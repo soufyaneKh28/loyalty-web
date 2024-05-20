@@ -3,7 +3,9 @@
   @tailwind utilities;
 
 
-  
+  .rtl {
+    font-family:;
+  }
 
   body{
     background: #FFF7EA;
@@ -32,16 +34,19 @@
     @apply shadow-md; /* Or any desired shadow class */
   }
 
+  
 
   .slider {
     margin:0 20px;
     overflow:"hidden";
     padding:2rem 0;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
   }
   
   .slider img {
-    width: 100%;
-    border-radius:10px;
+   width: 40px;
   }
   
   .react-multi-carousel-list {
@@ -50,7 +55,12 @@
   
   .custom-dot-list-style button{
   border: none;
+  display: none !important;
   background: rgb(255, 68, 68);
+  }
+
+  .react-multi-carousel-dot-list {
+    display: none;
   }
   .react-multi-carousel-dot.react-multi-carousel-dot--active button{
   background: rgb(255, 68, 68) !important;

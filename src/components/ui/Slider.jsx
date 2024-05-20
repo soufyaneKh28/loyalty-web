@@ -45,12 +45,12 @@ const sliderImageUrl = [
     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTdvuww0JDC7nFRxiFL6yFiAxRJgM-1tvJTxA&usqp=CAU",
   },
 ];
-const Slider = () => {
+const Slider = ({ children }) => {
   return (
     <div className="parent">
       <Carousel
         responsive={responsive}
-        autoPlay={true}
+        autoPlay={false}
         swipeable={true}
         draggable={true}
         showDots={true}
@@ -58,13 +58,14 @@ const Slider = () => {
         partialVisible={false}
         dotListClass="custom-dot-list-style"
       >
-        {sliderImageUrl.map((imageUrl, index) => {
+        {/* {sliderImageUrl.map((imageUrl, index) => {
           return (
             <div className="slider" key={index}>
               <Image src={imageUrl.url} alt="movie" />
             </div>
           );
-        })}
+        })} */}
+        {children}
       </Carousel>
     </div>
   );

@@ -1,3 +1,5 @@
+import Menubar from "@/components/Menubar";
+
 import { Poppins, Roboto } from "next/font/google";
 
 const poppins = Poppins({
@@ -9,6 +11,13 @@ const roboto = Poppins({
   subsets: ["latin"],
   weight: ["100", "300", "400", "500", "700", "900"],
 });
-
-export const poppinsClass = poppins.className;
-export const robotoClass = roboto.className;
+export default function arLayout({ children }) {
+  return (
+    <html lang="en" className={` ${poppins.className} `}>
+      <body dir="ltr">
+        <Menubar />
+        {children}
+      </body>
+    </html>
+  );
+}
