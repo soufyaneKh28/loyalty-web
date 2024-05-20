@@ -2,8 +2,7 @@ import { Poppins, Roboto } from "next/font/google";
 import { homeHero } from "../../public";
 import Image from "next/image";
 
-import Slider, { CarouselSize } from "@/components/ui/Slider";
-import { CarouselSpacing } from "@/components/ui/CarouselSpacing";
+
 import BounceBall from "@/components/BounceBall";
 import Menubar from "@/components/Menubar";
 import Services from "@/components/Services";

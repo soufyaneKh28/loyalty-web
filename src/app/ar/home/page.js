@@ -2,11 +2,10 @@ import { Poppins, Roboto } from "next/font/google";
 import { Cairo } from "next/font/google";
 import Image from "next/image";
 
-import Slider, { CarouselSize } from "@/components/ui/Slider";
-import { CarouselSpacing } from "@/components/ui/CarouselSpacing";
+
 import BounceBall from "@/components/BounceBall";
 import { Marketing, homeHero } from "../../../../public";
-import Head from "next/head";
+
 import Services from "@/components/Services";
 
 const cairo = Cairo({
