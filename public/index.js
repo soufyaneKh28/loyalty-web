@@ -3,6 +3,6 @@ import menu from "./MenuMOB.png";
 import close from "./close.png";
 import animationData from "./menuAnimate.json";
 import homeHero from "./homeHero.png";
-import Marketing from "./Marketing.png";
+import Marketing from "./marketing.png";
 
 export { logo, menu, close, animationData, homeHero, Marketing };
