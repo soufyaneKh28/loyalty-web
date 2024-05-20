@@ -13,8 +13,8 @@ const roboto = Poppins({
 });
 export default function arLayout({ children }) {
   return (
-    <html lang="en" className={` ${poppins.className} `}>
-      <body dir="ltr">
+    <html lang="en">
+      <body dir="ltr" className={` ${poppins.className} `}>
         <Menubar />
         {children}
       </body>

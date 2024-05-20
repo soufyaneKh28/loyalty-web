@@ -8,8 +8,8 @@ const cairo = Cairo({
 });
 export default function arLayout({ children }) {
   return (
-    <html lang="ar" className={` ${cairo.className} `}>
-      <body dir="rtl" className="rtl">
+    <html lang="ar">
+      <body dir="rtl" className={` rtl ${cairo.className} `}>
         <MenubarAr />
         {children}
       </body>

@@ -1,18 +1,52 @@
 import { Poppins, Roboto } from "next/font/google";
-import { homeHero } from "../../public";
+import { Marketing, homeHero } from "../../public";
 import Image from "next/image";
-
 
 import BounceBall from "@/components/BounceBall";
 import Menubar from "@/components/Menubar";
 import Services from "@/components/Services";
 
-// const poppins = google({
-//   family: "Rob",
-//   subsets: ["latin"],
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-// });
-
+const sliderImageUrl = [
+  //First image url
+  {
+    title: "Digital marketing",
+    imgDark: Marketing,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+  },
+  {
+    title: "Digital marketing",
+    imgDark: Marketing,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+  },
+  {
+    title: "Digital marketing",
+    imgDark: Marketing,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+  },
+  {
+    title: "Programmation Solution",
+    imgDark: Marketing,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+  },
+  //Second image url
+  {
+    title: "Design",
+    imgDark: Marketing,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+  },
+  //Third image url
+  {
+    title: "Mobile Application",
+    imgDark: Marketing,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+  },
+];
 const roboto = Roboto({
   family: "Roboto",
   subsets: ["latin"],
@@ -58,7 +92,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <Services />
+          <Services object={sliderImageUrl} />
         </section>
       </main>
     </>
