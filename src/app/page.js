@@ -6,6 +6,7 @@ import Slider, { CarouselSize } from "@/components/ui/Slider";
 import { CarouselSpacing } from "@/components/ui/CarouselSpacing";
 import BounceBall from "@/components/BounceBall";
 import Menubar from "@/components/Menubar";
+import Services from "@/components/Services";
 
 // const poppins = google({
 //   family: "Rob",
@@ -56,6 +57,9 @@ export default function Home() {
               />
             </div>
           </div>
+        </section>
+        <section>
+          <Services />
         </section>
       </main>
     </>

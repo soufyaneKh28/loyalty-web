@@ -7,6 +7,7 @@ import { CarouselSpacing } from "@/components/ui/CarouselSpacing";
 import BounceBall from "@/components/BounceBall";
 import { homeHero } from "../../../../public";
 import Head from "next/head";
+import Services from "@/components/Services";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -59,7 +60,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>{/* <Slider /> */}</section>
+      <section>
+        <Services />
+      </section>
     </main>
   );
 }
