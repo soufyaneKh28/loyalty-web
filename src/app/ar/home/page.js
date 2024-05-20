@@ -5,7 +5,7 @@ import Image from "next/image";
 import Slider, { CarouselSize } from "@/components/ui/Slider";
 import { CarouselSpacing } from "@/components/ui/CarouselSpacing";
 import BounceBall from "@/components/BounceBall";
-import { homeHero } from "../../../../public";
+import { Marketing, homeHero } from "../../../../public";
 import Head from "next/head";
 import Services from "@/components/Services";
 
@@ -25,6 +25,36 @@ export const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
+
+const sliderImageUrl = [
+  //First image url
+  {
+    title: "التسويق الرقمي",
+    imgDark: Marketing,
+    description:
+      "هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء التصميم ",
+  },
+  {
+    title: "حلول برمجية",
+    imgDark: Marketing,
+    description:
+      "هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء التصميم ",
+  },
+  //Second image url
+  {
+    title: "تصميم",
+    imgDark: Marketing,
+    description:
+      "هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء التصميم ",
+  },
+  //Third image url
+  {
+    title: "تطبيق الهاتف المحمول",
+    imgDark: Marketing,
+    description:
+      "هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء التصميم ",
+  },
+];
 
 export const metadata = {
   title: "الصفحة بالعربية",
@@ -61,7 +91,7 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <Services />
+        <Services object={sliderImageUrl} />
       </section>
     </main>
   );
