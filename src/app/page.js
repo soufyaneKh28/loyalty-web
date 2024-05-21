@@ -87,6 +87,7 @@ export default function Home() {
                 src={homeHero}
                 alt="homeHero"
                 className=" w-[350px] md:w-[420px] "
+                priority={true}
               />
             </div>
           </div>

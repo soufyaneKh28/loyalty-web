@@ -96,7 +96,7 @@ export default function Home() {
             <Image
               src={homeHero}
               alt="homeHero"
-              className=" w-[350px] md:w-[420px] "
+              className=" md:w-[420px] "
               width={350}
               priority={true}
             />

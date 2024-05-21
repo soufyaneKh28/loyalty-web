@@ -87,7 +87,7 @@ export default function Home() {
               alt="homeHero"
               className=" w-[350px] md:w-[420px]  scale-x-[-1] "
               width={350}
-              priority
+              priority={true}
             />
           </div>
         </div>
