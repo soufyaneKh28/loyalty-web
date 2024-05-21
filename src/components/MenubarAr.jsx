@@ -127,7 +127,11 @@ export default function MenubarAr() {
               ))}
             </ul>
           </nav>
-          <select value={selectedLanguage} onChange={(e) => onChange(e)}>
+          <select
+            className=" hidden md:flex"
+            value={selectedLanguage}
+            onChange={(e) => onChange(e)}
+          >
             <option value="en">en</option>
 
             <option value="ar">العربية</option>
@@ -177,6 +181,18 @@ export default function MenubarAr() {
                   </Link>
                 </motion.li>
               ))}
+
+              <select
+                className=" bg-transparent py-1 px-5 border rounded focus:outline-none"
+                value={selectedLanguage}
+                onChange={(e) => onChange(e)}
+              >
+                <option value="en">en</option>
+
+                <option value="ar" className="">
+                  العربية
+                </option>
+              </select>
             </motion.ul>
           </motion.div>
         )}

@@ -6,6 +6,7 @@ import Image from "next/image";
 import BounceBall from "@/components/BounceBall";
 import { Marketing, homeHero } from "../../../../public";
 import Services from "@/components/Services";
+import Strategy from "@/components/Strategy";
 
 // const poppins = google({
 //   family: "Rob",
@@ -74,8 +75,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main>
-      <section className={`"flex  py-5 pt-[100px] ${poppins.className}`}>
+    <main className={`${poppins.className}`}>
+      <section className={`"flex  pb-5 pt-[100px] `}>
         <div className="container md:justify-between md:items-center  flex flex-col md:flex-row">
           <div className=" textContent">
             <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[500px] font-bold text-primaryDark leading-[48px] md:leading-[60px]">
@@ -96,12 +97,29 @@ export default function Home() {
               src={homeHero}
               alt="homeHero"
               className=" w-[350px] md:w-[420px] "
+              width={350}
             />
           </div>
         </div>
       </section>
-      <section>
+      <section className="py-5">
+        <div className="container flex flex-col items-center justify-center my-10">
+          <div className=" flex flex-col items-start">
+            <div className="flex items-center mb-[-5px]">
+              <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+              <h5 className=" text-secondary">What we do ?</h5>
+            </div>
+            <h2 className="text-[32px] font-bold">Our Services</h2>
+          </div>
+          <p className="text-center max-w-[550px]">
+            Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed
+            ac sed. Aenean donec nulla sollicitudin{" "}
+          </p>
+        </div>
         <Services object={sliderImageUrl} />
+      </section>
+      <section className="py-5 bg-primaryDark">
+        <Strategy />
       </section>
     </main>
   );

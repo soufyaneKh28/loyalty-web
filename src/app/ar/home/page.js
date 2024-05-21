@@ -7,6 +7,7 @@ import BounceBall from "@/components/BounceBall";
 import { Marketing, homeHero } from "../../../../public";
 
 import Services from "@/components/Services";
+import StrategyAr from "@/components/StrategyAr";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -85,12 +86,30 @@ export default function Home() {
               src={homeHero}
               alt="homeHero"
               className=" w-[350px] md:w-[420px]  scale-x-[-1] "
+              width={350}
+              priority
             />
           </div>
         </div>
       </section>
-      <section>
+      <section className="py-5">
+        <div className="container flex flex-col items-center justify-center my-10">
+          <div className=" flex flex-col items-start">
+            <div className="flex items-center mb-[-5px]">
+              <div className="w-[25px] h-[2px] bg-secondary mr-1"></div>
+              <h5 className=" text-secondary">ماذا نقدم ؟</h5>
+            </div>
+            <h2 className="text-[32px] font-bold">خدماتنا</h2>
+          </div>
+          <p className="text-center max-w-[550px]">
+            هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء التصميم
+            هذا مجرد محتوى مزيف لملء التصميم
+          </p>
+        </div>
         <Services object={sliderImageUrl} />
+      </section>
+      <section className="py-5 bg-primaryDark">
+        <StrategyAr />
       </section>
     </main>
   );

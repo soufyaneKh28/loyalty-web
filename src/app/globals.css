@@ -77,7 +77,7 @@
 
 
   .embla {
-    max-width: 70rem;
+    max-width: 60rem;
     margin: auto;
     --slide-height: 19rem;
     --slide-spacing: 1rem;
@@ -88,6 +88,7 @@
     --slide-size-lg: calc(100% / 3);
   }
   .embla__viewport {
+    padding: 0px 5px;
     overflow: hidden;
   }
   .rtl .embla__container {
@@ -164,14 +165,14 @@
   color: #FFF7EA;
   }
   .embla__slide__number h3 {
-    font-size: 24px;
+    font-size: 20px;
     /* font-family: 'Poppins', 'sans-serif'; */
     cursor: default;
   }
 
 
  .rtl .embla__slide__number h3 {
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 800;
     /* font-family: 'Cairo', 'sans-serif'; */
     cursor: default;
@@ -272,5 +273,84 @@
   .embla__button--prev {
     background-color: #FFCEBF;
   }
+
+  .item {
+    max-width: 265px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #949491;
+    border-radius: 20px;
+    /* padding: 20px; */
+    background-color: #252C34;
+    color: #ffffff;
+    z-index: 10;
+    position: relative;
+    overflow: hidden;
+    /* margin-top: 20px; */
+    transition: 0.3s ease all;
+  }
+
+  .item-container .circle {
+    opacity: 0;
+    background-color: #F8360A;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    z-index: 0;
+  }
+
+.num {
+  cursor: default;
+}
+
+  .item-container:hover .num {
+    background-color: #F8360A;
+    transition: 0.3s ease all;
+  }
   
+  .item-container:hover .circle {
+    opacity: 1;
+    transition: 0.3s ease all;
+  }
+  .border-box {
+    z-index: 3;
+  }
+ .rtl .border-box {
+    flex-direction: row-reverse;
+  }
   
+  .dashed-border {
+    border-top: dashed 2px white;
+    width: 40px;
+  }
+
+  .box-circle {
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    background-color: white;
+    z-index: 50;
+    position: relative;
+  }
+
+
+  .item-container:hover .box-circle {
+    background-color: #F8360A;
+    transition: 0.3s ease all;
+  }
+
+  @media (min-width: 768px) {
+    .border-box {
+      z-index: 2;
+      transform: rotate(270deg) translateY(240%);
+      top: -20px;
+      right: 50%;
+  
+    }
+}
