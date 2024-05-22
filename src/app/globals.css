@@ -300,6 +300,9 @@
     height: 60px;
     border-radius: 100%;
     filter: blur(12px);
+    -webkit-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     position: absolute;
     top: -20px;
     right: -20px;
