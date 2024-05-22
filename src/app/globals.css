@@ -299,6 +299,7 @@
     width: 60px;
     height: 60px;
     border-radius: 100%;
+    filter: blur(12px);
     position: absolute;
     top: -20px;
     right: -20px;

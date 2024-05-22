@@ -25,7 +25,7 @@ const Strategy = ({ object }) => {
               <div className="dashed-border" />
               <div className=" box-circle " />
             </div>
-            <div className=" circle  blur-md" />
+            <div className=" circle " />
             <div className="item  z-10 relative ">
               <div className=" w-full py-10 ">
                 <h4 className=" text-[18px] font-semibold">
@@ -52,7 +52,7 @@ const Strategy = ({ object }) => {
               <div className="dashed-border" />
               <div className=" box-circle  " />
             </div>
-            <div className=" circle blur-md" />
+            <div className=" circle " />
             <div className="item ">
               <div className=" w-full py-10 ">
                 <h4 className=" text-[18px] font-semibold">Planning</h4>
@@ -75,7 +75,7 @@ const Strategy = ({ object }) => {
               <div className="dashed-border" />
               <div className="box-circle " />
             </div>
-            <div className=" circle  blur-md" />
+            <div className=" circle  " />
             <div className="item ">
               <div className=" w-full py-10 ">
                 <h4 className=" text-[18px] font-semibold">Implementation</h4>
