@@ -4,7 +4,7 @@ import { strategy, support } from "../../public";
 
 function Features({ object }) {
   return (
-    <div className="container flex flex-col md:flex-row md:justify-between md:items-center">
+    <div className="container flex flex-col md:flex-row md:justify-between md:items-center ">
       <div className=" flex flex-col ">
         <div className=" flex flex-col items-start">
           <div className="flex items-center mb-[-5px]">
@@ -19,9 +19,9 @@ function Features({ object }) {
           {object.description}
         </p>
       </div>
-      <div className="py-5 md:w-[422px]">
+      <div className="pt-10 md:pb-10 md:w-[422px]">
         {object.items.map((item, i) => (
-          <div className=" features-item flex items-center my-3 w-full" key={i}>
+          <div className=" features-item flex items-center  w-full" key={i}>
             <div className=" img-circle bg-secondary w-[65px] h-[65px] flex p-2 justify-center items-center rounded-full">
               <Image src={item.icon} width={45} alt="icon" />
             </div>

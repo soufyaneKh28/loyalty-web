@@ -15,6 +15,7 @@ import Services from "@/components/Services";
 import Strategy from "@/components/Strategy";
 import Features from "@/components/Features";
 import { icons } from "lucide-react";
+import Footer from "@/components/Footer";
 
 // const poppins = google({
 //   family: "Rob",
@@ -182,9 +183,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-5">
+      <section className="py-10">
         <Features object={features} />
       </section>
+      <Footer />
     </main>
   );
 }
