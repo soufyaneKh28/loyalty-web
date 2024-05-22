@@ -4,10 +4,40 @@ import Image from "next/image";
 
 
 import BounceBall from "@/components/BounceBall";
-import { Marketing, homeHero } from "../../../../public";
+import {
+  Marketing,
+  contact,
+  homeHero,
+  strategy,
+  support,
+} from "../../../../public";
 
 import Services from "@/components/Services";
 import StrategyAr from "@/components/StrategyAr";
+import Features from "@/components/Features";
+
+const features = {
+  smallTitle: "مميزاتنا",
+  title: "أفضل شركة في إسطنبول",
+  description: `نحن الأفضل لأننا نمزج بين التسويق والبرمجة والتصميم المعقد معًا للحصول على أفضل النتائج. بعد أن نقوم بتطوير هوية علامتك التجارية الخاصة، 
+  نساعدك على تنمية علامتك التجارية من خلال إعداد الحملات التسويقية عبر وسائل التواصل الاجتماعي ومحركات البحث.
+ 
+بالتوازي نقوم بتطوير موقع الويب الخاص بك بالإضافة إلى التطبيقات والبرامج الخاصة بعلاقات العملاء والمبيعات والمحاسبة.`,
+  items: [
+    {
+      icon: strategy,
+      title: "الخطط والمشورة",
+    },
+    {
+      icon: support,
+      title: "دعم على مدار الساعة",
+    },
+    {
+      icon: strategy,
+      title: "افكار جديدة",
+    },
+  ],
+};
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -110,6 +140,39 @@ export default function Home() {
       </section>
       <section className="py-5 bg-primaryDark">
         <StrategyAr />
+
+        <div className="container flex flex-col md:flex-row md:justify-between md:items-center">
+          <div className=" flex flex-col py-4 ">
+            <div className=" flex flex-col items-start">
+              {/* <div className="flex items-center mb-[-5px]">
+                <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+                <h5 className=" text-white">Workflow</h5>
+              </div> */}
+              <h2 className="text-[32px] font-bold w-[300px] md:w-auto  leading-9 mt-3 text-white">
+                قم بتنمية أعمالك اليوم
+              </h2>
+            </div>
+            <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
+              بدءًا من تحسين هوية علامتك التجارية وتشغيل الحملات وحتى تعزيز
+              تواجدك الرقمي، فإننا نقوم بكل ذلك
+            </p>
+            <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
+              تواصل معنا
+            </button>
+          </div>
+          <div className=" flex justify-end relative mt-4 md:mt-0 ">
+            <Image
+              src={contact}
+              alt="homeHero"
+              className=" md:w-[420px] ml-[-40px] scale-x-[-1] "
+              width={350}
+              priority={true}
+            />
+          </div>
+        </div>
+      </section>
+      <section className="py-5">
+        <Features object={features} />
       </section>
     </main>
   );

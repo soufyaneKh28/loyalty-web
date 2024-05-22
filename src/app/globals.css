@@ -354,3 +354,29 @@
   
     }
 }
+
+.features-item {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.features-item:hover {
+  background-color: #F8360A;
+  transition: all 0.3s ease;
+
+}
+
+.features-item:hover h3 {
+  color: #ffffff;
+
+}
+
+.features-item:hover .img-circle {
+  background-color: #ffffff;
+}
+
+
+.features-item:hover .img-circle img {
+  filter:brightness(20%);
+  transition: 0.3s ease all;
+}
