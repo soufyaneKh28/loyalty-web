@@ -76,12 +76,15 @@ const Footer = () => {
         </div>
         <div className=" col my-5">
           <form action="" className=" flex flex-col">
-            {/* <input
+            <input
               type="phone"
               className=" py-3 px-3 border-none rounded-[10px]"
-            /> */}
-            <PhoneInputT />
-            <button className=" bg-secondary py-3 rounded-full my-3 text-white font-semibold ">
+            />
+            {/* <PhoneInputT /> */}
+            <button
+              type="submit"
+              className=" bg-secondary py-3 rounded-full my-3 text-white font-semibold "
+            >
               Subscribe Now
             </button>
           </form>
