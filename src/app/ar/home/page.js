@@ -15,6 +15,7 @@ import {
 import Services from "@/components/Services";
 import StrategyAr from "@/components/StrategyAr";
 import Features from "@/components/Features";
+import FooterAr from "@/components/FooterAr";
 
 const features = {
   smallTitle: "مميزاتنا",
@@ -174,6 +175,7 @@ export default function Home() {
       <section className="py-5">
         <Features object={features} />
       </section>
+      <FooterAr />
     </main>
   );
 }

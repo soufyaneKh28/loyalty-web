@@ -42,11 +42,10 @@ const Footer = () => {
             <Image src={logo2} alt="logo2" />
           </div>
           <p className=" text-white w-[280px] md:w-[220px]  mt-5 font-normal text-[15px]">
-            A trading company specializing in marketing and programming. The
-            company was established in 2008 and a branch was opened in Turkey in
-            2014 to officially become a limited liability trading company
-            operating within the laws of the Republic of Turkey for commercial
-            companies in 2020.
+            شركة تجارية متخصصة في التسويق والبرمجة. تأسست الشركة عام 2008 وتم
+            افتتاح فرع لها في تركيا عام 2014 لتصبح رسمياً شركة تجارية ذات
+            مسؤولية محدودة تعمل ضمن قوانين الجمهورية التركية للشركات التجارية
+            عام 2020.
           </p>
         </div>
         <div className="col my-5 ">
@@ -73,7 +72,7 @@ const Footer = () => {
                 width={30}
                 height={30}
               />
-              <Link href={""} className="mx-2 text-white">
+              <Link href={""} dir="ltr" className="mx-2  text-white">
                 +90 546 544 41 96
               </Link>
             </div>
@@ -96,11 +95,12 @@ const Footer = () => {
             Company Information
           </h3>
           <div className="mt-5 flex flex-col text-white">
-            <Link href={"/"}>Home</Link>
-            <Link href={"/"}>About Us</Link>
-            <Link href={"/"}>Services</Link>
-            <Link href={"/"}>Projects</Link>
-            <Link href={"/"}>Contact Us</Link>
+            <Link href={"/ar/home"}>الرئيسية</Link>
+            <Link href={"/ar/about"}>من نحن</Link>
+            <Link href={"/"}>خدماتنا</Link>
+            <Link href={"/"}>المشاريع</Link>
+            <Link href={"/"}>المدونة</Link>
+            <Link href={"/"}>تواصل معنا</Link>
           </div>
         </div>
         <div className=" col my-5">
@@ -137,7 +137,7 @@ const Footer = () => {
             ))}
           </div>
           <div className=" text-white">
-            Copyright © 2023. <span className=" text-secondary">LOYALTY.</span>
+            حقوق النشر© 2024. <span className=" text-secondary">لويالتي.</span>
           </div>
         </div>
       </div>

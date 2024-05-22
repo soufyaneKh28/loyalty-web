@@ -1,10 +1,36 @@
 import { Poppins, Roboto } from "next/font/google";
-import { Marketing, homeHero } from "../../public";
+import { Marketing, contact, homeHero, strategy, support } from "../../public";
 import Image from "next/image";
 
 import BounceBall from "@/components/BounceBall";
 import Menubar from "@/components/Menubar";
 import Services from "@/components/Services";
+import Features from "@/components/Features";
+import Footer from "@/components/Footer";
+import Strategy from "@/components/Strategy";
+
+const features = {
+  smallTitle: "Our Features",
+  title: "The Best Company in Istanbul",
+  description: `We are the best because we mix marketing, programming, and intricate design together to get the best results. After we develop your own brand identity, 
+  we help you grow your brand by preparing marketing campaigns through social media and search engines.
+  
+  In parallel we develop your website in addition to applications and programs for customer's relations, sales, and accounting.`,
+  items: [
+    {
+      icon: strategy,
+      title: "Plans and Advice",
+    },
+    {
+      icon: support,
+      title: "24/7 Support",
+    },
+    {
+      icon: strategy,
+      title: "New Ideas",
+    },
+  ],
+};
 
 const sliderImageUrl = [
   //First image url
@@ -64,7 +90,7 @@ export default function Home() {
     <>
       <Menubar />
       <main>
-        <section className={`"flex  py-5 pt-[100px] ${poppins.className}`}>
+        <section className={`"flex  pb-5 pt-[100px] `}>
           <div className="container md:justify-between md:items-center  flex flex-col md:flex-row">
             <div className=" textContent">
               <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[500px] font-bold text-primaryDark leading-[48px] md:leading-[60px]">
@@ -72,7 +98,7 @@ export default function Home() {
                 <span className=" text-secondary">Digital Product</span>, Brand
                 and Experience
               </h1>
-              <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px] font-Poppins font-medium">
+              <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px] font-Roboto font-medium">
                 we are Marketing and digital agency , we provide a lot of
                 services we are Marketing and digital agency , we provide a lot
                 of services
@@ -86,15 +112,65 @@ export default function Home() {
               <Image
                 src={homeHero}
                 alt="homeHero"
-                className=" w-[350px] md:w-[420px] "
+                className=" md:w-[420px] "
+                width={350}
                 priority={true}
               />
             </div>
           </div>
         </section>
-        <section>
+        <section className="py-5">
+          <div className="container flex flex-col items-center justify-center my-10">
+            <div className=" flex flex-col items-start">
+              <div className="flex items-center mb-[-5px]">
+                <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+                <h5 className=" text-secondary">What we do ?</h5>
+              </div>
+              <h2 className="text-[32px] font-bold">Our Services</h2>
+            </div>
+            <p className="text-center max-w-[550px]">
+              Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed
+              ac sed. Aenean donec nulla sollicitudin{" "}
+            </p>
+          </div>
           <Services object={sliderImageUrl} />
         </section>
+        <section className="py-5 bg-primaryDark">
+          <Strategy />
+          <div className="container flex flex-col md:flex-row md:justify-between md:items-center">
+            <div className=" flex flex-col py-4 ">
+              <div className=" flex flex-col items-start">
+                {/* <div className="flex items-center mb-[-5px]">
+                <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+                <h5 className=" text-white">Workflow</h5>
+              </div> */}
+                <h2 className="text-[32px] font-bold w-[350px] md:w-auto  leading-9 mt-3 text-white">
+                  Grow your Business today{" "}
+                </h2>
+              </div>
+              <p className=" text-white font-Roboto w-[270px] md:w-[385px]  text-[16px] mt-4">
+                From refining your brand identify and running campaigns to
+                powering your digital presence, we do it all
+              </p>
+              <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
+                Get Started
+              </button>
+            </div>
+            <div className=" flex justify-end relative mt-4 md:mt-0 ">
+              <Image
+                src={contact}
+                alt="homeHero"
+                className=" md:w-[420px] mr-[-40px] "
+                width={350}
+                priority={true}
+              />
+            </div>
+          </div>
+        </section>
+        <section className="py-10">
+          <Features object={features} />
+        </section>
+        <Footer />
       </main>
     </>
   );

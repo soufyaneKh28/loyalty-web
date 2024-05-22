@@ -393,3 +393,7 @@
   flex-direction: column;
   align-items: start;
 }
+
+.icon:hover img {
+  filter:brightness(20%); ;
+}

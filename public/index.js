@@ -13,6 +13,10 @@ import logo2 from "./logo2.svg";
 import location from "./Location.png";
 import email from "./Email.png";
 import phone from "./Phone.png";
+import facebook from "./facebook.png";
+import instagram from "./instagram.png";
+import linkedin from "./linkedin.png";
+import x from "./TwitterX.png";
 
 export {
   logo,
@@ -29,4 +33,8 @@ export {
   location,
   email,
   phone,
+  facebook,
+  instagram,
+  linkedin,
+  x,
 };
