@@ -136,7 +136,7 @@ const Footer = () => {
               </Link>
             ))}
           </div>
-          <div className=" text-white">
+          <div className=" text-white w-[100px] md:w-[200px]">
             حقوق النشر© 2024. <span className=" text-secondary">لويالتي.</span>
           </div>
         </div>
