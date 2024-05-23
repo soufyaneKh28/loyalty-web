@@ -1,6 +1,6 @@
 import React from "react";
 
-const Strategy = ({ object }) => {
+const StrategyAr = ({ object }) => {
   return (
     <div className="container">
       <div className=" flex flex-col md:flex-row md:justify-between md:items-center">
@@ -169,4 +169,4 @@ const Strategy = ({ object }) => {
   );
 };
 
-export default Strategy;
+export default StrategyAr;

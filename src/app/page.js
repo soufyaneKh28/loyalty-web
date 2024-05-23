@@ -2,12 +2,14 @@ import { Poppins, Roboto } from "next/font/google";
 import { Marketing, contact, homeHero, strategy, support } from "../../public";
 import Image from "next/image";
 
-import BounceBall from "@/components/BounceBall";
-import Menubar from "@/components/Menubar";
-import Services from "@/components/Services";
-import Features from "@/components/Features";
-import Footer from "@/components/Footer";
-import Strategy from "@/components/Strategy";
+import {
+  Services,
+  Strategy,
+  Footer,
+  Features,
+  BounceBall,
+  Menubar,
+} from "@/components";
 
 const features = {
   smallTitle: "Our Features",

@@ -8,6 +8,7 @@ import {
   Marketing,
   contact,
   homeHero,
+  memberTeam,
   strategy,
   support,
 } from "../../../../public";
@@ -16,6 +17,7 @@ import Services from "@/components/Services";
 import StrategyAr from "@/components/StrategyAr";
 import Features from "@/components/Features";
 import FooterAr from "@/components/FooterAr";
+import Team from "@/components/Team";
 
 const features = {
   smallTitle: "مميزاتنا",
@@ -84,6 +86,39 @@ const sliderImageUrl = [
     imgDark: Marketing,
     description:
       "هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء التصميم ",
+  },
+];
+
+const members = [
+  {
+    name: "جنيد العمر",
+    role: "المؤسس",
+    img: memberTeam,
+    color: "#F0A400",
+  },
+  {
+    name: "هشام حجازي",
+    role: "مطور ويب",
+    img: memberTeam,
+    color: "#30C4E5",
+  },
+  {
+    name: "سفيان خلف الله",
+    role: "مطور ويب",
+    img: memberTeam,
+    color: "#F0A400",
+  },
+  {
+    name: "ياسين باسو",
+    role: "مطور ويب",
+    img: memberTeam,
+    color: "#30C4E5",
+  },
+  {
+    name: "سفيان خلف الله",
+    role: "مطور ويب",
+    img: memberTeam,
+    color: "#F0A400",
   },
 ];
 
@@ -174,6 +209,27 @@ export default function Home() {
       </section>
       <section className="py-5">
         <Features object={features} />
+      </section>
+      <section className="py-5 bg-primaryDark">
+        <div className="container flex flex-col items-center justify-center my-10">
+          <div className=" flex flex-col items-center">
+            <div className="flex items-center mb-[-5px]">
+              <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+              <h5 className=" text-secondary">فريقنا</h5>
+            </div>
+            <h2 className="text-[32px] font-bold text-white">
+              تعرف على فريقنا{" "}
+            </h2>
+          </div>
+          <p className="text-center max-w-[550px] font-normal text-white mt-3">
+            بدءًا من تحسين هوية علامتك التجارية وتشغيل الحملات وحتى تعزيز تواجدك
+            الرقمي، فإننا نقوم بكل ذلك
+          </p>
+          <button className="w-fit text-primary text-[14px] font-medium mt-5  bg-secondary rounded-full px-9 py-3">
+            انضم إلى فريقنا
+          </button>
+        </div>
+        <Team members={members} />
       </section>
       <FooterAr />
     </main>

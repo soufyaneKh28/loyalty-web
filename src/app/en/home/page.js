@@ -1,27 +1,19 @@
 import { Poppins, Roboto } from "next/font/google";
-
+import "../../globals.css";
 import Image from "next/image";
-
 
 import BounceBall from "@/components/BounceBall";
 import {
   Marketing,
   contact,
   homeHero,
+  memberTeam,
   strategy,
   support,
 } from "../../../../public";
-import Services from "@/components/Services";
-import Strategy from "@/components/Strategy";
-import Features from "@/components/Features";
-import { icons } from "lucide-react";
-import Footer from "@/components/Footer";
 
-// const poppins = google({
-//   family: "Rob",
-//   subsets: ["latin"],
-//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-// });
+import { Services, Strategy, Footer, Features } from "@/components";
+import Team from "@/components/Team";
 
 const features = {
   smallTitle: "Our Features",
@@ -85,6 +77,39 @@ const sliderImageUrl = [
     imgDark: Marketing,
     description:
       "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+  },
+];
+
+const members = [
+  {
+    name: "Junaid AL-Omar",
+    role: "CEO - Founder",
+    img: memberTeam,
+    color: "#F0A400",
+  },
+  {
+    name: "Hisham Hijazi",
+    role: "Web Developer",
+    img: memberTeam,
+    color: "#30C4E5",
+  },
+  {
+    name: "Soufyane Khalfallah",
+    role: "Web Developer",
+    img: memberTeam,
+    color: "#F0A400",
+  },
+  {
+    name: "Soufyane Khalfallah",
+    role: "Web Developer",
+    img: memberTeam,
+    color: "#30C4E5",
+  },
+  {
+    name: "Soufyane Khalfallah",
+    role: "Web Developer",
+    img: memberTeam,
+    color: "#F0A400",
   },
 ];
 
@@ -185,6 +210,27 @@ export default function Home() {
       </section>
       <section className="py-10">
         <Features object={features} />
+      </section>
+      <section className="py-5 bg-primaryDark">
+        <div className="container flex flex-col items-center justify-center my-10">
+          <div className=" flex flex-col items-center">
+            <div className="flex items-center mb-[-5px]">
+              <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+              <h5 className=" text-secondary">Our Team</h5>
+            </div>
+            <h2 className="text-[32px] font-bold text-white">
+              Get To Know Our Team
+            </h2>
+          </div>
+          <p className="text-center max-w-[550px] font-normal text-white">
+            Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed
+            ac sed. Aenean donec nulla sollicitudin{" "}
+          </p>
+          <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
+            Join Our Team
+          </button>
+        </div>
+        <Team members={members} />
       </section>
       <Footer />
     </main>

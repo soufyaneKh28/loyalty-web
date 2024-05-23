@@ -397,3 +397,7 @@
 .icon:hover img {
   filter:brightness(20%); ;
 }
+
+.member-img {
+  border-radius: 75px 0px 100px 100px;
+}

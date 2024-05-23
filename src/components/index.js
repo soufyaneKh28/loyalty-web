@@ -1,0 +1,21 @@
+import Services from "./Services";
+import Strategy from "./Strategy";
+import Features from "./Features";
+import FooterAr from "./FooterAr";
+import Footer from "./Footer";
+import Menubar from "./Menubar";
+import MenubarAr from "./MenubarAr";
+import StrategyAr from "./StrategyAr";
+import BounceBall from "./BounceBall";
+
+export {
+  Services,
+  Strategy,
+  Features,
+  FooterAr,
+  Footer,
+  Menubar,
+  MenubarAr,
+  StrategyAr,
+  BounceBall,
+};

@@ -33,7 +33,7 @@ const socialMedia = [
   },
 ];
 
-const Footer = () => {
+const FooterAr = () => {
   return (
     <footer className=" bg-primaryDark py-10">
       <div className="container flex flex-col md:flex-row  ">
@@ -145,4 +145,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterAr;
