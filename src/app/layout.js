@@ -19,7 +19,7 @@ import Head from "next/head";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" dir="ltr">
       <body>{children}</body>
     </html>
   );

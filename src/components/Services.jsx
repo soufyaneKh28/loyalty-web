@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "./ui/Slider";
+
 import Image from "next/image";
 import { Marketing } from "../../public";
 import EmblaCarousel from "./ui/EmblaCarousel";

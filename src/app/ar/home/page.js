@@ -18,6 +18,7 @@ import StrategyAr from "@/components/StrategyAr";
 import Features from "@/components/Features";
 import FooterAr from "@/components/FooterAr";
 import Team from "@/components/Team";
+import Clients from "@/components/Clients";
 
 const features = {
   smallTitle: "مميزاتنا",
@@ -94,31 +95,26 @@ const members = [
     name: "جنيد العمر",
     role: "المؤسس",
     img: memberTeam,
-    color: "#F0A400",
   },
   {
     name: "هشام حجازي",
     role: "مطور ويب",
     img: memberTeam,
-    color: "#30C4E5",
   },
   {
     name: "سفيان خلف الله",
     role: "مطور ويب",
     img: memberTeam,
-    color: "#F0A400",
   },
   {
     name: "ياسين باسو",
     role: "مطور ويب",
     img: memberTeam,
-    color: "#30C4E5",
   },
   {
     name: "سفيان خلف الله",
     role: "مطور ويب",
     img: memberTeam,
-    color: "#F0A400",
   },
 ];
 
@@ -230,6 +226,25 @@ export default function Home() {
           </button>
         </div>
         <Team members={members} />
+      </section>
+      <section className="py-10">
+        <div className="container flex flex-col items-center justify-center my-10">
+          <div className=" flex flex-col items-center">
+            <div className="flex items-center mb-[-5px]">
+              <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+              <h5 className=" text-secondary ">عملائنا</h5>
+            </div>
+            <h2 className="text-[32px] max-w-[300px] text-center font-bold">
+              ماذا يقول عملاؤنا؟{" "}
+            </h2>
+          </div>
+          <p className="text-center max-w-[550px]">
+            وكما قلنا من قبل نشجعك على الغوص قبل اليقين! نحن على يقين من أننا
+            سنقدم لك أفضل خدمة، حيث قدمنا لكثير من عملائنا أفضل النتائج. من
+            المستحيل أن تصاب بخيبة أمل إذا كنت تعمل معنا.
+          </p>
+        </div>
+        <Clients />
       </section>
       <FooterAr />
     </main>

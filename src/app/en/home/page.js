@@ -14,6 +14,7 @@ import {
 
 import { Services, Strategy, Footer, Features } from "@/components";
 import Team from "@/components/Team";
+import Clients from "@/components/Clients";
 
 const features = {
   smallTitle: "Our Features",
@@ -231,6 +232,26 @@ export default function Home() {
           </button>
         </div>
         <Team members={members} />
+      </section>
+      <section className="py-10">
+        <div className="container flex flex-col items-center justify-center my-10">
+          <div className=" flex flex-col items-center">
+            <div className="flex items-center mb-[-5px]">
+              <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+              <h5 className=" text-secondary ">Our Clients</h5>
+            </div>
+            <h2 className="text-[32px] max-w-[300px] text-center font-bold">
+              What Our Clients Say ?
+            </h2>
+          </div>
+          <p className="text-center max-w-[550px]">
+            As we said before we encourage you to dive in before certainty! We
+            are sure that we will give you the best service, as we have given
+            lots of our clients the best results. It`s impossible for you to be
+            disappointed if you are working with us.
+          </p>
+        </div>
+        <Clients />
       </section>
       <Footer />
     </main>

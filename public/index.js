@@ -6,7 +6,7 @@ import homeHero from "./homeHero.png";
 import Marketing from "./marketing.png";
 import prev from "./prev.png";
 
-import contact from "./contact.svg";
+import contact from "./contact.png";
 import strategy from "./Strategy.svg";
 import support from "./support.svg";
 import logo2 from "./logo2.svg";
@@ -18,6 +18,10 @@ import instagram from "./instagram.png";
 import linkedin from "./linkedin.png";
 import x from "./TwitterX.png";
 import memberTeam from "./memberTeam.png";
+import sou from "./sou.png";
+import right from "./RightArrow.png";
+import left from "./LeftArrow.png";
+
 export {
   logo,
   menu,
@@ -37,4 +41,7 @@ export {
   linkedin,
   x,
   memberTeam,
+  sou,
+  right,
+  left,
 };

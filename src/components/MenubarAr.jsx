@@ -107,7 +107,7 @@ export default function MenubarAr() {
       <header
         className={` ${isScrolled || isOpen ? "scrolled" : ""}  ${
           cairo.className
-        } header py-4  flex flex-col  items-center font-Ibm fixed w-full bg-[#FFF7EA] z-[50] transition-all`}
+        } header py-4  flex flex-col  items-center font-Ibm fixed w-full bg-white z-[50] transition-all`}
       >
         <div className="container flex justify-between ">
           <Link href="/">

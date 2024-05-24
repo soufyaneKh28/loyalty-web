@@ -1,5 +1,12 @@
 import { Poppins, Roboto } from "next/font/google";
-import { Marketing, contact, homeHero, strategy, support } from "../../public";
+import {
+  Marketing,
+  contact,
+  homeHero,
+  memberTeam,
+  strategy,
+  support,
+} from "../../public";
 import Image from "next/image";
 
 import {
@@ -10,6 +17,8 @@ import {
   BounceBall,
   Menubar,
 } from "@/components";
+import Team from "@/components/Team";
+import Clients from "@/components/Clients";
 
 const features = {
   smallTitle: "Our Features",
@@ -34,6 +43,38 @@ const features = {
   ],
 };
 
+const members = [
+  {
+    name: "Junaid AL-Omar",
+    role: "CEO - Founder",
+    img: memberTeam,
+    color: "#F0A400",
+  },
+  {
+    name: "Hisham Hijazi",
+    role: "Web Developer",
+    img: memberTeam,
+    color: "#30C4E5",
+  },
+  {
+    name: "Soufyane Khalfallah",
+    role: "Web Developer",
+    img: memberTeam,
+    color: "#F0A400",
+  },
+  {
+    name: "Soufyane Khalfallah",
+    role: "Web Developer",
+    img: memberTeam,
+    color: "#30C4E5",
+  },
+  {
+    name: "Soufyane Khalfallah",
+    role: "Web Developer",
+    img: memberTeam,
+    color: "#F0A400",
+  },
+];
 const sliderImageUrl = [
   //First image url
   {
@@ -91,7 +132,7 @@ export default function Home() {
   return (
     <>
       <Menubar />
-      <main>
+      <main className={`${poppins.className}`}>
         <section className={`"flex  pb-5 pt-[100px] `}>
           <div className="container md:justify-between md:items-center  flex flex-col md:flex-row">
             <div className=" textContent">
@@ -171,6 +212,47 @@ export default function Home() {
         </section>
         <section className="py-10">
           <Features object={features} />
+        </section>
+        <section className="py-5 bg-primaryDark">
+          <div className="container flex flex-col items-center justify-center my-10">
+            <div className=" flex flex-col items-center">
+              <div className="flex items-center mb-[-5px]">
+                <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+                <h5 className=" text-secondary">Our Team</h5>
+              </div>
+              <h2 className="text-[32px] font-bold text-white">
+                Get To Know Our Team
+              </h2>
+            </div>
+            <p className="text-center max-w-[550px] font-normal text-white">
+              Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed
+              ac sed. Aenean donec nulla sollicitudin{" "}
+            </p>
+            <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
+              Join Our Team
+            </button>
+          </div>
+          <Team members={members} />
+        </section>
+        <section className="py-10">
+          <div className="container flex flex-col items-center justify-center my-10">
+            <div className=" flex flex-col items-center">
+              <div className="flex items-center mb-[-5px]">
+                <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+                <h5 className=" text-secondary ">Our Clients</h5>
+              </div>
+              <h2 className="text-[32px] max-w-[300px] text-center font-bold">
+                What Our Clients Say ?
+              </h2>
+            </div>
+            <p className="text-center max-w-[550px]">
+              As we said before we encourage you to dive in before certainty! We
+              are sure that we will give you the best service, as we have given
+              lots of our clients the best results. It`s impossible for you to
+              be disappointed if you are working with us.
+            </p>
+          </div>
+          <Clients />
         </section>
         <Footer />
       </main>

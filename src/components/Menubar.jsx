@@ -1,4 +1,5 @@
 "use client";
+import { Poppins, Roboto } from "next/font/google";
 
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
@@ -56,12 +57,18 @@ const links = [
 //   };
 // }
 
+export const poppins = Poppins({
+  family: "Poppins",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
 export default function Menubar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
+  const [selectedLanguage, setSelectedLanguage] = useState("");
   const router = useRouter();
 
   useEffect(() => {
@@ -84,15 +91,21 @@ export default function Menubar() {
 
   useEffect(
     function () {
-      if (pathname.includes("ar")) {
-        const newPath = pathname.replace("ar", selectedLanguage);
-        console.log(newPath);
-        router.push(newPath);
-      }
-      if (pathname.includes("en")) {
-        const newPath = pathname.replace("en", selectedLanguage);
-        console.log(newPath);
-        router.push(newPath);
+      if (selectedLanguage) {
+        if (pathname.includes("ar")) {
+          const newPath = pathname.replace("ar", selectedLanguage);
+          console.log(newPath);
+          router.push(newPath);
+        }
+        if (pathname.includes("en")) {
+          const newPath = pathname.replace("en", selectedLanguage);
+          console.log(newPath);
+          router.push(newPath);
+        }
+        if (pathname === "/") {
+          const newPath = pathname.replace("/", `${selectedLanguage}/home`);
+          router.push(newPath);
+        }
       }
       // if (!pathname.includes("en") || !pathname.includes("ar")) {
       //   const newPath = pathname.replace("/", `/${selectedLanguage}`);
@@ -108,9 +121,9 @@ export default function Menubar() {
   return (
     <>
       <header
-        className={` ${
+        className={`${poppins.className}   ${
           isScrolled || isOpen ? "scrolled" : ""
-        } header py-4  flex flex-col  items-center fixed w-full bg-[#FFF7EA] z-[50] transition-all`}
+        } header py-4  flex flex-col  items-center fixed w-full bg-white z-[50] transition-all`}
       >
         <div className="container flex justify-between ">
           <Link href="/">
