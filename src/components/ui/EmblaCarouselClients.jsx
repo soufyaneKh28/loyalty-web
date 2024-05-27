@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useCallback, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {
@@ -18,7 +20,7 @@ const TWEEN_FACTOR_BASE = 0.84;
 const numberWithinRange = (number, min, max) =>
   Math.min(Math.max(number, min), max);
 
-const EmblaCarouselClients = ({ children }) => {
+const EmblaCarouselClients = ({ children, object }) => {
   // const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const tweenFactor = useRef(0);

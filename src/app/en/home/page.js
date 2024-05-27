@@ -8,13 +8,21 @@ import {
   contact,
   homeHero,
   memberTeam,
+  sou,
   strategy,
   support,
 } from "../../../../public";
 
-import { Services, Strategy, Footer, Features } from "@/components";
+import {
+  Services,
+  Strategy,
+  Footer,
+  Features,
+  Clients,
+  Statis,
+} from "@/components";
 import Team from "@/components/Team";
-import Clients from "@/components/Clients";
+// import Clients from "@/components/Clients";
 
 const features = {
   smallTitle: "Our Features",
@@ -111,6 +119,33 @@ const members = [
     role: "Web Developer",
     img: memberTeam,
     color: "#F0A400",
+  },
+];
+
+const clients = [
+  {
+    name: "Soufyane Khalfallah",
+    img: sou,
+    message: `As we said before we encourage you to dive in before certainty! We are sure that we will 
+    give you the best service, as we have given lots of our clients the best results. It's impossible for you to be disappointed 
+    if you are working with us.`,
+    role: "Web Developer",
+  },
+  {
+    name: "Soufyane Khalfallah",
+    img: sou,
+    message: `As we said before we encourage you to dive in before certainty! We are sure that we will 
+    give you the best service, as we have given lots of our clients the best results. It's impossible for you to be disappointed 
+    if you are working with us.`,
+    role: "Web Developer",
+  },
+  {
+    name: "Soufyane Khalfallah",
+    img: sou,
+    message: `As we said before we encourage you to dive in before certainty! We are sure that we will 
+    give you the best service, as we have given lots of our clients the best results. It's impossible for you to be disappointed 
+    if you are working with us.`,
+    role: "Web Developer",
   },
 ];
 
@@ -212,6 +247,26 @@ export default function Home() {
       <section className="py-10">
         <Features object={features} />
       </section>
+      <section className=" py-10">
+        <div className="container flex flex-col items-center justify-center ">
+          <div className=" flex flex-col items-center">
+            <div className="flex items-center mb-[-5px]">
+              <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+              <h5 className=" text-secondary">Who Are We ?</h5>
+            </div>
+            <h2 className="text-[32px] w-[354px] font-bold text-center">
+              Your Work Grows With Us
+            </h2>
+          </div>
+          <p className="text-center max-w-[550px]">
+            Established in 2013, our company specializes in branding, digital
+            marketing, and programming. We expanded to Turkey in 2014, becoming
+            an official entity under Turkish marketing laws in 2020.
+            Additionally, we have branches in Dubai, UAE, and the USA.
+          </p>
+        </div>
+        <Statis />
+      </section>
       <section className="py-5 bg-primaryDark">
         <div className="container flex flex-col items-center justify-center my-10">
           <div className=" flex flex-col items-center">
@@ -251,7 +306,7 @@ export default function Home() {
             disappointed if you are working with us.
           </p>
         </div>
-        <Clients />
+        <Clients object={clients} />
       </section>
       <Footer />
     </main>

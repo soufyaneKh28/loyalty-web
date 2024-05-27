@@ -21,6 +21,8 @@ import memberTeam from "./memberTeam.png";
 import sou from "./sou.png";
 import right from "./RightArrow.png";
 import left from "./LeftArrow.png";
+import circles from "./StatisCircle.png";
+import prize from "./Prize.png";
 
 export {
   logo,
@@ -44,4 +46,6 @@ export {
   sou,
   right,
   left,
+  circles,
+  prize,
 };

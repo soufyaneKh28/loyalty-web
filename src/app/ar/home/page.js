@@ -9,6 +9,7 @@ import {
   contact,
   homeHero,
   memberTeam,
+  sou,
   strategy,
   support,
 } from "../../../../public";
@@ -115,6 +116,27 @@ const members = [
     name: "سفيان خلف الله",
     role: "مطور ويب",
     img: memberTeam,
+  },
+];
+
+const clients = [
+  {
+    name: "سفيان خلف الله",
+    img: sou,
+    message: `لقد وجدت العديد من الشركات والوكالات الكثيرة، ولكن عند التعامل معك لأول مرة شعرت أنك الأفضل! وهذا بالضبط ما حدث عندما تعاملت معك.`,
+    role: "مطور ويب",
+  },
+  {
+    name: "Soufyane Khalfallah",
+    img: sou,
+    message: `لقد وجدت العديد من الشركات والوكالات الكثيرة، ولكن عند التعامل معك لأول مرة شعرت أنك الأفضل! وهذا بالضبط ما حدث عندما تعاملت معك.`,
+    role: "Web Developer",
+  },
+  {
+    name: "Soufyane Khalfallah",
+    img: sou,
+    message: `وكما قلنا من قبل نشجعك على الغوص قبل اليقين! نحن على يقين من أننا سنقدم لك أفضل خدمة، حيث قدمنا لكثير من عملائنا أفضل النتائج. من المستحيل أن تصاب بخيبة أمل إذا كنت تعمل معنا.`,
+    role: "Web Developer",
   },
 ];
 
@@ -244,7 +266,7 @@ export default function Home() {
             المستحيل أن تصاب بخيبة أمل إذا كنت تعمل معنا.
           </p>
         </div>
-        <Clients />
+        <Clients object={clients} />
       </section>
       <FooterAr />
     </main>

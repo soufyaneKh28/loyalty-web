@@ -440,7 +440,8 @@
 .emblaClient__slide__number {
   border-radius: 1.8rem;
   padding: 40px 20px;
-  /* height: var(--slide-height); */
+  height: var(--slide-height);
+  max-height: fit-content;
   width: 100%;
   /* border: 1px solid black; */
   display: flex;
@@ -449,7 +450,14 @@
   align-items: center;
   object-fit: cover;
 }
+@media (max-width: 768px) { 
 
+  .emblaClient__slide__number {
+ 
+    height: 400px;
+
+  }
+}
 
 .emblaClient__controls {
   display: flex;

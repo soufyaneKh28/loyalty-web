@@ -7,6 +7,8 @@ import Menubar from "./Menubar";
 import MenubarAr from "./MenubarAr";
 import StrategyAr from "./StrategyAr";
 import BounceBall from "./BounceBall";
+import Clients from "./Clients";
+import Statis from "./Statis";
 
 export {
   Services,
@@ -18,4 +20,6 @@ export {
   MenubarAr,
   StrategyAr,
   BounceBall,
+  Clients,
+  Statis,
 };
