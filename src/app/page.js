@@ -4,6 +4,7 @@ import {
   contact,
   homeHero,
   memberTeam,
+  sou,
   strategy,
   support,
 } from "../../public";
@@ -16,6 +17,7 @@ import {
   Features,
   BounceBall,
   Menubar,
+  Statis,
 } from "@/components";
 import Team from "@/components/Team";
 import Clients from "@/components/Clients";
@@ -308,7 +310,7 @@ export default function Home() {
               be disappointed if you are working with us.
             </p>
           </div>
-          <Clients />
+          <Clients object={clients} />
         </section>
         <Footer />
       </main>
