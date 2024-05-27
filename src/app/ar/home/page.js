@@ -20,6 +20,7 @@ import Features from "@/components/Features";
 import FooterAr from "@/components/FooterAr";
 import Team from "@/components/Team";
 import Clients from "@/components/Clients";
+import { Statis } from "@/components";
 
 const features = {
   smallTitle: "مميزاتنا",
@@ -227,6 +228,26 @@ export default function Home() {
       </section>
       <section className="py-5">
         <Features object={features} />
+      </section>
+      <section className=" py-10">
+        <div className="container flex flex-col items-center justify-center ">
+          <div className=" flex flex-col items-center">
+            <div className="flex items-center mb-[-5px]">
+              <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+              <h5 className=" text-secondary">Who Are We ?</h5>
+            </div>
+            <h2 className="text-[32px] w-[354px] font-bold text-center">
+              Your Work Grows With Us
+            </h2>
+          </div>
+          <p className="text-center max-w-[550px]">
+            Established in 2013, our company specializes in branding, digital
+            marketing, and programming. We expanded to Turkey in 2014, becoming
+            an official entity under Turkish marketing laws in 2020.
+            Additionally, we have branches in Dubai, UAE, and the USA.
+          </p>
+        </div>
+        <Statis />
       </section>
       <section className="py-5 bg-primaryDark">
         <div className="container flex flex-col items-center justify-center my-10">

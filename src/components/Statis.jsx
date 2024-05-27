@@ -71,7 +71,7 @@ const Statis = () => {
             src={circles}
             alt="circles"
             width={350}
-            className=" absolute rotate-[160deg] bottom-[-170px] md:top-0  right-[50%] md:rotate-[280deg] md:left-0 translate-x-[50%] md:translate-x-[-50%]"
+            className=" absolute rotate-[160deg] bottom-[-170px] md:top-0  right-[50%] md:rotate-[280deg] md:left-0 translate-x-[50%] md:translate-x-[-100%]"
           />
         </div>
       </div>
