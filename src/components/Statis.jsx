@@ -25,35 +25,35 @@ const Statis = ({ object }) => {
         <div className="stats my-10 md:flex justify-center md:gap-20">
           <div className="flex my-5  items-start justify-center">
             <div className="stats-icon ">
-              <Image src={prize} alt="prize" className="mt-2" />
+              <Image src={prize} alt="prize" className="mt-3" />
             </div>
             <div className=" text-white">
-              <h3 className="text-[28px] font-bold" ref={ref}>
+              <h3 className="text-[37px] font-bold" ref={ref}>
                 {inView && <CountUp duration={3} start={0} end={120} />}+
               </h3>
-              <p className=" font-normal">{object.stats.project}</p>
+              <p className=" font-bold w-[100px]">{object.stats.project}</p>
             </div>
           </div>
           <div className="flex my-5 items-start justify-center">
             <div className="stats-icon ">
-              <Image src={prize} alt="prize" className="mt-2" />
+              <Image src={prize} alt="prize" className="mt-3" />
             </div>
             <div className=" text-white">
-              <h3 className="text-[28px] font-bold" ref={ref}>
+              <h3 className="text-[37px] font-bold" ref={ref}>
                 {inView && <CountUp duration={3.5} start={0} end={180} />}+
               </h3>
-              <p className=" font-normal">{object.stats.client}</p>
+              <p className=" font-bold w-[100px]">{object.stats.client}</p>
             </div>
           </div>
           <div className="flex my-5  items-start justify-center">
             <div className="stats-icon ">
-              <Image src={prize} alt="prize" className="mt-2" />
+              <Image src={prize} alt="prize" className="mt-3" />
             </div>
             <div className=" text-white">
-              <h3 className="text-[28px] font-bold" ref={ref}>
+              <h3 className="text-[37px] font-bold" ref={ref}>
                 {inView && <CountUp duration={4} start={0} end={60} />}+
               </h3>
-              <p className=" font-normal">{object.stats.team}</p>
+              <p className=" font-bold w-[100px]">{object.stats.team}</p>
             </div>
           </div>
         </div>
