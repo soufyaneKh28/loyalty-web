@@ -9,6 +9,8 @@ import StrategyAr from "./StrategyAr";
 import BounceBall from "./BounceBall";
 import Clients from "./Clients";
 import Statis from "./Statis";
+import CallTo from "./CallTo";
+import IconsSlider from "./IconsSlider";
 
 export {
   Services,
@@ -22,4 +24,6 @@ export {
   BounceBall,
   Clients,
   Statis,
+  CallTo,
+  IconsSlider,
 };

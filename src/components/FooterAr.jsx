@@ -49,7 +49,7 @@ const FooterAr = () => {
           </p>
         </div>
         <div className="col my-5 ">
-          <h3 className=" font-semibold text-white text-[20px]">Company</h3>
+          <h3 className=" font-semibold text-white text-[20px]">الشركة</h3>
           <div className="mt-2">
             <div className=" py-3  flex">
               <Image
@@ -92,7 +92,7 @@ const FooterAr = () => {
         </div>
         <div className="col my-5 footer-links ">
           <h3 className=" font-semibold text-white text-[20px]">
-            Company Information
+            معلومات الشركة
           </h3>
           <div className="mt-5 flex flex-col text-white">
             <Link href={"/ar/home"}>الرئيسية</Link>
@@ -114,7 +114,7 @@ const FooterAr = () => {
               type="submit"
               className=" bg-secondary py-3 rounded-full my-3 text-white font-semibold "
             >
-              Subscribe Now
+              إشترك الآن{" "}
             </button>
           </form>
         </div>

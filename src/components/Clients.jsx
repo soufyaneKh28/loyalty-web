@@ -24,7 +24,7 @@ import { sou } from "../../public";
                   <Image src={client.img} alt="user" />
                 </div>
                 <div className=" mt-3 flex-1 md:ms-5">
-                  <p className=" text-[14px] md:text-[19px] text-center text-white max-w-[500px] md:text-start font-light">
+                  <p className=" text-[14px] md:text-[19px] text-center text-white max-w-[500px] md:text-start font-medium">
                     {client.message}
                   </p>
                   <div className="text-white mt-4 text-center md:text-start">

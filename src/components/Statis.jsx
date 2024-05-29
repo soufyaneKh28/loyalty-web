@@ -5,7 +5,8 @@ import React from "react";
 import { circles, prize } from "../../public";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-const Statis = () => {
+import { data } from "autoprefixer";
+const Statis = ({ object }) => {
   const { ref, inView } = useInView({
     triggerOnce: true, // Trigger the animation only once
     threshold: 0.1, // Trigger when 10% of the component is in view
@@ -30,9 +31,7 @@ const Statis = () => {
               <h3 className="text-[28px] font-bold" ref={ref}>
                 {inView && <CountUp duration={3} start={0} end={120} />}+
               </h3>
-              <p className=" font-normal">
-                Successful <br /> Project
-              </p>
+              <p className=" font-normal">{object.stats.project}</p>
             </div>
           </div>
           <div className="flex my-5 items-start justify-center">
@@ -43,11 +42,7 @@ const Statis = () => {
               <h3 className="text-[28px] font-bold" ref={ref}>
                 {inView && <CountUp duration={3.5} start={0} end={180} />}+
               </h3>
-              <p className=" font-normal">
-                Happy
-                <br />
-                Client
-              </p>
+              <p className=" font-normal">{object.stats.client}</p>
             </div>
           </div>
           <div className="flex my-5  items-start justify-center">
@@ -58,11 +53,7 @@ const Statis = () => {
               <h3 className="text-[28px] font-bold" ref={ref}>
                 {inView && <CountUp duration={4} start={0} end={60} />}+
               </h3>
-              <p className=" font-normal">
-                Team
-                <br />
-                Member
-              </p>
+              <p className=" font-normal">{object.stats.team}</p>
             </div>
           </div>
         </div>
@@ -71,7 +62,7 @@ const Statis = () => {
             src={circles}
             alt="circles"
             width={350}
-            className=" absolute rotate-[160deg] bottom-[-170px] md:top-0  right-[50%] md:rotate-[280deg] md:left-0 translate-x-[50%] md:translate-x-[-100%]"
+            className=" absolute rotate-[160deg] bottom-[-170px] md:top-0  right-[50%] md:rotate-[280deg] md:left-0 translate-x-[50%] md:translate-x-[-50%] rtl:md:translate-x-[-100%]"
           />
         </div>
       </div>

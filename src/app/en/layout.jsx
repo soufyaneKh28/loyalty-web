@@ -11,10 +11,10 @@ const roboto = Poppins({
   subsets: ["latin"],
   weight: ["100", "300", "400", "500", "700", "900"],
 });
-export default function arLayout({ children }) {
+export default function enLayout({ children }) {
   return (
     <html lang="en">
-      <body dir="ltr" className={` ${poppins.className} `}>
+      <body>
         <Menubar />
         {children}
       </body>

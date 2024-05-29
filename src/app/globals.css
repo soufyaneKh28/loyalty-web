@@ -576,3 +576,13 @@
 .emblaClient__dot--selected:after {
   box-shadow: inset 0 0 0 0.2rem var(--text-body);
 }
+
+.slider-icon{
+  display: flex!important;
+  justify-content: center;
+}
+
+
+.icon-carousel {
+ direction: ltr ;
+}
