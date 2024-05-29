@@ -18,9 +18,12 @@ import {
   BounceBall,
   Menubar,
   Statis,
+  IconsSlider,
+  CallTo,
 } from "@/components";
 import Team from "@/components/Team";
 import Clients from "@/components/Clients";
+// import { data } from "autoprefixer";
 
 const features = {
   smallTitle: "Our Features",
@@ -119,10 +122,6 @@ const sliderImageUrl = [
   },
 ];
 
-
-
-
-
 const clients = [
   {
     name: "Soufyane Khalfallah",
@@ -150,8 +149,18 @@ const clients = [
   },
 ];
 
-
-
+const data = {
+  callto: {
+    title: `Grow your Business today`,
+    subTitle: `Let Our Team Help Your Business`,
+    btn: "Submit",
+  },
+  stats: {
+    project: ` Successful Project`,
+    client: `Happy Client`,
+    team: `Team Member`,
+  },
+};
 
 
 const roboto = Roboto({
@@ -269,28 +278,7 @@ export default function Home() {
               Additionally, we have branches in Dubai, UAE, and the USA.
             </p>
           </div>
-          <Statis />
-        </section>
-        <section className="py-5 bg-primaryDark">
-          <div className="container flex flex-col items-center justify-center my-10">
-            <div className=" flex flex-col items-center">
-              <div className="flex items-center mb-[-5px]">
-                <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-                <h5 className=" text-secondary">Our Team</h5>
-              </div>
-              <h2 className="text-[32px] font-bold text-white">
-                Get To Know Our Team
-              </h2>
-            </div>
-            <p className="text-center max-w-[550px] font-normal text-white">
-              Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed
-              ac sed. Aenean donec nulla sollicitudin{" "}
-            </p>
-            <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
-              Join Our Team
-            </button>
-          </div>
-          <Team members={members} />
+          <Statis object={data} />
         </section>
         <section className="py-10">
           <div className="container flex flex-col items-center justify-center my-10">
@@ -311,6 +299,47 @@ export default function Home() {
             </p>
           </div>
           <Clients object={clients} />
+        </section>
+        <section className="py-5 pb-10 bg-primaryDark">
+          <div className="container flex flex-col items-center justify-center my-10">
+            <div className=" flex flex-col items-center">
+              <div className="flex items-center mb-[-5px]">
+                <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+                <h5 className=" text-secondary">Our Team</h5>
+              </div>
+              <h2 className="text-[32px] font-bold text-white">
+                Get To Know Our Team
+              </h2>
+            </div>
+            <p className="text-center max-w-[550px] font-normal text-white">
+              Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed
+              ac sed. Aenean donec nulla sollicitudin{" "}
+            </p>
+            <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
+              Join Our Team
+            </button>
+          </div>
+          <Team members={members} />
+        </section>
+        <CallTo object={data} />
+        <section className="py-10">
+          <div className="container flex flex-col items-center justify-center my-10">
+            <div className=" flex flex-col items-center">
+              <div className="flex items-center mb-[-5px]">
+                <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+                <h5 className=" text-secondary ">Our Partners</h5>
+              </div>
+              <h2 className="text-[27px] max-w-[550px] text-center font-bold">
+                Our Partners in The Journey To Succeed
+              </h2>
+            </div>
+            <p className="text-center max-w-[550px] mt-3">
+              Since the beginning of our journey these companies have helped us
+              pave the way of success. Working side by side for enough time we
+              have become partners and the go to source for their services.
+            </p>
+          </div>
+          <IconsSlider />
         </section>
         <Footer />
       </main>
