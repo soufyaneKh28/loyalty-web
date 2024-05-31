@@ -2,7 +2,7 @@ import { Poppins, Roboto } from "next/font/google";
 import { Cairo } from "next/font/google";
 import Image from "next/image";
 
-
+import dataAr from "@/app/content-ar";
 import BounceBall from "@/components/BounceBall";
 import {
   Marketing,

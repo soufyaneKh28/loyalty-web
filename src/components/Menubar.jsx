@@ -29,11 +29,11 @@ const links = [
   },
   {
     link: "Services",
-    href: "/en/Services",
+    href: "/en/services",
   },
   {
     link: "Projects",
-    href: "/Projects",
+    href: "/projects",
   },
   {
     link: "Blogs",
@@ -41,7 +41,7 @@ const links = [
   },
   {
     link: "Contact Us",
-    href: "/en/Contact-Us",
+    href: "/en/contact-Us",
   },
 ];
 

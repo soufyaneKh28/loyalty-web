@@ -36,11 +36,11 @@ const links = [
   },
   {
     link: "خدماتنا",
-    href: "/ar/Services",
+    href: "/ar/services",
   },
   {
     link: "المشاريع",
-    href: "/ar/Projects",
+    href: "/ar/projects",
   },
   {
     link: "المدونة",
@@ -48,7 +48,7 @@ const links = [
   },
   {
     link: "تواصل معنا",
-    href: "/ar/Contact-Us",
+    href: "/ar/contact-Us",
   },
 ];
 

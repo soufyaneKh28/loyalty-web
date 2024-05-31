@@ -23,6 +23,11 @@ import right from "./RightArrow.png";
 import left from "./LeftArrow.png";
 import circles from "./StatisCircle.png";
 import prize from "./Prize.png";
+import google from "./google.png";
+import Iso from "./Iso.png";
+import ce from "./ce.png";
+import wipo from "./wipo.png";
+import zoho from "./zoho.png";
 
 export {
   logo,
@@ -48,4 +53,9 @@ export {
   left,
   circles,
   prize,
+  google,
+  Iso,
+  ce,
+  wipo,
+  zoho,
 };

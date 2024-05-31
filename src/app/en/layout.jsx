@@ -1,3 +1,4 @@
+import { Footer } from "@/components";
 import Menubar from "@/components/Menubar";
 
 import { Poppins, Roboto } from "next/font/google";
@@ -17,6 +18,7 @@ export default function enLayout({ children }) {
       <body>
         <Menubar />
         {children}
+        <Footer />
       </body>
     </html>
   );

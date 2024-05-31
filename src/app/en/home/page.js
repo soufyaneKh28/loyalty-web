@@ -3,7 +3,7 @@ import "../../globals.css";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import data from "@/app/content-en";
 import BounceBall from "@/components/BounceBall";
 import {
   Marketing,
@@ -183,18 +183,7 @@ const clients = [
   },
 ];
 
-const data = {
-  callto: {
-    title: `Grow your Business today`,
-    subTitle: `Let Our Team Help Your Business`,
-    btn: "Submit",
-  },
-  stats: {
-    project: ` Successful Project`,
-    client: `Happy Client`,
-    team: `Team Member`,
-  },
-};
+// const data = {};
 
 const roboto = Roboto({
   family: "Roboto",
@@ -260,7 +249,7 @@ export default function Home() {
         <Services object={sliderImageUrl} />
       </section>
       <section className="py-5 bg-primaryDark">
-        <Strategy />
+        <Strategy object={data.strategy} />
         <div className="container flex flex-col md:flex-row md:justify-between md:items-center">
           <div className=" flex flex-col py-4 ">
             <div className=" flex flex-col items-start">
@@ -375,7 +364,6 @@ export default function Home() {
         </div>
         <IconsSlider />
       </section>
-      <Footer />
     </main>
   );
 }

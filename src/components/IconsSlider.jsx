@@ -1,15 +1,10 @@
 "use client";
-// import {
-//   PrevButton,
-//   NextButton,
-//   usePrevNextButtons,
-// } from "./ui/EmblaCarouselArrowButtons";
-// import EmblaCarousel from "./ui/EmblaCarousel";
-// import Slider from "react-slick";
+
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import React from "react";
 import Slider from "react-infinite-logo-slider";
 import Image from "next/image";
+import { Iso, ce, google, wipo, zoho } from "../../public";
 
 function IconsSlider() {
   const settings = {
@@ -26,47 +21,6 @@ function IconsSlider() {
   return (
     <div className="container">
       <div className="icon-carousel">
-        {/* <EmblaCarousel>
-          <div className="embla__slide">
-            <div className="embla__slide__number">
-              {" "}
-              <div className="slider-icon">
-                <FaFacebook size={50} />
-              </div>
-            </div>
-          </div>
-          <div className="embla__slide">
-            <div className="embla__slide__number">
-              {" "}
-              <div className="slider-icon">
-                <FaFacebook size={50} />
-              </div>
-            </div>
-          </div>
-          <div className="embla__slide">
-            <div className="embla__slide__number">
-              {" "}
-              <div className="slider-icon">
-                <FaFacebook size={50} />
-              </div>
-            </div>
-          </div>
-
-          <div className="  slider-icon">
-            <FaTwitter size={50} />
-          </div>
-          <div className="slider-icon">
-            <FaInstagram size={50} />
-          </div>
-          <div className="slider-icon">
-            <FaLinkedin size={50} />
-          </div>
-          {/* Add more icons as needed */}
-        {/* <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">{index + 1}</div>
-            </div> 
-        </EmblaCarousel> */}
-
         <Slider
           width="250px"
           duration={40}
@@ -75,28 +29,19 @@ function IconsSlider() {
           blurBoderColor={"#fff"}
         >
           <Slider.Slide>
-            <FaTwitter size={50} />
+            <Image src={google} alt="google" />
           </Slider.Slide>
           <Slider.Slide>
-            <FaFacebook size={50} />
+            <Image src={Iso} alt="google" />
           </Slider.Slide>
           <Slider.Slide>
-            <FaInstagram size={50} />
+            <Image src={ce} alt="ce" />
           </Slider.Slide>
           <Slider.Slide>
-            <FaLinkedin size={50} />
+            <Image src={wipo} alt="wipo" />
           </Slider.Slide>
           <Slider.Slide>
-            <FaTwitter size={50} />
-          </Slider.Slide>
-          <Slider.Slide>
-            <FaFacebook size={50} />
-          </Slider.Slide>
-          <Slider.Slide>
-            <FaInstagram size={50} />
-          </Slider.Slide>
-          <Slider.Slide>
-            <FaLinkedin size={50} />
+            <Image src={zoho} alt="zoho" />
           </Slider.Slide>
         </Slider>
       </div>
