@@ -1,3 +1,4 @@
+import { FooterAr } from "@/components";
 import MenubarAr from "@/components/MenubarAr";
 import { Cairo } from "next/font/google";
 
@@ -12,6 +13,7 @@ export default function arLayout({ children }) {
       <body className={`rtl `}>
         <MenubarAr />
         {children}
+        <FooterAr />
       </body>
     </html>
   );
