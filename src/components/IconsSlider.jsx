@@ -43,6 +43,21 @@ function IconsSlider() {
           <Slider.Slide>
             <Image src={zoho} alt="zoho" />
           </Slider.Slide>
+          <Slider.Slide>
+            <Image src={google} alt="google" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <Image src={Iso} alt="google" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <Image src={ce} alt="ce" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <Image src={wipo} alt="wipo" />
+          </Slider.Slide>
+          <Slider.Slide>
+            <Image src={zoho} alt="zoho" />
+          </Slider.Slide>
         </Slider>
       </div>
     </div>

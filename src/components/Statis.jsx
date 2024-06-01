@@ -31,7 +31,7 @@ const Statis = ({ object }) => {
               <h3 className="text-[37px] font-bold" ref={ref}>
                 {inView && <CountUp duration={3} start={0} end={120} />}+
               </h3>
-              <p className=" font-bold w-[100px]">{object.stats.project}</p>
+              <p className=" font-bold w-[100px]">{object.numbers.project}</p>
             </div>
           </div>
           <div className="flex my-5 items-start justify-center">
@@ -42,7 +42,7 @@ const Statis = ({ object }) => {
               <h3 className="text-[37px] font-bold" ref={ref}>
                 {inView && <CountUp duration={3.5} start={0} end={180} />}+
               </h3>
-              <p className=" font-bold w-[100px]">{object.stats.client}</p>
+              <p className=" font-bold w-[100px]">{object.numbers.client}</p>
             </div>
           </div>
           <div className="flex my-5  items-start justify-center">
@@ -53,7 +53,7 @@ const Statis = ({ object }) => {
               <h3 className="text-[37px] font-bold" ref={ref}>
                 {inView && <CountUp duration={4} start={0} end={60} />}+
               </h3>
-              <p className=" font-bold w-[100px]">{object.stats.team}</p>
+              <p className=" font-bold w-[100px]">{object.numbers.team}</p>
             </div>
           </div>
         </div>

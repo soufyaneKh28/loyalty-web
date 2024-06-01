@@ -586,3 +586,14 @@
 .icon-carousel {
  direction: ltr ;
 }
+
+.about .embla__slide .embla__slide__number{
+  align-items: center;
+  justify-content: start;
+  height: 100%;
+}
+
+.about .embla__slide .embla__slide__number p {
+  text-align: center;
+ 
+}

@@ -1,47 +1,89 @@
-const { Marketing, strategy, support } = require("../../public");
+const {
+  Marketing,
+  strategy,
+  support,
+  memberTeam,
+  sou,
+} = require("../../public");
 
 const data = {
-  sliderImageUrl: [
-    //First image url
-    {
-      title: "Digital marketing",
-      imgDark: Marketing,
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+  heroServices: {
+    title: "We Give You The Best Results",
+    description:
+      "A commercial company founded in 2013, specializing in brand development, digital marketing, and programming. We established a branch in Turkey in 2014 and became an official company under Turkish law for marketing companies in 2020. Additionally, we have branches in Dubai, UAE, and the USA.      ",
+    cta: "Contact Us",
+  },
+  heroAbout: {
+    title: "Full-Service Digital Experience",
+    description:
+      "A commercial company founded in 2013, specializing in brand development, digital marketing, and programming. We established a branch in Turkey in 2014 and became an official company under Turkish law for marketing companies in 2020. Additionally, we have branches in Dubai, UAE, and the USA.",
+    cta: "Get Started",
+    items: {
+      message: {
+        title: "Our Message ",
+        description:
+          "Helping our clients to achieve the best growth towards stability through smart and creative marketing mixed with a clear strategy.",
+      },
+      vision: {
+        title: "Our Vision",
+        description:
+          "Helping our clients to achieve the best growth towards stability through smart and creative marketing mixed with a clear strategy.",
+      },
+      features: {
+        title: "Our Features",
+        description:
+          "Academic experience - professionalism - team work - Prevalence",
+      },
     },
-    {
-      title: "Digital marketing",
-      imgDark: Marketing,
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
-    },
-    {
-      title: "Digital marketing",
-      imgDark: Marketing,
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
-    },
-    {
-      title: "Programmation Solution",
-      imgDark: Marketing,
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
-    },
-    //Second image url
-    {
-      title: "Design",
-      imgDark: Marketing,
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
-    },
-    //Third image url
-    {
-      title: "Mobile Application",
-      imgDark: Marketing,
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
-    },
-  ],
+  },
+
+  services: {
+    smallTitle: "What we do ?",
+    title: "Our Services",
+    description: ` Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed
+    ac sed. Aenean donec nulla sollicitudin`,
+    servicesItems: [
+      {
+        title: "Digital marketing",
+        imgDark: Marketing,
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+      },
+      {
+        title: "Digital marketing",
+        imgDark: Marketing,
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+      },
+      {
+        title: "Digital marketing",
+        imgDark: Marketing,
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+      },
+      {
+        title: "Programmation Solution",
+        imgDark: Marketing,
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+      },
+      //Second image url
+      {
+        title: "Design",
+        imgDark: Marketing,
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+      },
+
+      //Third image url
+      {
+        title: "Mobile Application",
+        imgDark: Marketing,
+        description:
+          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
+      },
+    ],
+  },
   strategy: {
     smallTitle: "Workflow",
     title: "Our Business Strategy",
@@ -96,9 +138,132 @@ const data = {
     btn: "Submit",
   },
   stats: {
-    project: ` Successful Project`,
-    client: `Happy Client`,
-    team: `Team Member`,
+    smallTitle: "Who Are We ?",
+    title: "Your Work Grows With Us",
+    description: `Lorem ipsum dolor sit amet consectetur. 
+    Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin`,
+    numbers: {
+      project: `Successful Project`,
+      client: `Happy Client`,
+      team: `Team Member`,
+    },
+  },
+  members: {
+    smallTitle: "Our Team",
+    title: "Get To Know Our Team",
+    description: ` Lorem ipsum dolor sit amet consectetur. 
+    Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudi `,
+    btn: "Join Our Team",
+
+    items: [
+      {
+        name: "Junaid AL-Omar",
+        role: "CEO - Founder",
+        img: memberTeam,
+        color: "#F0A400",
+      },
+      {
+        name: "Hisham Hijazi",
+        role: "Web Developer",
+        img: memberTeam,
+        color: "#30C4E5",
+      },
+      {
+        name: "Soufyane Khalfallah",
+        role: "Web Developer",
+        img: memberTeam,
+        color: "#F0A400",
+      },
+      {
+        name: "Soufyane Khalfallah",
+        role: "Web Developer",
+        img: memberTeam,
+        color: "#30C4E5",
+      },
+      {
+        name: "Soufyane Khalfallah",
+        role: "Web Developer",
+        img: memberTeam,
+        color: "#F0A400",
+      },
+      {
+        name: "Junaid AL-Omar",
+        role: "CEO - Founder",
+        img: memberTeam,
+        color: "#F0A400",
+      },
+      {
+        name: "Hisham Hijazi",
+        role: "Web Developer",
+        img: memberTeam,
+        color: "#30C4E5",
+      },
+      {
+        name: "Soufyane Khalfallah",
+        role: "Web Developer",
+        img: memberTeam,
+        color: "#F0A400",
+      },
+      {
+        name: "Soufyane Khalfallah",
+        role: "Web Developer",
+        img: memberTeam,
+        color: "#30C4E5",
+      },
+      {
+        name: "Soufyane Khalfallah",
+        role: "Web Developer",
+        img: memberTeam,
+        color: "#F0A400",
+      },
+    ],
+  },
+  partners: {
+    smallTitle: "Our Partners",
+    title: "Our Partners in The Journey To Succeed",
+    description: `Since the beginning of our journey these companies have helped us pave the way of success.
+     Working side by side for enough time we have become partners and the go to source for their services.
+    `,
+  },
+  grow: {
+    title: "Grow your Business today",
+    description: `From refining your brand identify and running campaigns to powering your digital presence, we do it all
+    `,
+    btn: "Get Started",
+  },
+  clients: {
+    smallTitle: "Our Clients",
+    title: "What Our Clients Say ?",
+    description: `As we said before we encourage you to dive in before certainty! We are
+     sure that we will give you the best service, as we have given lots of our clients the best results. 
+    It's impossible for you to be disappointed if you are working with us.
+    `,
+    items: [
+      {
+        name: "Soufyane Khalfallah",
+        img: sou,
+        message: `As we said before we encourage you to dive in before certainty! We are sure that we will 
+        give you the best service, as we have given lots of our clients the best results. It's impossible for you to be disappointed 
+        if you are working with us.`,
+        role: "Web Developer",
+      },
+      {
+        name: "Soufyane Khalfallah",
+        img: sou,
+        message: `As we said before we encourage you to dive in before certainty! We are sure that we will 
+        give you the best service, as we have given lots of our clients the best results. It's impossible for you to be disappointed 
+        if you are working with us.`,
+        role: "Web Developer",
+      },
+      {
+        name: "Soufyane Khalfallah",
+        img: sou,
+        message: `As we said before we encourage you to dive in before certainty! We are sure that we will 
+        give you the best service, as we have given lots of our clients the best results. It's impossible for you to be disappointed 
+        if you are working with us.`,
+        role: "Web Developer",
+      },
+    ],
   },
 };
 

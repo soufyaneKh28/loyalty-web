@@ -5,6 +5,7 @@ import close from "./close.png";
 import homeHero from "./homeHero.png";
 import Marketing from "./marketing.png";
 import prev from "./prev.png";
+import next from "./next.png";
 
 import contact from "./contact.png";
 import strategy from "./Strategy.svg";
@@ -29,6 +30,9 @@ import ce from "./ce.png";
 import wipo from "./wipo.png";
 import zoho from "./zoho.png";
 
+import message from "./message.png";
+import star from "./star.png";
+import vision from "./vision.png";
 export {
   logo,
   menu,
@@ -58,4 +62,8 @@ export {
   ce,
   wipo,
   zoho,
+  message,
+  star,
+  vision,
+  next,
 };
