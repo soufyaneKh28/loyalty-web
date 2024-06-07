@@ -33,6 +33,8 @@ import zoho from "./zoho.png";
 import message from "./message.png";
 import star from "./star.png";
 import vision from "./vision.png";
+import innovaition from "./innovaition.png";
+import innov1 from "./innov-1.png";
 export {
   logo,
   menu,
@@ -66,4 +68,6 @@ export {
   star,
   vision,
   next,
+  innovaition,
+  innov1,
 };

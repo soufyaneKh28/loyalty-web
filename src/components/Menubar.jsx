@@ -3,20 +3,11 @@ import { Poppins, Roboto } from "next/font/google";
 
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
-import Lottie from "react-lottie";
-import animationData from "../../public"; // Replace with your JSON path
-import { motion, Variants } from "framer-motion";
+
+import { motion } from "framer-motion";
 import { logo, menu, close } from "../../public";
 import Link from "next/link";
-import { redirect, usePathname, useRouter } from "next/navigation";
-const itemVariants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 24 },
-  },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
-};
+import { usePathname, useRouter } from "next/navigation";
 
 const links = [
   {
@@ -45,17 +36,7 @@ const links = [
   },
 ];
 
-// export async function getServerSideProps(context) {
-//   const { params } = context;
-//   const currentPath = `/${params.path.join("/")}`;
-//   // Use currentPath for data fetching or other server-side logic
 
-//   return {
-//     props: {
-//       currentPath,
-//     },
-//   };
-// }
 
 export const poppins = Poppins({
   family: "Poppins",
@@ -107,11 +88,7 @@ export default function Menubar() {
           router.push(newPath);
         }
       }
-      // if (!pathname.includes("en") || !pathname.includes("ar")) {
-      //   const newPath = pathname.replace("/", `/${selectedLanguage}`);
-      //   console.log(newPath);
-      //   router.push(newPath);
-      // }
+
     },
     [selectedLanguage, pathname, router]
   );

@@ -163,7 +163,7 @@ const page = () => {
                 <div className=" bg-primaryDark w-[40px] h-[40px] rounded-full p-2">
                   <Image src={location} alt="location" />
                 </div>
-                <p className=" max-w-[350px]">
+                <p className=" max-w-[270px] md:max-w-[350px]">
                   Maltepe, Cevizlibağ Köprüsü No:8 Kat:11 No:137 , 34010
                   Zeytinburnu, 34010 Maltepe/İstanbuls
                 </p>
