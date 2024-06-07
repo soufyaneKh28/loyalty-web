@@ -11,6 +11,7 @@ import Clients from "./Clients";
 import Statis from "./Statis";
 import CallTo from "./CallTo";
 import IconsSlider from "./IconsSlider";
+import ContactMap from "./ContactMap";
 
 export {
   Services,
@@ -26,4 +27,5 @@ export {
   Statis,
   CallTo,
   IconsSlider,
+  ContactMap,
 };

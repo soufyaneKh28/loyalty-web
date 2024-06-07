@@ -25,9 +25,6 @@ const Team = ({ members }) => {
                 height={"100%"}
                 priority
               />
-              <div className=" bg-white  w-[25px] h-[25px] rounded-full flex justify-center items-center absolute top-2 right-2 shadow-xl">
-                +
-              </div>
             </div>
             <div className=" flex flex-col items-center mt-3">
               <h3 className=" text-white font-semibold text-center">

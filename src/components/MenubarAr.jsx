@@ -48,7 +48,7 @@ const links = [
   },
   {
     link: "تواصل معنا",
-    href: "/ar/contact-Us",
+    href: "/ar/contactUs",
   },
 ];
 

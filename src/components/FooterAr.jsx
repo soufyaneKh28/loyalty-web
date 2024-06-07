@@ -13,6 +13,7 @@ import {
 import Link from "next/link";
 import { PhoneInput } from "react-international-phone";
 import PhoneInputT from "./ui/PhoneInputT";
+import { cairoClass } from "@/app/font";
 
 const socialMedia = [
   {
@@ -35,7 +36,7 @@ const socialMedia = [
 
 const FooterAr = () => {
   return (
-    <footer className=" bg-primaryDark py-10">
+    <footer className={` bg-primaryDark py-10 ${cairoClass}`}>
       <div className="container flex flex-col md:flex-row  ">
         <div className="col ">
           <div className="  ">

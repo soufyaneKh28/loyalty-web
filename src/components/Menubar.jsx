@@ -33,7 +33,7 @@ const links = [
   },
   {
     link: "Projects",
-    href: "/projects",
+    href: "/en/projects",
   },
   {
     link: "Blogs",
@@ -41,7 +41,7 @@ const links = [
   },
   {
     link: "Contact Us",
-    href: "/en/contact-Us",
+    href: "/en/contactUs",
   },
 ];
 
@@ -94,12 +94,12 @@ export default function Menubar() {
       if (selectedLanguage) {
         if (pathname.includes("ar")) {
           const newPath = pathname.replace("ar", selectedLanguage);
-          console.log(newPath);
+
           router.push(newPath);
         }
         if (pathname.includes("en")) {
           const newPath = pathname.replace("en", selectedLanguage);
-          console.log(newPath);
+
           router.push(newPath);
         }
         if (pathname === "/") {
@@ -115,8 +115,6 @@ export default function Menubar() {
     },
     [selectedLanguage, pathname, router]
   );
-
-  console.log(pathname);
 
   return (
     <>
