@@ -6,6 +6,7 @@ const {
   message,
   sou,
   innov1,
+  project,
 } = require("../../public");
 
 const data = {
@@ -281,6 +282,44 @@ const data = {
   
   `,
       img: innov1,
+    },
+  ],
+  projects: [
+    {
+      url: "Visual-Identity-Souq-alfurat",
+      title: "الهوية البصرية لسوق الفرات",
+      tags: [
+        {
+          title: "العلامة التجارية",
+        },
+        {
+          title: "تصميم",
+        },
+      ],
+      img: project,
+      details: {
+        client: "سوق الفرات",
+        services: "تصميم العلامة التجارية",
+        duration: "03 أشهر",
+      },
+    },
+    {
+      url: "Soufyne-khalfallah",
+      title: "سفيان خلف الله",
+      tags: [
+        {
+          title: "العلامة التجارية",
+        },
+        {
+          title: "تصميم",
+        },
+      ],
+      img: project,
+      details: {
+        client: "سوق الفرات",
+        services: "تصميم العلامة التجارية",
+        duration: "03 أشهر",
+      },
     },
   ],
 };

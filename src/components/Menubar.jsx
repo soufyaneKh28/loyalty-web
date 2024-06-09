@@ -44,9 +44,9 @@ export const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-export default function Menubar() {
+export default function Menubar({ params }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  // console.log(params);
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
@@ -88,7 +88,6 @@ export default function Menubar() {
           router.push(newPath);
         }
       }
-
     },
     [selectedLanguage, pathname, router]
   );

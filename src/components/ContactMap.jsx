@@ -1,7 +1,6 @@
 "use client";
-import "leaflet/dist/leaflet.css";
 
-import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+// import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 
 export default function ContactMap() {
   return (

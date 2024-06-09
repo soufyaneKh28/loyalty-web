@@ -35,6 +35,9 @@ import star from "./star.png";
 import vision from "./vision.png";
 import innovaition from "./innovaition.png";
 import innov1 from "./innov-1.png";
+
+import project from "./project.png";
+
 export {
   logo,
   menu,
@@ -70,4 +73,5 @@ export {
   next,
   innovaition,
   innov1,
+  project,
 };

@@ -5,6 +5,7 @@ const {
   memberTeam,
   sou,
   innov1,
+  project,
 } = require("../../public");
 
 const data = {
@@ -290,6 +291,45 @@ const data = {
   
   `,
       img: innov1,
+    },
+  ],
+
+  projects: [
+    {
+      url: "Visual-Identity-Souq-alfurat",
+      title: "Visual Identity Souq alfurat",
+      tags: [
+        {
+          title: "Branding",
+        },
+        {
+          title: "Design",
+        },
+      ],
+      img: project,
+      details: {
+        client: "Souq alfurat",
+        services: "Branding Design",
+        duration: "03 Months",
+      },
+    },
+    {
+      url: "Soufyne-khalfallah",
+      title: "Soufyne khalfallah",
+      tags: [
+        {
+          title: "Branding",
+        },
+        {
+          title: "Design",
+        },
+      ],
+      img: project,
+      details: {
+        client: "Souq alfurat",
+        services: "Branding Design",
+        duration: "03 Months",
+      },
     },
   ],
 };
