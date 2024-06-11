@@ -91,15 +91,14 @@ const page = () => {
   console.log("hello");
   return (
     <main className={`${cairoClass}`}>
-      <section className={`"flex  pb-5 py-[150px] `}>
+      <section className={`"flex  pb-[100px] py-[150px] md:pt-[200px] `}>
         <div className="container md:justify-center md:items-center  flex flex-col ">
           <div className=" textContent md:text-center flex flex-col md:items-center">
-            <h1 className=" text-[50px] max-w-[550px] md:text-[50px] md:max-w-[800px] font-bold text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
-              We Combine Marketing With Programming{" "}
-              <span className=" text-secondary">To Give You </span>The Best
-              Results
+            <h1 className=" text-[50px] max-w-[550px] md:text-[50px] md:max-w-[800px] font-black text-primaryDark leading-[60px] md:*:text-center md:leading-[60px]">
+              نحن ندمج التسويق مع البرمجة
+              <span className="text-secondary">لنقدم لك</span> أفضل النتائج
             </h1>
-            <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px] font-Roboto font-medium leading-[27px]">
+            <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
               {dataAr.heroAbout.description}
             </p>
             <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
@@ -112,10 +111,10 @@ const page = () => {
         <div className=" flex flex-col items-center">
           <div className="flex items-center mb-[-5px]">
             <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-            <h5 className=" text-secondary">Our projects</h5>
+            <h5 className=" text-secondary">مشاريعنا</h5>
           </div>
           <h2 className="text-[32px] font-bold text-white">
-            See Our Latest Projects
+            انظر إلى أحدث مشاريعنا
           </h2>
         </div>
         <div className=" container">

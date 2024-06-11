@@ -37,7 +37,12 @@ import innovaition from "./innovaition.png";
 import innov1 from "./innov-1.png";
 
 import project from "./project.png";
+import projectDe from "./projectDe.png";
 
+import soufyane from "./soufyane.png";
+import soufyane1 from "./soufyane1.png";
+import soufyane2 from "./soufyane2.png";
+import soufyane3 from "./soufyane3.png";
 export {
   logo,
   menu,
@@ -74,4 +79,9 @@ export {
   innovaition,
   innov1,
   project,
+  projectDe,
+  soufyane,
+  soufyane1,
+  soufyane2,
+  soufyane3,
 };

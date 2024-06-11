@@ -8,6 +8,8 @@ import { redirect } from "next/navigation";
 import { poppinsClass } from "@/app/font";
 import { MetaData } from "next";
 import Head from "next/head";
+import EmblaCarousel from "@/components/ui/EmblaCarousel";
+import Form from "@/components/Form";
 
 // export const generateMetaData = ({ params }): Metadata => {
 //   return {
@@ -47,47 +49,130 @@ const Page = ({ params }) => {
 
   return (
     <>
-      <main className={` py-[100px] ${poppinsClass}`}>
-        <div className="container">
-          {/* {!exist ? null : (
+      <main className={` pt-[100px] ${poppinsClass}`}>
+        <section className="pt-10 md:pt-20">
+          <div className="container">
+            {/* {!exist ? null : (
             // <div className=" ">
             //   product title :{params.projectId} {params.projectTitle}{" "}
             //   {`${projectObj.title}`}
             // </div>
-          )} */}
-          <div>
-            <h1 className=" text-center leading-[118%] text-[50px] font-bold text-primaryDark">
-              {projectObj.title}
-            </h1>
+            )} */}
+            <div>
+              <h1 className=" text-center leading-[118%] text-[50px] font-bold text-primaryDark">
+                {projectObj.title}
+              </h1>
 
-            <div className="project-details my-10 flex justify-center gap-8">
-              <div className="client flex flex-col items-center justify-center">
-                <h4 className=" text-[#8A8A8A] font-medium text-[15px] text-center ">
-                  CLIENT
-                </h4>
-                <h6 className=" text-primaryDark font-semibold text-center">
-                  {projectObj.details.client}
-                </h6>
-              </div>
-              <div className="client flex flex-col items-center ">
-                <h4 className=" text-[#8A8A8A] font-medium text-[15px]">
-                  SERVICES
-                </h4>
-                <h6 className=" text-primaryDark font-semibold text-center">
-                  {projectObj.details.services}
-                </h6>
-              </div>
-              <div className="client flex flex-col items-center">
-                <h4 className=" text-[#8A8A8A] font-medium text-[15px]">
-                  DURATION
-                </h4>
-                <h6 className=" text-primaryDark font-semibold text-center">
-                  {projectObj.details.duration}
-                </h6>
+              <div className="project-details my-10 flex justify-center gap-8 md:gap-[5rem]">
+                <div className="client flex flex-col items-center justify-center">
+                  <h4 className=" text-[#8A8A8A] font-medium text-[15px] text-center ">
+                    CLIENT
+                  </h4>
+                  <h6 className=" text-primaryDark font-semibold text-center">
+                    {projectObj.details.client}
+                  </h6>
+                </div>
+                <div className="client flex flex-col items-center ">
+                  <h4 className=" text-[#8A8A8A] font-medium text-[15px]">
+                    SERVICES
+                  </h4>
+                  <h6 className=" text-primaryDark font-semibold text-center">
+                    {projectObj.details.services}
+                  </h6>
+                </div>
+                <div className="client flex flex-col items-center">
+                  <h4 className=" text-[#8A8A8A] font-medium text-[15px]">
+                    DURATION
+                  </h4>
+                  <h6 className=" text-primaryDark font-semibold text-center">
+                    {projectObj.details.duration}
+                  </h6>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+          <div className="project-images flex justify-end">
+            <EmblaCarousel>
+              {data.projects[params.projectId - 1].details.images
+                ? data.projects[params.projectId - 1].details.images.map(
+                    (project, i) => (
+                      <div className=" mx-2 ms-[15px] md:ms-[50px] " key={i}>
+                        <div className="transition-colors w-[350px] h-[250px] md:h-[535px] md:w-[800px] rounded-[10px] overflow-hidden">
+                          <Image
+                            src={project.img}
+                            alt="img"
+                            className="w-[100%] h-[100%] object-cover"
+                            width={"100%"}
+                            height={"100%"}
+                          />
+                        </div>
+                      </div>
+                    )
+                  )
+                : null}
+              {}
+
+              {/* <div className=" mx-2">
+                <div className="transition-colors w-[350px] h-[250px] md:h-[535px] md:w-[800px] rounded-[10px] overflow-hidden">
+                  <Image
+                    src={projectObj.img}
+                    alt="img"
+                    className="w-[100%] h-[100%] object-cover"
+                    width={"100%"}
+                    height={"100%"}
+                  />
+                </div>
+              </div>
+              <div className=" mx-2">
+                <div className="transition-colors w-[350px] h-[250px] md:h-[535px] md:w-[800px] rounded-[10px] overflow-hidden">
+                  <Image
+                    src={projectObj.img}
+                    alt="img"
+                    className="w-[100%] h-[100%] object-cover"
+                    width={"100%"}
+                    height={"100%"}
+                  />
+                </div>
+              </div> */}
+            </EmblaCarousel>
+          </div>
+        </section>
+        <section className=" bg-primaryDark py-[150px] pb-[100px] mt-[-150px]">
+          <div className="container">
+            <div className="text-white my-6 flex flex-col md:flex-row md:justify-between">
+              <h3 className=" text-[26px] font-bold">Our Challenge</h3>
+              <p className="mt-3 max-w-[600px]">
+                Lorem ipsum dolor sit amet consectetur. Lectus leo tincidunt
+                ipsum libero placerat. Leo metus purus tempor lectus. Vitae
+                adipiscing sit quis laoreet tellus montes. Id in viverra sed
+                senectus arcu sit.
+                <br />
+                <br />
+                adipiscing sit quis laoreet tellus montes. Id in viverra sed
+                senectus arcu sit.
+              </p>
+            </div>
+            <div className="text-white my-20 flex flex-col md:flex-row md:justify-between">
+              <h3 className=" text-[26px] font-bold">Solution & Result</h3>
+              <p className="mt-3 max-w-[600px]">
+                Lorem ipsum dolor sit amet consectetur. Lectus leo tincidunt
+                ipsum libero placerat. Leo metus purus tempor lectus. Vitae
+                adipiscing sit quis laoreet tellus montes. Id in viverra sed
+                senectus arcu sit.
+              </p>
+            </div>
+          </div>
+          <div className="container">
+            <div className="w-full h-[2px] bg-slate-500"></div>
+          </div>
+        </section>
+        <section className=" bg-primaryDark pb-[100px]">
+          <div className="container flex justify-center">
+            <div className="w-[100%] md:w-[80%]">
+              <Form />
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );

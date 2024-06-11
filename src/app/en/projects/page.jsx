@@ -4,7 +4,7 @@ import { CallTo } from "@/components";
 import { poppins } from "@/components/Menubar";
 import Image from "next/image";
 import React from "react";
-import { project } from "../../../../public";
+import { project, projectDe } from "../../../../public";
 import Link from "next/link";
 
 export const metadata = {
@@ -91,11 +91,11 @@ const page = () => {
   console.log("hello");
   return (
     <main className={`${poppinsClass}`}>
-      <section className={`"flex  pb-5 py-[150px] `}>
+      <section className={`"flex   pt-[150px] md:pt-[200px] pb-[100px] `}>
         <div className="container md:justify-center md:items-center  flex flex-col ">
           <div className=" textContent md:text-center flex flex-col md:items-center">
-            <h1 className=" text-[50px] max-w-[550px] md:text-[50px] md:max-w-[800px] font-bold text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
-              We Combine Marketing With Programming{" "}
+            <h1 className=" text-[50px] max-w-[550px] md:text-[50px] md:max-w-[800px] font-bold text-primaryDark leading-[55px] md:*:text-center md:leading-[60px]">
+              With Programming{" "}
               <span className=" text-secondary">To Give You </span>The Best
               Results
             </h1>

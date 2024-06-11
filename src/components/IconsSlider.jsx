@@ -15,7 +15,6 @@ function IconsSlider() {
     slidesToScroll: 1, // Number of slides to scroll at once
     autoplay: true, // Auto play
     autoplaySpeed: 2000, // Auto play speed
-    pauseOnHover: true, // Pause on hover
   };
 
   return (
@@ -24,7 +23,7 @@ function IconsSlider() {
         <Slider
           width="250px"
           duration={40}
-          pauseOnHover={true}
+          pauseOnHover={false}
           blurBorders={false}
           blurBoderColor={"#fff"}
         >

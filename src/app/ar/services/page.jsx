@@ -46,7 +46,7 @@ const page = () => {
             {dataAr.services.description}
           </p>
         </div>
-        <Services object={dataAr.services.servicesItems} />
+        <Services object={dataAr.services.servicesItems} options={"rtl"} />
       </section>
       <section className="py-5 bg-primaryDark">
         <Strategy object={dataAr.strategy} />

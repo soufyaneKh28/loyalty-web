@@ -10,8 +10,8 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 
 const EmblaCarousel = ({ children, options }) => {
-  //   const { slides, options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  // const { options = {} } = props;
+  const [emblaRef, emblaApi] = useEmblaCarousel({ direction: options });
 
   const {
     prevBtnDisabled,

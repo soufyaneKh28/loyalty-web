@@ -36,7 +36,7 @@ const OPTIONS = { align: "start" };
 const SLIDE_COUNT = 6;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
-function Services({ object }) {
+function Services({ object, options }) {
   return (
     <div className="container">
       {/* <Slider>
@@ -57,7 +57,7 @@ function Services({ object }) {
           );
         })}
       </Slider> */}
-      <EmblaCarousel options={OPTIONS}>
+      <EmblaCarousel options={options}>
         {object.map((service, index) => {
           return (
             <div className="embla__slide" key={index}>
