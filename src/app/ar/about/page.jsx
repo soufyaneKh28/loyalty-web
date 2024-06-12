@@ -16,10 +16,10 @@ export const metadata = {
 function Page() {
   return (
     <main className={`${cairoClass}`}>
-      <section className={`"flex  pb-5 py-[150px] `}>
+      <section className={`"flex  pb-[100px] py-[150px] md:pt-[200px] `}>
         <div className="container md:justify-center md:items-center  flex flex-col ">
           <div className=" textContent md:text-center flex flex-col md:items-center">
-            <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-bold text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
+            <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-black text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
               {dataAr.heroAbout.title}
             </h1>
             <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px] font-medium leading-[27px]">

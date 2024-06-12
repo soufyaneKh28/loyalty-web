@@ -133,11 +133,7 @@ const page = () => {
                       className=" hover:scale-110 transition-all"
                     />
                     <div className="absolute bottom-[0px] px-3 translate-y-[-20%]">
-                      <Link
-                        href={`/en/projects/${i + 1}/${project.title
-                          .split(" ")
-                          .join("-")}`}
-                      >
+                      <Link href={`/en/projects/${i + 1}/${project.url}`}>
                         <h2 className=" text-white font-bold text-[28px] hover:text-secondary transition-colors cursor-pointer">
                           {project.title}
                         </h2>

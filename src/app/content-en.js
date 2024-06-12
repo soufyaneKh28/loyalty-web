@@ -1,3 +1,5 @@
+import { Span } from "next/dist/trace";
+
 const {
   Marketing,
   strategy,
@@ -413,6 +415,108 @@ const data = {
         duration: "03 Months",
         images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
       },
+    },
+  ],
+  blogs: [
+    {
+      id: 1,
+      url: "diffrence-between-marketing-and-digital-marketing",
+      img: soufyane1,
+      title: " Difference Between Marketing and Digital Marketing",
+      date: "Sunday, 12.08.2023",
+      tag: "Design",
+      description: `In the old days,companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
+Marketing definition
+
+
+Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
+What is the so important to know the difference between marketing and digital marketing?
+
+The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
+    },
+    {
+      id: 2,
+      url: "diffrence-between-marketing-and-digital-marketing",
+      img: soufyane1,
+      title: " Difference Between Marketing and Digital Marketing",
+      date: "Sunday, 12.08.2023",
+      tag: "Design",
+      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
+Marketing definition
+Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
+What is the so important to know the difference between marketing and digital marketing?
+
+The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
+    },
+    {
+      id: 3,
+      url: "diffrence-between-marketing-and-digital-marketing",
+      img: soufyane1,
+      title: " Difference Between Marketing and Digital Marketing",
+      date: "Sunday, 12.08.2023",
+      tag: "Design",
+      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
+Marketing definition
+Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
+What is the so important to know the difference between marketing and digital marketing?
+
+The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
+    },
+    {
+      id: 4,
+      url: "diffrence-between-marketing-and-digital-marketing",
+      img: soufyane1,
+      title: " Difference Between Marketing and Digital Marketing",
+      date: "Sunday, 12.08.2023",
+      tag: "Design",
+      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
+Marketing definition
+Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
+What is the so important to know the difference between marketing and digital marketing?
+
+The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
+    },
+    {
+      id: 5,
+      url: "diffrence-between-marketing-and-digital-marketing",
+      img: soufyane1,
+      title: " Difference Between Marketing and Digital Marketing",
+      date: "Sunday, 12.08.2023",
+      tag: "Design",
+      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
+Marketing definition
+Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
+What is the so important to know the difference between marketing and digital marketing?
+
+The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
+    },
+    {
+      id: 6,
+      url: "diffrence-between-marketing-and-digital-marketing",
+      img: soufyane1,
+      title: " Difference Between Marketing and Digital Marketing",
+      date: "Sunday, 12.08.2023",
+      tag: "Design",
+      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
+Marketing definition
+Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
+What is the so important to know the difference between marketing and digital marketing?
+
+The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
+    },
+    {
+      id: 7,
+      url: "soufyane-khalfallah",
+      img: projectDe,
+      title: "soufyane khalfallah",
+      date: "Sunday, 12.08.2023",
+      tag: "Design",
+      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
+Marketing definition
+Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
+What is the so important to know the difference between marketing and digital marketing?
+
+The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
     },
   ],
 };
