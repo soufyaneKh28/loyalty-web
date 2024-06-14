@@ -614,6 +614,9 @@
   max-width: 80%;
   margin: 0;
 }
+.innovations .embla {
+  max-width: 42rem;
+}
 /* .rtl .project-images .embla {
   max-width: 95% !important;
   margin: 0;
@@ -625,4 +628,12 @@
     max-width: 93% !important;
     margin-left: 5px;
   }
+
+  .innovations .embla {
+    max-width: 100% !important;
+  }
+}
+
+.servicesAr .embla__controls {
+  transform: rotate(180deg);
 }

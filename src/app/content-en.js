@@ -276,6 +276,7 @@ const data = {
   },
   innovations: [
     {
+      url: "the-story-of-moarize",
       title: "The Story Of Monarize",
       description: `Monarisa! Or Mona Lisa?MonaRize A commercial
        company working in the field of real estate and tourism, 
@@ -285,9 +286,11 @@ const data = {
          one of a kind in the natural creativity that it is in.
   
   `,
-      img: innov1,
+      img: soufyane1,
+      images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
     },
     {
+      url: "the-story-of-moarize",
       title: "The Story Of Monarize",
       description: `Monarisa! Or Mona Lisa?MonaRize A commercial
        company working in the field of real estate and tourism, 
@@ -298,12 +301,15 @@ const data = {
   
   `,
       img: innov1,
+
+      images: [{ img: innov1 }, { img: innov1 }, { img: innov1 }],
     },
   ],
 
   projects: [
     {
       url: "Visual-Identity-Souq-alfurat",
+      id: "1",
       title: "Visual Identity Souq alfurat",
       tags: [
         {
@@ -323,6 +329,7 @@ const data = {
     },
     {
       url: "Visual-Identity-soufyane",
+      id: "2",
       title: "Visual Identity soufyane",
       tags: [
         {
@@ -342,6 +349,7 @@ const data = {
     },
     {
       url: "Visual-Identity-Souq-alfurat",
+      id: "3",
       title: "Visual Identity Souq alfurat",
       tags: [
         {
@@ -361,6 +369,7 @@ const data = {
     },
     {
       url: "Visual-Identity-soufyane",
+      id: "4",
       title: "Visual Identity soufyane",
       tags: [
         {
@@ -380,6 +389,7 @@ const data = {
     },
     {
       url: "Visual-Identity-Souq-alfurat",
+      id: "5",
       title: "Visual Identity Souq alfurat",
       tags: [
         {
@@ -399,6 +409,7 @@ const data = {
     },
     {
       url: "Visual-Identity-soufyane",
+      id: "6",
       title: "Visual Identity soufyane",
       tags: [
         {

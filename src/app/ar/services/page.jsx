@@ -33,7 +33,7 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section className="py-5">
+      <section className="py-5 servicesAr">
         <div className="container flex flex-col items-center justify-center my-10">
           <div className=" flex flex-col items-start">
             <div className="flex items-center mb-[-5px]">

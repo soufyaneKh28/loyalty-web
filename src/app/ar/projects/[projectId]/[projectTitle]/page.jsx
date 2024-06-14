@@ -1,6 +1,6 @@
 // "use client";
 
-import dataAr from "@/app/content-ar";
+import data from "@/app/content-ar";
 import Image from "next/image";
 // import { usePathname, useRouter } from "next/navigation";
 import React from "react";
@@ -11,6 +11,8 @@ import Head from "next/head";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import { EmblaCarousel2 } from "@/components/ui/EmblaCarousel2";
 import Form from "@/components/Form";
+import Link from "next/link";
+// import data from "@/app/content-en";
 
 // export const generateMetaData = ({ params }): Metadata => {
 //   return {
@@ -32,13 +34,13 @@ export const metadata = {
 // }
 const Page = ({ params }) => {
   let exist = true;
-  metadata.title = dataAr.projects[params.projectId - 1].title;
+  metadata.title = data.projects[params.projectId - 1].title;
   // metadata.title = decodeURIComponent(params.projectTitle).split("-").join(" ");
 
   console.log(params.projectTitle);
   console.log(decodeURIComponent(params.projectTitle));
 
-  let projectObj = dataAr.projects[Number(params.projectId) - 1];
+  let projectObj = data.projects[Number(params.projectId) - 1];
   const arrayOfStrings = decodeURIComponent(params.projectTitle).split("-");
 
   // console.log(arrayOfStrings);
@@ -97,8 +99,8 @@ const Page = ({ params }) => {
           </div>
           <div className="project-images flex justify-end  ">
             <EmblaCarousel2>
-              {dataAr.projects[params.projectId - 1].details.images
-                ? dataAr.projects[params.projectId - 1].details.images.map(
+              {data.projects[params.projectId - 1].details.images
+                ? data.projects[params.projectId - 1].details.images.map(
                     (project, i) => (
                       <div className=" mx-2 ms-[15px]  md:ms-[50px] " key={i}>
                         <div className="transition-colors  w-[350px] h-[250px] md:h-[535px] md:w-[800px] rounded-[10px] overflow-hidden">
@@ -168,6 +170,42 @@ const Page = ({ params }) => {
           </div>
           <div className="container">
             <div className="w-full h-[2px] bg-slate-500"></div>
+            <div className=" my-10 py-3">
+              <h3 className=" text-white text-[24px] font-bold my-5 ">
+                المشاريع الأخيرة:{" "}
+              </h3>
+              <div className=" flex flex-col md:flex-row md:justify-center gap-8">
+                {[...data.projects].slice(-3).map((project, i) => (
+                  <div
+                    className="project rounded-[10px] overflow-hidden w-[333px] relative"
+                    key={i}
+                  >
+                    <Image
+                      src={project.img}
+                      alt={project.title}
+                      className=" hover:scale-110 transition-all"
+                    />
+                    <div className="absolute bottom-[0px] px-3 translate-y-[-20%]">
+                      <Link href={`/ar/projects/${project.id}/${project.url}`}>
+                        <h2 className=" text-white font-bold text-[28px] hover:text-secondary transition-colors cursor-pointer">
+                          {project.title}
+                        </h2>
+                      </Link>
+                      <div className="tags mt-4 flex gap-2">
+                        {project.tags.map((tag, i) => (
+                          <div
+                            className=" bg-white w-fit py-1 px-4 rounded-[5px] text-[14px] flex items-center font-semibold "
+                            key={i}
+                          >
+                            {tag.title}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
         <section className=" bg-primaryDark pb-[100px]">

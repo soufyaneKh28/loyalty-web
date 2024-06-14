@@ -118,13 +118,15 @@ export default function Menubar({ params }) {
             </ul>
           </nav>
           <select
-            className=" hidden md:flex"
+            className=" hidden md:flex px-1 rounded-[5px] border-1 border-solid border-black"
             value={selectedLanguage}
             onChange={(e) => onChange(e)}
           >
-            <option value="en">en</option>
+            <option value="en" className="">
+              en
+            </option>
 
-            <option value="ar">العربية</option>
+            <option value="ar">ar</option>
           </select>
 
           <motion.button

@@ -3,31 +3,38 @@ import { BounceBall } from "@/components";
 import Image from "next/image";
 import React from "react";
 import { homeHero, innov1, innovaition } from "../../../../public";
+import data from "@/app/content-ar";
+import Link from "next/link";
 
 const innovations = [
   {
-    title: "قصة مونارايز",
-    description: `موناريسا! أم موناليزا؟موناريسا شركة تجارية
-تعمل في مجال العقارات والسياحة،
-تقع تحديدًا في ريزا، ريزا هي المدينة الجذابة
-واللوحة الفنية الفريدة في الشمال التركي، جبالها وهضابها وبحرها وسمائها،
-وكذلك الحال في طقسها وشعبها. في الواقع، هذه المدينة هي لوحة فنية فريدة من نوعها،
-من نوعها في الإبداع الطبيعي الذي تتميز به.
+    url: "the-story-of-moarize",
+    title: "The Story Of Monarize",
+    description: `Monarisa! Or Mona Lisa?MonaRize A commercial
+     company working in the field of real estate and tourism, 
+     specifically located in Rize, Risa is the attractive city
+      and unique painting in the Turkish north, its mountains, plateaus, sea and sky, 
+      as well as the case in its weather and people. Actually, this city is a unique painting,
+       one of a kind in the natural creativity that it is in.
 
 `,
     img: innov1,
+    images: [{ img: innov1 }, { img: innov1 }, { img: innov1 }],
   },
   {
-    title: "قصة مونارايز",
-    description: `موناريسا! أم موناليزا؟موناريسا شركة تجارية
-تعمل في مجال العقارات والسياحة،
-تقع تحديدًا في ريزا، ريزا هي المدينة الجذابة
-واللوحة الفنية الفريدة في الشمال التركي، جبالها وهضابها وبحرها وسمائها،
-وكذلك الحال في طقسها وشعبها. في الواقع، هذه المدينة هي لوحة فنية فريدة من نوعها،
-من نوعها في الإبداع الطبيعي الذي تتميز به.
+    url: "the-story-of-moarize",
+    title: "The Story Of Monarize",
+    description: `Monarisa! Or Mona Lisa?MonaRize A commercial
+     company working in the field of real estate and tourism, 
+     specifically located in Rize, Risa is the attractive city
+      and unique painting in the Turkish north, its mountains, plateaus, sea and sky, 
+      as well as the case in its weather and people. Actually, this city is a unique painting,
+       one of a kind in the natural creativity that it is in.
 
 `,
     img: innov1,
+
+    images: [{ img: innov1 }, { img: innov1 }, { img: innov1 }],
   },
 ];
 
@@ -38,19 +45,21 @@ const page = () => {
         <div className="container md:justify-between md:items-center  flex flex-col md:flex-row">
           <div className=" textContent">
             <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[500px] font-bold text-primaryDark leading-[48px] md:leading-[60px]">
-              <span className=" text-primaryDark">ابتكاراتنا</span>
+              Our <span className=" text-secondary">Innovations</span>
             </h1>
-            <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px]  font-medium leading-7">
-              يعرض قسم الابتكارات لدينا القصص وراء العلامات التجارية التي
-              ابتكرناها، بالإضافة إلى اسمنا وشعارنا. هنا، ستكتشف ما يميزنا
-              وتكتسب رؤى حول إنشاء علامات تجارية فريدة
+            <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px] font-Roboto font-medium">
+              Our innovations department showcases the stories behind the brands
+              we&apos;ve crafted, along with our name and logo. Here,
+              you&apos;ll discover what sets us apart and gain insights into
+              creating unique brands
               <br />
               <br />
-              في السوق. يتطلب إنشاء علامة تجارية موهبة وذكاءً تجاريًا، مع
-              الإلهام والكفاءة التي تتوج بالعمل المتميز.
+              in the market. Crafting a brand requires talent and business
+              acumen, with inspiration and proficiency culminating in
+              outstanding work.
             </p>
             <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
-              تواصل معنا
+              Get Started
             </button>
           </div>
           <div className=" flex justify-end relative">
@@ -58,7 +67,7 @@ const page = () => {
             <Image
               src={innovaition}
               alt="homeHero"
-              className=" md:w-[420px] scale-x-[-1]"
+              className=" md:w-[420px] scale-x-[-1] "
               width={350}
               priority={true}
             />
@@ -67,29 +76,60 @@ const page = () => {
       </section>
       <section className=" bg-primaryDark py-10 md:mt-[100px]">
         <div className="container">
-          {innovations.map((innov, i) => (
+          {/* <div className="innov-container flex flex-col md:flex-row items-center justify-between">
+            <div className="innov-text flex-1">
+              <h2 className="text-[36px] text-white font-bold">
+                The Story Of Monarize
+              </h2>
+              <p className=" text-white max-w-[370px] font-normal mt-4">
+                Monarisa! Or Mona Lisa?MonaRize A commercial company working in
+                the field of real estate and tourism, specifically located in
+                Rize, Risa is the attractive city and unique painting in the
+                Turkish north, its mountains, plateaus, sea and sky, as well as
+                the case in its weather and people. Actually, this city is a
+                unique painting, one of a kind in the natural creativity that it
+                is in.
+              </p>
+              <button className="w-fit text-primary text-[14px] font-medium mt-6  bg-secondary rounded-full px-9  py-3">
+                Continue Story
+              </button>
+            </div>
+            <div className="innov-img overflow-hidden rounded-[10px]">
+              <Image
+                src={innov1}
+                alt="innov1"
+                className=" hover:scale-110 transition-all"
+              />
+            </div>
+          </div> */}
+          {data.innovations.map((innov, i) => (
             <div
               className={`innov-container flex flex-col my-10  ${
                 (i + 1) % 2 === 0 ? " md:flex-row-reverse" : "md:flex-row"
               } items-center justify-between `}
               key={i}
             >
-              <div className="innov-text my-5 ">
-                <h2 className="text-[36px] text-white font-bold">
-                  {innov.title}
-                </h2>
-                <p className=" text-white max-w-[370px] font-normal mt-4 leading-7">
-                  {innov.description}
-                </p>
-                <button className="w-fit text-primary text-[14px] font-medium mt-6  bg-secondary rounded-full px-9  py-3">
-                  أكمل القصة{" "}
-                </button>
+              <div className="innov-text my-5 flex flex-col items-start ">
+                <div>
+                  <h2 className="text-[36px] text-white font-bold">
+                    {innov.title}
+                  </h2>
+                  <p className=" text-white max-w-[370px] font-normal mt-4">
+                    {innov.description}
+                  </p>
+                </div>
+                <Link
+                  href={`/ar/innovations/${i + 1}/${innov.url}`}
+                  className="w-fit text-primary text-[14px] font-medium my-3  bg-secondary rounded-full px-9  py-3"
+                >
+                  أكمل القصة
+                </Link>
               </div>
-              <div className="innov-img overflow-hidden rounded-[10px]">
+              <div className="innov-img overflow-hidden max-w-[422px] h-[438px] rounded-[10px]">
                 <Image
                   src={innov.img}
                   alt="innov1"
-                  className=" hover:scale-110 transition-all "
+                  className=" hover:scale-110 h-[100%] object-cover transition-all"
                 />
               </div>
             </div>

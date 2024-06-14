@@ -4,9 +4,11 @@ import Image from "next/image";
 import React from "react";
 import { homeHero, innov1, innovaition } from "../../../../public";
 import data from "@/app/content-en";
+import Link from "next/link";
 
 const innovations = [
   {
+    url: "the-story-of-moarize",
     title: "The Story Of Monarize",
     description: `Monarisa! Or Mona Lisa?MonaRize A commercial
      company working in the field of real estate and tourism, 
@@ -17,8 +19,10 @@ const innovations = [
 
 `,
     img: innov1,
+    images: [{ img: innov1 }, { img: innov1 }, { img: innov1 }],
   },
   {
+    url: "the-story-of-moarize",
     title: "The Story Of Monarize",
     description: `Monarisa! Or Mona Lisa?MonaRize A commercial
      company working in the field of real estate and tourism, 
@@ -29,6 +33,8 @@ const innovations = [
 
 `,
     img: innov1,
+
+    images: [{ img: innov1 }, { img: innov1 }, { img: innov1 }],
   },
 ];
 
@@ -103,22 +109,25 @@ const page = () => {
               } items-center justify-between `}
               key={i}
             >
-              <div className="innov-text my-5 ">
+              <div className="innov-text my-5 flex flex-col items-start justify-center ">
                 <h2 className="text-[36px] text-white font-bold">
                   {innov.title}
                 </h2>
                 <p className=" text-white max-w-[370px] font-normal mt-4">
                   {innov.description}
                 </p>
-                <button className="w-fit text-primary text-[14px] font-medium mt-6  bg-secondary rounded-full px-9  py-3">
+                <Link
+                  href={`/en/innovations/${i + 1}/${innov.url}`}
+                  className="w-fit text-primary text-[14px] font-medium my-4  bg-secondary rounded-full px-9  py-3"
+                >
                   Continue Story
-                </button>
+                </Link>
               </div>
-              <div className="innov-img overflow-hidden rounded-[10px]">
+              <div className="innov-img overflow-hidden max-w-[422px] h-[438px] rounded-[10px]">
                 <Image
                   src={innov.img}
                   alt="innov1"
-                  className=" hover:scale-110 transition-all"
+                  className=" hover:scale-110  w-full h-[100%] object-cover transition-all"
                 />
               </div>
             </div>

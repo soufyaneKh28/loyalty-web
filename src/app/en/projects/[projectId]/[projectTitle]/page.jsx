@@ -10,6 +10,7 @@ import { MetaData } from "next";
 import Head from "next/head";
 import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import Form from "@/components/Form";
+import Link from "next/link";
 
 // export const generateMetaData = ({ params }): Metadata => {
 //   return {
@@ -164,6 +165,42 @@ const Page = ({ params }) => {
           </div>
           <div className="container">
             <div className="w-full h-[2px] bg-slate-500"></div>
+            <div className=" my-10 py-3">
+              <h3 className=" text-white text-[24px] my-5 font-bold ">
+                Recent Projects:{" "}
+              </h3>
+              <div className=" flex flex-col md:flex-row md:justify-center gap-8">
+                {[...data.projects].slice(-3).map((project, i) => (
+                  <div
+                    className="project rounded-[10px] overflow-hidden w-[333px] relative"
+                    key={i}
+                  >
+                    <Image
+                      src={project.img}
+                      alt={project.title}
+                      className=" hover:scale-110 transition-all"
+                    />
+                    <div className="absolute bottom-[0px] px-3 translate-y-[-20%]">
+                      <Link href={`/en/projects/${project.id}/${project.url}`}>
+                        <h2 className=" text-white font-bold text-[28px] hover:text-secondary transition-colors cursor-pointer">
+                          {project.title}
+                        </h2>
+                      </Link>
+                      <div className="tags mt-4 flex gap-2">
+                        {project.tags.map((tag, i) => (
+                          <div
+                            className=" bg-white w-fit py-1 px-4 rounded-[5px] text-[14px] flex items-center font-semibold "
+                            key={i}
+                          >
+                            {tag.title}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
         <section className=" bg-primaryDark pb-[100px]">
