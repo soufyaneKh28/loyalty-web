@@ -33,7 +33,7 @@ export default function Home() {
               Building <span className=" text-secondary">Digital Product</span>,
               Brand and Experience
             </h1>
-            <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px] font-Roboto font-medium">
+            <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px]  font-medium">
               we are Marketing and digital agency , we provide a lot of services
               we are Marketing and digital agency , we provide a lot of services
             </p>
@@ -77,7 +77,7 @@ export default function Home() {
                 {data.grow.title}
               </h2>
             </div>
-            <p className=" text-white font-Roboto w-[270px] md:w-[385px]  text-[16px] mt-4">
+            <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
               {data.grow.description}
             </p>
             <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">

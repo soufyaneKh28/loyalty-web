@@ -1,18 +1,21 @@
 "use client";
-import es from "react-phone-input-2/lang/es.json";
-import { Target } from "lucide-react";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+import { useState } from "react";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
+
 const PhoneInputT = () => {
-  const [value, setValue] = useState("tr");
+  const [phone, setPhone] = useState("");
+
   return (
-    <PhoneInput
-      country={ar}
-      localization={es}
-      value={value}
-      onChange={(e) => setValue(e.target.value)}
-    />
+    <div>
+      <PhoneInput
+        defaultCountry="tr"
+        value={phone}
+        onChange={(phone) => setPhone(phone)}
+        className=""
+      />
+    </div>
   );
 };
 
-export default PhoneInput;
+export { PhoneInputT };

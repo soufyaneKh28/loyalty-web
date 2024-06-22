@@ -414,6 +414,126 @@ const data = {
         images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
       },
     },
+    {
+      url: "Visual-Identity-Souq-alfurat",
+      id: "7",
+      title: "الهوية البصرية لسوق الفرات",
+      tags: [
+        {
+          title: "العلامة التجارية",
+        },
+        {
+          title: "التصميم",
+        },
+      ],
+      img: project,
+      details: {
+        client: "سوق الفرات",
+        services: "تصميم العلامة التجارية",
+        duration: "03 أشهر",
+        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+      },
+    },
+    {
+      url: "Visual-Identity-soufyane",
+      id: "8",
+      title: "الهوية البصرية لسوفيان",
+      tags: [
+        {
+          title: "ui ux",
+        },
+        {
+          title: "التصميم",
+        },
+      ],
+      img: soufyane,
+      details: {
+        client: "سوق الفرات",
+        services: "تصميم العلامة التجارية",
+        duration: "03 أشهر",
+        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+      },
+    },
+    {
+      url: "Visual-Identity-Souq-alfurat",
+      id: "9",
+      title: "الهوية البصرية لسوق الفرات",
+      tags: [
+        {
+          title: "العلامة التجارية",
+        },
+        {
+          title: "التصميم",
+        },
+      ],
+      img: project,
+      details: {
+        client: "سوق الفرات",
+        services: "تصميم العلامة التجارية",
+        duration: "03 أشهر",
+        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+      },
+    },
+    {
+      url: "Visual-Identity-soufyane",
+      id: "10",
+      title: "الهوية البصرية لسوفيان",
+      tags: [
+        {
+          title: "ui ux",
+        },
+        {
+          title: "التصميم",
+        },
+      ],
+      img: soufyane,
+      details: {
+        client: "سوق الفرات",
+        services: "تصميم العلامة التجارية",
+        duration: "03 أشهر",
+        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+      },
+    },
+    {
+      url: "Visual-Identity-Souq-alfurat",
+      id: "11",
+      title: "الهوية البصرية لسوق الفرات",
+      tags: [
+        {
+          title: "العلامة التجارية",
+        },
+        {
+          title: "التصميم",
+        },
+      ],
+      img: project,
+      details: {
+        client: "سوق الفرات",
+        services: "تصميم العلامة التجارية",
+        duration: "03 أشهر",
+        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+      },
+    },
+    {
+      url: "Visual-Identity-soufyane",
+      id: "12",
+      title: "الهوية البصرية لسوفيان",
+      tags: [
+        {
+          title: "ui ux ",
+        },
+        {
+          title: "التصميم",
+        },
+      ],
+      img: soufyane,
+      details: {
+        client: "سوق الفرات",
+        services: "تصميم العلامة التجارية",
+        duration: "03 أشهر",
+        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+      },
+    },
   ],
   blogs: [
     {

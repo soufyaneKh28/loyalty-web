@@ -110,21 +110,79 @@ export default function MenubarAr() {
         } header py-4  flex flex-col  items-center font-Ibm fixed w-full bg-white z-[50] transition-all`}
       >
         <div className="container flex justify-between ">
-          <Link href="/">
+          <Link href="/ar/home">
             <Image src={logo} alt="logo" width={80} />
           </Link>
 
           <nav className="  hidden md:block">
             <ul className="flex gap-9">
-              {links.map((link) => (
+              {/* {links.map((link) => {
+                return (
+                  <Link
+                    href={link.href}
+                    key={link.link}
+                    className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  >
+                    {link.link}
+                  </Link>
+                );
+              })} */}
+              <Link
+                href={`/ar/home`}
+                className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+              >
+                الرئيسية
+              </Link>
+              <Link
+                href={`/ar/about`}
+                className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+              >
+                من نحن
+              </Link>
+
+              <Link
+                href={`/ar/services`}
+                className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+              >
+                خدماتنا
+              </Link>
+              <div className=" dropdown">
                 <Link
-                  href={link.href}
-                  key={link.link}
-                  className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  href={`/ar/projects`}
+                  className=" flex items-center dropdown font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
-                  {link.link}
+                  المشاريع
+                  <svg
+                    className=" svg fill-current ms-2 h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                  </svg>
                 </Link>
-              ))}
+                <ul class="dropdown-menu absolute hidden px-3  py-3 rounded-[10px] bg-white  pt-3">
+                  <li class="">
+                    <Link
+                      className="font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                      href="/ar/innovations"
+                    >
+                      الابتكارات
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <Link
+                href={`/ar/blogs`}
+                className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+              >
+                المدونة
+              </Link>
+              <Link
+                href={`/ar/contactUs`}
+                className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+              >
+                تواصل معنا
+              </Link>
             </ul>
           </nav>
           <select

@@ -53,11 +53,12 @@ export const metadata = {
 // }
 const Page = ({ params }) => {
   //   let exist = true;
-  metadata.title = `${params.blogTitle.split("-").join(" ")}`;
 
   //   console.log("Visual-Identity-Souq-alfurat");
 
   let blogObj = data.blogs[Number(params.blogId) - 1];
+
+  metadata.title = blogObj.title;
   //   const arrayOfStrings = params.projectTitle.split("-");
 
   //   console.log(arrayOfStrings);

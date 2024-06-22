@@ -20,7 +20,7 @@ function Page() {
             <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-bold text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
               {data.heroAbout.title}
             </h1>
-            <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px] font-Roboto font-medium leading-[27px]">
+            <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
               {data.heroAbout.description}
             </p>
             <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
@@ -107,7 +107,7 @@ function Page() {
                 {data.grow.title}
               </h2>
             </div>
-            <p className=" text-white font-Roboto w-[270px] md:w-[385px]  text-[16px] mt-4">
+            <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
               {data.grow.description}
             </p>
             <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">

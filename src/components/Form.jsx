@@ -1,4 +1,5 @@
 import React from "react";
+import { PhoneInputT } from "./ui/PhoneInputT";
 
 const Form = () => {
   return (
@@ -49,13 +50,7 @@ const Form = () => {
       </div>
       <div className=" flex flex-col my-2">
         <label htmlFor="phone">Phone</label>
-        <input
-          type="phone"
-          name="name"
-          placeholder="phone"
-          id="phone"
-          className=" p-3 mt-1 rounded-[10px] outline-none border-none text-primaryDark"
-        />
+        <PhoneInputT />
       </div>
       <button className=" bg-secondary py-3 px-10 mt-5 rounded-full ">
         Submit

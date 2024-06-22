@@ -106,15 +106,73 @@ export default function Menubar({ params }) {
 
           <nav className="  hidden md:block">
             <ul className="flex gap-9">
-              {links.map((link) => (
+              {/* {links.map((link) => {
+                return (
+                  <Link
+                    href={link.href}
+                    key={link.link}
+                    className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  >
+                    {link.link}
+                  </Link>
+                );
+              })} */}
+              <Link
+                href={`/en/home`}
+                className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+              >
+                {`Home`}
+              </Link>
+              <Link
+                href={`/en/about`}
+                className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+              >
+                {`About`}
+              </Link>
+
+              <Link
+                href={`/en/services`}
+                className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+              >
+                {`Sevices`}
+              </Link>
+              <div className=" dropdown">
                 <Link
-                  href={link.href}
-                  key={link.link}
-                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  href={`/en/projects`}
+                  className=" flex items-center dropdown font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
-                  {link.link}
+                  Projects{" "}
+                  <svg
+                    className=" svg fill-current ms-2 h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                  </svg>
                 </Link>
-              ))}
+                <ul class="dropdown-menu absolute hidden px-3  py-3 rounded-[10px] bg-white  pt-3">
+                  <li class="">
+                    <Link
+                      className="font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                      href="/en/innovations"
+                    >
+                      Innovations
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <Link
+                href={`/en/blogs`}
+                className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+              >
+                Blogs
+              </Link>
+              <Link
+                href={`/en/contactUs`}
+                className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+              >
+                Contact Us
+              </Link>
             </ul>
           </nav>
           <select
@@ -155,7 +213,7 @@ export default function Menubar({ params }) {
               className="flex flex-col gap-4 py-5 px-5"
               style={{ pointerEvents: isOpen ? "auto" : "none" }}
             >
-              {links.map((link, i) => (
+              {/* {links.map((link, i) => (
                 <motion.li
                   initial={{ x: "-100vh", opacity: 0 }}
                   transition={{
@@ -172,7 +230,109 @@ export default function Menubar({ params }) {
                     {link.link}
                   </Link>
                 </motion.li>
-              ))}
+              ))} */}
+              <motion.li
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 0 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/en/home`}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  {`Home`}
+                </Link>
+              </motion.li>
+              <motion.li
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 1 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/en/about`}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  {`About`}
+                </Link>
+              </motion.li>
+              <motion.li
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 2 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/en/services`}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  {`Sevices`}
+                </Link>
+              </motion.li>
+              <motion.li
+                className=" dropdown"
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 3 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/en/projects`}
+                  className=" flex w-full justify-between items-center dropdown font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  Projects{" "}
+                  <svg
+                    className=" svg fill-current ms-2 h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                  </svg>
+                </Link>
+                <ul class="dropdown-menu  hidden px-3  py-3 rounded-[10px] bg-white  pt-3">
+                  <li class="">
+                    <Link
+                      className="font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                      href="/en/innovations"
+                    >
+                      Innovations
+                    </Link>
+                  </li>
+                </ul>
+              </motion.li>
+              <motion.li
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 4 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/en/services`}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  Blogs
+                </Link>
+              </motion.li>
+              <motion.li
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 5 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/en/contactUs`}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  Contact Us
+                </Link>
+              </motion.li>
               <select
                 className=" bg-transparent py-1 px-5 border rounded focus:outline-none"
                 value={selectedLanguage}

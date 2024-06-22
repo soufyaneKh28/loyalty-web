@@ -6,37 +6,6 @@ import { homeHero, innov1, innovaition } from "../../../../public";
 import data from "@/app/content-ar";
 import Link from "next/link";
 
-const innovations = [
-  {
-    url: "the-story-of-moarize",
-    title: "The Story Of Monarize",
-    description: `Monarisa! Or Mona Lisa?MonaRize A commercial
-     company working in the field of real estate and tourism, 
-     specifically located in Rize, Risa is the attractive city
-      and unique painting in the Turkish north, its mountains, plateaus, sea and sky, 
-      as well as the case in its weather and people. Actually, this city is a unique painting,
-       one of a kind in the natural creativity that it is in.
-
-`,
-    img: innov1,
-    images: [{ img: innov1 }, { img: innov1 }, { img: innov1 }],
-  },
-  {
-    url: "the-story-of-moarize",
-    title: "The Story Of Monarize",
-    description: `Monarisa! Or Mona Lisa?MonaRize A commercial
-     company working in the field of real estate and tourism, 
-     specifically located in Rize, Risa is the attractive city
-      and unique painting in the Turkish north, its mountains, plateaus, sea and sky, 
-      as well as the case in its weather and people. Actually, this city is a unique painting,
-       one of a kind in the natural creativity that it is in.
-
-`,
-    img: innov1,
-
-    images: [{ img: innov1 }, { img: innov1 }, { img: innov1 }],
-  },
-];
 
 const page = () => {
   return (

@@ -13,7 +13,7 @@ const Strategy = ({ object }) => {
             {object.title}
           </h2>
         </div>
-        <p className=" text-white font-Roboto w-[270px] md:w-[385px]  text-[16px] mt-4">
+        <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
           {object.descriptipn}
         </p>
       </div>
@@ -36,7 +36,7 @@ const Strategy = ({ object }) => {
                 <div className=" num absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
                   {object.items.item1.num}
                 </div>
-                <p className="text-[14px] mt-4 font-normal font-Roboto">
+                <p className="text-[14px] mt-4 font-normal ">
                   {object.items.item1.description}
                 </p>
               </div>
@@ -63,7 +63,7 @@ const Strategy = ({ object }) => {
                 <div className="num absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
                   {object.items.item2.num}
                 </div>
-                <p className="text-[14px] mt-4 font-normal font-Roboto">
+                <p className="text-[14px] mt-4 font-normal">
                   {object.items.item2.description}
                 </p>
               </div>
@@ -88,7 +88,7 @@ const Strategy = ({ object }) => {
                 <div className="num  absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
                   {object.items.item3.num}
                 </div>
-                <p className="text-[14px] mt-4 font-normal font-Roboto">
+                <p className="text-[14px] mt-4 font-normal">
                   {object.items.item3.description}
                 </p>
               </div>

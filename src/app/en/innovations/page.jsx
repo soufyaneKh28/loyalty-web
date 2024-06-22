@@ -47,7 +47,7 @@ const page = () => {
             <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[500px] font-bold text-primaryDark leading-[48px] md:leading-[60px]">
               Our <span className=" text-secondary">Innovations</span>
             </h1>
-            <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px] font-Roboto font-medium">
+            <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px]  font-medium">
               Our innovations department showcases the stories behind the brands
               we&apos;ve crafted, along with our name and logo. Here,
               you&apos;ll discover what sets us apart and gain insights into

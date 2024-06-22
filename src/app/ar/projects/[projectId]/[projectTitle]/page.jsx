@@ -55,7 +55,7 @@ const Page = ({ params }) => {
   const OPTIONS = { direction: "rtl" };
   return (
     <>
-      <main className={` py-[100px] ${cairoClass}`}>
+      <main className={` pt-[100px] ${cairoClass}`}>
         <section className="pt-10 md:pt-20">
           <div className="container">
             {/* {!exist ? null : (
@@ -174,7 +174,7 @@ const Page = ({ params }) => {
               <h3 className=" text-white text-[24px] font-bold my-5 ">
                 المشاريع الأخيرة:{" "}
               </h3>
-              <div className=" flex flex-col md:flex-row md:justify-center gap-8">
+              <div className=" flex flex-col items-center md:flex-row md:justify-center gap-8">
                 {[...data.projects].slice(-3).map((project, i) => (
                   <div
                     className="project rounded-[10px] overflow-hidden w-[333px] relative"

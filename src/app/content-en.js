@@ -427,6 +427,126 @@ const data = {
         images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
       },
     },
+    {
+      url: "Visual-Identity-Souq-alfurat",
+      id: "7",
+      title: "Visual Identity Souq alfurat",
+      tags: [
+        {
+          title: "Branding",
+        },
+        {
+          title: "Design",
+        },
+      ],
+      img: project,
+      details: {
+        client: "Souq alfurat",
+        services: "Branding Design",
+        duration: "03 Months",
+        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+      },
+    },
+    {
+      url: "Visual-Identity-soufyane",
+      id: "8",
+      title: "Visual Identity soufyane",
+      tags: [
+        {
+          title: "UI UX",
+        },
+        {
+          title: "Design",
+        },
+      ],
+      img: soufyane,
+      details: {
+        client: "Souq alfurat",
+        services: "Branding Design",
+        duration: "03 Months",
+        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+      },
+    },
+    {
+      url: "Visual-Identity-Souq-alfurat",
+      id: "9",
+      title: "Visual Identity Souq alfurat",
+      tags: [
+        {
+          title: "Branding",
+        },
+        {
+          title: "Design",
+        },
+      ],
+      img: project,
+      details: {
+        client: "Souq alfurat",
+        services: "Branding Design",
+        duration: "03 Months",
+        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+      },
+    },
+    {
+      url: "Visual-Identity-soufyane",
+      id: "10",
+      title: "Visual Identity soufyane",
+      tags: [
+        {
+          title: "UI UX",
+        },
+        {
+          title: "Design",
+        },
+      ],
+      img: soufyane,
+      details: {
+        client: "Souq alfurat",
+        services: "Branding Design",
+        duration: "03 Months",
+        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+      },
+    },
+    {
+      url: "Visual-Identity-Souq-alfurat",
+      id: "11",
+      title: "Visual Identity Souq alfurat",
+      tags: [
+        {
+          title: "Branding",
+        },
+        {
+          title: "Design",
+        },
+      ],
+      img: project,
+      details: {
+        client: "Souq alfurat",
+        services: "Branding Design",
+        duration: "03 Months",
+        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+      },
+    },
+    {
+      url: "Visual-Identity-soufyane",
+      id: "12",
+      title: "Visual Identity soufyane",
+      tags: [
+        {
+          title: "UI UX",
+        },
+        {
+          title: "Design",
+        },
+      ],
+      img: soufyane,
+      details: {
+        client: "Souq alfurat",
+        services: "Branding Design",
+        duration: "03 Months",
+        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+      },
+    },
   ],
   blogs: [
     {
