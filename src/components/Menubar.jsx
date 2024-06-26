@@ -139,7 +139,7 @@ export default function Menubar({ params }) {
               <div className=" dropdown">
                 <Link
                   href={`/en/projects`}
-                  className=" flex items-center dropdown font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  className=" flex items-center  font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   Projects{" "}
                   <svg

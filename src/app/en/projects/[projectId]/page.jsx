@@ -29,6 +29,28 @@ const page = ({ params }) => {
           : null}
         {}
 
+        <div className=" mx-2 ms-[15px]  md:ms-[50px] ">
+          <div className="transition-colors  w-[350px] h-[250px] md:h-[535px] md:w-[800px] rounded-[10px] overflow-hidden">
+            <video
+              width="100%"
+              height="100%"
+              controls
+              loop
+              preload="true"
+              autoPlay="true"
+              src=" https://cdn.dribbble.com/userupload/2999497/file/large-438276ad83c25e3db171ff740589081e.mp4"
+            >
+              <track
+                src="/path/to/captions.vtt"
+                kind="subtitles"
+                srcLang="en"
+                label="English"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
         {/* <div className=" mx-2">
               <div className="transition-colors w-[350px] h-[250px] md:h-[535px] md:w-[800px] rounded-[10px] overflow-hidden">
                 <Image
@@ -50,6 +72,8 @@ const page = ({ params }) => {
                   height={"100%"}
                 />
               </div>
+
+              https://cdn.dribbble.com/userupload/2999497/file/large-438276ad83c25e3db171ff740589081e.mp4
             </div> */}
       </EmblaCarousel2>
     </div>

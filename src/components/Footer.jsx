@@ -12,7 +12,7 @@ import {
 } from "../../public";
 import Link from "next/link";
 import { PhoneInput } from "react-international-phone";
-import PhoneInputT from "./ui/PhoneInputT";
+import { PhoneInputT } from "./ui/PhoneInputT";
 
 const socialMedia = [
   {
@@ -99,20 +99,17 @@ const Footer = () => {
             Company Information
           </h3>
           <div className="mt-5 flex flex-col text-white">
-            <Link href={"/"}>Home</Link>
-            <Link href={"/"}>About Us</Link>
-            <Link href={"/"}>Services</Link>
-            <Link href={"/"}>Projects</Link>
-            <Link href={"/"}>Contact Us</Link>
+            <Link href={"/en/home"}>Home</Link>
+            <Link href={"/en/about"}>About Us</Link>
+            <Link href={"/en/services"}>Services</Link>
+            <Link href={"/en/projects"}>Projects</Link>
+            <Link href={"/contactUs"}>Contact Us</Link>
           </div>
         </div>
         <div className=" col my-5">
           <form action="" className=" flex flex-col">
-            <input
-              type="phone"
-              className=" py-3 px-3 border-none rounded-[10px]"
-            />
             {/* <PhoneInputT /> */}
+            <PhoneInputT />
             <button
               type="submit"
               className=" bg-secondary py-3 rounded-full my-3 text-white font-semibold "

@@ -36,6 +36,8 @@ const socialMedia = [
 ];
 
 import Map from "@/components/Map";
+import Form from "@/components/Form";
+import data from "@/app/content-ar";
 
 const page = () => {
   return (
@@ -79,67 +81,7 @@ const page = () => {
             </div>
           </div>
           <div className=" mt-20 md:mt-0  max-w-[450px] flex-1">
-            <form
-              action=""
-              className=" bg-primaryDark text-white p-5 flex flex-col py-12  rounded-[20px]"
-            >
-              <h3 className=" text-[28px] text-center font-semibold">
-                اتصل بنا{" "}
-              </h3>
-              <div className=" flex flex-col my-2">
-                <label htmlFor="name">الاسم الكامل</label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="full name"
-                  id="name"
-                  className=" p-3 mt-1 rounded-[10px] outline-none border-none text-primaryDark"
-                />
-              </div>
-              <div className=" flex flex-col my-2">
-                <label htmlFor="email">البريد الإلكتروني</label>
-                <input
-                  type="email"
-                  name="name"
-                  placeholder="email"
-                  id="email"
-                  className=" p-3 mt-1 rounded-[10px] outline-none border-none text-primaryDark"
-                />
-              </div>
-              <div className=" flex flex-col my-2">
-                <label htmlFor="phone">الهاتف</label>
-                <input
-                  type="phone"
-                  name="name"
-                  placeholder="phone"
-                  id="phone"
-                  className=" p-3 mt-1 rounded-[10px] outline-none border-none text-primaryDark"
-                />
-              </div>
-              <div className=" flex flex-col my-2">
-                <label htmlFor="phone">الهاتف</label>
-                <input
-                  type="phone"
-                  name="name"
-                  placeholder="phone"
-                  id="phone"
-                  className=" p-3 mt-1 rounded-[10px] outline-none border-none text-primaryDark"
-                />
-              </div>
-              <div className=" flex flex-col my-2">
-                <label htmlFor="phone">الهاتف</label>
-                <input
-                  type="phone"
-                  name="name"
-                  placeholder="phone"
-                  id="phone"
-                  className=" p-3 mt-1 rounded-[10px] outline-none border-none text-primaryDark"
-                />
-              </div>
-              <button className=" bg-secondary py-3 px-10 mt-5 rounded-full ">
-                إرسال
-              </button>
-            </form>
+            <Form object={data.form} />
           </div>
         </div>
       </section>

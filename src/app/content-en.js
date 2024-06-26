@@ -324,7 +324,15 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+        images: [
+          {
+            type: "video",
+            img: "https://cdn.dribbble.com/userupload/2999497/file/large-438276ad83c25e3db171ff740589081e.mp4",
+          },
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+        ],
       },
     },
     {
@@ -344,7 +352,15 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+        images: [
+          {
+            type: "video",
+            img: "https://cdn.dribbble.com/userupload/2999497/file/large-438276ad83c25e3db171ff740589081e.mp4",
+          },
+          { type: "img", img: soufyane1 },
+          { type: "img", img: soufyane2 },
+          { type: "img", img: soufyane3 },
+        ],
       },
     },
     {
@@ -364,7 +380,11 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+        images: [
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+        ],
       },
     },
     {
@@ -384,7 +404,11 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+        images: [
+          { type: "img", img: soufyane1 },
+          { type: "img", img: soufyane2 },
+          { type: "img", img: soufyane3 },
+        ],
       },
     },
     {
@@ -404,7 +428,11 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+        images: [
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+        ],
       },
     },
     {
@@ -424,7 +452,11 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+        images: [
+          { type: "img", img: soufyane1 },
+          { type: "img", img: soufyane2 },
+          { type: "img", img: soufyane3 },
+        ],
       },
     },
     {
@@ -444,7 +476,11 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+        images: [
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+        ],
       },
     },
     {
@@ -464,7 +500,11 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+        images: [
+          { type: "img", img: soufyane1 },
+          { type: "img", img: soufyane2 },
+          { type: "img", img: soufyane3 },
+        ],
       },
     },
     {
@@ -484,7 +524,11 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+        images: [
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+        ],
       },
     },
     {
@@ -504,7 +548,11 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+        images: [
+          { type: "img", img: soufyane1 },
+          { type: "img", img: soufyane2 },
+          { type: "img", img: soufyane3 },
+        ],
       },
     },
     {
@@ -524,7 +572,11 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: projectDe }, { img: projectDe }, { img: projectDe }],
+        images: [
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+          { type: "img", img: projectDe },
+        ],
       },
     },
     {
@@ -544,7 +596,11 @@ const data = {
         client: "Souq alfurat",
         services: "Branding Design",
         duration: "03 Months",
-        images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
+        images: [
+          { type: "img", img: soufyane1 },
+          { type: "img", img: soufyane2 },
+          { type: "img", img: soufyane3 },
+        ],
       },
     },
   ],
@@ -648,6 +704,39 @@ Marketing is creating value for products or services and transforming it into a 
 What is the so important to know the difference between marketing and digital marketing?
 
 The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
+    },
+  ],
+  form: {
+    title: "Contact Us",
+    fullName: "Full Name",
+    email: "Email",
+    phone: "Phone",
+    btn: "send",
+  },
+  timeline: [
+    {
+      title: "Move to Turkey",
+      date: "14 January 2014",
+      description:
+        "Setting up ( Loyalty) headquarters in turkey in Istanbul in 2014 in the world trade center in Istanbul, which made the company stand out with its strategic location. Loyalty's team was made up of 4 people who were determined to implement the vision of the company",
+    },
+    {
+      title: "Move to Turkey",
+      date: "14 January 2014",
+      description:
+        "Setting up ( Loyalty) headquarters in turkey in Istanbul in 2014 in the world trade center in Istanbul, which made the company stand out with its strategic location. Loyalty's team was made up of 4 people who were determined to implement the vision of the company",
+    },
+    {
+      title: "Move to Turkey",
+      date: "14 January 2014",
+      description:
+        "Setting up ( Loyalty) headquarters in turkey in Istanbul in 2014 in the world trade center in Istanbul, which made the company stand out with its strategic location. Loyalty's team was made up of 4 people who were determined to implement the vision of the company",
+    },
+    {
+      title: "Move to Turkey",
+      date: "14 January 2014",
+      description:
+        "Setting up ( Loyalty) headquarters in turkey in Istanbul in 2014 in the world trade center in Istanbul, which made the company stand out with its strategic location. Loyalty's team was made up of 4 people who were determined to implement the vision of the company",
     },
   ],
 };

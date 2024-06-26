@@ -140,7 +140,7 @@ const Page = ({ params }) => {
         </section>
         <section className=" bg-primaryDark py-[150px] pb-[100px] mt-[-150px]">
           <div className="container">
-            <div className="text-white my-6 flex flex-col md:flex-row md:justify-between">
+            <div className="text-white my-20 flex flex-col md:flex-row md:justify-between">
               <h3 className=" text-[26px] font-bold">Our Challenge</h3>
               <p className="mt-3 max-w-[600px]">
                 Lorem ipsum dolor sit amet consectetur. Lectus leo tincidunt
@@ -206,7 +206,7 @@ const Page = ({ params }) => {
         <section className=" bg-primaryDark pb-[100px]">
           <div className="container flex justify-center">
             <div className="w-[100%] md:w-[80%]">
-              <Form />
+              <Form object={data.form} />
             </div>
           </div>
         </section>

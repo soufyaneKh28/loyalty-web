@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
-import { Cairo } from "next/font/google";
+import { cairoClass } from "@/app/font";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { logo, menu, close } from "../../public";
@@ -10,20 +10,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { redirect } from "next/navigation";
 import { Router } from "next/router";
-const cairo = Cairo({
-  subsets: ["arabic"],
-
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
-});
-
-const itemVariants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 24 },
-  },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
-};
 
 const links = [
   {
@@ -105,9 +91,9 @@ export default function MenubarAr() {
   return (
     <>
       <header
-        className={` ${isScrolled || isOpen ? "scrolled" : ""}  ${
-          cairo.className
-        } header py-4  flex flex-col  items-center font-Ibm fixed w-full bg-white z-[50] transition-all`}
+        className={` ${
+          isScrolled || isOpen ? "scrolled" : ""
+        }  ${cairoClass} header py-4  flex flex-col  items-center font-Ibm fixed w-full bg-white z-[50] transition-all`}
       >
         <div className="container flex justify-between ">
           <Link href="/ar/home">

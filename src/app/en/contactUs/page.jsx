@@ -36,6 +36,7 @@ const socialMedia = [
 
 import Map from "@/components/Map";
 import Form from "@/components/Form";
+import data from "@/app/content-en";
 
 export const metadata = {
   title: "Contact-Us",
@@ -83,7 +84,7 @@ const page = () => {
             </div>
           </div>
           <div className=" mt-20 md:mt-0  max-w-[450px] flex-1">
-            <Form />
+            <Form object={data.form} />
           </div>
         </div>
       </section>

@@ -43,6 +43,8 @@ import soufyane from "./soufyane.png";
 import soufyane1 from "./soufyane1.png";
 import soufyane2 from "./soufyane2.png";
 import soufyane3 from "./soufyane3.png";
+
+// import video1 from "./video.mp4";
 export {
   logo,
   menu,
@@ -84,4 +86,5 @@ export {
   soufyane1,
   soufyane2,
   soufyane3,
+  // video1,
 };

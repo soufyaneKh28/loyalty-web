@@ -211,7 +211,7 @@ const Page = ({ params }) => {
         <section className=" bg-primaryDark pb-[100px]">
           <div className="container flex justify-center">
             <div className="w-[100%] md:w-[80%]">
-              <Form />
+              <Form object={data.form} />
             </div>
           </div>
         </section>
