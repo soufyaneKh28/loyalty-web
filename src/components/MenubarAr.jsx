@@ -231,24 +231,115 @@ export default function MenubarAr() {
               className="flex flex-col gap-4 py-5 px-5"
               style={{ pointerEvents: isOpen ? "auto" : "none" }}
             >
-              {links.map((link, i) => (
-                <motion.li
-                  initial={{ x: "100vh", opacity: 0 }}
-                  transition={{
-                    delay: i * 0.2,
-                  }}
-                  animate={{ x: 0, opacity: 1 }}
-                  key={link.link}
+              <motion.li
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 0 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/ar/home`}
+                  onClick={() => setIsOpen(false)}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="  text-[17px] text-[#27272F] hover:text-[#F8360A] font-bold transition-colors"
+                  الرئيسية
+                </Link>
+              </motion.li>
+              <motion.li
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 1 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/ar/about`}
+                  onClick={() => setIsOpen(false)}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  من نحن
+                </Link>
+              </motion.li>
+              <motion.li
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 2 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/ar/services`}
+                  onClick={() => setIsOpen(false)}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  خدماتنا
+                </Link>
+              </motion.li>
+              <motion.li
+                className=" dropdown"
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 3 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/ar/projects`}
+                  onClick={() => setIsOpen(false)}
+                  className=" flex w-full justify-between items-center dropdown font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  المشاريع
+                  <svg
+                    className=" svg fill-current ms-2 h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
                   >
-                    {link.link}
-                  </Link>
-                </motion.li>
-              ))}
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                  </svg>
+                </Link>
+                <ul class="dropdown-menu  hidden px-3  py-3 rounded-[10px] bg-white  pt-3">
+                  <li class="">
+                    <Link
+                      className="font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                      href="/ar/innovations"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      الابتكارات
+                    </Link>
+                  </li>
+                </ul>
+              </motion.li>
+              <motion.li
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 4 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/ar/services`}
+                  onClick={() => setIsOpen(false)}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  المدونة
+                </Link>
+              </motion.li>
+              <motion.li
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 5 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <Link
+                  href={`/ar/contactUs`}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  تواصل معنا
+                </Link>
+              </motion.li>
 
               <div className="language relative">
                 <div className=" w-full  font-bold">

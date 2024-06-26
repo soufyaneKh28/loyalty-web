@@ -271,6 +271,7 @@ export default function Menubar({ params }) {
               >
                 <Link
                   href={`/en/home`}
+                  onClick={() => setIsOpen(false)}
                   className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   {`Home`}
@@ -285,6 +286,7 @@ export default function Menubar({ params }) {
               >
                 <Link
                   href={`/en/about`}
+                  onClick={() => setIsOpen(false)}
                   className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   {`About`}
@@ -299,6 +301,7 @@ export default function Menubar({ params }) {
               >
                 <Link
                   href={`/en/services`}
+                  onClick={() => setIsOpen(false)}
                   className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   {`Sevices`}
@@ -314,6 +317,7 @@ export default function Menubar({ params }) {
               >
                 <Link
                   href={`/en/projects`}
+                  onClick={() => setIsOpen(false)}
                   className=" flex w-full justify-between items-center dropdown font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   Projects{" "}
@@ -330,6 +334,7 @@ export default function Menubar({ params }) {
                     <Link
                       className="font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                       href="/en/innovations"
+                      onClick={() => setIsOpen(false)}
                     >
                       Innovations
                     </Link>
@@ -345,6 +350,7 @@ export default function Menubar({ params }) {
               >
                 <Link
                   href={`/en/services`}
+                  onClick={() => setIsOpen(false)}
                   className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   Blogs
@@ -360,6 +366,7 @@ export default function Menubar({ params }) {
                 <Link
                   href={`/en/contactUs`}
                   className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  onClick={() => setIsOpen(false)}
                 >
                   Contact Us
                 </Link>

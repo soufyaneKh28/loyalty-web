@@ -13,7 +13,7 @@ export const metadata = {
 
 function Page() {
   return (
-    <main className={`${cairoClass} font-Cairo`}>
+    <main className={`${cairoClass} `}>
       <section className={`"flex  pb-[100px] py-[150px] md:pt-[200px] `}>
         <div className="container md:justify-center md:items-center  flex flex-col ">
           <div className=" textContent md:text-center flex flex-col md:items-center">
