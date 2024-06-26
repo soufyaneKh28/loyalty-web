@@ -12,6 +12,7 @@ import Statis from "./Statis";
 import CallTo from "./CallTo";
 import IconsSlider from "./IconsSlider";
 import ContactMap from "./ContactMap";
+import MotionContainer from "./MotionContainer";
 
 export {
   Services,
@@ -28,4 +29,5 @@ export {
   CallTo,
   IconsSlider,
   ContactMap,
+  MotionContainer,
 };

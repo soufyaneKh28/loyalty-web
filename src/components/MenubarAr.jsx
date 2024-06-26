@@ -95,7 +95,7 @@ export default function MenubarAr() {
           isScrolled || isOpen ? "scrolled" : ""
         }  ${cairoClass} header py-4  flex flex-col  items-center font-Ibm fixed w-full bg-white z-[50] transition-all`}
       >
-        <div className="container flex justify-between ">
+        <div className="container flex items-center justify-between ">
           <Link href="/ar/home">
             <Image src={logo} alt="logo" width={80} />
           </Link>
@@ -171,15 +171,39 @@ export default function MenubarAr() {
               </Link>
             </ul>
           </nav>
-          <select
-            className=" hidden md:flex"
-            value={selectedLanguage}
-            onChange={(e) => onChange(e)}
-          >
-            <option value="en">en</option>
+          <div className="language relative hidden md:block">
+            <div className=" w-[70px] p-2 font-bold    ">
+              <div className=" items-center gap-1 flex hover:text-secondary transition-colors cursor-pointer">
+                <p className=" font-bold">ar</p>
+                <svg
+                  className=" svg fill-current ms-2 h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                </svg>
+              </div>
+            </div>
+            <ul
+              className="  shadow-lg absolute bg-white hidden   flex-col px-1 rounded-[5px] border-1 border-solid border-black"
+              value={selectedLanguage}
+              onChange={(e) => onChange(e)}
+            >
+              <li
+                className=" hover:text-secondary transition-colors cursor-pointer"
+                onClick={() => setSelectedLanguage("en")}
+              >
+                English
+              </li>
 
-            <option value="ar">العربية</option>
-          </select>
+              <li
+                className=" hover:text-secondary transition-colors cursor-pointer"
+                onClick={() => setSelectedLanguage("ar")}
+              >
+                Arabic
+              </li>
+            </ul>
+          </div>
 
           <motion.button
             className="md:hidden"
@@ -226,17 +250,39 @@ export default function MenubarAr() {
                 </motion.li>
               ))}
 
-              <select
-                className=" bg-transparent py-1 px-5 border rounded focus:outline-none"
-                value={selectedLanguage}
-                onChange={(e) => onChange(e)}
-              >
-                <option value="en">en</option>
+              <div className="language relative">
+                <div className=" w-full  font-bold">
+                  <div className=" items-center justify-between gap-1 flex hover:text-secondary transition-colors cursor-pointer">
+                    <p>ar</p>
+                    <svg
+                      className=" svg fill-current ms-2 h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                    </svg>
+                  </div>
+                </div>
+                <ul
+                  className="  shadow-lg  bg-white hidden   flex-col px-1 rounded-[5px] border-1 border-solid border-black"
+                  value={selectedLanguage}
+                  onChange={(e) => onChange(e)}
+                >
+                  <li
+                    className=" hover:text-secondary transition-colors cursor-pointer"
+                    onClick={() => setSelectedLanguage("en")}
+                  >
+                    English
+                  </li>
 
-                <option value="ar" className="">
-                  العربية
-                </option>
-              </select>
+                  <li
+                    className=" hover:text-secondary transition-colors cursor-pointer"
+                    onClick={() => setSelectedLanguage("ar")}
+                  >
+                    Arabic
+                  </li>
+                </ul>
+              </div>
             </motion.ul>
           </motion.div>
         )}

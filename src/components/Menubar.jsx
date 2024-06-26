@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 
 import { motion } from "framer-motion";
-import { logo, menu, close } from "../../public";
+import { logo, menu, close, downArrow } from "../../public";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -36,8 +36,6 @@ const links = [
   },
 ];
 
-
-
 export const poppins = Poppins({
   family: "Poppins",
   subsets: ["latin"],
@@ -49,7 +47,7 @@ export default function Menubar({ params }) {
   // console.log(params);
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
   const router = useRouter();
 
   useEffect(() => {
@@ -99,7 +97,7 @@ export default function Menubar({ params }) {
           isScrolled || isOpen ? "scrolled" : ""
         } header py-4  flex flex-col  items-center fixed w-full bg-white z-[50] transition-all`}
       >
-        <div className="container flex justify-between ">
+        <div className="container flex justify-between items-center ">
           <Link href="/">
             <Image src={logo} alt="logo" width={80} />
           </Link>
@@ -175,17 +173,50 @@ export default function Menubar({ params }) {
               </Link>
             </ul>
           </nav>
-          <select
+          {/* <select
             className=" hidden md:flex px-1 rounded-[5px] border-1 border-solid border-black"
             value={selectedLanguage}
             onChange={(e) => onChange(e)}
           >
             <option value="en" className="">
-              en
+              {selectedLanguage}
             </option>
 
             <option value="ar">ar</option>
-          </select>
+          </select> */}
+          <div className="language relative hidden md:block">
+            <div className=" w-[70px] p-2 font-bold    ">
+              <div className=" items-center gap-1 flex hover:text-secondary transition-colors cursor-pointer">
+                <p>en</p>
+                <svg
+                  className=" svg fill-current ms-2 h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                </svg>
+              </div>
+            </div>
+            <ul
+              className="  shadow-lg absolute bg-white hidden   flex-col px-1 rounded-[5px] border-1 border-solid border-black"
+              value={selectedLanguage}
+              onChange={(e) => onChange(e)}
+            >
+              <li
+                className=" hover:text-secondary transition-colors cursor-pointer"
+                onClick={() => setSelectedLanguage("en")}
+              >
+                English
+              </li>
+
+              <li
+                className=" hover:text-secondary transition-colors cursor-pointer"
+                onClick={() => setSelectedLanguage("ar")}
+              >
+                Arabic
+              </li>
+            </ul>
+          </div>
 
           <motion.button
             className="md:hidden"
@@ -333,17 +364,39 @@ export default function Menubar({ params }) {
                   Contact Us
                 </Link>
               </motion.li>
-              <select
-                className=" bg-transparent py-1 px-5 border rounded focus:outline-none"
-                value={selectedLanguage}
-                onChange={(e) => onChange(e)}
-              >
-                <option value="en">en</option>
+              <div className="language relative">
+                <div className=" w-full  font-bold">
+                  <div className=" items-center justify-between gap-1 flex hover:text-secondary transition-colors cursor-pointer">
+                    <p>en</p>
+                    <svg
+                      className=" svg fill-current ms-2 h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                    </svg>
+                  </div>
+                </div>
+                <ul
+                  className="  shadow-lg  bg-white hidden   flex-col px-1 rounded-[5px] border-1 border-solid border-black"
+                  value={selectedLanguage}
+                  onChange={(e) => onChange(e)}
+                >
+                  <li
+                    className=" hover:text-secondary transition-colors cursor-pointer"
+                    onClick={() => setSelectedLanguage("en")}
+                  >
+                    English
+                  </li>
 
-                <option value="ar" className="">
-                  العربية
-                </option>
-              </select>
+                  <li
+                    className=" hover:text-secondary transition-colors cursor-pointer"
+                    onClick={() => setSelectedLanguage("ar")}
+                  >
+                    Arabic
+                  </li>
+                </ul>
+              </div>
             </motion.ul>
           </motion.div>
         )}
