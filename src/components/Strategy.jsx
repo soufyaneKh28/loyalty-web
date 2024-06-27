@@ -1,4 +1,5 @@
 import React from "react";
+import { MotionLayout } from ".";
 
 const Strategy = ({ object }) => {
   return (
@@ -25,22 +26,24 @@ const Strategy = ({ object }) => {
               <div className=" box-circle " />
             </div>
             <div className=" circle " />
-            <div className="item  z-10 relative ">
-              <div className=" w-full py-10 ">
-                <h4 className=" text-[18px] font-semibold">
-                  {object.items.item1.title}
-                </h4>
-              </div>
-
-              <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
-                <div className=" num absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
-                  {object.items.item1.num}
+            <MotionLayout delay={1}>
+              <div className="item  z-10 relative ">
+                <div className=" w-full py-10 ">
+                  <h4 className=" text-[18px] font-semibold">
+                    {object.items.item1.title}
+                  </h4>
                 </div>
-                <p className="text-[14px] mt-4 font-normal ">
-                  {object.items.item1.description}
-                </p>
+
+                <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
+                  <div className=" num absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
+                    {object.items.item1.num}
+                  </div>
+                  <p className="text-[14px] mt-4 font-normal ">
+                    {object.items.item1.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </MotionLayout>
           </div>
 
           <div className=" item-container relative">
@@ -51,23 +54,25 @@ const Strategy = ({ object }) => {
               <div className=" box-circle  " />
             </div>
             <div className=" circle " />
-            <div className="item ">
-              <div className=" w-full py-10 ">
-                <h4 className=" text-[18px] font-semibold">
-                  {" "}
-                  {object.items.item2.title}
-                </h4>
-              </div>
-
-              <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
-                <div className="num absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
-                  {object.items.item2.num}
+            <MotionLayout delay={1.4}>
+              <div className="item ">
+                <div className=" w-full py-10 ">
+                  <h4 className=" text-[18px] font-semibold">
+                    {" "}
+                    {object.items.item2.title}
+                  </h4>
                 </div>
-                <p className="text-[14px] mt-4 font-normal">
-                  {object.items.item2.description}
-                </p>
+
+                <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
+                  <div className="num absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
+                    {object.items.item2.num}
+                  </div>
+                  <p className="text-[14px] mt-4 font-normal">
+                    {object.items.item2.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </MotionLayout>
           </div>
 
           <div className=" item-container relative">
@@ -76,23 +81,25 @@ const Strategy = ({ object }) => {
               <div className="box-circle " />
             </div>
             <div className=" circle  " />
-            <div className="item ">
-              <div className=" w-full py-10 ">
-                <h4 className=" text-[18px] font-semibold">
-                  {" "}
-                  {object.items.item3.title}
-                </h4>
-              </div>
-
-              <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
-                <div className="num  absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
-                  {object.items.item3.num}
+            <MotionLayout delay={1.8}>
+              <div className="item ">
+                <div className=" w-full py-10 ">
+                  <h4 className=" text-[18px] font-semibold">
+                    {" "}
+                    {object.items.item3.title}
+                  </h4>
                 </div>
-                <p className="text-[14px] mt-4 font-normal">
-                  {object.items.item3.description}
-                </p>
+
+                <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
+                  <div className="num  absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
+                    {object.items.item3.num}
+                  </div>
+                  <p className="text-[14px] mt-4 font-normal">
+                    {object.items.item3.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </MotionLayout>
           </div>
         </div>
       </div>

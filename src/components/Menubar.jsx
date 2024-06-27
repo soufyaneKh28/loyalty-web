@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 
 import { motion } from "framer-motion";
-import { logo, menu, close, downArrow } from "../../public";
+import { logo, menu, close, downArrow, uk, ar } from "../../public";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -91,13 +91,13 @@ export default function Menubar({ params }) {
   );
 
   return (
-    <>
+    <div className="container flex justify-center">
       <header
         className={`${poppins.className}   ${
           isScrolled || isOpen ? "scrolled" : ""
-        } header py-4  flex flex-col  items-center fixed w-full bg-white z-[50] transition-all`}
+        } header py-4 rounded-[20px] md:rounded-full flex flex-col max-w-[95%] md:max-w-[1200px]  mt-3 items-center fixed w-full bg-white z-[50]  transition-all`}
       >
-        <div className="container flex justify-between items-center ">
+        <div className="container flex justify-between  items-center ">
           <Link href="/">
             <Image src={logo} alt="logo" width={80} />
           </Link>
@@ -185,9 +185,12 @@ export default function Menubar({ params }) {
             <option value="ar">ar</option>
           </select> */}
           <div className="language relative hidden md:block">
-            <div className=" w-[70px] p-2 font-bold    ">
-              <div className=" items-center gap-1 flex hover:text-secondary transition-colors cursor-pointer">
-                <p>en</p>
+            <div className="  p-2 font-bold    ">
+              <div className=" items-center justify-center gap-1 flex hover:text-secondary transition-colors cursor-pointer">
+                <div className="flex">
+                  <Image src={uk} alt="uk" width={25} />
+                  <p className=" ms-1">En</p>
+                </div>
                 <svg
                   className=" svg fill-current ms-2 h-4 w-4"
                   xmlns="http://www.w3.org/2000/svg"
@@ -206,14 +209,20 @@ export default function Menubar({ params }) {
                 className=" hover:text-secondary transition-colors cursor-pointer"
                 onClick={() => setSelectedLanguage("en")}
               >
-                English
+                <div className="flex items-center">
+                  <Image src={uk} alt="uk" width={25} />
+                  <p className=" ms-1">English</p>
+                </div>
               </li>
 
               <li
                 className=" hover:text-secondary transition-colors cursor-pointer"
                 onClick={() => setSelectedLanguage("ar")}
               >
-                Arabic
+                <div className="flex items-center">
+                  <Image src={ar} alt="ar" width={25} />
+                  <p className=" ms-1">Arabic</p>
+                </div>
               </li>
             </ul>
           </div>
@@ -349,7 +358,7 @@ export default function Menubar({ params }) {
                 animate={{ x: 0, opacity: 1 }}
               >
                 <Link
-                  href={`/en/services`}
+                  href={`/en/blogs`}
                   onClick={() => setIsOpen(false)}
                   className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
@@ -408,6 +417,6 @@ export default function Menubar({ params }) {
           </motion.div>
         )}
       </header>
-    </>
+    </div>
   );
 }

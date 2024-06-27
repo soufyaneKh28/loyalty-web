@@ -67,7 +67,7 @@ function IconsSlider() {
     //   </div>
     // </div>
 
-    <div className="logos ">
+    <div className="logos " dir="ltr">
       <div className="logos-slide ">
         <div>
           <Image src={google} alt="google" />

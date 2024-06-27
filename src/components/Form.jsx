@@ -53,7 +53,7 @@ const Form = ({ object }) => {
         />
       </div>
 
-      <button className=" bg-secondary py-3 px-10 mt-5 rounded-full ">
+      <button className=" bg-secondary py-3 px-10 mt-5 rounded-full font-bold ">
         {object.btn}
       </button>
     </form>

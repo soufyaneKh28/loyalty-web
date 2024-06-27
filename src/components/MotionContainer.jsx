@@ -14,7 +14,8 @@ const MotionContainer = ({
       initial={initial}
       animate={animate}
       transition={transition}
-      whileInView={whileInView}
+      // viewport={{ once: true, amount: 0.5 }}
+      whileInView="animate"
     >
       {children}
     </motion.div>

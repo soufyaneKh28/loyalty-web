@@ -12,6 +12,7 @@ import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import Form from "@/components/Form";
 import Link from "next/link";
 import { facebook, instagram, linkedin, x } from "../../../../../../public";
+import { MotionLayout } from "@/components";
 
 // export const generateMetaData = ({ params }): Metadata => {
 //   return {
@@ -75,33 +76,35 @@ const Page = ({ params }) => {
         <section>
           <div className=" container my-10 mb-[200px] flex gap-5  flex-col md:flex-row justify-between">
             <div className="blogs-cont w-full md:w-[90%] flex-wrap flex flex-col md:flex-row items-center md:items-start justify-start">
-              <div className="blog m-2 ">
-                <div className=" h-[225px] overflow-hidden rounded-[20px]">
-                  <Image
-                    src={blogObj.img}
-                    width={"100%"}
-                    height={"100%"}
-                    alt="alt"
-                    className=" h-[100%] object-cover hover:scale-110 transition-all cursor-pointer "
-                  />
-                </div>
-
-                <div className=" flex justify-between mt-4 items-center">
-                  <div className="date text-[#807B75] font-medium">
-                    {blogObj.date}
+              <MotionLayout delay={0.3}>
+                <div className="blog m-2 ">
+                  <div className=" h-[225px] overflow-hidden rounded-[20px]">
+                    <Image
+                      src={blogObj.img}
+                      width={"100%"}
+                      height={"100%"}
+                      alt="alt"
+                      className=" h-[100%] object-cover hover:scale-110 transition-all cursor-pointer "
+                    />
                   </div>
-                  <div className="tag bg-[#B0D9DF] px-3 py-1 texr-[#003642] font-medium rounded-[5px]">
-                    {blogObj.tag}
+
+                  <div className=" flex justify-between mt-4 items-center">
+                    <div className="date text-[#807B75] font-medium">
+                      {blogObj.date}
+                    </div>
+                    <div className="tag bg-[#B0D9DF] px-3 py-1 texr-[#003642] font-medium rounded-[5px]">
+                      {blogObj.tag}
+                    </div>
+                  </div>
+                  <h3 className="  text-[22px] leading-8 mt-3 cursor-pointer  transition-all font-semibold">
+                    {blogObj.title}
+                  </h3>
+
+                  <div className=" my-5">
+                    <p>{blogObj.description}</p>
                   </div>
                 </div>
-                <h3 className="  text-[22px] leading-8 mt-3 cursor-pointer  transition-all font-semibold">
-                  {blogObj.title}
-                </h3>
-
-                <div className=" my-5">
-                  <p>{blogObj.description}</p>
-                </div>
-              </div>
+              </MotionLayout>
             </div>
             <div className="side-bar  ">
               <div>

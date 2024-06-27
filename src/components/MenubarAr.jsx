@@ -89,11 +89,11 @@ export default function MenubarAr() {
 
   // console.log(pathname);
   return (
-    <>
+    <div className="container flex justify-center">
       <header
         className={` ${
           isScrolled || isOpen ? "scrolled" : ""
-        }  ${cairoClass} header py-4  flex flex-col  items-center font-Ibm fixed w-full bg-white z-[50] transition-all`}
+        }  ${cairoClass} header py-4 rounded-[20px] md:rounded-full  flex flex-col max-w-[95%] md:max-w-[1200px]  mt-3  items-center font-Ibm fixed w-full bg-white z-[50] transition-all`}
       >
         <div className="container flex items-center justify-between ">
           <Link href="/ar/home">
@@ -173,7 +173,7 @@ export default function MenubarAr() {
           </nav>
           <div className="language relative hidden md:block">
             <div className=" w-[70px] p-2 font-bold    ">
-              <div className=" items-center gap-1 flex hover:text-secondary transition-colors cursor-pointer">
+              <div className=" items-center justify-center gap-1 flex hover:text-secondary transition-colors cursor-pointer">
                 <p className=" font-bold">ar</p>
                 <svg
                   className=" svg fill-current ms-2 h-4 w-4"
@@ -378,6 +378,6 @@ export default function MenubarAr() {
           </motion.div>
         )}
       </header>
-    </>
+    </div>
   );
 }

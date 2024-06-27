@@ -6,12 +6,14 @@ import {
   facebook,
   instagram,
   linkedin,
+  nextSvg,
   projectDe,
   soufyane1,
   x,
 } from "../../../../public";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { MotionContainer, MotionLayout } from "@/components";
 
 const socialMedia = [
   {
@@ -63,18 +65,30 @@ function Blogs({ searchParams }) {
       <section className={`"flex  pb-5 py-[150px] `}>
         <div className="container md:justify-center md:items-center  flex flex-col ">
           <div className=" textContent md:text-center flex flex-col md:items-center">
-            <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-bold text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
-              Our <span className=" text-secondary">Latest</span> Posts
-            </h1>
-            <p className=" mt-[10px] max-w-[300px] md:max-w-[800px] text-[#686567] text-[16px]  font-medium leading-[27px]">
-              Check out our specialized articles on marketing and business,
-              valuable articles on the importance of marketing, programming, and
-              design in different fields. Digitization is a vast and innovative
-              world, but it is actually a science that is developing very
-              quickly and at a very impressive rate. Read some articles
-              regarding digital marketing, programming, design, and how to apply
-              them scientifically and practically on the ground.
-            </p>
+            <MotionContainer
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.3 }}
+            >
+              <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-bold text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
+                Our <span className=" text-secondary">Latest</span> Posts
+              </h1>
+            </MotionContainer>
+            <MotionContainer
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.6 }}
+            >
+              <p className=" mt-[10px] max-w-[300px] md:max-w-[800px] text-[#686567] text-[16px]  font-medium leading-[27px]">
+                Check out our specialized articles on marketing and business,
+                valuable articles on the importance of marketing, programming,
+                and design in different fields. Digitization is a vast and
+                innovative world, but it is actually a science that is
+                developing very quickly and at a very impressive rate. Read some
+                articles regarding digital marketing, programming, design, and
+                how to apply them scientifically and practically on the ground.
+              </p>
+            </MotionContainer>
           </div>
         </div>
       </section>
@@ -87,35 +101,37 @@ function Blogs({ searchParams }) {
                 .reverse()
                 .slice((page - 1) * itemsPerPage, page * itemsPerPage)
                 .map((blog, i) => (
-                  <div className="blog m-2 max-w-[360px]" key={i}>
-                    <div className=" h-[225px] overflow-hidden rounded-[20px]">
-                      <Link
-                        href={`/en/blogs/${blog.id}/${blog.url}`}
-                        className="h-[100%] w-full block"
-                      >
-                        <Image
-                          src={blog.img}
-                          width={"100%"}
-                          height={"100%"}
-                          alt="alt"
-                          className=" h-[100%] object-cover hover:scale-110 transition-all cursor-pointer "
-                        />
+                  <MotionLayout delay={0.3 * i} key={i}>
+                    <div className="blog m-2 max-w-[360px]">
+                      <div className=" h-[225px] overflow-hidden rounded-[20px]">
+                        <Link
+                          href={`/en/blogs/${blog.id}/${blog.url}`}
+                          className="h-[100%] w-full block"
+                        >
+                          <Image
+                            src={blog.img}
+                            width={"100%"}
+                            height={"100%"}
+                            alt="alt"
+                            className=" h-[100%] object-cover hover:scale-110 transition-all cursor-pointer "
+                          />
+                        </Link>
+                      </div>
+                      <Link href={`/en/blogs/${blog.id}/${blog.url}`}>
+                        <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-semibold">
+                          {blog.title}
+                        </h3>
                       </Link>
-                    </div>
-                    <Link href={`/en/blogs/${blog.id}/${blog.url}`}>
-                      <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-semibold">
-                        {blog.title}
-                      </h3>
-                    </Link>
-                    <div className=" flex justify-between mt-4 items-center">
-                      <div className="date text-[#807B75] font-medium">
-                        {blog.date}
-                      </div>
-                      <div className="tag bg-[#B0D9DF] px-3 py-1 texr-[#003642] font-medium rounded-[5px]">
-                        {blog.tag}
+                      <div className=" flex justify-between mt-4 items-center">
+                        <div className="date text-[#807B75] font-medium">
+                          {blog.date}
+                        </div>
+                        <div className="tag bg-[#B0D9DF] px-3 py-1 texr-[#003642] font-medium rounded-[5px]">
+                          {blog.tag}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </MotionLayout>
                 ))}
             </div>
 
@@ -128,9 +144,13 @@ function Blogs({ searchParams }) {
                         href={`/en/blogs/?${new URLSearchParams({
                           page: String(page > 1 ? page - 1 : 1),
                         }).toString()}`}
-                        className="flex items-center  font-bold justify-center px-5 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                        className="flex items-center  font-bold justify-center px-1 h-10 ms-0 leading-tight rounded-[10px]  text-gray-500 bg-white border border-e-0 border-gray-300 "
                       >
-                        Previous
+                        <Image
+                          src={nextSvg}
+                          alt="next"
+                          className=" rotate-[180deg]"
+                        ></Image>
                       </Link>
                     </li>
                   )}
@@ -142,7 +162,7 @@ function Blogs({ searchParams }) {
                           Number(searchParams.page) === num
                             ? " text-secondary"
                             : ""
-                        } items-center justify-center px-5 h-10 leading-tight rounded-[5px]  font-bold text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
+                        } items-center justify-center px-5 h-10 leading-tight rounded-[10px]  font-bold text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
                       >
                         {num}
                       </Link>
@@ -150,7 +170,7 @@ function Blogs({ searchParams }) {
                   ))}
                   {Number(searchParams.page) ===
                   Math.ceil(productsLength / itemsPerPage) ? null : (
-                    <li>
+                    <li className=" rounded-[10px]">
                       <Link
                         href={`/en/blogs/?${new URLSearchParams({
                           page: String(
@@ -159,9 +179,9 @@ function Blogs({ searchParams }) {
                               : Math.ceil(productsLength / itemsPerPage)
                           ),
                         }).toString()}`}
-                        className="flex items-center justify-center px-5 h-10 font-bold leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                        className="flex items-center justify-center px-1 h-10 rounded-[10px]   font-bold leading-tight text-gray-500 bg-white border border-gray-300  hover:bg-gray-100  "
                       >
-                        Next
+                        <Image src={nextSvg} alt="next" className=""></Image>
                       </Link>
                     </li>
                   )}

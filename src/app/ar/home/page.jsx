@@ -10,7 +10,7 @@ import Features from "@/components/Features";
 
 import Team from "@/components/Team";
 import Clients from "@/components/Clients";
-import { CallTo, IconsSlider, Statis, Services } from "@/components";
+import { CallTo, IconsSlider, Statis, Services, Button } from "@/components";
 import { cairoClass } from "@/app/font";
 
 export const metadata = {
@@ -25,15 +25,13 @@ export default function Home() {
         <div className="container md:justify-between md:items-center  flex flex-col md:flex-row">
           <div className=" textContent">
             <h1 className=" font-black text-[40px] max-w-[350px] md:text-[50px] md:max-w-[500px]  text-primaryDark leading-[48px] md:leading-[60px]">
-              بناء المنتج الرقمي والعلامة التجارية والخبرة
+              نقدم لك <span className=" text-secondary">النجاح </span>الرقمي{" "}
             </h1>
-            <p className="  mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px]  font-medium">
+            <p className="   max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px] my-3 mt-5 leading-7  font-medium">
               نحن وكالة تسويق ووكالة رقمية، نقدم الكثير من الخدمات نحن وكالة
               تسويق ووكالة رقمية، نقدم الكثير من الخدمات
             </p>
-            <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
-              تواصل معنا
-            </button>
+            <Button>تواصل معنا</Button>
           </div>
           <div className=" flex justify-end relative">
             <BounceBall />
@@ -75,9 +73,7 @@ export default function Home() {
             <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
               {dataAr.grow.description}
             </p>
-            <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
-              {dataAr.grow.btn}
-            </button>
+            <Button>{dataAr.grow.btn}</Button>
           </div>
           <div className=" flex justify-end relative mt-4 md:mt-0 ">
             <Image
@@ -141,9 +137,7 @@ export default function Home() {
           <p className="text-center max-w-[550px] font-normal text-white mt-3">
             {dataAr.members.description}
           </p>
-          <button className="w-fit text-primary text-[14px] font-medium mt-5  bg-secondary rounded-full px-9 py-3">
-            {dataAr.members.btn}{" "}
-          </button>
+          <Button>{dataAr.members.btn} </Button>
         </div>
         <Team members={dataAr.members.items} />
       </section>

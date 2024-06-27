@@ -6,6 +6,7 @@ import homeHero from "./homeHero.png";
 import Marketing from "./marketing.png";
 import prev from "./prev.png";
 import next from "./next.png";
+import nextSvg from "./next.svg";
 
 import contact from "./contact.png";
 import strategy from "./Strategy.svg";
@@ -45,6 +46,8 @@ import soufyane2 from "./soufyane2.png";
 import soufyane3 from "./soufyane3.png";
 
 import downArrow from "./down-arrow.png";
+import uk from "./uk.png";
+import ar from "./ar.png";
 export {
   logo,
   menu,
@@ -87,4 +90,7 @@ export {
   soufyane2,
   soufyane3,
   downArrow,
+  nextSvg,
+  uk,
+  ar,
 };

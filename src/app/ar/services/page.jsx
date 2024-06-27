@@ -1,6 +1,7 @@
 import { cairoClass } from "@/app/font";
 import dataAr from "@/app/content-ar";
 import {
+  Button,
   CallTo,
   Features,
   IconsSlider,
@@ -8,7 +9,6 @@ import {
   Strategy,
 } from "@/components";
 import React from "react";
-
 
 export const metadata = {
   title: "خدماتنا",
@@ -27,9 +27,7 @@ const page = () => {
             <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
               {dataAr.heroServices.description}
             </p>
-            <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
-              {dataAr.heroServices.cta}
-            </button>
+            <Button>{dataAr.heroServices.cta}</Button>
           </div>
         </div>
       </section>

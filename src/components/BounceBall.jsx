@@ -10,21 +10,19 @@ export default function BounceBall() {
     repeat: Infinity,
   };
   return (
-    <MotionLayout>
-      <motion.div
-        animate={{
-          y: ["5%", "-2%", "5%"],
+    <motion.div
+      animate={{
+        y: ["5%", "-2%", "5%"],
 
-          borderRadius: ["100%"],
-        }}
-        transition={{
-          duration: 2,
-          ease: "easeInOut",
+        borderRadius: ["100%"],
+      }}
+      transition={{
+        duration: 2,
+        ease: "easeInOut",
 
-          repeat: Infinity,
-        }}
-        className=" rtl:left-[-100px] w-[360px] h-[360px] md:w-[460px] md:h-[460px] 2xl:w-[500px] 2xl:h-[500px] bg-primaryDark rounded-full absolute z-[-1] ltr:right-[-100px]  "
-      />
-    </MotionLayout>
+        repeat: Infinity,
+      }}
+      className=" rtl:left-[-100px] w-[360px] h-[360px] md:w-[460px] md:h-[460px] 2xl:w-[500px] 2xl:h-[500px] bg-primaryDark rounded-full absolute z-[-1] ltr:right-[-100px]  "
+    />
   );
 }

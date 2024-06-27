@@ -1,4 +1,4 @@
-import { CallTo, IconsSlider, Statis } from "@/components";
+import { Button, CallTo, IconsSlider, Statis } from "@/components";
 import Team from "@/components/Team";
 import Image from "next/image";
 import React from "react";
@@ -23,9 +23,7 @@ function Page() {
             <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px] font-medium leading-[27px]">
               {dataAr.heroAbout.description}
             </p>
-            <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
-              {dataAr.heroAbout.cta}
-            </button>
+            <Button>{dataAr.heroAbout.cta}</Button>
           </div>
         </div>
       </section>
@@ -158,9 +156,7 @@ function Page() {
             <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
               {dataAr.grow.description}
             </p>
-            <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
-              {dataAr.grow.btn}
-            </button>
+            <Button>{dataAr.grow.btn}</Button>
           </div>
           <div className=" flex justify-end relative mt-4 md:mt-0 ">
             <Image
@@ -187,9 +183,7 @@ function Page() {
           <p className="text-center max-w-[550px] font-normal text-white">
             {dataAr.members.description}
           </p>
-          <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
-            {dataAr.members.btn}
-          </button>
+          <Button>{dataAr.members.btn}</Button>
         </div>
         <Team members={dataAr.members.items} />
       </section>

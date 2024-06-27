@@ -13,7 +13,8 @@ import CallTo from "./CallTo";
 import IconsSlider from "./IconsSlider";
 import ContactMap from "./ContactMap";
 import MotionContainer from "./MotionContainer";
-
+import Button from "./ui/Button";
+import { MotionLayout } from "./MotionLayout";
 export {
   Services,
   Strategy,
@@ -30,4 +31,6 @@ export {
   IconsSlider,
   ContactMap,
   MotionContainer,
+  Button,
+  MotionLayout,
 };

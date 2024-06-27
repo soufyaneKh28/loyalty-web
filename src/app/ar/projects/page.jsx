@@ -1,6 +1,6 @@
 import dataAr from "@/app/content-ar";
 import { cairoClass, poppinsClass } from "@/app/font";
-import { CallTo } from "@/components";
+import { Button, CallTo } from "@/components";
 import { poppins } from "@/components/Menubar";
 import Image from "next/image";
 import React from "react";
@@ -120,9 +120,7 @@ const page = ({ searchParams }) => {
             <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
               {dataAr.heroAbout.description}
             </p>
-            <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
-              {dataAr.heroAbout.cta}
-            </button>
+            <Button>{dataAr.heroAbout.cta}</Button>
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import { poppinsClass } from "@/app/font";
-import { BounceBall } from "@/components";
+import { BounceBall, Button } from "@/components";
 import Image from "next/image";
 import React from "react";
 import { homeHero, innov1, innovaition } from "../../../../public";
@@ -45,22 +45,16 @@ const page = () => {
         <div className="container md:justify-between md:items-center  flex flex-col md:flex-row">
           <div className=" textContent">
             <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[500px] font-bold text-primaryDark leading-[48px] md:leading-[60px]">
-              Our <span className=" text-secondary">Innovations</span>
+              Pioneering Digital Innovations
             </h1>
             <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px]  font-medium">
               Our innovations department showcases the stories behind the brands
               we&apos;ve crafted, along with our name and logo. Here,
               you&apos;ll discover what sets us apart and gain insights into
-              creating unique brands
-              <br />
-              <br />
-              in the market. Crafting a brand requires talent and business
-              acumen, with inspiration and proficiency culminating in
-              outstanding work.
+              creating unique brands in the market. Crafting a brand requires
+              talent and business
             </p>
-            <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
-              Get Started
-            </button>
+            <Button>Get Started</Button>
           </div>
           <div className=" flex justify-end relative">
             <BounceBall />
@@ -110,25 +104,28 @@ const page = () => {
               key={i}
             >
               <div className="innov-text my-5 flex flex-col items-start justify-center ">
-                <h2 className="text-[36px] text-white font-bold">
-                  {innov.title}
-                </h2>
-                <p className=" text-white max-w-[370px] font-normal mt-4">
+                <Link href={`/en/innovations/${i + 1}/${innov.url}`}>
+                  <h2 className="text-[36px] text-white font-bold hover:text-secondary transition-colors">
+                    {innov.title}
+                  </h2>
+                </Link>
+                <p className=" text-white max-w-[370px] font-normal mt-4 leading-7">
                   {innov.description}
                 </p>
-                <Link
-                  href={`/en/innovations/${i + 1}/${innov.url}`}
-                  className="w-fit text-primary text-[14px] font-medium my-4  bg-secondary rounded-full px-9  py-3"
-                >
-                  Continue Story
-                </Link>
+                <Button>
+                  <Link href={`/en/innovations/${i + 1}/${innov.url}`}>
+                    Continue Story
+                  </Link>
+                </Button>
               </div>
               <div className="innov-img overflow-hidden max-w-[422px] h-[438px] rounded-[10px]">
-                <Image
-                  src={innov.img}
-                  alt="innov1"
-                  className=" hover:scale-110  w-full h-[100%] object-cover transition-all"
-                />
+                <Link href={`/en/innovations/${i + 1}/${innov.url}`}>
+                  <Image
+                    src={innov.img}
+                    alt="innov1"
+                    className=" hover:scale-110  w-full h-[100%] object-cover transition-all"
+                  />
+                </Link>
               </div>
             </div>
           ))}
