@@ -705,3 +705,76 @@
   transform: rotate(-180deg);
   transition: 0.3s ease all;
 }
+
+
+/* logos slider */
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  display: flex;
+  padding: 60px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.logos:hover .logos-slide {
+  /* animation-play-state: paused; */
+}
+
+.logos-slide {
+  display: flex;
+  /* gap: 50px; */
+  animation: 50s slide infinite linear;
+}
+
+
+@media (min-width: 750px) {
+  .logos-slide {
+
+    gap: 100px;
+
+  }
+}
+
+.logos-slide img {
+  height: 100%;
+  width: 100%;
+ object-fit: cover; 
+}
+
+.logos-slide div {
+  /* height: 75px; */
+  width: 70px;
+  
+  margin: 0 40px;
+}

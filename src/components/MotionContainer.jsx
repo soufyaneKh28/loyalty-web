@@ -2,9 +2,20 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-const MotionContainer = ({ children, initial, animate, transition }) => {
+const MotionContainer = ({
+  children,
+  initial,
+  animate,
+  transition,
+  whileInView,
+}) => {
   return (
-    <motion.div initial={initial} animate={animate} transition={transition}>
+    <motion.div
+      initial={initial}
+      animate={animate}
+      transition={transition}
+      whileInView={whileInView}
+    >
       {children}
     </motion.div>
   );
