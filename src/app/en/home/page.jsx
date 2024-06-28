@@ -72,7 +72,6 @@ export default function Home() {
                 alt="homeHero"
                 className=" md:w-[420px] "
                 width={350}
-                priority={true}
               />
             </MotionContainer>
           </div>
@@ -116,7 +115,6 @@ export default function Home() {
                 alt="homeHero"
                 className=" md:w-[420px] mr-[-40px] "
                 width={350}
-                priority={true}
               />
             </div>
           </div>
