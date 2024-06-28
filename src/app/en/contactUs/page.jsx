@@ -101,7 +101,7 @@ const page = () => {
                 <div className=" flex flex-col items-start">
                   <div className="flex items-center mb-[-5px]">
                     <div className="w-[25px] h-[2px] bg-white mr-1"></div>
-                    <h5 className=" text-white">Our office</h5>
+                    <p className=" text-white">Our office</p>
                   </div>
                   <h2 className="text-[32px] font-bold text-white">
                     See Our Location on The Map

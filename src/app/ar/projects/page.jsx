@@ -128,7 +128,7 @@ const page = ({ searchParams }) => {
         <div className=" flex flex-col items-center">
           <div className="flex items-center mb-[-5px]">
             <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-            <h5 className=" text-secondary">مشاريعنا</h5>
+            <p className=" text-secondary">مشاريعنا</p>
           </div>
           <h2 className="text-[32px] font-bold text-white">
             انظر إلى أحدث مشاريعنا

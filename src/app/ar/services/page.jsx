@@ -36,7 +36,7 @@ const page = () => {
           <div className=" flex flex-col items-start">
             <div className="flex items-center mb-[-5px]">
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-secondary">{dataAr.services.smallTitle}</h5>
+              <p className=" text-secondary">{dataAr.services.smallTitle}</p>
             </div>
             <h2 className="text-[32px] font-bold">{dataAr.services.title}</h2>
           </div>
@@ -73,7 +73,7 @@ const page = () => {
           <div className=" flex flex-col items-center">
             <div className="flex items-center mb-[-5px]">
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-secondary ">{dataAr.partners.smallTitle}</h5>
+              <p className=" text-secondary ">{dataAr.partners.smallTitle}</p>
             </div>
             <h2 className="text-[27px] max-w-[550px] text-center font-bold">
               {dataAr.partners.title}

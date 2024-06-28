@@ -128,7 +128,7 @@ function Page() {
           <div className=" flex flex-col items-center">
             <div className="flex items-center mb-[-5px]">
               <div className="w-[25px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-secondary">من نحن ؟</h5>
+              <p className=" text-secondary">من نحن ؟</p>
             </div>
             <h2 className="text-[32px] font-bold">عملك ينمو معنا</h2>
           </div>
@@ -183,7 +183,7 @@ function Page() {
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">
                 <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-                <h5 className=" text-secondary">{dataAr.stats.smallTitle}</h5>
+                <p className=" text-secondary">{dataAr.stats.smallTitle}</p>
               </div>
               <h2 className="text-[32px] w-[354px] font-bold text-center">
                 {dataAr.stats.title}
@@ -203,7 +203,7 @@ function Page() {
               <div className=" flex flex-col items-start">
                 {/* <div className="flex items-center mb-[-5px]">
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-white">Workflow</h5>
+              <p className=" text-white">Workflow</p>
             </div> */}
                 <h2 className="text-[32px] font-bold w-[350px] md:w-auto  leading-9 mt-3 text-white">
                   {dataAr.grow.title}
@@ -232,7 +232,7 @@ function Page() {
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">
                 <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-                <h5 className=" text-secondary">{dataAr.members.smallTitle}</h5>
+                <p className=" text-secondary">{dataAr.members.smallTitle}</p>
               </div>
               <h2 className="text-[32px] font-bold text-white">
                 {dataAr.members.title}
@@ -252,7 +252,7 @@ function Page() {
           <div className=" flex flex-col items-center">
             <div className="flex items-center mb-[-5px]">
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-secondary ">{dataAr.partners.smallTitle}</h5>
+              <p className=" text-secondary ">{dataAr.partners.smallTitle}</p>
             </div>
             <h2 className="text-[27px] max-w-[550px] text-center font-bold">
               {dataAr.partners.title}

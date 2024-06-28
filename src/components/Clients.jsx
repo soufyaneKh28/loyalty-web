@@ -28,7 +28,7 @@ import { sou } from "../../public";
                     {client.message}
                   </p>
                   <div className="text-white mt-4 text-center md:text-start">
-                    <h5 className=" font-bold">{client.name}</h5>
+                    <p className=" font-bold">{client.name}</p>
                     <p className=" font-light">{client.role}</p>
                   </div>
                 </div>

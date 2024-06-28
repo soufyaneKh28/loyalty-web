@@ -183,9 +183,9 @@ function Blogs({ searchParams }) {
                     </div>
                     <div className=" flex-1 flex-col justify-between ms-3">
                       <Link href={`/ar/blogs/${blog.id}/${blog.url}`}>
-                        <h5 className="  font-medium hover:text-secondary transition-all leading-5 cursor-pointer cur">
+                        <p className="  font-medium hover:text-secondary transition-all leading-5 cursor-pointer cur">
                           {blog.title}
-                        </h5>
+                        </p>
                       </Link>
                       <div className="date text-[#807B75] font-medium mt-3">
                         {blog.date}
