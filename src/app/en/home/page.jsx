@@ -79,7 +79,7 @@ export default function Home() {
         </div>
       </section>
       <section className="py-5">
-        <MotionLayout delay={1.6}>
+        <MotionLayout>
           <div className="container flex flex-col items-center justify-center my-10">
             <div className=" flex flex-col items-start">
               <div className="flex items-center mb-[-5px]">
@@ -96,7 +96,7 @@ export default function Home() {
         </MotionLayout>
       </section>
       <section className="py-5 bg-primaryDark">
-        <MotionLayout delay={1.6}>
+        <MotionLayout>
           <Strategy object={data.strategy} />
           <div className="container flex flex-col md:flex-row md:justify-between md:items-center">
             <div className=" flex flex-col py-4 ">
@@ -126,7 +126,7 @@ export default function Home() {
         <Features object={data.features} />
       </section>
       <section className=" py-10">
-        <MotionLayout delay={1.6}>
+        <MotionLayout>
           <div className="container flex flex-col items-center justify-center ">
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">
@@ -145,7 +145,7 @@ export default function Home() {
         </MotionLayout>
       </section>
       <section className="py-10">
-        <MotionLayout delay={1.6}>
+        <MotionLayout>
           <div className="container flex flex-col items-center justify-center my-10">
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">
@@ -164,7 +164,7 @@ export default function Home() {
         </MotionLayout>
       </section>
       <section className="py-5 pb-10 bg-primaryDark">
-        <MotionLayout delay={1.6}>
+        <MotionLayout>
           <div className="container flex flex-col items-center justify-center my-10">
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">
