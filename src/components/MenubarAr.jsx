@@ -350,10 +350,13 @@ export default function MenubarAr() {
                 </Link>
               </motion.li>
 
-              <div className="language relative">
-                <div className=" w-full  font-bold">
+              <div className="language relative ">
+                <div className="  p-2 font-bold    ">
                   <div className=" items-center justify-between gap-1 flex hover:text-secondary transition-colors cursor-pointer">
-                    <p>ar</p>
+                    <div className="flex">
+                      <Image src={ar} alt="uk" width={25} />
+                      <p className=" ms-1">Ar</p>
+                    </div>
                     <svg
                       className=" svg fill-current ms-2 h-4 w-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -370,16 +373,21 @@ export default function MenubarAr() {
                 >
                   <li
                     className=" hover:text-secondary transition-colors cursor-pointer"
-                    onClick={() => setSelectedLanguage("en")}
-                  >
-                    English
-                  </li>
-
-                  <li
-                    className=" hover:text-secondary transition-colors cursor-pointer"
                     onClick={() => setSelectedLanguage("ar")}
                   >
-                    Arabic
+                    <div className="flex items-center">
+                      <Image src={ar} alt="ar" width={25} />
+                      <p className=" ms-1">العربية</p>
+                    </div>
+                  </li>
+                  <li
+                    className=" hover:text-secondary transition-colors cursor-pointer"
+                    onClick={() => setSelectedLanguage("en")}
+                  >
+                    <div className="flex items-center">
+                      <Image src={uk} alt="uk" width={25} />
+                      <p className=" ms-1">الإنجليزية</p>
+                    </div>
                   </li>
                 </ul>
               </div>

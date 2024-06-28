@@ -380,10 +380,13 @@ export default function Menubar({ params }) {
                   Contact Us
                 </Link>
               </motion.li>
-              <div className="language relative">
-                <div className=" w-full  font-bold">
+              <div className="language relative ">
+                <div className="  p-2 font-bold    ">
                   <div className=" items-center justify-between gap-1 flex hover:text-secondary transition-colors cursor-pointer">
-                    <p>en</p>
+                    <div className="flex">
+                      <Image src={uk} alt="uk" width={25} />
+                      <p className=" ms-1">En</p>
+                    </div>
                     <svg
                       className=" svg fill-current ms-2 h-4 w-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -402,14 +405,20 @@ export default function Menubar({ params }) {
                     className=" hover:text-secondary transition-colors cursor-pointer"
                     onClick={() => setSelectedLanguage("en")}
                   >
-                    English
+                    <div className="flex items-center">
+                      <Image src={uk} alt="uk" width={25} />
+                      <p className=" ms-1">English</p>
+                    </div>
                   </li>
 
                   <li
                     className=" hover:text-secondary transition-colors cursor-pointer"
                     onClick={() => setSelectedLanguage("ar")}
                   >
-                    Arabic
+                    <div className="flex items-center">
+                      <Image src={ar} alt="ar" width={25} />
+                      <p className=" ms-1">Arabic</p>
+                    </div>
                   </li>
                 </ul>
               </div>
