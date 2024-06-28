@@ -22,7 +22,6 @@ const Team = ({ members }) => {
                   alt="member"
                   width={"100%"}
                   height={"100%"}
-                  priority
                 />
               </div>
               <div className=" flex flex-col items-center mt-3">
