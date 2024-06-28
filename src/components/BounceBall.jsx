@@ -22,7 +22,7 @@ export default function BounceBall() {
 
         repeat: Infinity,
       }}
-      className=" rtl:left-[-100px] w-[360px] h-[360px] md:w-[460px] md:h-[460px] 2xl:w-[500px] 2xl:h-[500px] bg-primaryDark rounded-full absolute z-[-1] ltr:right-[-100px]  "
+      className="  rtl:right-[100px] w-[360px] h-[360px] md:w-[460px] md:h-[460px] 2xl:w-[500px] 2xl:h-[500px] bg-primaryDark rounded-full absolute z-[-1] right-[-100px]  "
     />
   );
 }
