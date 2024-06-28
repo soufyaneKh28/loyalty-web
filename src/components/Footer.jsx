@@ -59,7 +59,6 @@ const Footer = () => {
                 alt="location"
                 width={30}
                 height={30}
-                priority
               />
               <Link href={""} className="mx-2 text-white">
                 Maltepe, Cevizlibağ Köprüsü No:8 Kat:11 No:137 , 34010
@@ -70,10 +69,9 @@ const Footer = () => {
               <Image
                 src={phone}
                 className="h-[30px]"
-                alt="location"
+                alt="phone"
                 width={30}
                 height={30}
-                priority
               />
               <Link href={""} className="mx-2 text-white">
                 +90 546 544 41 96
@@ -83,10 +81,9 @@ const Footer = () => {
               <Image
                 src={email}
                 className="h-[30px]"
-                alt="location"
+                alt="email"
                 width={30}
                 height={30}
-                priority
               />
               <Link href={""} className=" mx-2 text-white">
                 info@loyalty.com.tr
@@ -131,7 +128,7 @@ const Footer = () => {
             {socialMedia.map((icon, i) => (
               <Link href={icon.link} key={i}>
                 <div className=" icon w-[50px] h-[50px] hover:bg-white transition-colors bg-secondary rounded-full flex justify-center items-center">
-                  <Image src={icon.icon} alt="facebook" width={28} priority />
+                  <Image src={icon.icon} alt="facebook" width={28} />
                 </div>
               </Link>
             ))}
