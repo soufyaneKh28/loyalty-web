@@ -90,7 +90,7 @@ function Page() {
           <MotionContainer
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.6, delay: 1.4 }}
+            transition={{ duration: 1.6, delay: 1 }}
           >
             <div className="embla__slide">
               <div className="embla__slide__number transition-colors">
@@ -113,7 +113,7 @@ function Page() {
           <MotionContainer
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.6, delay: 1.7 }}
+            transition={{ duration: 1.6, delay: 1.3 }}
           >
             <div className="embla__slide">
               <div className="embla__slide__number transition-colors">
@@ -136,7 +136,7 @@ function Page() {
           <MotionContainer
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.6, delay: 2 }}
+            transition={{ duration: 1.6, delay: 1.6 }}
           >
             <div className="embla__slide">
               <div className="embla__slide__number transition-colors">
@@ -259,7 +259,7 @@ function Page() {
         </MotionLayout>
       </section>
       <section className="py-5 pb-10 bg-primaryDark">
-        <MotionLayout delay={0.3}>
+        <MotionLayout>
           <div className="container flex flex-col items-center justify-center my-10">
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">

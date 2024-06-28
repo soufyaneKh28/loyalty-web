@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { cairoClass } from "@/app/font";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { logo, menu, close } from "../../public";
+import { logo, menu, close, uk, ar } from "../../public";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { redirect } from "next/navigation";
@@ -172,9 +172,12 @@ export default function MenubarAr() {
             </ul>
           </nav>
           <div className="language relative hidden md:block">
-            <div className=" w-[70px] p-2 font-bold    ">
+            <div className="  p-2 font-bold    ">
               <div className=" items-center justify-center gap-1 flex hover:text-secondary transition-colors cursor-pointer">
-                <p className=" font-bold">ar</p>
+                <div className="flex items-center">
+                  <Image src={ar} alt="ar" width={25} />
+                  <p className=" ms-1">Ar</p>
+                </div>
                 <svg
                   className=" svg fill-current ms-2 h-4 w-4"
                   xmlns="http://www.w3.org/2000/svg"
@@ -193,14 +196,20 @@ export default function MenubarAr() {
                 className=" hover:text-secondary transition-colors cursor-pointer"
                 onClick={() => setSelectedLanguage("en")}
               >
-                English
+                <div className="flex items-center">
+                  <Image src={uk} alt="uk" width={25} />
+                  <p className=" ms-1">الإنجليزية</p>
+                </div>
               </li>
 
               <li
                 className=" hover:text-secondary transition-colors cursor-pointer"
                 onClick={() => setSelectedLanguage("ar")}
               >
-                Arabic
+                <div className="flex items-center">
+                  <Image src={ar} alt="ar" width={25} />
+                  <p className=" ms-1">العربية</p>
+                </div>
               </li>
             </ul>
           </div>

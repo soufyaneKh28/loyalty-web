@@ -10,7 +10,15 @@ import Features from "@/components/Features";
 
 import Team from "@/components/Team";
 import Clients from "@/components/Clients";
-import { CallTo, IconsSlider, Statis, Services, Button } from "@/components";
+import {
+  CallTo,
+  IconsSlider,
+  Statis,
+  Services,
+  Button,
+  MotionContainer,
+  MotionLayout,
+} from "@/components";
 import { cairoClass } from "@/app/font";
 
 export const metadata = {
@@ -23,123 +31,155 @@ export default function Home() {
     <main dir="rtl" className={` ${cairoClass}`}>
       <section className={`"flex  py-5 pt-[100px]  `}>
         <div className="container md:justify-between md:items-center  flex flex-col md:flex-row">
-          <div className=" textContent">
-            <h1 className=" font-black text-[40px] max-w-[350px] md:text-[50px] md:max-w-[500px]  text-primaryDark leading-[48px] md:leading-[60px]">
-              نقدم لك <span className=" text-secondary">النجاح </span>الرقمي{" "}
-            </h1>
-            <p className="   max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px] my-3 mt-5 leading-7  font-medium">
-              نحن وكالة تسويق ووكالة رقمية، نقدم الكثير من الخدمات نحن وكالة
-              تسويق ووكالة رقمية، نقدم الكثير من الخدمات
-            </p>
-            <Button>تواصل معنا</Button>
-          </div>
+          <MotionContainer
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <div className=" textContent">
+              <MotionContainer
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <h1 className=" font-black text-[40px] max-w-[350px] md:text-[50px] md:max-w-[500px]  text-primaryDark leading-[48px] md:leading-[60px]">
+                  نقدم لك <span className=" text-secondary">النجاح </span>الرقمي{" "}
+                </h1>
+              </MotionContainer>
+              <p className="   max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px] my-3 mt-5 leading-7  font-medium">
+                نحن وكالة تسويق ووكالة رقمية، نقدم الكثير من الخدمات نحن وكالة
+                تسويق ووكالة رقمية، نقدم الكثير من الخدمات
+              </p>
+              <Button>تواصل معنا</Button>
+            </div>
+          </MotionContainer>
           <div className=" flex justify-end relative">
             <BounceBall />
-            <Image
-              src={homeHero}
-              alt="homeHero"
-              className=" w-[350px] md:w-[420px]  scale-x-[-1] "
-              width={350}
-              priority={true}
-            />
+            <MotionContainer
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 2.5 }}
+            >
+              <Image
+                src={homeHero}
+                alt="homeHero"
+                className=" w-[350px] md:w-[420px]  scale-x-[-1] "
+                width={350}
+                priority={true}
+              />
+            </MotionContainer>
           </div>
         </div>
       </section>
       <section className="py-5 servicesAr">
-        <div className="container flex flex-col items-center justify-center my-10">
-          <div className=" flex flex-col items-start">
-            <div className="flex items-center mb-[-5px]">
-              <div className="w-[25px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-secondary">{dataAr.services.smallTitle}</h5>
+        <MotionLayout>
+          <div className="container flex flex-col items-center justify-center my-10">
+            <div className=" flex flex-col items-start">
+              <div className="flex items-center mb-[-5px]">
+                <div className="w-[25px] h-[2px] bg-secondary mr-1"></div>
+                <h5 className=" text-secondary">
+                  {dataAr.services.smallTitle}
+                </h5>
+              </div>
+              <h2 className="text-[32px] font-bold">{dataAr.services.title}</h2>
             </div>
-            <h2 className="text-[32px] font-bold">{dataAr.services.title}</h2>
+            <p className="text-center max-w-[550px]">
+              {dataAr.services.description}
+            </p>
           </div>
-          <p className="text-center max-w-[550px]">
-            {dataAr.services.description}
-          </p>
-        </div>
-        <Services object={dataAr.services.servicesItems} options={"rtl"} />
+          <Services object={dataAr.services.servicesItems} options={"rtl"} />
+        </MotionLayout>
       </section>
       <section className="py-5 bg-primaryDark">
-        <StrategyAr />
+        <MotionLayout>
+          <StrategyAr />
 
-        <div className="container flex flex-col md:flex-row md:justify-between md:items-center">
-          <div className=" flex flex-col py-4 ">
-            <div className=" flex flex-col items-start">
-              <h2 className="text-[32px] font-bold w-[300px] md:w-auto  leading-9 mt-3 text-white">
-                {dataAr.grow.title}{" "}
-              </h2>
+          <div className="container flex flex-col md:flex-row md:justify-between md:items-center">
+            <div className=" flex flex-col py-4 ">
+              <div className=" flex flex-col items-start">
+                <h2 className="text-[32px] font-bold w-[300px] md:w-auto  leading-9 mt-3 text-white">
+                  {dataAr.grow.title}{" "}
+                </h2>
+              </div>
+              <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
+                {dataAr.grow.description}
+              </p>
+              <Button>{dataAr.grow.btn}</Button>
             </div>
-            <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
-              {dataAr.grow.description}
-            </p>
-            <Button>{dataAr.grow.btn}</Button>
+            <div className=" flex justify-end relative mt-4 md:mt-0 ">
+              <Image
+                src={contact}
+                alt="homeHero"
+                className=" md:w-[420px] ml-[-40px] scale-x-[-1] "
+                width={350}
+                priority={true}
+              />
+            </div>
           </div>
-          <div className=" flex justify-end relative mt-4 md:mt-0 ">
-            <Image
-              src={contact}
-              alt="homeHero"
-              className=" md:w-[420px] ml-[-40px] scale-x-[-1] "
-              width={350}
-              priority={true}
-            />
-          </div>
-        </div>
+        </MotionLayout>
       </section>
       <section className="py-5">
         <Features object={dataAr.features} />
       </section>
       <section className=" py-10">
-        <div className="container flex flex-col items-center justify-center ">
-          <div className=" flex flex-col items-center">
-            <div className="flex items-center mb-[-5px]">
-              <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-secondary">{dataAr.stats.smallTitle}</h5>
+        <MotionLayout>
+          <div className="container flex flex-col items-center justify-center ">
+            <div className=" flex flex-col items-center">
+              <div className="flex items-center mb-[-5px]">
+                <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+                <h5 className=" text-secondary">{dataAr.stats.smallTitle}</h5>
+              </div>
+              <h2 className="text-[32px] w-[354px] font-bold text-center">
+                {dataAr.stats.title}
+              </h2>
             </div>
-            <h2 className="text-[32px] w-[354px] font-bold text-center">
-              {dataAr.stats.title}
-            </h2>
+            <p className="text-center max-w-[550px]">
+              {dataAr.stats.description}
+            </p>
           </div>
-          <p className="text-center max-w-[550px]">
-            {dataAr.stats.description}
-          </p>
-        </div>
-        <Statis object={dataAr.stats} />
+          <Statis object={dataAr.stats} />
+        </MotionLayout>
       </section>
       <section className="py-10">
-        <div className="container flex flex-col items-center justify-center my-10">
-          <div className=" flex flex-col items-center">
-            <div className="flex items-center mb-[-5px]">
-              <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-secondary ">{dataAr.clients.smallTitle}</h5>
+        <MotionLayout>
+          <div className="container flex flex-col items-center justify-center my-10">
+            <div className=" flex flex-col items-center">
+              <div className="flex items-center mb-[-5px]">
+                <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+                <h5 className=" text-secondary ">
+                  {dataAr.clients.smallTitle}
+                </h5>
+              </div>
+              <h2 className="text-[32px] max-w-[300px] text-center font-bold">
+                {dataAr.clients.title}
+              </h2>
             </div>
-            <h2 className="text-[32px] max-w-[300px] text-center font-bold">
-              {dataAr.clients.title}
-            </h2>
+            <p className="text-center max-w-[550px]">
+              {dataAr.clients.description}{" "}
+            </p>
           </div>
-          <p className="text-center max-w-[550px]">
-            {dataAr.clients.description}{" "}
-          </p>
-        </div>
-        <Clients object={dataAr.clients.items} />
+          <Clients object={dataAr.clients.items} />
+        </MotionLayout>
       </section>
       <section className="py-10 bg-primaryDark">
-        <div className="container flex flex-col items-center justify-center my-10">
-          <div className=" flex flex-col items-center">
-            <div className="flex items-center mb-[-5px]">
-              <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-secondary">{dataAr.members.smallTitle}</h5>
+        <MotionLayout>
+          <div className="container flex flex-col items-center justify-center my-10">
+            <div className=" flex flex-col items-center">
+              <div className="flex items-center mb-[-5px]">
+                <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+                <h5 className=" text-secondary">{dataAr.members.smallTitle}</h5>
+              </div>
+              <h2 className="text-[32px] font-bold text-white">
+                {dataAr.members.title}
+              </h2>
             </div>
-            <h2 className="text-[32px] font-bold text-white">
-              {dataAr.members.title}
-            </h2>
+            <p className="text-center max-w-[550px] font-normal text-white mt-3">
+              {dataAr.members.description}
+            </p>
+            <Button>{dataAr.members.btn} </Button>
           </div>
-          <p className="text-center max-w-[550px] font-normal text-white mt-3">
-            {dataAr.members.description}
-          </p>
-          <Button>{dataAr.members.btn} </Button>
-        </div>
-        <Team members={dataAr.members.items} />
+          <Team members={dataAr.members.items} />
+        </MotionLayout>
       </section>
 
       <CallTo object={dataAr} />
