@@ -19,7 +19,7 @@ import facebook from "./facebook.webp";
 import instagram from "./instagram.webp";
 import linkedin from "./linkedin.png";
 import x from "./TwitterX.png";
-import memberTeam from "./memberTeam.png";
+import memberTeam from "./memberTeam.webp";
 import sou from "./sou.png";
 import right from "./RightArrow.png";
 import left from "./LeftArrow.png";
