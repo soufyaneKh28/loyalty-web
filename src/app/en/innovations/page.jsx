@@ -1,5 +1,10 @@
 import { poppinsClass } from "@/app/font";
-import { BounceBall, Button } from "@/components";
+import {
+  BounceBall,
+  Button,
+  MotionContainer,
+  MotionLayout,
+} from "@/components";
 import Image from "next/image";
 import React from "react";
 import { homeHero, innov1, innovaition } from "../../../../public";
@@ -41,40 +46,59 @@ const innovations = [
 const page = () => {
   return (
     <main className={`${poppinsClass}`}>
-      <section className={`"flex  py-[100px] md:my-10 `}>
-        <div className="container md:justify-between md:items-center  flex flex-col md:flex-row">
-          <div className=" textContent">
-            <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[500px] font-bold text-primaryDark leading-[48px] md:leading-[60px]">
-              Pioneering Digital Innovations
-            </h1>
-            <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px]  font-medium">
-              Our innovations department showcases the stories behind the brands
-              we&apos;ve crafted, along with our name and logo. Here,
-              you&apos;ll discover what sets us apart and gain insights into
-              creating unique brands in the market. Crafting a brand requires
-              talent and business
-            </p>
-            <Button>Get Started</Button>
+      <MotionLayout>
+        <section className={`"flex  py-[100px] md:my-10 `}>
+          <div className="container md:justify-between md:items-center  flex flex-col md:flex-row">
+            <MotionContainer
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <div className=" textContent">
+                <MotionContainer
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
+                >
+                  <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[500px] font-bold text-primaryDark leading-[48px] md:leading-[60px]">
+                    Pioneering Digital Innovations
+                  </h1>
+                </MotionContainer>
+                <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px]  font-medium">
+                  Our innovations department showcases the stories behind the
+                  brands we&apos;ve crafted, along with our name and logo. Here,
+                  you&apos;ll discover what sets us apart and gain insights into
+                  creating unique brands in the market. Crafting a brand
+                  requires talent and business
+                </p>
+                <Button>Get Started</Button>
+              </div>
+            </MotionContainer>
+            <div className=" flex justify-end relative">
+              <BounceBall />
+              <MotionContainer
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 2.5 }}
+              >
+                <Image
+                  src={innovaition}
+                  alt="homeHero"
+                  className=" md:w-[420px] "
+                  width={350}
+                  priority={true}
+                />
+              </MotionContainer>
+            </div>
           </div>
-          <div className=" flex justify-end relative">
-            <BounceBall />
-            <Image
-              src={innovaition}
-              alt="homeHero"
-              className=" md:w-[420px] "
-              width={350}
-              priority={true}
-            />
-          </div>
-        </div>
-      </section>
-      <section className=" bg-primaryDark py-10 md:mt-[100px]">
-        <div className="container">
-          {/* <div className="innov-container flex flex-col md:flex-row items-center justify-between">
+        </section>
+        <section className=" bg-primaryDark py-10 md:mt-[100px]">
+          <div className="container">
+            {/* <div className="innov-container flex flex-col md:flex-row items-center justify-between">
             <div className="innov-text flex-1">
-              <h2 className="text-[36px] text-white font-bold">
+            <h2 className="text-[36px] text-white font-bold">
                 The Story Of Monarize
-              </h2>
+                </h2>
               <p className=" text-white max-w-[370px] font-normal mt-4">
                 Monarisa! Or Mona Lisa?MonaRize A commercial company working in
                 the field of real estate and tourism, specifically located in
@@ -83,54 +107,57 @@ const page = () => {
                 the case in its weather and people. Actually, this city is a
                 unique painting, one of a kind in the natural creativity that it
                 is in.
-              </p>
-              <button className="w-fit text-primary text-[14px] font-medium mt-6  bg-secondary rounded-full px-9  py-3">
+                </p>
+                <button className="w-fit text-primary text-[14px] font-medium mt-6  bg-secondary rounded-full px-9  py-3">
                 Continue Story
-              </button>
-            </div>
-            <div className="innov-img overflow-hidden rounded-[10px]">
-              <Image
+                </button>
+                </div>
+                <div className="innov-img overflow-hidden rounded-[10px]">
+                <Image
                 src={innov1}
                 alt="innov1"
                 className=" hover:scale-110 transition-all"
-              />
-            </div>
-          </div> */}
-          {data.innovations.map((innov, i) => (
-            <div
-              className={`innov-container flex flex-col my-10  ${
-                (i + 1) % 2 === 0 ? " md:flex-row-reverse" : "md:flex-row"
-              } items-center justify-between `}
-              key={i}
-            >
-              <div className="innov-text my-5 flex flex-col items-start justify-center ">
-                <Link href={`/en/innovations/${i + 1}/${innov.url}`}>
-                  <h2 className="text-[36px] text-white font-bold hover:text-secondary transition-colors">
-                    {innov.title}
-                  </h2>
-                </Link>
-                <p className=" text-white max-w-[370px] font-normal mt-4 leading-7">
-                  {innov.description}
-                </p>
-                <Button>
-                  <Link href={`/en/innovations/${i + 1}/${innov.url}`}>
-                    Continue Story
-                  </Link>
-                </Button>
-              </div>
-              <div className="innov-img overflow-hidden max-w-[422px] h-[438px] rounded-[10px]">
-                <Link href={`/en/innovations/${i + 1}/${innov.url}`}>
-                  <Image
-                    src={innov.img}
-                    alt="innov1"
-                    className=" hover:scale-110  w-full h-[100%] object-cover transition-all"
-                  />
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+                />
+                </div>
+                </div> */}
+            {data.innovations.map((innov, i) => (
+              <MotionLayout delay={0.3 * i} key={i}>
+                <div
+                  className={`innov-container flex flex-col my-10  ${
+                    (i + 1) % 2 === 0 ? " md:flex-row-reverse" : "md:flex-row"
+                  } items-center justify-between `}
+                  key={i}
+                >
+                  <div className="innov-text my-5 flex flex-col items-start justify-center ">
+                    <Link href={`/en/innovations/${i + 1}/${innov.url}`}>
+                      <h2 className="text-[36px] text-white font-bold hover:text-secondary transition-colors">
+                        {innov.title}
+                      </h2>
+                    </Link>
+                    <p className=" text-white max-w-[370px] font-normal mt-4 leading-7">
+                      {innov.description}
+                    </p>
+                    <Button>
+                      <Link href={`/en/innovations/${i + 1}/${innov.url}`}>
+                        Continue Story
+                      </Link>
+                    </Button>
+                  </div>
+                  <div className="innov-img overflow-hidden max-w-[422px] h-[438px] rounded-[10px]">
+                    <Link href={`/en/innovations/${i + 1}/${innov.url}`}>
+                      <Image
+                        src={innov.img}
+                        alt="innov1"
+                        className=" hover:scale-110  w-full h-[100%] object-cover transition-all"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              </MotionLayout>
+            ))}
+          </div>
+        </section>
+      </MotionLayout>
     </main>
   );
 };

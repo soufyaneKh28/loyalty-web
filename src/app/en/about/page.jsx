@@ -163,7 +163,7 @@ function Page() {
           <div className=" flex flex-col items-center">
             <div className="flex items-center mb-[-5px]">
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-secondary">Who Are We ?</h5>
+              <p className=" text-secondary">Who Are We ?</p>
             </div>
             <h2 className="text-[32px] font-bold">Your Work Grows With Us</h2>
           </div>
@@ -217,7 +217,7 @@ function Page() {
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">
                 <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-                <h5 className=" text-secondary">{data.stats.smallTitle}</h5>
+                <p className=" text-secondary">{data.stats.smallTitle}</p>
               </div>
               <h2 className="text-[32px] w-[354px] font-bold text-center">
                 {data.stats.title}
@@ -264,7 +264,7 @@ function Page() {
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">
                 <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-                <h5 className=" text-secondary">{data.members.smallTitle}</h5>
+                <p className=" text-secondary">{data.members.smallTitle}</p>
               </div>
               <h2 className="text-[32px] font-bold text-white">
                 {data.members.title}
@@ -286,7 +286,7 @@ function Page() {
           <div className=" flex flex-col items-center">
             <div className="flex items-center mb-[-5px]">
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-secondary ">{data.partners.smallTitle}</h5>
+              <p className=" text-secondary ">{data.partners.smallTitle}</p>
             </div>
             <h2 className="text-[27px] max-w-[550px] text-center font-bold">
               {data.partners.title}

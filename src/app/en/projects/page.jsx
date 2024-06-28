@@ -37,7 +37,7 @@ const page = ({ searchParams }) => {
 
   return (
     <main className={`${poppinsClass}`}>
-      <MotionLayout delay={0.3}>
+      <MotionLayout>
         <section className={`"flex   pt-[150px] md:pt-[200px] pb-[100px] `}>
           <div className="container md:justify-center md:items-center  flex flex-col ">
             <div className=" textContent md:text-center flex flex-col md:items-center">
@@ -67,7 +67,7 @@ const page = ({ searchParams }) => {
           <div className=" flex flex-col items-center">
             <div className="flex items-center mb-[-5px]">
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <h5 className=" text-secondary">Our projects</h5>
+              <p className=" text-secondary">Our projects</p>
             </div>
             <h2 className="text-[32px] font-bold text-white">
               See Our Latest Projects
