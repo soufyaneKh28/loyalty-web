@@ -9,7 +9,7 @@ const Team = ({ members }) => {
     <div className="container flex justify-center ">
       <div className=" flex justify-between  flex-wrap max-w-[785px] ">
         {members.map((member, i) => (
-          <MotionLayout delay={0.5 * i} key={i}>
+          <MotionLayout delay={0.2 * i} key={i}>
             <div className="member max-w-[165px] p-1 my-4  flex flex-col items-center ">
               <div
                 className={` overflow-hidden member-img ${

@@ -34,7 +34,7 @@ import zoho from "./zoho.png";
 import message from "./message.png";
 import star from "./star.png";
 import vision from "./vision.png";
-import innovaition from "./innovaition.webp";
+import innovaition from "./innovation.webp";
 import innov1 from "./innov-1.png";
 
 import project from "./project.png";

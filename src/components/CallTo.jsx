@@ -1,4 +1,5 @@
 import React from "react";
+import { PhoneInputT } from "./ui/PhoneInputT";
 
 const CallTo = ({ object }) => {
   return (
@@ -17,7 +18,7 @@ const CallTo = ({ object }) => {
             </p>
           </div>
           <div className=" flex flex-col w-full mt-6 md:mt-0 max-w-[400px] flex-1 md:ms-5">
-            <input type="phone" className=" w-full py-2 px-2 rounded-[10px]" />
+            <PhoneInputT />
             <button
               type="submit"
               className=" bg-primaryDark text-white py-3 mt-3 rounded-full"

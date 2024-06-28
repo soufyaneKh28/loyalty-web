@@ -115,29 +115,34 @@ export default function Menubar({ params }) {
                   </Link>
                 );
               })} */}
-              <Link
-                href={`/en/home`}
-                className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-              >
-                {`Home`}
-              </Link>
-              <Link
-                href={`/en/about`}
-                className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-              >
-                {`About`}
-              </Link>
-
-              <Link
-                href={`/en/services`}
-                className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-              >
-                {`Sevices`}
-              </Link>
+              <li>
+                <Link
+                  href={`/en/home`}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  {`Home`}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/en/about`}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  {`About`}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/en/services`}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  {`Sevices`}
+                </Link>
+              </li>
               <div className=" dropdown">
                 <Link
                   href={`/en/projects`}
-                  className=" flex items-center  font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  className=" flex projects items-center  font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   Projects{" "}
                   <svg
@@ -159,18 +164,23 @@ export default function Menubar({ params }) {
                   </li>
                 </ul>
               </div>
-              <Link
-                href={`/en/blogs`}
-                className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-              >
-                Blogs
-              </Link>
-              <Link
-                href={`/en/contactUs`}
-                className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-              >
-                Contact Us
-              </Link>
+              <li>
+                <Link
+                  href={`/en/blogs`}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  Blogs
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href={`/en/contactUs`}
+                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </nav>
           {/* <select
@@ -324,12 +334,15 @@ export default function Menubar({ params }) {
                 }}
                 animate={{ x: 0, opacity: 1 }}
               >
-                <Link
-                  href={`/en/projects`}
-                  onClick={() => setIsOpen(false)}
-                  className=" flex w-full justify-between items-center dropdown font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-                >
-                  Projects{" "}
+                {" "}
+                <div className="flex w-full projects justify-between items-center dropdown">
+                  <Link
+                    href={`/en/projects`}
+                    onClick={() => setIsOpen(false)}
+                    className="   font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  >
+                    Projects{" "}
+                  </Link>
                   <svg
                     className=" svg fill-current ms-2 h-4 w-4"
                     xmlns="http://www.w3.org/2000/svg"
@@ -337,7 +350,7 @@ export default function Menubar({ params }) {
                   >
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
                   </svg>
-                </Link>
+                </div>
                 <ul class="dropdown-menu  hidden px-3  py-3 rounded-[10px] bg-white  pt-3">
                   <li class="">
                     <Link
@@ -380,7 +393,14 @@ export default function Menubar({ params }) {
                   Contact Us
                 </Link>
               </motion.li>
-              <div className="language relative ">
+              <motion.div
+                className="language relative "
+                initial={{ x: "-100vh", opacity: 0 }}
+                transition={{
+                  delay: 6 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
                 <div className="  p-2 font-bold    ">
                   <div className=" items-center justify-between gap-1 flex hover:text-secondary transition-colors cursor-pointer">
                     <div className="flex">
@@ -421,7 +441,7 @@ export default function Menubar({ params }) {
                     </div>
                   </li>
                 </ul>
-              </div>
+              </motion.div>
             </motion.ul>
           </motion.div>
         )}

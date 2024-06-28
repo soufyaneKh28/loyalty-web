@@ -29,7 +29,7 @@ function Page() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-black text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
+              <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-black text-primaryDark leading-[65px] md:*:text-center md:leading-[60px]">
                 {dataAr.heroAbout.title}
               </h1>
             </MotionContainer>

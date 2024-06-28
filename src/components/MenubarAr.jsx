@@ -107,7 +107,7 @@ export default function MenubarAr() {
                   <Link
                     href={link.href}
                     key={link.link}
-                    className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                    className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                   >
                     {link.link}
                   </Link>
@@ -241,7 +241,7 @@ export default function MenubarAr() {
               style={{ pointerEvents: isOpen ? "auto" : "none" }}
             >
               <motion.li
-                initial={{ x: "-100vh", opacity: 0 }}
+                initial={{ x: "100vh", opacity: 0 }}
                 transition={{
                   delay: 0 * 0.2,
                 }}
@@ -250,13 +250,13 @@ export default function MenubarAr() {
                 <Link
                   href={`/ar/home`}
                   onClick={() => setIsOpen(false)}
-                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   الرئيسية
                 </Link>
               </motion.li>
               <motion.li
-                initial={{ x: "-100vh", opacity: 0 }}
+                initial={{ x: "100vh", opacity: 0 }}
                 transition={{
                   delay: 1 * 0.2,
                 }}
@@ -265,13 +265,13 @@ export default function MenubarAr() {
                 <Link
                   href={`/ar/about`}
                   onClick={() => setIsOpen(false)}
-                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   من نحن
                 </Link>
               </motion.li>
               <motion.li
-                initial={{ x: "-100vh", opacity: 0 }}
+                initial={{ x: "100vh", opacity: 0 }}
                 transition={{
                   delay: 2 * 0.2,
                 }}
@@ -280,25 +280,27 @@ export default function MenubarAr() {
                 <Link
                   href={`/ar/services`}
                   onClick={() => setIsOpen(false)}
-                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   خدماتنا
                 </Link>
               </motion.li>
               <motion.li
                 className=" dropdown"
-                initial={{ x: "-100vh", opacity: 0 }}
+                initial={{ x: "100vh", opacity: 0 }}
                 transition={{
                   delay: 3 * 0.2,
                 }}
                 animate={{ x: 0, opacity: 1 }}
               >
-                <Link
-                  href={`/ar/projects`}
-                  onClick={() => setIsOpen(false)}
-                  className=" flex w-full justify-between items-center dropdown font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-                >
-                  المشاريع
+                <div className="flex w-full justify-between items-center dropdown">
+                  <Link
+                    href={`/ar/projects`}
+                    onClick={() => setIsOpen(false)}
+                    className="  font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  >
+                    المشاريع
+                  </Link>
                   <svg
                     className=" svg fill-current ms-2 h-4 w-4"
                     xmlns="http://www.w3.org/2000/svg"
@@ -306,11 +308,11 @@ export default function MenubarAr() {
                   >
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
                   </svg>
-                </Link>
+                </div>
                 <ul class="dropdown-menu  hidden px-3  py-3 rounded-[10px] bg-white  pt-3">
                   <li class="">
                     <Link
-                      className="font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                      className="font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                       href="/ar/innovations"
                       onClick={() => setIsOpen(false)}
                     >
@@ -320,7 +322,7 @@ export default function MenubarAr() {
                 </ul>
               </motion.li>
               <motion.li
-                initial={{ x: "-100vh", opacity: 0 }}
+                initial={{ x: "100vh", opacity: 0 }}
                 transition={{
                   delay: 4 * 0.2,
                 }}
@@ -329,13 +331,13 @@ export default function MenubarAr() {
                 <Link
                   href={`/ar/services`}
                   onClick={() => setIsOpen(false)}
-                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   المدونة
                 </Link>
               </motion.li>
               <motion.li
-                initial={{ x: "-100vh", opacity: 0 }}
+                initial={{ x: "100vh", opacity: 0 }}
                 transition={{
                   delay: 5 * 0.2,
                 }}
@@ -343,15 +345,22 @@ export default function MenubarAr() {
               >
                 <Link
                   href={`/ar/contactUs`}
-                  className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  className=" font-bold text-[17px] font-bold text-[#27272F] hover:text-[#F8360A] transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   تواصل معنا
                 </Link>
               </motion.li>
 
-              <div className="language relative ">
-                <div className="  p-2 font-bold    ">
+              <motion.div
+                className="language relative "
+                initial={{ x: "100vh", opacity: 0 }}
+                transition={{
+                  delay: 5 * 0.2,
+                }}
+                animate={{ x: 0, opacity: 1 }}
+              >
+                <div className="  py-2 font-bold    ">
                   <div className=" items-center justify-between gap-1 flex hover:text-secondary transition-colors cursor-pointer">
                     <div className="flex">
                       <Image src={ar} alt="uk" width={25} />
@@ -390,7 +399,7 @@ export default function MenubarAr() {
                     </div>
                   </li>
                 </ul>
-              </div>
+              </motion.div>
             </motion.ul>
           </motion.div>
         )}

@@ -703,7 +703,7 @@
   font-size: 13px;
 }
 
-.language:hover svg {
+.language:hover svg , .projects:hover svg{
   transform: rotate(-180deg);
   transition: 0.3s ease all;
 }
