@@ -39,7 +39,7 @@ const Footer = () => {
       <div className="container flex flex-col md:flex-row  ">
         <div className="col ">
           <div className="  ">
-            <Image src={logo2} alt="logo2" priority />
+            <Image src={logo2} alt="logo2" />
           </div>
           <p className=" text-white w-[280px] md:w-[220px]  mt-5 font-normal text-[15px]">
             A trading company specializing in marketing and programming. The
