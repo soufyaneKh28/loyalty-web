@@ -46,7 +46,7 @@ export const metadata = {
 const page = () => {
   return (
     <main className={`mt-[60px] ${poppinsClass}`}>
-      <MotionLayout delay={0.3}>
+      <MotionLayout>
         <section className=" py-10  md:py-20">
           <div className="container  flex flex-col md:flex-row md:items-start md:justify-between ">
             <div className="text">

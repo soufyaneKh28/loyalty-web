@@ -134,7 +134,7 @@ const Footer = () => {
             ))}
           </div>
           <div className=" text-white w-[100px] md:w-[200px]">
-            Copyright © 2023. <span className=" text-secondary">LOYALTY.</span>
+            Copyright © 2024. <span className=" text-secondary">LOYALTY.</span>
           </div>
         </div>
       </div>

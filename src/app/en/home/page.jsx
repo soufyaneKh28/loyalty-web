@@ -47,15 +47,14 @@ export default function Home() {
                 transition={{ duration: 1 }}
               >
                 <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[500px] font-bold text-primaryDark leading-[48px] md:leading-[60px]">
-                  Building{" "}
-                  <span className=" text-secondary">Digital Product</span>,
-                  Brand and Experience
+                  Empowering{" "}
+                  <span className="text-secondary">Your Digital</span> Success
                 </h1>
               </MotionContainer>
               <p className=" mt-[10px] max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px]  font-medium">
-                we are Marketing and digital agency , we provide a lot of
-                services we are Marketing and digital agency , we provide a lot
-                of services
+                Loyalty is your partner in brand development, digital marketing,
+                and programming. Discover how we can elevate your business to
+                new heights
               </p>
               <Button>Get Started</Button>
             </div>

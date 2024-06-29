@@ -56,7 +56,8 @@ const page = ({ searchParams }) => {
                 transition={{ duration: 1.6 }}
               >
                 <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
-                  {data.heroAbout.description}
+                  Take a look at our portfolio of successful projects. Each one
+                  a testament to our dedication, creativity, and expertise.
                 </p>
                 <Button>{data.heroAbout.cta}</Button>
               </MotionContainer>

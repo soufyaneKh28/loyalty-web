@@ -46,9 +46,9 @@ export default function Home() {
                   نقدم لك <span className=" text-secondary">النجاح </span>الرقمي{" "}
                 </h1>
               </MotionContainer>
-              <p className="   max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px] my-3 mt-5 leading-7  font-medium">
-                نحن وكالة تسويق ووكالة رقمية، نقدم الكثير من الخدمات نحن وكالة
-                تسويق ووكالة رقمية، نقدم الكثير من الخدمات
+              <p className="   max-w-[300px] md:max-w-[400px] text-[#686567] text-[16px] my-3 mt-5 leading-7  font-semibold">
+                لويلتي هي شريكك في تطوير العلامات التجارية والتسويق الرقمي
+                والبرمجة. اكتشف كيف يمكننا رفع عملك إلى آفاق جديدة
               </p>
               <Button>تواصل معنا</Button>
             </div>

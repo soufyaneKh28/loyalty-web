@@ -11,10 +11,7 @@ import {
   x,
 } from "../../../../public";
 import Link from "next/link";
-
-
-
-
+import { MotionContainer, MotionLayout } from "@/components";
 
 export const metadata = {
   title: "المدونة",
@@ -61,161 +58,178 @@ function Blogs({ searchParams }) {
   }
   return (
     <main className={`${cairoClass}`}>
-      <section className={`"flex  pb-[100px] py-[150px] md:pt-[200px] `}>
-        <div className="container md:justify-center md:items-center  flex flex-col ">
-          <div className=" textContent md:text-center flex flex-col md:items-center">
-            <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-black text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
-              احدث <span className=" text-secondary">منشوراتنا</span>
-            </h1>
-            <p className=" mt-[10px] max-w-[300px] md:max-w-[800px] text-[#686567] text-[16px] font-medium leading-[27px]">
-              تفضل بالتحقق من مقالاتنا المتخصصة في التسويق والأعمال، مقالات قيمة
-              تتناول أهمية التسويق والبرمجة والتصميم في مجالات مختلفة. التحول
-              الرقمي عالم واسع ومبتكر، ولكنه في الواقع علم يتطور بسرعة كبيرة
-              وبمعدل مثير للإعجاب. اقرأ بعض المقالات المتعلقة بالتسويق الرقمي،
-              البرمجة، التصميم، وكيفية تطبيقها علميا وعمليا على أرض الواقع.
-            </p>
+      <MotionLayout>
+        <section className={`"flex  pb-[100px] py-[150px] md:pt-[200px] `}>
+          <div className="container md:justify-center md:items-center  flex flex-col ">
+            <div className=" textContent md:text-center flex flex-col md:items-center">
+              <MotionContainer
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.3 }}
+              >
+                <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-black text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
+                  احدث <span className=" text-secondary">منشوراتنا</span>
+                </h1>
+              </MotionContainer>
+              <MotionContainer
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.6 }}
+              >
+                <p className=" mt-[10px] max-w-[300px] md:max-w-[800px] text-[#686567] text-[16px] font-medium leading-[27px]">
+                  تفضل بالتحقق من مقالاتنا المتخصصة في التسويق والأعمال، مقالات
+                  قيمة تتناول أهمية التسويق والبرمجة والتصميم في مجالات مختلفة.
+                  التحول الرقمي عالم واسع ومبتكر، ولكنه في الواقع علم يتطور
+                  بسرعة كبيرة وبمعدل مثير للإعجاب. اقرأ بعض المقالات المتعلقة
+                  بالتسويق الرقمي، البرمجة، التصميم، وكيفية تطبيقها علميا وعمليا
+                  على أرض الواقع.
+                </p>
+              </MotionContainer>
+            </div>
           </div>
-        </div>
-      </section>
-      <section>
-        <div className=" container my-10 mb-[200px] flex flex-col md:flex-row justify-between">
-          <div>
-            <div className="blogs-cont  flex-wrap flex flex-col md:flex-row items-center md:items-start justify-start">
-              {[...data.blogs]
-                .reverse()
-                .slice((page - 1) * itemsPerPage, page * itemsPerPage)
-                .map((blog, i) => (
-                  <div className="blog m-2 max-w-[368px]" key={i}>
-                    <div className=" h-[225px] overflow-hidden rounded-[20px]">
-                      <Link
-                        href={`/ar/blogs/${blog.id}/${blog.url}`}
-                        className="h-[100%] w-full block"
-                      >
+        </section>
+        <section>
+          <div className=" container my-10 mb-[200px] flex flex-col md:flex-row justify-between">
+            <div>
+              <div className="blogs-cont  flex-wrap flex flex-col md:flex-row items-center md:items-start justify-start">
+                {[...data.blogs]
+                  .reverse()
+                  .slice((page - 1) * itemsPerPage, page * itemsPerPage)
+                  .map((blog, i) => (
+                    <MotionLayout delay={0.3 * i} key={i}>
+                      <div className="blog m-2 max-w-[368px]">
+                        <div className=" h-[225px] overflow-hidden rounded-[20px]">
+                          <Link
+                            href={`/ar/blogs/${blog.id}/${blog.url}`}
+                            className="h-[100%] w-full block"
+                          >
+                            <Image
+                              src={blog.img}
+                              width={"100%"}
+                              height={"100%"}
+                              alt="alt"
+                              className=" h-[100%] object-cover hover:scale-110 transition-all cursor-pointer "
+                            />
+                          </Link>
+                        </div>
+                        <Link href={`/ar/blogs/${blog.id}/${blog.url}`}>
+                          <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-bold">
+                            {blog.title}
+                          </h3>
+                        </Link>
+                        <div className=" flex justify-between mt-4 items-center">
+                          <div className="date text-[#807B75] font-medium">
+                            {blog.date}
+                          </div>
+                          <div className="tag bg-[#B0D9DF] px-3 py-1 texr-[#003642] font-medium rounded-[5px]">
+                            {blog.tag}
+                          </div>
+                        </div>
+                      </div>
+                    </MotionLayout>
+                  ))}
+              </div>
+              <div className="pagination my-10 flex justify-center md:justify-start">
+                <nav aria-label="" className="">
+                  <ul class="inline-flex -space-x-px text-sm">
+                    {Number(searchParams.page) === 1 ? null : (
+                      <li>
+                        <Link
+                          href={`/ar/blogs/?${new URLSearchParams({
+                            page: String(page > 1 ? page - 1 : 1),
+                          }).toString()}`}
+                          className="flex items-center  font-bold justify-center px-5 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                        >
+                          السابق
+                        </Link>
+                      </li>
+                    )}
+                    {pagesArray.map((num, i) => (
+                      <li key={i}>
+                        <Link
+                          href={`/ar/blogs?page=${num}`}
+                          className={` flex ${
+                            Number(searchParams.page) === num
+                              ? " text-secondary"
+                              : ""
+                          } items-center justify-center px-5 h-10 leading-tight rounded-[5px]  font-bold text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
+                        >
+                          {num}
+                        </Link>
+                      </li>
+                    ))}
+                    {Number(searchParams.page) ===
+                    Math.ceil(productsLength / itemsPerPage) ? null : (
+                      <li>
+                        <Link
+                          href={`/ar/blogs/?${new URLSearchParams({
+                            page: String(
+                              page < Math.ceil(productsLength / itemsPerPage)
+                                ? page + 1
+                                : Math.ceil(productsLength / itemsPerPage)
+                            ),
+                          }).toString()}`}
+                          className="flex items-center justify-center px-5 h-10 font-bold leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                        >
+                          التالي
+                        </Link>
+                      </li>
+                    )}
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div className="side-bar flex-1 md:max-w-[33%] basis-[85%] ">
+              <div>
+                <h4 className=" font-bold">المنشورات الأخيرة</h4>
+                <div className="recent-blogs mt-3">
+                  {data.blogs.slice(-3).map((blog, i) => (
+                    <div className=" my-4 flex items-start" key={i}>
+                      <div className=" w-[82px] h-[82px] rounded-[5px] overflow-hidden">
                         <Image
                           src={blog.img}
+                          alt="project"
                           width={"100%"}
                           height={"100%"}
-                          alt="alt"
-                          className=" h-[100%] object-cover hover:scale-110 transition-all cursor-pointer "
+                          className=" h-[100%] object-cover "
                         />
-                      </Link>
-                    </div>
-                    <Link href={`/ar/blogs/${blog.id}/${blog.url}`}>
-                      <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-bold">
-                        {blog.title}
-                      </h3>
-                    </Link>
-                    <div className=" flex justify-between mt-4 items-center">
-                      <div className="date text-[#807B75] font-medium">
-                        {blog.date}
                       </div>
-                      <div className="tag bg-[#B0D9DF] px-3 py-1 texr-[#003642] font-medium rounded-[5px]">
-                        {blog.tag}
+                      <div className=" flex-1 flex-col justify-between ms-3">
+                        <Link href={`/ar/blogs/${blog.id}/${blog.url}`}>
+                          <p className="  font-medium hover:text-secondary transition-all leading-5 cursor-pointer cur">
+                            {blog.title}
+                          </p>
+                        </Link>
+                        <div className="date text-[#807B75] font-medium mt-3">
+                          {blog.date}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-            </div>
-            <div className="pagination my-10 flex justify-center md:justify-start">
-              <nav aria-label="" className="">
-                <ul class="inline-flex -space-x-px text-sm">
-                  {Number(searchParams.page) === 1 ? null : (
-                    <li>
-                      <Link
-                        href={`/ar/blogs/?${new URLSearchParams({
-                          page: String(page > 1 ? page - 1 : 1),
-                        }).toString()}`}
-                        className="flex items-center  font-bold justify-center px-5 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                      >
-                        السابق
-                      </Link>
-                    </li>
-                  )}
-                  {pagesArray.map((num, i) => (
-                    <li key={i}>
-                      <Link
-                        href={`/ar/blogs?page=${num}`}
-                        className={` flex ${
-                          Number(searchParams.page) === num
-                            ? " text-secondary"
-                            : ""
-                        } items-center justify-center px-5 h-10 leading-tight rounded-[5px]  font-bold text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
-                      >
-                        {num}
-                      </Link>
-                    </li>
                   ))}
-                  {Number(searchParams.page) ===
-                  Math.ceil(productsLength / itemsPerPage) ? null : (
-                    <li>
-                      <Link
-                        href={`/ar/blogs/?${new URLSearchParams({
-                          page: String(
-                            page < Math.ceil(productsLength / itemsPerPage)
-                              ? page + 1
-                              : Math.ceil(productsLength / itemsPerPage)
-                          ),
-                        }).toString()}`}
-                        className="flex items-center justify-center px-5 h-10 font-bold leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                      >
-                        التالي
-                      </Link>
-                    </li>
-                  )}
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <div className="side-bar flex-1 md:max-w-[33%] basis-[85%] ">
-            <div>
-              <h4 className=" font-bold">المنشورات الأخيرة</h4>
-              <div className="recent-blogs mt-3">
-                {data.blogs.slice(-3).map((blog, i) => (
-                  <div className=" my-4 flex items-start" key={i}>
-                    <div className=" w-[82px] h-[82px] rounded-[5px] overflow-hidden">
-                      <Image
-                        src={blog.img}
-                        alt="project"
-                        width={"100%"}
-                        height={"100%"}
-                        className=" h-[100%] object-cover "
-                      />
-                    </div>
-                    <div className=" flex-1 flex-col justify-between ms-3">
-                      <Link href={`/ar/blogs/${blog.id}/${blog.url}`}>
-                        <p className="  font-medium hover:text-secondary transition-all leading-5 cursor-pointer cur">
-                          {blog.title}
-                        </p>
-                      </Link>
-                      <div className="date text-[#807B75] font-medium mt-3">
-                        {blog.date}
+                </div>
+              </div>
+              <div className=" w-full h-[1px] bg-[#B9B9B9] my-5" />
+              <div className="">
+                <h4 className=" font-bold">وسائل التواصل الاجتماعي</h4>
+                <div className=" flex  my-3 gap-1">
+                  {socialMedia.map((icon, i) => (
+                    <Link href={icon.link} key={i}>
+                      <div className=" icon w-[40px] h-[40px] hover:bg-white transition-colors bg-secondary rounded-full flex justify-center items-center">
+                        <Image
+                          src={icon.icon}
+                          alt="facebook"
+                          width={23}
+                          priority
+                        />
                       </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className=" w-full h-[1px] bg-[#B9B9B9] my-5" />
-            <div className="">
-              <h4 className=" font-bold">وسائل التواصل الاجتماعي</h4>
-              <div className=" flex  my-3 gap-1">
-                {socialMedia.map((icon, i) => (
-                  <Link href={icon.link} key={i}>
-                    <div className=" icon w-[40px] h-[40px] hover:bg-white transition-colors bg-secondary rounded-full flex justify-center items-center">
-                      <Image
-                        src={icon.icon}
-                        alt="facebook"
-                        width={23}
-                        priority
-                      />
-                    </div>
-                  </Link>
-                ))}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </MotionLayout>
     </main>
   );
 }

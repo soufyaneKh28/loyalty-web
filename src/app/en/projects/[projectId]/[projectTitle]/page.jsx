@@ -52,7 +52,7 @@ const Page = ({ params }) => {
   return (
     <>
       <main className={` pt-[100px] ${poppinsClass}`}>
-        <MotionLayout delay={0.3}>
+        <MotionLayout>
           <section className="pt-10 md:pt-20">
             <div className="container">
               {/* {!exist ? null : (

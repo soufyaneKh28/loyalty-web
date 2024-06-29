@@ -113,62 +113,73 @@ export default function MenubarAr() {
                   </Link>
                 );
               })} */}
-              <Link
-                href={`/ar/home`}
-                className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-              >
-                الرئيسية
-              </Link>
-              <Link
-                href={`/ar/about`}
-                className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-              >
-                من نحن
-              </Link>
-
-              <Link
-                href={`/ar/services`}
-                className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-              >
-                خدماتنا
-              </Link>
-              <div className=" dropdown">
+              <li>
                 <Link
-                  href={`/ar/projects`}
-                  className=" flex items-center dropdown font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  href={`/ar/home`}
+                  className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
-                  المشاريع
-                  <svg
-                    className=" svg fill-current ms-2 h-4 w-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
-                  </svg>
+                  الرئيسية
                 </Link>
-                <ul class="dropdown-menu absolute hidden px-3  py-3 rounded-[10px] bg-white  pt-3">
-                  <li class="">
-                    <Link
-                      className="font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-                      href="/ar/innovations"
+              </li>
+              <li>
+                <Link
+                  href={`/ar/about`}
+                  className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  من نحن
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/ar/services`}
+                  className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  خدماتنا
+                </Link>
+              </li>
+              <li>
+                <div className=" dropdown ">
+                  <Link
+                    href={`/ar/projects`}
+                    className=" flex items-center projects dropdown font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  >
+                    المشاريع
+                    <svg
+                      className=" svg fill-current ms-2 h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
                     >
-                      الابتكارات
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <Link
-                href={`/ar/blogs`}
-                className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-              >
-                المدونة
-              </Link>
-              <Link
-                href={`/ar/contactUs`}
-                className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-              >
-                تواصل معنا
-              </Link>
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                    </svg>
+                  </Link>
+                  <ul class="dropdown-menu absolute hidden px-3  py-3 rounded-[10px] bg-white  pt-3">
+                    <li class="">
+                      <Link
+                        className="font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                        href="/ar/innovations"
+                      >
+                        الابتكارات
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <Link
+                  href={`/ar/blogs`}
+                  className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  المدونة
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/ar/contactUs`}
+                  className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                >
+                  تواصل معنا
+                </Link>
+              </li>
             </ul>
           </nav>
           <div className="language relative hidden md:block">

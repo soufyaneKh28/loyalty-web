@@ -1,10 +1,10 @@
 import dataAr from "@/app/content-ar";
 import { cairoClass, poppinsClass } from "@/app/font";
-import { Button, CallTo } from "@/components";
+import { Button, CallTo, MotionContainer, MotionLayout } from "@/components";
 import { poppins } from "@/components/Menubar";
 import Image from "next/image";
 import React from "react";
-import { project } from "../../../../public";
+import { nextSvg, project } from "../../../../public";
 import Link from "next/link";
 
 export const metadata = {
@@ -110,125 +110,144 @@ const page = ({ searchParams }) => {
 
   return (
     <main className={`${cairoClass}`}>
-      <section className={`"flex  pb-[100px] py-[150px] md:pt-[200px] `}>
-        <div className="container md:justify-center md:items-center  flex flex-col ">
-          <div className=" textContent md:text-center flex flex-col md:items-center">
-            <h1 className=" text-[50px] max-w-[550px] md:text-[50px] md:max-w-[800px] font-black text-primaryDark leading-[60px] md:*:text-center md:leading-[60px]">
-              نحن ندمج التسويق مع البرمجة
-              <span className="text-secondary">لنقدم لك</span> أفضل النتائج
-            </h1>
-            <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
-              {dataAr.heroAbout.description}
-            </p>
-            <Button>{dataAr.heroAbout.cta}</Button>
-          </div>
-        </div>
-      </section>
-      <section className="py-10 bg-[#191C1D]">
-        <div className=" flex flex-col items-center">
-          <div className="flex items-center mb-[-5px]">
-            <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-            <p className=" text-secondary">مشاريعنا</p>
-          </div>
-          <h2 className="text-[32px] font-bold text-white">
-            انظر إلى أحدث مشاريعنا
-          </h2>
-        </div>
-        <div className=" container">
-          <div className="projects my-10">
-            <div className="projects-btn">
-              <div className="projects-container flex flex-col items-center md:flex-row  justify-center gap-5 flex-wrap">
-                {[...dataAr.projects]
-                  .reverse()
-                  .slice((page - 1) * itemsPerPage, page * itemsPerPage)
-                  .map((project, i) => (
-                    <div
-                      className="project rounded-[10px] overflow-hidden w-[333px] relative"
-                      key={i}
-                    >
-                      <Image
-                        src={project.img}
-                        alt={project.title}
-                        className=" hover:scale-110 transition-all"
-                      />
-                      <div className="absolute bottom-[0px] px-3 translate-y-[-20%]">
-                        <Link
-                          href={`/ar/projects/${[project.id]}/${project.url}`}
-                        >
-                          <h2 className=" text-white font-bold text-[28px] hover:text-secondary transition-colors cursor-pointer">
-                            {project.title}
-                          </h2>
-                        </Link>
-                        <div className="tags mt-4 flex gap-2">
-                          {project.tags.map((tag, i) => (
-                            <div
-                              className=" bg-white w-fit py-1 px-4 rounded-[5px] text-[14px] flex items-center font-semibold "
-                              key={i}
-                            >
-                              {tag.title}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-              </div>
+      <MotionLayout>
+        <section className={`"flex  pb-[100px] py-[150px] md:pt-[200px] `}>
+          <div className="container md:justify-center md:items-center  flex flex-col ">
+            <div className=" textContent md:text-center flex flex-col md:items-center">
+              <MotionContainer
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <h1 className=" text-[50px] max-w-[550px] md:text-[50px] md:max-w-[800px] font-black text-primaryDark leading-[60px] md:*:text-center md:leading-[60px]">
+                  نحن ندمج التسويق مع البرمجة
+                  <span className="text-secondary">لنقدم لك</span> أفضل النتائج
+                </h1>
+              </MotionContainer>
+              <MotionContainer
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.6 }}
+              >
+                <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
+                  {dataAr.heroAbout.description}
+                </p>
+                <Button>{dataAr.heroAbout.cta}</Button>
+              </MotionContainer>
             </div>
           </div>
-          <div className="pagination my-10 flex justify-center ">
-            <nav aria-label="" className="">
-              <ul class="inline-flex gap-1 -space-x-px text-sm">
-                {Number(searchParams.page) != 1 ? (
-                  <li className=" overflow-hidden rounded-[5px]">
-                    <Link
-                      href={`/ar/projects/?${new URLSearchParams({
-                        page: String(page > 1 ? page - 1 : 1),
-                      }).toString()}`}
-                      className="flex items-center font-bold justify-center px-5 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >
-                      السابق
-                    </Link>
-                  </li>
-                ) : null}
-                {pagesArray.map((num, i) => (
-                  <li key={i}>
-                    <Link
-                      href={`/ar/projects?page=${num}`}
-                      className={` flex ${
-                        Number(searchParams.page) === num
-                          ? " text-secondary"
-                          : ""
-                      } items-center justify-center px-5 h-10 leading-tight rounded-[5px]  font-bold text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
-                    >
-                      {num}
-                    </Link>
-                  </li>
-                ))}
-                {Number(searchParams.page) ===
-                Math.ceil(productsLength / itemsPerPage) ? null : (
-                  <li className="rounded-[5px] overflow-hidden">
-                    <Link
-                      href={`/ar/projects/?${new URLSearchParams({
-                        page: String(
-                          page < Math.ceil(productsLength / itemsPerPage)
-                            ? page + 1
-                            : Math.ceil(productsLength / itemsPerPage)
-                        ),
-                      }).toString()}`}
-                      className="flex items-center rounded-[5px] justify-center px-5 h-10 font-bold leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                    >
-                      التالي
-                    </Link>
-                  </li>
-                )}
-              </ul>
-            </nav>
+        </section>
+        <section className="py-10 bg-[#191C1D]">
+          <div className=" flex flex-col items-center">
+            <div className="flex items-center mb-[-5px]">
+              <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
+              <p className=" text-secondary">مشاريعنا</p>
+            </div>
+            <h2 className="text-[32px] font-bold text-white">
+              انظر إلى أحدث مشاريعنا
+            </h2>
           </div>
-        </div>
-        <div className="mt-20">
-          <CallTo object={dataAr} />
-        </div>
-      </section>
+          <div className=" container">
+            <div className="projects my-10">
+              <div className="projects-btn">
+                <div className="projects-container flex flex-col items-center md:flex-row  justify-center gap-5 flex-wrap">
+                  {[...dataAr.projects]
+                    .reverse()
+                    .slice((page - 1) * itemsPerPage, page * itemsPerPage)
+                    .map((project, i) => (
+                      <MotionLayout delay={0.3 * i} key={i}>
+                        <div className="project rounded-[10px] overflow-hidden w-[333px] relative">
+                          <Image
+                            src={project.img}
+                            alt={project.title}
+                            className=" hover:scale-110 transition-all"
+                          />
+                          <div className="absolute bottom-[0px] px-3 translate-y-[-20%]">
+                            <Link
+                              href={`/ar/projects/${[project.id]}/${
+                                project.url
+                              }`}
+                            >
+                              <h2 className=" text-white font-bold text-[28px] hover:text-secondary transition-colors cursor-pointer">
+                                {project.title}
+                              </h2>
+                            </Link>
+                            <div className="tags mt-4 flex gap-2">
+                              {project.tags.map((tag, i) => (
+                                <div
+                                  className=" bg-white w-fit py-1 px-4 rounded-[5px] text-[14px] flex items-center font-semibold "
+                                  key={i}
+                                >
+                                  {tag.title}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </MotionLayout>
+                    ))}
+                </div>
+              </div>
+            </div>
+            <div className="pagination my-10 flex justify-center ">
+              <nav aria-label="" className="">
+                <ul class="inline-flex gap-1 -space-x-px text-sm">
+                  {Number(searchParams.page) != 1 ? (
+                    <li className=" overflow-hidden rounded-[5px]">
+                      <Link
+                        href={`/ar/projects/?${new URLSearchParams({
+                          page: String(page > 1 ? page - 1 : 1),
+                        }).toString()}`}
+                        className="flex items-center rounded-[5px] justify-center px-1 h-10 font-bold leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                      >
+                        <Image src={nextSvg} alt="next"></Image>
+                      </Link>
+                    </li>
+                  ) : null}
+                  {pagesArray.map((num, i) => (
+                    <li key={i}>
+                      <Link
+                        href={`/ar/projects?page=${num}`}
+                        className={` flex ${
+                          Number(searchParams.page) === num
+                            ? " text-secondary"
+                            : ""
+                        } items-center justify-center px-5 h-10 leading-tight rounded-[5px]  font-bold text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
+                      >
+                        {num}
+                      </Link>
+                    </li>
+                  ))}
+                  {Number(searchParams.page) ===
+                  Math.ceil(productsLength / itemsPerPage) ? null : (
+                    <li className="rounded-[5px] overflow-hidden">
+                      <Link
+                        href={`/ar/projects/?${new URLSearchParams({
+                          page: String(
+                            page < Math.ceil(productsLength / itemsPerPage)
+                              ? page + 1
+                              : Math.ceil(productsLength / itemsPerPage)
+                          ),
+                        }).toString()}`}
+                        className="flex items-center rounded-[5px] justify-center px-1 h-10 font-bold leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                      >
+                        <Image
+                          src={nextSvg}
+                          alt="next"
+                          className=" rotate-[180deg]"
+                        ></Image>
+                      </Link>
+                    </li>
+                  )}
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div className="mt-20">
+            <CallTo object={dataAr} />
+          </div>
+        </section>
+      </MotionLayout>
     </main>
   );
 };

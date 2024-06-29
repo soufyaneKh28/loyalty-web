@@ -17,15 +17,15 @@ const {
 
 const data = {
   heroServices: {
-    title: "We Give You The Best Results",
+    title: "Comprehensive Digital Solutions",
     description:
-      "A commercial company founded in 2013, specializing in brand development, digital marketing, and programming. We established a branch in Turkey in 2014 and became an official company under Turkish law for marketing companies in 2020. Additionally, we have branches in Dubai, UAE, and the USA.      ",
+      "Explore our wide range of services designed to boost your brand and digital presence. From marketing strategies to innovative programming, we've got you covered.",
     cta: "Contact Us",
   },
   heroAbout: {
-    title: "Full-Service Digital Experience",
+    title: "Discover Our Journey",
     description:
-      "A commercial company founded in 2013, specializing in brand development, digital marketing, and programming. We established a branch in Turkey in 2014 and became an official company under Turkish law for marketing companies in 2020. Additionally, we have branches in Dubai, UAE, and the USA.",
+      "Founded in 2013, Loyalty specializes in brand development, digital marketing, and programming. With branches in Turkey, Dubai, and the USA, we are committed to your success.",
     cta: "Get Started",
     items: {
       message: {
@@ -721,22 +721,20 @@ The importance lies in knowing the fixed asset, so that you can work on the unst
         "Setting up ( Loyalty) headquarters in turkey in Istanbul in 2014 in the world trade center in Istanbul, which made the company stand out with its strategic location. Loyalty's team was made up of 4 people who were determined to implement the vision of the company",
     },
     {
-      title: "Move to Turkey",
-      date: "14 January 2014",
-      description:
-        "Setting up ( Loyalty) headquarters in turkey in Istanbul in 2014 in the world trade center in Istanbul, which made the company stand out with its strategic location. Loyalty's team was made up of 4 people who were determined to implement the vision of the company",
+      title: "The official headquarters",
+      date: "28 March 2018",
+      description: ` New headquarters was opened in the "Vision Park" building in "Yeni Bosna" area in İstanbul. With 140 square meters of office space, making it the 2nd headquarters of the company. Now the team is made up of 8 people all sharing their expertise in their fields while holding on to the company's vision and goals`,
     },
     {
-      title: "Move to Turkey",
-      date: "14 January 2014",
-      description:
-        "Setting up ( Loyalty) headquarters in turkey in Istanbul in 2014 in the world trade center in Istanbul, which made the company stand out with its strategic location. Loyalty's team was made up of 4 people who were determined to implement the vision of the company",
+      title: "Moving downtown",
+      date: "10 December 2019",
+      description: `The company moved to downtown Istanbul so that it can be close to all the major airports and transportation. "Cevizlibağ" area is where we are located. After much success and many more clients our team grew to 15 people all specialized in their fields and loyal to our company's vision.`,
     },
     {
-      title: "Move to Turkey",
-      date: "14 January 2014",
+      title: "Worldwide",
+      date: "05 May 2021",
       description:
-        "Setting up ( Loyalty) headquarters in turkey in Istanbul in 2014 in the world trade center in Istanbul, which made the company stand out with its strategic location. Loyalty's team was made up of 4 people who were determined to implement the vision of the company",
+        "Opening up branches of the company in The United States of America and in Dubai to make it closer to all of our clients around the world. Loyalty team are now around 20 employees specializing in marketing, design, and programming.",
     },
   ],
 };
