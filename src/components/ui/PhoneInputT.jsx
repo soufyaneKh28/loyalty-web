@@ -8,11 +8,14 @@ const PhoneInputT = () => {
 
   return (
     <div>
+      {/* <label htmlFor="phone">Phone</label> */}
       <PhoneInput
         defaultCountry="tr"
         value={phone}
         onChange={(phone) => setPhone(phone)}
         className=""
+        id="phone"
+        aria-label="phone"
       />
     </div>
   );

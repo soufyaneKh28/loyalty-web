@@ -139,31 +139,33 @@ export default function Menubar({ params }) {
                   {`Sevices`}
                 </Link>
               </li>
-              <div className=" dropdown">
-                <Link
-                  href={`/en/projects`}
-                  className=" flex projects items-center  font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-                >
-                  Projects{" "}
-                  <svg
-                    className=" svg fill-current ms-2 h-4 w-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
+              <li>
+                <div className=" dropdown">
+                  <Link
+                    href={`/en/projects`}
+                    className=" flex projects items-center  font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                   >
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
-                  </svg>
-                </Link>
-                <ul class="dropdown-menu absolute hidden px-3  py-3 rounded-[10px] bg-white  pt-3">
-                  <li class="">
-                    <Link
-                      className="font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
-                      href="/en/innovations"
+                    Projects{" "}
+                    <svg
+                      className=" svg fill-current ms-2 h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
                     >
-                      Innovations
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                    </svg>
+                  </Link>
+                  <ul class="dropdown-menu absolute hidden px-3  py-3 rounded-[10px] bg-white  pt-3">
+                    <li class="">
+                      <Link
+                        className="font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
+                        href="/en/innovations"
+                      >
+                        Innovations
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
               <li>
                 <Link
                   href={`/en/blogs`}
