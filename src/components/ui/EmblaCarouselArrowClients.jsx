@@ -45,7 +45,7 @@ export const PrevButtonClient = (props) => {
 
   return (
     <button className="" type="button" {...restProps}>
-      <Image src={left} alt="right" priority={true} />
+      <Image src={left} alt="right" />
       {children}
     </button>
   );
@@ -56,7 +56,7 @@ export const NextButtonClient = (props) => {
 
   return (
     <button className="" type="button" {...restProps}>
-      <Image src={right} alt="right" priority />
+      <Image src={right} alt="right" />
       {children}
     </button>
   );

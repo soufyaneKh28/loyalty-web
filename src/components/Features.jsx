@@ -31,7 +31,7 @@ function Features({ object }) {
           <MotionLayout delay={0.3 * i} key={i}>
             <div className=" features-item flex items-center  w-full" key={i}>
               <div className=" img-circle bg-secondary w-[65px] h-[65px] flex p-2 justify-center items-center rounded-full">
-                <Image src={item.icon} width={45} alt="icon" priority />
+                <Image src={item.icon} width={45} alt="icon" />
               </div>
               <h3 className=" text-[22px] font-semibold rtl:font-bold mx-3">
                 {item.title}
