@@ -62,19 +62,14 @@ export default function Home() {
           </MotionContainer>
           <div className=" flex justify-end relative">
             <BounceBall />
-            <MotionContainer
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 2.5 }}
-            >
-              <Image
-                src={homeHero}
-                alt="homeHero"
-                className=" md:w-[420px] "
-                width={350}
-                priority
-              />
-            </MotionContainer>
+
+            <Image
+              src={homeHero}
+              alt="homeHero"
+              className=" md:w-[420px] "
+              width={350}
+              priority
+            />
           </div>
         </div>
       </section>
