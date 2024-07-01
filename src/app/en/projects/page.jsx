@@ -40,13 +40,13 @@ const page = ({ searchParams }) => {
       <MotionLayout>
         <section className={`"flex   pt-[150px] md:pt-[200px] pb-[100px] `}>
           <div className="container md:justify-center md:items-center  flex flex-col ">
-            <div className=" textContent md:text-center flex flex-col md:items-center">
+            <div className=" textContent text-center flex flex-col items-center">
               <MotionContainer
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
               >
-                <h1 className=" text-[50px] max-w-[550px] md:text-[50px] md:max-w-[800px] font-bold text-primaryDark leading-[55px] md:*:text-center md:leading-[60px]">
+                <h1 className=" text-[40px] max-w-[550px] md:text-[50px] md:max-w-[800px] font-bold text-primaryDark leading-[45px] md:*:text-center md:leading-[60px]">
                   Our Success Stories
                 </h1>
               </MotionContainer>
@@ -55,7 +55,7 @@ const page = ({ searchParams }) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.6 }}
               >
-                <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
+                <p className=" mt-3 max-w-[350px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
                   Take a look at our portfolio of successful projects. Each one
                   a testament to our dedication, creativity, and expertise.
                 </p>
@@ -68,9 +68,9 @@ const page = ({ searchParams }) => {
           <div className=" flex flex-col items-center">
             <div className="flex items-center mb-[-5px]">
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <p className=" text-secondary">Our projects</p>
+              <p className=" text-secondary font-semibold">Our projects</p>
             </div>
-            <h2 className="text-[32px] font-bold text-white">
+            <h2 className=" text-[26px]  md:text-[32px] font-bold text-white">
               See Our Latest Projects
             </h2>
           </div>
@@ -93,7 +93,7 @@ const page = ({ searchParams }) => {
                             <Link
                               href={`/en/projects/${project.id}/${project.url}`}
                             >
-                              <h2 className=" text-white font-bold text-[28px] hover:text-secondary transition-colors cursor-pointer">
+                              <h2 className=" text-white font-bold text-[28px] leading-[35px] hover:text-secondary transition-colors cursor-pointer">
                                 {project.title}
                               </h2>
                             </Link>

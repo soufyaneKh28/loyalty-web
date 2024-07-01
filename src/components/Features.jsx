@@ -17,11 +17,11 @@ function Features({ object }) {
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
               <p className=" text-secondary font-bold">{object.smallTitle}</p>
             </div>
-            <h2 className="text-[32px] font-bold w-[320px] md:w-auto  leading-9 mt-3 text-primaryDark">
+            <h2 className=" text-[26px] md:text-[32px] font-bold w-[320px] md:w-auto  leading-9 mt-3 text-primaryDark">
               {object.title}
             </h2>
           </div>
-          <p className=" text-[#27272F] ltr:font-Roboto w-[350px]  md:w-[385px]  text-[16px] mt-4">
+          <p className=" text-[#27272F]  w-[350px] rtl:font-semibold  md:w-[385px]  text-[16px] mt-4">
             {object.description}
           </p>
         </div>

@@ -62,7 +62,7 @@ const Page = ({ params }) => {
             // </div>
             )} */}
               <div>
-                <h1 className=" text-center leading-[118%] text-[50px] font-bold text-primaryDark">
+                <h1 className=" text-center leading-[45px] text-[40px] md:text-[50px] font-bold text-primaryDark">
                   {projectObj.title}
                 </h1>
 
@@ -171,7 +171,7 @@ const Page = ({ params }) => {
                 <h3 className=" text-white text-[24px] my-5 font-bold ">
                   Recent Projects:{" "}
                 </h3>
-                <div className=" flex flex-col md:flex-row md:justify-center gap-8">
+                <div className=" flex flex-col items-center md:flex-row md:justify-center gap-8">
                   {[...data.projects].slice(-3).map((project, i) => (
                     <div
                       className="project rounded-[10px] overflow-hidden w-[333px] relative"
@@ -186,7 +186,7 @@ const Page = ({ params }) => {
                         <Link
                           href={`/en/projects/${project.id}/${project.url}`}
                         >
-                          <h2 className=" text-white font-bold text-[28px] hover:text-secondary transition-colors cursor-pointer">
+                          <h2 className=" text-white font-bold text-[28px] leading-[35px] hover:text-secondary transition-colors cursor-pointer">
                             {project.title}
                           </h2>
                         </Link>

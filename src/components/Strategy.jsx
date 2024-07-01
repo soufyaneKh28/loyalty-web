@@ -10,7 +10,7 @@ const Strategy = ({ object }) => {
             <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
             <p className=" text-white">{object.smallTitle}</p>
           </div>
-          <h2 className="text-[32px] font-bold w-[250px] md:w-auto  leading-9 mt-3 text-white">
+          <h2 className=" text-[26px] md:text-[32px] font-bold  md:w-auto  leading-9 mt-3 text-white">
             {object.title}
           </h2>
         </div>
@@ -18,7 +18,7 @@ const Strategy = ({ object }) => {
           {object.descriptipn}
         </p>
       </div>
-      <div className="mt-[100px]">
+      <div className="md:mt-[100px]">
         <div className=" flex flex-col items-center md:flex-row md:justify-center my-10 gap-10 relative">
           <div className=" item-container relative">
             <div className=" z-1 border-box absolute -right-11 flex top-[50%] items-center translate-y-[-50%]">

@@ -45,7 +45,7 @@ const page = () => {
                 <Button>Get Started</Button>
               </div>
             </MotionContainer>
-            <div className=" flex justify-end relative">
+            <div className=" flex justify-end relative mt-10">
               <BounceBall />
 
               <Image
@@ -60,43 +60,19 @@ const page = () => {
         </section>
         <section className=" bg-primaryDark py-10 md:mt-[100px]">
           <div className="container">
-            {/* <div className="innov-container flex flex-col md:flex-row items-center justify-between">
-            <div className="innov-text flex-1">
-            <h2 className="text-[36px] text-white font-bold">
-                The Story Of Monarize
-                </h2>
-              <p className=" text-white max-w-[370px] font-normal mt-4">
-                Monarisa! Or Mona Lisa?MonaRize A commercial company working in
-                the field of real estate and tourism, specifically located in
-                Rize, Risa is the attractive city and unique painting in the
-                Turkish north, its mountains, plateaus, sea and sky, as well as
-                the case in its weather and people. Actually, this city is a
-                unique painting, one of a kind in the natural creativity that it
-                is in.
-                </p>
-                <button className="w-fit text-primary text-[14px] font-medium mt-6  bg-secondary rounded-full px-9  py-3">
-                Continue Story
-                </button>
-                </div>
-                <div className="innov-img overflow-hidden rounded-[10px]">
-                <Image
-                src={innov1}
-                alt="innov1"
-                className=" hover:scale-110 transition-all"
-                />
-                </div>
-                </div> */}
             {data.innovations.map((innov, i) => (
               <MotionLayout delay={0.3 * i} key={i}>
                 <div
-                  className={`innov-container flex flex-col my-10  ${
-                    (i + 1) % 2 === 0 ? " md:flex-row-reverse" : "md:flex-row"
+                  className={`innov-container flex  my-10  ${
+                    i % 2 === 0
+                      ? " md:flex-row-reverse flex-col-reverse"
+                      : "md:flex-row flex-col"
                   } items-center justify-between `}
                   key={i}
                 >
                   <div className="innov-text my-5 flex flex-col items-start justify-center ">
                     <Link href={`/en/innovations/${i + 1}/${innov.url}`}>
-                      <h2 className="text-[36px] text-white font-bold hover:text-secondary transition-colors">
+                      <h2 className=" text-[28px] md:text-[36px] text-white font-bold hover:text-secondary transition-colors">
                         {innov.title}
                       </h2>
                     </Link>
@@ -109,8 +85,11 @@ const page = () => {
                       </Link>
                     </Button>
                   </div>
-                  <div className="innov-img overflow-hidden max-w-[422px] h-[438px] rounded-[10px]">
-                    <Link href={`/en/innovations/${i + 1}/${innov.url}`}>
+                  <div className="innov-img overflow-hidden w-[100%] md:max-w-[422px] h-[438px] rounded-[10px]">
+                    <Link
+                      href={`/en/innovations/${i + 1}/${innov.url}`}
+                      className=" w-full"
+                    >
                       <Image
                         src={innov.img}
                         alt="innov1"

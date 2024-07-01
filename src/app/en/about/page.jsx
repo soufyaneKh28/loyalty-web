@@ -26,13 +26,13 @@ function Page() {
     <main className={`${poppinsClass}`}>
       <section className={`"flex  pb-5 py-[150px] `}>
         <div className="container md:justify-center md:items-center  flex flex-col ">
-          <div className=" textContent md:text-center flex flex-col md:items-center">
+          <div className=" textContent text-center flex flex-col items-center">
             <MotionContainer
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-bold text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
+              <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-bold text-primaryDark leading-[40px] md:*:text-center md:leading-[60px]">
                 {data.heroAbout.title}
               </h1>
             </MotionContainer>
@@ -41,7 +41,7 @@ function Page() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.6 }}
             >
-              <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
+              <p className="  mt-3 max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
                 {data.heroAbout.description}
               </p>
               <Button>{data.heroAbout.cta}</Button>
@@ -67,7 +67,9 @@ function Page() {
                     height={"100%"}
                   />
                 </div>
-                <h3 className="mt-2 ">{data.heroAbout.items.message.title}</h3>
+                <h3 className="mt-2 font-bold text-[22px]">
+                  {data.heroAbout.items.message.title}
+                </h3>
                 <p className="mt-3 ">
                   {data.heroAbout.items.message.description}
                 </p>
@@ -90,7 +92,9 @@ function Page() {
                     height={"100%"}
                   />
                 </div>
-                <h3 className="mt-2 ">{data.heroAbout.items.vision.title}</h3>
+                <h3 className="mt-2 font-bold text-[22px]">
+                  {data.heroAbout.items.vision.title}
+                </h3>
                 <p className="mt-3 ">
                   {data.heroAbout.items.vision.description}
                 </p>
@@ -113,7 +117,9 @@ function Page() {
                     height={"100%"}
                   />
                 </div>
-                <h3 className="mt-2 ">{data.heroAbout.items.features.title}</h3>
+                <h3 className="mt-2 font-bold text-[22px]">
+                  {data.heroAbout.items.features.title}
+                </h3>
                 <p className="mt-3 ">
                   {data.heroAbout.items.features.description}{" "}
                 </p>
@@ -129,16 +135,18 @@ function Page() {
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
               <p className=" text-secondary">Who Are We ?</p>
             </div>
-            <h2 className="text-[32px] font-bold">Your Work Grows With Us</h2>
+            <h2 className=" text-[26px] md:text-[32px] font-bold text-center">
+              Your Work Grows With Us
+            </h2>
           </div>
-          <p className="text-center max-w-[550px]">
+          <p className="text-center max-w-[550px] mt-3">
             Established in 2013, our company specializes in branding, digital
             marketing, and programming. We expanded to Turkey in 2014, becoming
             an official entity under Turkish marketing laws in 2020.
             Additionally, we have branches in Dubai, UAE, and the USA.
           </p>
         </div>
-        <div className="container my-[100px] md:my-[100px]">
+        <div className="container mt-[100px] ">
           <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
             {data.timeline.map((item, i) => (
               <MotionLayout key={i}>
@@ -252,7 +260,7 @@ function Page() {
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
               <p className=" text-secondary ">{data.partners.smallTitle}</p>
             </div>
-            <h2 className="text-[27px] max-w-[550px] text-center font-bold">
+            <h2 className="text-[26px] md:text-[30px]  text-center font-bold">
               {data.partners.title}
             </h2>
           </div>

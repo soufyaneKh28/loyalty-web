@@ -10,10 +10,10 @@ const CallTo = ({ object }) => {
           className=" bg-secondary flex flex-col justify-between md:flex-row items-center px-5 py-8 rounded-[10px]"
         >
           <div className="text  ">
-            <h2 className=" text-white text-[32px] font-bold text-center">
+            <h2 className=" text-white text-[26px] md:text-[32px] font-bold text-center">
               {object.callto.title}
             </h2>
-            <p className=" text-white text-center md:text-start">
+            <p className=" mt-3 md:mt-1 text-white text-center md:text-start">
               {object.callto.subTitle}
             </p>
           </div>

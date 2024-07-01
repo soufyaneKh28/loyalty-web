@@ -23,13 +23,13 @@ const page = () => {
       <MotionLayout delay={0.3}>
         <section className={`"flex  pb-5 py-[150px] `}>
           <div className="container md:justify-center md:items-center  flex flex-col ">
-            <div className=" textContent md:text-center flex flex-col md:items-center">
+            <div className=" textContent text-center flex flex-col items-center">
               <MotionContainer
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
               >
-                <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-bold text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
+                <h1 className="text-[40px] md:text-[50px] max-w-[350px]  md:max-w-[600px] font-bold text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
                   {data.heroServices.title}
                 </h1>
               </MotionContainer>
@@ -51,9 +51,13 @@ const page = () => {
             <div className=" flex flex-col items-start">
               <div className="flex items-center mb-[-5px]">
                 <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-                <p className=" text-secondary">{data.services.smallTitle}</p>
+                <p className=" font-semibold text-secondary">
+                  {data.services.smallTitle}
+                </p>
               </div>
-              <h2 className="text-[32px] font-bold">{data.services.title}</h2>
+              <h2 className=" text-[26px] md:text-[32px] font-bold">
+                {data.services.title}
+              </h2>
             </div>
             <p className="text-center max-w-[550px]">
               {data.services.description}

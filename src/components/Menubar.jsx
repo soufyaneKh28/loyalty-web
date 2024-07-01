@@ -24,7 +24,7 @@ const links = [
   },
   {
     link: "Projects",
-    href: "/en/projects",
+    href: "/en/projects?page=1",
   },
   {
     link: "Blogs",
@@ -47,7 +47,7 @@ export default function Menubar({ params }) {
   // console.log(params);
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
+  const [selectedLanguage, setSelectedLanguage] = useState("");
   const router = useRouter();
 
   useEffect(() => {
@@ -142,7 +142,7 @@ export default function Menubar({ params }) {
               <li>
                 <div className=" dropdown">
                   <Link
-                    href={`/en/projects`}
+                    href={`/en/projects?page=1`}
                     className=" flex projects items-center  font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                   >
                     Projects{" "}
@@ -168,7 +168,7 @@ export default function Menubar({ params }) {
               </li>
               <li>
                 <Link
-                  href={`/en/blogs`}
+                  href={`/en/blogs?page=1`}
                   className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   Blogs
@@ -339,7 +339,7 @@ export default function Menubar({ params }) {
                 {" "}
                 <div className="flex w-full projects justify-between items-center dropdown">
                   <Link
-                    href={`/en/projects`}
+                    href={`/en/projects?page=1`}
                     onClick={() => setIsOpen(false)}
                     className="   font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                   >
@@ -373,7 +373,7 @@ export default function Menubar({ params }) {
                 animate={{ x: 0, opacity: 1 }}
               >
                 <Link
-                  href={`/en/blogs`}
+                  href={`/en/blogs?page=1`}
                   onClick={() => setIsOpen(false)}
                   className=" font-semibold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >

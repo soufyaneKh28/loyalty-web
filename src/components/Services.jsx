@@ -71,7 +71,7 @@ function Services({ object, options }) {
                     height={"100%"}
                   />
                 </div>
-                <h3 className="mt-2 ">{service.title}</h3>
+                <h3 className="mt-2 font-bold ">{service.title}</h3>
                 <p className="mt-3 ltr:font-Roboto">{service.description}</p>
               </div>
             </div>

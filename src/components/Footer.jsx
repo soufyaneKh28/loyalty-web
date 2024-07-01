@@ -41,12 +41,11 @@ const Footer = () => {
           <div className="  ">
             <Image src={logo2} alt="logo2" />
           </div>
-          <p className=" text-white w-[280px] md:w-[220px]  mt-5 font-normal text-[15px]">
-            A trading company specializing in marketing and programming. The
-            company was established in 2008 and a branch was opened in Turkey in
-            2014 to officially become a limited liability trading company
-            operating within the laws of the Republic of Turkey for commercial
-            companies in 2020.
+          <p className=" text-white w-[350px] md:w-[220px]  mt-5 font-normal text-[15px]">
+            Established in 2013, our company specializes in branding, digital
+            marketing, and programming. We expanded to Turkey in 2014, becoming
+            an official entity under Turkish marketing laws in 2020.
+            Additionally, we have branches in Dubai, UAE, and the USA.
           </p>
         </div>
         <div className="col my-5 ">
@@ -100,7 +99,7 @@ const Footer = () => {
             <Link href={"/en/about"}>About Us</Link>
             <Link href={"/en/services"}>Services</Link>
             <Link href={"/en/projects"}>Projects</Link>
-            <Link href={"/contactUs"}>Contact Us</Link>
+            <Link href={"/en/contactUs"}>Contact Us</Link>
           </div>
         </div>
         <div className=" col my-5">
@@ -127,7 +126,7 @@ const Footer = () => {
             </Link> */}
             {socialMedia.map((icon, i) => (
               <Link href={icon.link} key={i}>
-                <div className=" icon w-[50px] h-[50px] hover:bg-white transition-colors bg-secondary rounded-full flex justify-center items-center">
+                <div className=" icon w-[39px] h-[39px] hover:bg-white transition-colors bg-secondary rounded-full flex justify-center items-center">
                   <Image src={icon.icon} alt="facebook" width={28} />
                 </div>
               </Link>

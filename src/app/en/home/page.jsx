@@ -145,7 +145,7 @@ export default function Home() {
                 <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
                 <p className=" text-secondary ">{data.clients.smallTitle}</p>
               </div>
-              <h2 className="text-[32px] max-w-[300px] text-center font-bold">
+              <h2 className=" text-[22px]   max-w-[300px] text-center font-bold">
                 {data.clients.title}
               </h2>
             </div>

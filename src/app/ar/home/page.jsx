@@ -53,7 +53,7 @@ export default function Home() {
               <Button>تواصل معنا</Button>
             </div>
           </MotionContainer>
-          <div className=" flex justify-end relative">
+          <div className=" flex justify-end relative mt-10 md:mt-0">
             <BounceBall />
             <MotionContainer
               initial={{ opacity: 0, y: 100 }}
@@ -77,11 +77,15 @@ export default function Home() {
             <div className=" flex flex-col items-start">
               <div className="flex items-center mb-[-5px]">
                 <div className="w-[25px] h-[2px] bg-secondary mr-1"></div>
-                <p className=" text-secondary">{dataAr.services.smallTitle}</p>
+                <p className=" text-secondary font-bold">
+                  {dataAr.services.smallTitle}
+                </p>
               </div>
-              <h2 className="text-[32px] font-bold">{dataAr.services.title}</h2>
+              <h2 className="text-[32px] font-extrabold">
+                {dataAr.services.title}
+              </h2>
             </div>
-            <p className="text-center max-w-[550px]">
+            <p className="text-center mt-3 leading-7 max-w-[550px]">
               {dataAr.services.description}
             </p>
           </div>
@@ -99,7 +103,7 @@ export default function Home() {
                   {dataAr.grow.title}{" "}
                 </h2>
               </div>
-              <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
+              <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-3 font-semibold">
                 {dataAr.grow.description}
               </p>
               <Button>{dataAr.grow.btn}</Button>
@@ -131,7 +135,7 @@ export default function Home() {
                 {dataAr.stats.title}
               </h2>
             </div>
-            <p className="text-center max-w-[550px]">
+            <p className="text-center max-w-[550px] mt-3 leading-7 font-semibold">
               {dataAr.stats.description}
             </p>
           </div>
@@ -150,7 +154,7 @@ export default function Home() {
                 {dataAr.clients.title}
               </h2>
             </div>
-            <p className="text-center max-w-[550px]">
+            <p className="text-center max-w-[550px] mt-3 leading-7 font-semibold">
               {dataAr.clients.description}{" "}
             </p>
           </div>
@@ -169,7 +173,7 @@ export default function Home() {
                 {dataAr.members.title}
               </h2>
             </div>
-            <p className="text-center max-w-[550px] font-normal text-white mt-3">
+            <p className="text-center max-w-[550px] leading-7 font-normal text-white mt-3">
               {dataAr.members.description}
             </p>
             <Button>{dataAr.members.btn} </Button>

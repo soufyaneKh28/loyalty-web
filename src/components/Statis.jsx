@@ -12,7 +12,7 @@ const Statis = ({ object }) => {
     threshold: 0.1, // Trigger when 10% of the component is in view
   });
   return (
-    <div className="container my-8">
+    <div className="container mt-8">
       <div className=" py-[50px] md:py-0 bg-primaryDark relative w-full  overflow-hidden rounded-[10px] flex flex-col">
         <div className="circle">
           <Image

@@ -19,79 +19,6 @@ const StrategyAr = ({ object }) => {
         </p>
       </div>
       <div className="py-[100px]">
-        {/*         
-        <div className=" flex flex-col items-center md:flex-row md:justify-center my-10 gap-10 relative">
-          <div className=" item-container relative">
-            <div className=" border-box absolute -right-11 flex top-[50%] items-center translate-y-[-50%]">
-              <div className="dashed-border" />
-              <div className="box-circle " />
-            </div>
-            <div className=" circle  blur-md" />
-            <div className="item  z-10 relative ">
-              <div className=" w-full py-10 ">
-                <h4 className=" text-[18px] font-semibold">البحث والتحليل</h4>
-              </div>
-
-              <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
-                <div className=" num absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
-                  01
-                </div>
-                <p className="text-[14px] mt-4 font-normal leading-6">
-                  هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء
-                  التصميم هذا مجرد محتوى مزيف لملء التصميم
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className=" item-container relative">
-            <div className=" border-dashed border-r-2 h-[545px] top-[50%] translate-y-[-50%] absolute right-[-40px] md:h-0 md:w-[500px]" />
-            <div className="border-box absolute -right-11 flex top-[50%] items-center translate-y-[-50%]">
-              <div className="dashed-border" />
-              <div className=" box-circle  " />
-            </div>
-            <div className=" circle blur-md" />
-            <div className="item ">
-              <div className=" w-full py-10 ">
-                <h4 className=" text-[18px] font-semibold">التخطيط</h4>
-              </div>
-
-              <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
-                <div className="num absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
-                  02
-                </div>
-                <p className="text-[14px] mt-4 font-normal leading-6">
-                  هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء
-                  التصميم هذا مجرد محتوى مزيف لملء التصميم
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className=" item-container relative">
-            <div className="border-box absolute -right-11 flex top-[50%] items-center translate-y-[-50%]">
-              <div className="dashed-border" />
-              <div className=" box-circle " />
-            </div>
-            <div className=" circle  blur-md" />
-            <div className="item ">
-              <div className=" w-full py-10 ">
-                <h4 className=" text-[18px] font-semibold">التنفيذ</h4>
-              </div>
-
-              <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
-                <div className="num  absolute top-0 right-[50%] translate-x-[50%]  translate-y-[-50%] w-[50px] h-[50px] bg-[#75898C] flex justify-center font-bold text-[20px] items-center rounded-full">
-                  03
-                </div>
-                <p className="text-[14px] mt-4 font-normal leading-6">
-                  هذا مجرد محتوى مزيف لملء التصميم هذا مجرد محتوى مزيف لملء
-                  التصميم هذا مجرد محتوى مزيف لملء التصميم
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
         <div className=" flex flex-col items-center md:flex-row md:justify-center my-10 gap-10 relative">
           <div className=" item-container relative">
             <div className=" z-1 border-box absolute -right-11 flex top-[50%] items-center translate-y-[-50%]">
@@ -101,7 +28,7 @@ const StrategyAr = ({ object }) => {
             <div className=" circle  blur-md" />
             <div className="item  z-10 relative ">
               <div className=" w-full py-10 ">
-                <h4 className=" text-[18px] font-semibold">البحث والتحليل</h4>
+                <h4 className=" text-[18px] font-bold">البحث والتحليل</h4>
               </div>
 
               <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
@@ -126,7 +53,7 @@ const StrategyAr = ({ object }) => {
             <div className=" circle blur-md" />
             <div className="item ">
               <div className=" w-full py-10 ">
-                <h4 className=" text-[18px] font-semibold">التخطيط</h4>
+                <h4 className=" text-[18px] font-bold">التخطيط</h4>
               </div>
 
               <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
@@ -149,7 +76,7 @@ const StrategyAr = ({ object }) => {
             <div className=" circle  blur-md" />
             <div className="item ">
               <div className=" w-full py-10 ">
-                <h4 className=" text-[18px] font-semibold">التنفيذ</h4>
+                <h4 className=" text-[18px] font-bold">التنفيذ</h4>
               </div>
 
               <div className=" relative h-[50%] bg-primaryDark py-5 px-3">
