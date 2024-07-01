@@ -97,11 +97,11 @@ const Page = ({ params }) => {
                         {blogObj.tag}
                       </div>
                     </div>
-                    <h3 className="  text-[22px] leading-8 mt-3 cursor-pointer  transition-all font-semibold">
+                    <h3 className="  text-[22px] leading-8 mt-3 cursor-pointer  transition-all font-bold">
                       {blogObj.title}
                     </h3>
 
-                    <div className=" my-5">
+                    <div className=" my-5 leading-7">
                       <p>{blogObj.description}</p>
                     </div>
                   </div>
@@ -127,7 +127,7 @@ const Page = ({ params }) => {
                           </div>
                           <div className=" flex-1 flex-col justify-between ms-3">
                             <Link href={`/en/blogs/${blog.id}/${blog.url}`}>
-                              <p className="  font-medium hover:text-secondary transition-all leading-5 cursor-pointer cur">
+                              <p className="  font-semibold hover:text-secondary transition-all leading-5 cursor-pointer cur">
                                 {blog.title}
                               </p>
                             </Link>

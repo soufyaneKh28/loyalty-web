@@ -6,6 +6,7 @@ import {
   facebook,
   instagram,
   linkedin,
+  nextSvg,
   projectDe,
   soufyane1,
   x,
@@ -59,15 +60,15 @@ function Blogs({ searchParams }) {
   return (
     <main className={`${cairoClass}`}>
       <MotionLayout>
-        <section className={`"flex  pb-[100px] py-[150px] md:pt-[200px] `}>
+        <section className={`"flex   pt-[150px] md:pb-[100px]  `}>
           <div className="container md:justify-center md:items-center  flex flex-col ">
-            <div className=" textContent md:text-center flex flex-col md:items-center">
+            <div className=" textContent text-center flex flex-col items-center">
               <MotionContainer
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.3 }}
               >
-                <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-black text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
+                <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-black text-primaryDark leading-[48px] md:*:text-center md:leading-[60px]">
                   احدث <span className=" text-secondary">منشوراتنا</span>
                 </h1>
               </MotionContainer>
@@ -76,7 +77,7 @@ function Blogs({ searchParams }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.6 }}
               >
-                <p className=" mt-[10px] max-w-[300px] md:max-w-[800px] text-[#686567] text-[16px] font-medium leading-[27px]">
+                <p className=" mt-5 max-w-[350px] md:max-w-[800px] text-[#686567] text-[16px] font-semibold leading-7">
                   تفضل بالتحقق من مقالاتنا المتخصصة في التسويق والأعمال، مقالات
                   قيمة تتناول أهمية التسويق والبرمجة والتصميم في مجالات مختلفة.
                   التحول الرقمي عالم واسع ومبتكر، ولكنه في الواقع علم يتطور
@@ -113,7 +114,7 @@ function Blogs({ searchParams }) {
                           </Link>
                         </div>
                         <Link href={`/ar/blogs/${blog.id}/${blog.url}`}>
-                          <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-bold">
+                          <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-black">
                             {blog.title}
                           </h3>
                         </Link>
@@ -138,9 +139,9 @@ function Blogs({ searchParams }) {
                           href={`/ar/blogs/?${new URLSearchParams({
                             page: String(page > 1 ? page - 1 : 1),
                           }).toString()}`}
-                          className="flex items-center  font-bold justify-center px-5 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                          className="flex items-center  font-bold justify-center px-1 h-10 ms-0 leading-tight rounded-[10px]  text-gray-500 bg-white border border-e-0 border-gray-300 "
                         >
-                          السابق
+                          <Image src={nextSvg} alt="next" className=" "></Image>
                         </Link>
                       </li>
                     )}
@@ -169,9 +170,13 @@ function Blogs({ searchParams }) {
                                 : Math.ceil(productsLength / itemsPerPage)
                             ),
                           }).toString()}`}
-                          className="flex items-center justify-center px-5 h-10 font-bold leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                          className="flex items-center  font-bold justify-center px-1 h-10 ms-0 leading-tight rounded-[10px]  text-gray-500 bg-white border border-e-0 border-gray-300 "
                         >
-                          التالي
+                          <Image
+                            src={nextSvg}
+                            alt="next"
+                            className=" rotate-[180deg]"
+                          ></Image>
                         </Link>
                       </li>
                     )}
@@ -196,7 +201,7 @@ function Blogs({ searchParams }) {
                       </div>
                       <div className=" flex-1 flex-col justify-between ms-3">
                         <Link href={`/ar/blogs/${blog.id}/${blog.url}`}>
-                          <p className="  font-medium hover:text-secondary transition-all leading-5 cursor-pointer cur">
+                          <p className="  font-bold hover:text-secondary transition-all leading-5 cursor-pointer cur">
                             {blog.title}
                           </p>
                         </Link>

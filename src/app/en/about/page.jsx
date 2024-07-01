@@ -184,7 +184,7 @@ function Page() {
         </div>
       </section>
       <section className=" py-10">
-        <MotionLayout delay={0.3}>
+        <MotionLayout>
           <div className="container flex flex-col items-center justify-center ">
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">
@@ -203,7 +203,7 @@ function Page() {
         </MotionLayout>
       </section>
       <section className=" bg-primaryDark py-2.5">
-        <MotionLayout delay={0.3}>
+        <MotionLayout>
           <div className="container flex flex-col md:flex-row md:justify-between md:items-center">
             <div className=" flex flex-col py-4 ">
               <div className=" flex flex-col items-start">

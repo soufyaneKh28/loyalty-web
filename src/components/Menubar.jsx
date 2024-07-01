@@ -42,7 +42,7 @@ export const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-export default function Menubar({ params }) {
+export default function Menubar({ params, searchParams }) {
   const [isOpen, setIsOpen] = useState(false);
   // console.log(params);
   const pathname = usePathname();
@@ -90,6 +90,7 @@ export default function Menubar({ params }) {
     [selectedLanguage, pathname, router]
   );
 
+  console.log(searchParams);
   return (
     <div className="container flex justify-center">
       <header

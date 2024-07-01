@@ -23,13 +23,13 @@ function Page() {
     <main className={`${cairoClass} `}>
       <section className={`"flex  pb-[100px] py-[150px] md:pt-[200px] `}>
         <div className="container md:justify-center md:items-center  flex flex-col ">
-          <div className=" textContent md:text-center flex flex-col md:items-center">
+          <div className=" textContent text-center flex flex-col items-center">
             <MotionContainer
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-black text-primaryDark leading-[65px] md:*:text-center md:leading-[60px]">
+              <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-black text-primaryDark leading-[55px] md:*:text-center md:leading-[60px]">
                 {dataAr.heroAbout.title}
               </h1>
             </MotionContainer>
@@ -38,7 +38,7 @@ function Page() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.6 }}
             >
-              <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px] font-medium leading-[27px]">
+              <p className=" mt-3 max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px] font-semibold leading-[27px]">
                 {dataAr.heroAbout.description}
               </p>
               <Button>{dataAr.heroAbout.cta}</Button>
@@ -64,10 +64,10 @@ function Page() {
                     height={"100%"}
                   />
                 </div>
-                <h3 className="mt-2 ">
+                <h3 className="mt-2 font-extrabold ">
                   {dataAr.heroAbout.items.message.title}
                 </h3>
-                <p className="mt-3 ltr:">
+                <p className="mt-3 font-semibold">
                   {dataAr.heroAbout.items.message.description}
                 </p>
               </div>
@@ -89,8 +89,10 @@ function Page() {
                     height={"100%"}
                   />
                 </div>
-                <h3 className="mt-2 ">{dataAr.heroAbout.items.vision.title}</h3>
-                <p className="mt-3 ltr:">
+                <h3 className="mt-2 font-extrabold">
+                  {dataAr.heroAbout.items.vision.title}
+                </h3>
+                <p className="mt-3 font-semibold">
                   {dataAr.heroAbout.items.vision.description}
                 </p>
               </div>
@@ -112,10 +114,10 @@ function Page() {
                     height={"100%"}
                   />
                 </div>
-                <h3 className="mt-2 ">
+                <h3 className="mt-2 font-extrabold">
                   {dataAr.heroAbout.items.features.title}
                 </h3>
-                <p className="mt-3 ltr:">
+                <p className="mt-3 font-semibold">
                   {dataAr.heroAbout.items.features.description}
                 </p>
               </div>
@@ -128,25 +130,25 @@ function Page() {
           <div className=" flex flex-col items-center">
             <div className="flex items-center mb-[-5px]">
               <div className="w-[25px] h-[2px] bg-secondary mr-1"></div>
-              <p className=" text-secondary">من نحن ؟</p>
+              <p className=" text-secondary font-bold">من نحن ؟</p>
             </div>
             <h2 className="text-[32px] font-bold">عملك ينمو معنا</h2>
           </div>
-          <p className="text-center max-w-[550px]">
+          <p className="text-center leading-7 max-w-[550px] mt-3">
             تأسست شركتنا في عام 2013، وهي متخصصة في العلامات التجارية والتسويق
             الرقمي والبرمجة. توسعنا إلى تركيا في عام 2014، وأصبحنا كيانًا رسميًا
             بموجب قوانين التسويق التركية في عام 2020. بالإضافة إلى ذلك، لدينا
             فروع في دبي، الإمارات العربية المتحدة، والولايات المتحدة الأمريكية.
           </p>
         </div>
-        <div className="container my-[100px] md:my-[100px]">
-          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+        <div className="container mt-[100px]">
+          <div className="space-y-8 relative before:absolute before:inset-0 before:mr-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
             {dataAr.timeline.map((item, i) => (
               <MotionLayout key={i}>
                 <div
                   className={`relative timeline-item flex items-center justify-between md:justify-normal  ${
                     i % 2 == 0 ? " md:flex-row" : " md:flex-row-reverse"
-                  } group `}
+                  }  `}
                   key={i}
                 >
                   {/* <!-- Icon --> */}
@@ -177,19 +179,21 @@ function Page() {
           </div>
         </div>
       </section>
-      <section className=" py-10">
-        <MotionLayout delay={0.3}>
+      <section className=" p-10">
+        <MotionLayout>
           <div className="container flex flex-col items-center justify-center ">
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">
                 <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-                <p className=" text-secondary">{dataAr.stats.smallTitle}</p>
+                <p className=" text-secondary font-bold">
+                  {dataAr.stats.smallTitle}
+                </p>
               </div>
               <h2 className="text-[32px] w-[354px] font-bold text-center">
                 {dataAr.stats.title}
               </h2>
             </div>
-            <p className="text-center max-w-[550px]">
+            <p className="text-center max-w-[550px] mt-3 leading-7">
               {dataAr.stats.description}
             </p>
           </div>
@@ -197,7 +201,7 @@ function Page() {
         </MotionLayout>
       </section>
       <section className=" bg-primaryDark py-2.5">
-        <MotionLayout delay={0.3}>
+        <MotionLayout>
           <div className="container flex flex-col md:flex-row md:justify-between md:items-center">
             <div className=" flex flex-col py-4 ">
               <div className=" flex flex-col items-start">
@@ -218,7 +222,7 @@ function Page() {
               <Image
                 src={contact}
                 alt="homeHero"
-                className=" md:w-[420px] mr-[-40px] "
+                className=" md:w-[420px] mr-[-40px] scale-x-[-1] "
                 width={350}
                 priority={true}
               />
@@ -252,7 +256,9 @@ function Page() {
           <div className=" flex flex-col items-center">
             <div className="flex items-center mb-[-5px]">
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <p className=" text-secondary ">{dataAr.partners.smallTitle}</p>
+              <p className=" text-secondary font-bold ">
+                {dataAr.partners.smallTitle}
+              </p>
             </div>
             <h2 className="text-[27px] max-w-[550px] text-center font-bold">
               {dataAr.partners.title}

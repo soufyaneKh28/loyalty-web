@@ -120,7 +120,7 @@ function Blogs({ searchParams }) {
                           </Link>
                         </div>
                         <Link href={`/en/blogs/${blog.id}/${blog.url}`}>
-                          <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-semibold">
+                          <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-bold">
                             {blog.title}
                           </h3>
                         </Link>
@@ -208,7 +208,7 @@ function Blogs({ searchParams }) {
                       </div>
                       <div className=" flex-1 flex-col justify-between ms-3">
                         <Link href={`blogs/${blog.id}/${blog.url}`}>
-                          <p className="  font-medium hover:text-secondary transition-all leading-5 cursor-pointer cur">
+                          <p className="  font-semibold hover:text-secondary transition-all leading-5 cursor-pointer cur">
                             {blog.title}
                           </p>
                         </Link>

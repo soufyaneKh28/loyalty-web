@@ -140,7 +140,7 @@ export default function MenubarAr() {
               <li>
                 <div className=" dropdown ">
                   <Link
-                    href={`/ar/projects`}
+                    href={`/ar/projects?page=1`}
                     className=" flex items-center projects dropdown font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                   >
                     المشاريع
@@ -166,7 +166,7 @@ export default function MenubarAr() {
               </li>
               <li>
                 <Link
-                  href={`/ar/blogs`}
+                  href={`/ar/blogs?page=1`}
                   className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
                   المدونة
@@ -306,7 +306,7 @@ export default function MenubarAr() {
               >
                 <div className="flex w-full justify-between items-center dropdown">
                   <Link
-                    href={`/ar/projects`}
+                    href={`/ar/projects?page=1`}
                     onClick={() => setIsOpen(false)}
                     className="  font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                   >
@@ -340,7 +340,7 @@ export default function MenubarAr() {
                 animate={{ x: 0, opacity: 1 }}
               >
                 <Link
-                  href={`/ar/services`}
+                  href={`/ar/blogs?page=1`}
                   onClick={() => setIsOpen(false)}
                   className=" font-bold text-[17px] text-[#27272F] hover:text-[#F8360A] transition-colors"
                 >
@@ -356,7 +356,7 @@ export default function MenubarAr() {
               >
                 <Link
                   href={`/ar/contactUs`}
-                  className=" font-bold text-[17px] font-bold text-[#27272F] hover:text-[#F8360A] transition-colors"
+                  className=" font-bold text-[17px]  text-[#27272F] hover:text-[#F8360A] transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   تواصل معنا

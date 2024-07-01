@@ -45,7 +45,7 @@ const page = () => {
                 <Button>تواصل معنا </Button>
               </div>
             </MotionContainer>
-            <div className=" flex justify-end relative">
+            <div className=" flex justify-end mt-10 md:mt-0 relative">
               <BounceBall />
               <Image
                 src={innovaition}

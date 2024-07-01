@@ -113,15 +113,14 @@ const page = ({ searchParams }) => {
       <MotionLayout>
         <section className={`"flex  pb-[100px] py-[150px] md:pt-[200px] `}>
           <div className="container md:justify-center md:items-center  flex flex-col ">
-            <div className=" textContent md:text-center flex flex-col md:items-center">
+            <div className=" textContent text-center flex flex-col items-center">
               <MotionContainer
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
               >
-                <h1 className=" text-[50px] max-w-[550px] md:text-[50px] md:max-w-[800px] font-black text-primaryDark leading-[60px] md:*:text-center md:leading-[60px]">
-                  نحن ندمج التسويق مع البرمجة
-                  <span className="text-secondary">لنقدم لك</span> أفضل النتائج
+                <h1 className=" text-[40px] max-w-[550px] md:text-[50px] md:max-w-[800px] font-black text-primaryDark leading-[60px] md:*:text-center md:leading-[60px]">
+                  قصص النجاح لدينا
                 </h1>
               </MotionContainer>
               <MotionContainer
@@ -129,8 +128,9 @@ const page = ({ searchParams }) => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.6 }}
               >
-                <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
-                  {dataAr.heroAbout.description}
+                <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-semibold leading-[27px]">
+                  ألق نظرة على مجموعتنا من المشاريع الناجحة. كل منها شهادة على
+                  تفانينا وإبداعنا وخبرتنا.
                 </p>
                 <Button>{dataAr.heroAbout.cta}</Button>
               </MotionContainer>
@@ -141,7 +141,7 @@ const page = ({ searchParams }) => {
           <div className=" flex flex-col items-center">
             <div className="flex items-center mb-[-5px]">
               <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-              <p className=" text-secondary">مشاريعنا</p>
+              <p className=" text-secondary font-bold">مشاريعنا</p>
             </div>
             <h2 className="text-[32px] font-bold text-white">
               انظر إلى أحدث مشاريعنا

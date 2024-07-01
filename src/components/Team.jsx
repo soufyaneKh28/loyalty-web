@@ -6,8 +6,8 @@ import { MotionLayout } from ".";
 
 const Team = ({ members }) => {
   return (
-    <div className="container flex justify-center ">
-      <div className=" flex justify-between  flex-wrap max-w-[785px] ">
+    <div className="container flex justify-center  ">
+      <div className=" flex justify-between pb-10 flex-wrap max-w-[785px] ">
         {members.map((member, i) => (
           <MotionLayout delay={0.2 * i} key={i}>
             <div className="member max-w-[165px] p-1 my-4  flex flex-col items-center ">
@@ -25,10 +25,12 @@ const Team = ({ members }) => {
                 />
               </div>
               <div className=" flex flex-col items-center mt-3">
-                <h3 className=" text-white font-semibold text-center">
+                <h3 className=" text-white font-semibold rtl:font-bold text-center">
                   {member.name}
                 </h3>
-                <p className=" text-white font-light mt-1">{member.role}</p>
+                <p className=" text-white font-light rtl:font-medium mt-1 text-center">
+                  {member.role}
+                </p>
               </div>
             </div>
           </MotionLayout>

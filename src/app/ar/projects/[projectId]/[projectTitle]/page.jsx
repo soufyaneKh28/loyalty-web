@@ -67,32 +67,32 @@ const Page = ({ params }) => {
           // </div>
           )} */}
               <div>
-                <h1 className=" text-center leading-[118%] text-[50px] font-bold text-primaryDark">
+                <h1 className=" text-center leading-[118%] text-[40px] md:text-[50px] font-black text-primaryDark">
                   {projectObj.title}
                 </h1>
 
-                <div className="project-details my-10 flex justify-center gap-8 md:gap-[5rem]">
-                  <div className="client flex flex-col items-center justify-center">
-                    <h4 className=" text-[#8A8A8A] font-medium text-[15px] text-center ">
+                <div className="project-details my-10 flex justify-center items-start gap-7 md:gap-[5rem]">
+                  <div className="client flex flex-col items-center  justify-center">
+                    <h4 className=" text-[#8A8A8A] font-semibold text-[15px] text-center ">
                       العميل
                     </h4>
-                    <h6 className=" text-primaryDark font-semibold text-center">
+                    <h6 className=" text-primaryDark font-bold text-center">
                       {projectObj.details.client}
                     </h6>
                   </div>
-                  <div className="client flex flex-col items-center ">
-                    <h4 className=" text-[#8A8A8A] font-medium text-[15px]">
+                  <div className="client flex flex-col items-center  ">
+                    <h4 className=" text-[#8A8A8A] font-semibold text-[15px]">
                       الخدمات
                     </h4>
-                    <h6 className=" text-primaryDark font-semibold text-center">
+                    <h6 className=" text-primaryDark font-bold text-center">
                       {projectObj.details.services}
                     </h6>
                   </div>
-                  <div className="client flex flex-col items-center">
-                    <h4 className=" text-[#8A8A8A] font-medium text-[15px]">
+                  <div className="client flex flex-col items-center ">
+                    <h4 className=" text-[#8A8A8A] font-semibold text-[15px]">
                       المدة الزمنية
                     </h4>
-                    <h6 className=" text-primaryDark font-semibold text-center">
+                    <h6 className=" text-primaryDark font-bold text-center">
                       {projectObj.details.duration}
                     </h6>
                   </div>

@@ -62,12 +62,12 @@ const Page = ({ params }) => {
             // </div>
             )} */}
               <div className=" my-5 md:w-[50%] flex-1">
-                <div>Read </div>
+                <div className=" font-bold text-secondary">اقرأ </div>
                 <h1 className=" text-start leading-[118%] text-[50px] font-bold text-primaryDark">
                   {projectObj.title}
                 </h1>
                 <p
-                  className="max-w-[400px]
+                  className="max-w-[400px] my-3 leading-7 font-semibold
                 "
                 >
                   {projectObj.description}
@@ -129,10 +129,10 @@ const Page = ({ params }) => {
                               1
                             </span>
                           </div>
-                          <h3 className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-white md:mt-10">
+                          <h3 className="mt-4 sm:mt-6 text-xl font-bold leading-tight text-white md:mt-10">
                             الفكرة
                           </h3>
-                          <p className="mt-3 sm:mt-4 text-base text-gray-400">
+                          <p className="mt-3 sm:mt-4 text-base text-gray-400 leading-7">
                             ميدي كيوت أخبرنا العميل أنهم لا يملكون عيادة عادية،
                             بل أنهم يحاولون إنشاء مكان لصناعة الجمال بأيدي
                             الأطباء! لذلك جمعنا أوراقنا وأفكارنا وبدأنا بالبحث
@@ -145,10 +145,10 @@ const Page = ({ params }) => {
                               2
                             </span>
                           </div>
-                          <h3 className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-white md:mt-10">
+                          <h3 className="mt-4 sm:mt-6 text-xl font-bold leading-tight text-white md:mt-10">
                             التصميم
                           </h3>
-                          <p className="mt-3 sm:mt-4 text-base text-gray-400">
+                          <p className="mt-3 sm:mt-4 text-base text-gray-400 leading-7">
                             كيف جاءت فكرة الاسم والعلامة التجارية؟ هل كانت مجرد
                             صدفة؟ لا، تم إنشاؤها بعد تفكير دقيق ومعرفة واسعة.
                             نحن نؤمن بجمال الشركة والمكان. قمنا بدمج رؤيتنا مع
@@ -162,10 +162,10 @@ const Page = ({ params }) => {
                               3
                             </span>
                           </div>
-                          <h3 className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-white md:mt-10">
+                          <h3 className="mt-4 sm:mt-6 text-xl font-bold leading-tight text-white md:mt-10">
                             التطبيق
                           </h3>
-                          <p className="mt-3 sm:mt-4 text-base text-gray-400">
+                          <p className="mt-3 sm:mt-4 text-base text-gray-400 leading-7">
                             لوحة الموناليزا التي رسمها الفنان الإيطالي دافنشي
                             كانت وستظل لوحة أسطورية فريدة وجميلة لا تقدر بثمن.
                             الجميع يعرفها ويضرب بها المثل. الجميع أيضا يعرف

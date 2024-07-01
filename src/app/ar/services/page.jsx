@@ -23,13 +23,13 @@ const page = () => {
       <MotionLayout>
         <section className={`"flex  pb-[100px] py-[150px] md:pt-[200px] `}>
           <div className="container md:justify-center md:items-center  flex flex-col ">
-            <div className=" textContent md:text-center flex flex-col md:items-center">
+            <div className=" textContent text-center flex flex-col items-center">
               <MotionContainer
                 initial={{ opacity: 0, y: -100 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
               >
-                <h1 className=" text-[50px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-black text-primaryDark leading-[65px] md:*:text-center md:leading-[60px]">
+                <h1 className=" text-[40px] max-w-[350px] md:text-[50px] md:max-w-[600px] font-black text-primaryDark leading-[65px] md:*:text-center md:leading-[60px]">
                   {dataAr.heroServices.title}
                 </h1>
               </MotionContainer>
@@ -38,7 +38,7 @@ const page = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.6 }}
               >
-                <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
+                <p className=" mt-3 max-w-[350px] md:max-w-[700px] text-[#686567] text-[16px]  font-semibold leading-[27px]">
                   {dataAr.heroServices.description}
                 </p>
                 <Button>{dataAr.heroServices.cta}</Button>
@@ -51,7 +51,9 @@ const page = () => {
             <div className=" flex flex-col items-start">
               <div className="flex items-center mb-[-5px]">
                 <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-                <p className=" text-secondary">{dataAr.services.smallTitle}</p>
+                <p className=" text-secondary font-bold">
+                  {dataAr.services.smallTitle}
+                </p>
               </div>
               <h2 className="text-[32px] font-bold">{dataAr.services.title}</h2>
             </div>
@@ -88,7 +90,9 @@ const page = () => {
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">
                 <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-                <p className=" text-secondary ">{dataAr.partners.smallTitle}</p>
+                <p className=" text-secondary font-bold">
+                  {dataAr.partners.smallTitle}
+                </p>
               </div>
               <h2 className="text-[27px] max-w-[550px] text-center font-bold">
                 {dataAr.partners.title}
