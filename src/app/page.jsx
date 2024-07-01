@@ -56,11 +56,9 @@ export default function Home() {
                   marketing, and programming. Discover how we can elevate your
                   business to new heights
                 </p>
-                <Button>
-                  <Link href={"en/services"} className=" w-full h-full">
-                    Get Started
-                  </Link>
-                </Button>
+                <Link href={"en/services"} className=" w-auto h-auto">
+                  <Button>Get Started</Button>
+                </Link>
               </div>
             </MotionContainer>
             <div className=" flex justify-end relative mt-10 md:mt-0">
