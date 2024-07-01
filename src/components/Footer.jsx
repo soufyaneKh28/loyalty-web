@@ -105,7 +105,16 @@ const Footer = () => {
         <div className=" col my-5">
           <form action="" className=" flex flex-col">
             {/* <PhoneInputT /> */}
-            <PhoneInputT />
+            <div className=" flex flex-col my-2">
+              <input
+                type="email"
+                name="name"
+                aria-label="email"
+                placeholder="email"
+                id="email"
+                className=" p-3 mt-1 rounded-[10px] outline-none border-none text-primaryDark"
+              />
+            </div>
             <button
               type="submit"
               className=" bg-secondary py-3 rounded-full my-3 text-white font-semibold "
