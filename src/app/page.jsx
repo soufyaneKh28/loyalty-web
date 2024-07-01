@@ -56,12 +56,10 @@ export default function Home() {
                   marketing, and programming. Discover how we can elevate your
                   business to new heights
                 </p>
-                <Link href={"en/services"} className=" w-auto h-auto">
-                  <Button>Get Started</Button>
-                </Link>
+                <Button>Get Started</Button>
               </div>
             </MotionContainer>
-            <div className=" flex justify-end relative mt-10 md:mt-0">
+            <div className=" flex justify-end relative">
               <BounceBall />
 
               <Image
@@ -80,15 +78,13 @@ export default function Home() {
               <div className=" flex flex-col items-start">
                 <div className="flex items-center mb-[-5px]">
                   <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-                  <p className=" font-semibold text-secondary">
-                    {data.services.smallTitle}
-                  </p>
+                  <p className=" text-secondary">{data.services.smallTitle}</p>
                 </div>
                 <h2 className=" text-[26px] md:text-[32px] font-bold">
                   {data.services.title}
                 </h2>
               </div>
-              <p className="text-center mt-3 max-w-[550px]">
+              <p className="text-center max-w-[550px] mt-3">
                 {data.services.description}
               </p>
             </div>
@@ -136,7 +132,7 @@ export default function Home() {
                   {data.stats.title}
                 </h2>
               </div>
-              <p className="text-center max-w-[550px]">
+              <p className="text-center max-w-[550px] mt-3">
                 {data.stats.description}
               </p>
             </div>
@@ -151,11 +147,11 @@ export default function Home() {
                   <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
                   <p className=" text-secondary ">{data.clients.smallTitle}</p>
                 </div>
-                <h2 className=" text-[26px] md:text-[32px] md:max-w-[300px] text-center font-bold">
+                <h2 className=" text-[26px] md:text-[32px]   md:max-w-[300px] text-center font-bold">
                   {data.clients.title}
                 </h2>
               </div>
-              <p className="text-center mt-3 max-w-[550px]">
+              <p className="text-center max-w-[550px] mt-3">
                 {data.clients.description}
               </p>
             </div>
@@ -170,11 +166,11 @@ export default function Home() {
                   <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
                   <p className=" text-secondary">{data.members.smallTitle}</p>
                 </div>
-                <h2 className="text-[26px] md:text-[32px]  font-bold text-white">
+                <h2 className=" text-[26px] md:text-[32px] font-bold text-white">
                   {data.members.title}
                 </h2>
               </div>
-              <p className="text-center mt-3 max-w-[550px] font-normal text-white">
+              <p className="text-center max-w-[550px] font-normal text-white mt-3">
                 {data.members.description}
               </p>
               <Button>{data.members.btn}</Button>
@@ -188,9 +184,11 @@ export default function Home() {
             <div className=" flex flex-col items-center">
               <div className="flex items-center mb-[-5px]">
                 <div className="w-[60px] h-[2px] bg-secondary mr-1"></div>
-                <p className=" text-secondary ">{data.partners.smallTitle}</p>
+                <p className=" text-secondary font-bold">
+                  {data.partners.smallTitle}
+                </p>
               </div>
-              <h2 className="text-[26px] md:text-[32px] md:max-w-[550px] text-center font-bold">
+              <h2 className="text-[26px] md:text-[32px] max-w-[550px] text-center font-bold">
                 {data.partners.title}
               </h2>
             </div>

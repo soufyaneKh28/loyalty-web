@@ -65,7 +65,7 @@ function Blogs({ searchParams }) {
       <MotionLayout>
         <section className={`"flex  pb-5 py-[150px] `}>
           <div className="container md:justify-center md:items-center  flex flex-col ">
-            <div className=" textContent md:text-center flex flex-col md:items-center">
+            <div className=" textContent text-center flex flex-col items-center">
               <MotionContainer
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
