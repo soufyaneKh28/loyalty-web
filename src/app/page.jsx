@@ -57,7 +57,9 @@ export default function Home() {
                   business to new heights
                 </p>
                 <Button>
-                  <Link href={"en/services"}>Get Started</Link>
+                  <Link href={"en/services"} className=" w-full h-full">
+                    Get Started
+                  </Link>
                 </Button>
               </div>
             </MotionContainer>
