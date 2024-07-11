@@ -781,3 +781,11 @@
   
   margin: 0 40px;
 }
+
+.select div div:first-child{
+  padding: 5px;
+}
+.select div div div:first-child{
+  display: flex;
+  align-items: center;
+}

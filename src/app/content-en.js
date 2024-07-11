@@ -711,6 +711,8 @@ The importance lies in knowing the fixed asset, so that you can work on the unst
     fullName: "Full Name",
     email: "Email",
     phone: "Phone",
+    service: "Service Type",
+    project: "I want a project like",
     btn: "send",
   },
   timeline: [
