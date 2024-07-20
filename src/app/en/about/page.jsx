@@ -20,8 +20,7 @@ export const metadata = {
 };
 
 
-
-function Page() {
+async function Page() {
   return (
     <main className={`${poppinsClass}`}>
       <section className={`"flex  pb-5 py-[150px] `}>
@@ -199,7 +198,7 @@ function Page() {
               {data.stats.description}
             </p>
           </div>
-          <Statis object={data.stats} />
+          <Statis object={data.stats} stats={data.counter} />
         </MotionLayout>
       </section>
       <section className=" bg-primaryDark py-2.5">
@@ -268,7 +267,7 @@ function Page() {
             {data.partners.description}
           </p>
         </div>
-        <IconsSlider />
+        <IconsSlider logos={data.logos} />
       </section>
     </main>
   );

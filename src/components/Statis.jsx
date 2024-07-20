@@ -6,11 +6,12 @@ import { circles, prize } from "../../public";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { data } from "autoprefixer";
-const Statis = ({ object }) => {
+const Statis = ({ stats }) => {
   const { ref, inView } = useInView({
     triggerOnce: true, // Trigger the animation only once
     threshold: 0.1, // Trigger when 10% of the component is in view
   });
+  console.log(stats);
   return (
     <div className="container mt-8">
       <div className=" py-[50px] md:py-0 bg-primaryDark relative w-full  overflow-hidden rounded-[10px] flex flex-col">
@@ -23,7 +24,27 @@ const Statis = ({ object }) => {
           />
         </div>
         <div className="stats my-10 md:flex justify-center md:gap-20">
-          <div className="flex my-5  items-start justify-center">
+          {stats.slice(0, 3).map((count, i) => (
+            <div className="flex my-5  items-start justify-center" key={i}>
+              <div className="stats-icon ">
+                <Image src={prize} alt="prize" className="mt-3" />
+              </div>
+              <div className=" text-white">
+                <h3 className="text-[37px] font-bold" ref={ref}>
+                  {inView && (
+                    <CountUp
+                      duration={3}
+                      start={100}
+                      end={Number(count.counter_number)}
+                    />
+                  )}
+                  +
+                </h3>
+                <p className=" font-bold w-[100px]">{count.counter_title}</p>
+              </div>
+            </div>
+          ))}
+          {/* <div className="flex my-5  items-start justify-center">
             <div className="stats-icon ">
               <Image src={prize} alt="prize" className="mt-3" />
             </div>
@@ -55,7 +76,7 @@ const Statis = ({ object }) => {
               </h3>
               <p className=" font-bold w-[100px]">{object.numbers.team}</p>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="circle">
           <Image

@@ -102,7 +102,7 @@ const page = () => {
               {dataAr.partners.description}
             </p>
           </div>
-          <IconsSlider />
+          <IconsSlider logos={dataAr.logos} />
         </section>
       </MotionLayout>
     </main>

@@ -197,7 +197,7 @@ function Page() {
               {dataAr.stats.description}
             </p>
           </div>
-          <Statis object={dataAr.stats} />
+          <Statis stats={dataAr.counter} />
         </MotionLayout>
       </section>
       <section className=" bg-primaryDark py-2.5">
@@ -268,7 +268,7 @@ function Page() {
             {dataAr.partners.description}
           </p>
         </div>
-        <IconsSlider />
+        <IconsSlider logos={dataAr.logos} />
       </section>
     </main>
   );

@@ -14,6 +14,57 @@ const {
   soufyane3,
 } = require("../../public");
 
+
+
+
+
+async function getData() {
+  const res = await fetch(
+    `https://seenfox.com/api/get_data.php?actions=client&lang_code=ar`
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+async function getCounterData() {
+  const res = await fetch(
+    "https://seenfox.com/api/get_data.php?actions=counter&lang_code=en"
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+async function getTeamData() {
+  const res = await fetch(
+    "https://seenfox.com/api/get_data.php?actions=team,logo&lang_code=ar"
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+const datafetch = await getData();
+const team = await getTeamData();
+const counter = await getCounterData();
 const data = {
   heroServices: {
     title: ` حلول رقمية شاملة`,
@@ -161,68 +212,7 @@ const data = {
     سيد إجيستاس أديبسكينج سيد أك سيد. أنين دونك نولا سوليسيتودين `,
     btn: "انضم إلى فريقنا",
 
-    items: [
-      {
-        name: "جنيد العُمر",
-        role: "الرئيس التنفيذي - المؤسس",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-      {
-        name: "هشام حجازي",
-        role: "مطور ويب",
-        img: memberTeam,
-        color: "#30C4E5",
-      },
-      {
-        name: "سفيان خلف الله",
-        role: "مطور ويب",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-      {
-        name: "سفيان خلف الله",
-        role: "مطور ويب",
-        img: memberTeam,
-        color: "#30C4E5",
-      },
-      {
-        name: "سفيان خلف الله",
-        role: "مطور ويب",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-      {
-        name: "جنيد العُمر",
-        role: "الرئيس التنفيذي - المؤسس",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-      {
-        name: "هشام حجازي",
-        role: "مطور ويب",
-        img: memberTeam,
-        color: "#30C4E5",
-      },
-      {
-        name: "سفيان خلف الله",
-        role: "مطور ويب",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-      {
-        name: "سفيان خلف الله",
-        role: "مطور ويب",
-        img: memberTeam,
-        color: "#30C4E5",
-      },
-      {
-        name: "سفيان خلف الله",
-        role: "مطور ويب",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-    ],
+    items: team.team,
   },
   partners: {
     smallTitle: "شركاؤنا",
@@ -242,26 +232,7 @@ const data = {
     title: "ماذا يقول عملاؤنا؟",
     description: `كما قلنا من قبل، نشجعك على الغوص قبل التأكد! نحن متأكدون من أننا سنقدم لك أفضل خدمة، كما قدمنا للعديد من عملائنا أفضل النتائج. 
     من المستحيل أن تشعر بخيبة أمل إذا كنت تعمل معنا.`,
-    items: [
-      {
-        name: "سفيان خلف الله",
-        img: sou,
-        message: `كما قلنا من قبل، نشجعك على الغوص قبل التأكد! نحن متأكدون من أننا سنقدم لك أفضل خدمة، كما قدمنا للعديد من عملائنا أفضل النتائج. من المستحيل أن تشعر بخيبة أمل إذا كنت تعمل معنا.`,
-        role: "مطور ويب",
-      },
-      {
-        name: "سفيان خلف الله",
-        img: sou,
-        message: `كما قلنا من قبل، نشجعك على الغوص قبل التأكد! نحن متأكدون من أننا سنقدم لك أفضل خدمة، كما قدمنا للعديد من عملائنا أفضل النتائج. من المستحيل أن تشعر بخيبة أمل إذا كنت تعمل معنا.`,
-        role: "مطور ويب",
-      },
-      {
-        name: "سفيان خلف الله",
-        img: sou,
-        message: `كما قلنا من قبل، نشجعك على الغوص قبل التأكد! نحن متأكدون من أننا سنقدم لك أفضل خدمة، كما قدمنا للعديد من عملائنا أفضل النتائج. من المستحيل أن تشعر بخيبة أمل إذا كنت تعمل معنا.`,
-        role: "مطور ويب",
-      },
-    ],
+    items: datafetch.client,
   },
   innovations: [
     {
@@ -675,6 +646,8 @@ const data = {
         "افتتاح فروع للشركة في الولايات المتحدة الأمريكية ودبي لتكون أقرب إلى جميع عملائنا حول العالم. فريق Loyalty الآن يتألف من حوالي 20 موظفًا متخصصين في التسويق والتصميم والبرمجة.",
     },
   ],
+  logos: team.logo,
+  counter: counter.counter,
 };
 
 export default data;

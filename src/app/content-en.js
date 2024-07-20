@@ -15,6 +15,60 @@ const {
   soufyane3,
 } = require("../../public");
 
+
+
+
+
+
+async function getData() {
+  const res = await fetch(
+    `https://seenfox.com/api/get_data.php?actions=client&lang_code=en`
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+async function getTeamData() {
+  const res = await fetch(
+    "https://seenfox.com/api/get_data.php?actions=team,logo&lang_code=en"
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+async function getCounterData() {
+  const res = await fetch(
+    "https://seenfox.com/api/get_data.php?actions=counter&lang_code=en"
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+const datafetch = await getData();
+const team = await getTeamData();
+const counter = await getCounterData();
+
 const data = {
   heroServices: {
     title: "Comprehensive Digital Solutions",
@@ -151,11 +205,7 @@ const data = {
     title: "Your Work Grows With Us",
     description: `Lorem ipsum dolor sit amet consectetur. 
     Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin`,
-    numbers: {
-      project: `Successful Project`,
-      client: `Happy Client`,
-      team: `Team Member`,
-    },
+    numbers: counter,
   },
   members: {
     smallTitle: "Our Team",
@@ -164,68 +214,7 @@ const data = {
     Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudi `,
     btn: "Join Our Team",
 
-    items: [
-      {
-        name: "Junaid AL-Omar",
-        role: "CEO - Founder",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-      {
-        name: "Hisham Hijazi",
-        role: "Web Developer",
-        img: memberTeam,
-        color: "#30C4E5",
-      },
-      {
-        name: "Soufyane Khalfallah",
-        role: "Web Developer",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-      {
-        name: "Soufyane Khalfallah",
-        role: "Web Developer",
-        img: memberTeam,
-        color: "#30C4E5",
-      },
-      {
-        name: "Soufyane Khalfallah",
-        role: "Web Developer",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-      {
-        name: "Junaid AL-Omar",
-        role: "CEO - Founder",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-      {
-        name: "Hisham Hijazi",
-        role: "Web Developer",
-        img: memberTeam,
-        color: "#30C4E5",
-      },
-      {
-        name: "Soufyane Khalfallah",
-        role: "Web Developer",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-      {
-        name: "Soufyane Khalfallah",
-        role: "Web Developer",
-        img: memberTeam,
-        color: "#30C4E5",
-      },
-      {
-        name: "Soufyane Khalfallah",
-        role: "Web Developer",
-        img: memberTeam,
-        color: "#F0A400",
-      },
-    ],
+    items: team.team,
   },
   partners: {
     smallTitle: "Our Partners",
@@ -247,32 +236,7 @@ const data = {
      sure that we will give you the best service, as we have given lots of our clients the best results. 
     It's impossible for you to be disappointed if you are working with us.
     `,
-    items: [
-      {
-        name: "Soufyane Khalfallah",
-        img: sou,
-        message: `As we said before we encourage you to dive in before certainty! We are sure that we will 
-        give you the best service, as we have given lots of our clients the best results. It's impossible for you to be disappointed 
-        if you are working with us.`,
-        role: "Web Developer",
-      },
-      {
-        name: "Soufyane Khalfallah",
-        img: sou,
-        message: `As we said before we encourage you to dive in before certainty! We are sure that we will 
-        give you the best service, as we have given lots of our clients the best results. It's impossible for you to be disappointed 
-        if you are working with us.`,
-        role: "Web Developer",
-      },
-      {
-        name: "Soufyane Khalfallah",
-        img: sou,
-        message: `As we said before we encourage you to dive in before certainty! We are sure that we will 
-        give you the best service, as we have given lots of our clients the best results. It's impossible for you to be disappointed 
-        if you are working with us.`,
-        role: "Web Developer",
-      },
-    ],
+    items: datafetch.client,
   },
   innovations: [
     {
@@ -739,6 +703,8 @@ The importance lies in knowing the fixed asset, so that you can work on the unst
         "Opening up branches of the company in The United States of America and in Dubai to make it closer to all of our clients around the world. Loyalty team are now around 20 employees specializing in marketing, design, and programming.",
     },
   ],
+  logos: team.logo,
+  counter: counter.counter,
 };
 
 export default data;

@@ -770,15 +770,17 @@
 }
 
 .logos-slide img {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
  object-fit: cover; 
 }
 
 .logos-slide div {
   /* height: 75px; */
-  width: 70px;
-  
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 40px;
 }
 

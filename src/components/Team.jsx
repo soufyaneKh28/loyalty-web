@@ -1,10 +1,29 @@
-"use client";
+// "use client";
 
 import Image from "next/image";
 import React from "react";
 import { MotionLayout } from ".";
+import { memberTeam } from "../../public";
 
-const Team = ({ members }) => {
+async function getData() {
+  const res = await fetch(
+    "https://seenfox.com/api/get_data.php?actions=team,client&lang_code=en"
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
+async function Team({ members }) {
+  const datafetch = await getData();
+  // console.log(datafetch.team);
+
   return (
     <div className="container flex justify-center  ">
       <div className=" flex justify-between pb-10 flex-wrap max-w-[785px] ">
@@ -17,19 +36,19 @@ const Team = ({ members }) => {
                 } w-[155px] h-[190px] relative `}
               >
                 <Image
-                  className=" absolute bottom-0"
-                  src={member.img}
-                  alt="member"
-                  width={"100%"}
-                  height={"100%"}
+                  className="  h-[100%]  w-[100%] object-cover hover:scale-110 transition-all "
+                  src={member.team_image}
+                  alt={`${member.team_image_alt}`}
+                  width={200}
+                  height={200}
                 />
               </div>
               <div className=" flex flex-col items-center mt-3">
                 <h3 className=" text-white font-semibold rtl:font-bold text-center">
-                  {member.name}
+                  {member.team_name}
                 </h3>
                 <p className=" text-white font-light rtl:font-medium mt-1 text-center">
-                  {member.role}
+                  {member.team_job}
                 </p>
               </div>
             </div>
@@ -38,6 +57,6 @@ const Team = ({ members }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Team;

@@ -136,7 +136,7 @@ export default function Home() {
                 {data.stats.description}
               </p>
             </div>
-            <Statis object={data.stats} />
+            <Statis stats={data.counter} />
           </MotionLayout>
         </section>
         <section className="py-10">
@@ -155,7 +155,7 @@ export default function Home() {
                 {data.clients.description}
               </p>
             </div>
-            <Clients object={data.clients.items} />
+            <Clients clients={data.clients.items} />
           </MotionLayout>
         </section>
         <section className="py-5 pb-10 bg-primaryDark">
@@ -196,7 +196,7 @@ export default function Home() {
               {data.partners.description}
             </p>
           </div>
-          <IconsSlider />
+          <IconsSlider logos={data.logos} />
         </section>
       </main>
       <Footer />
