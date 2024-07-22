@@ -22,7 +22,8 @@ const {
 
 async function getData() {
   const res = await fetch(
-    `https://seenfox.com/api/get_data.php?actions=client&lang_code=en`
+    `https://seenfox.com/api/get_data.php?actions=client&lang_code=en`,
+    { cache: "no-store" }
   );
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
@@ -37,7 +38,8 @@ async function getData() {
 
 async function getTeamData() {
   const res = await fetch(
-    "https://seenfox.com/api/get_data.php?actions=team,logo&lang_code=en"
+    "https://seenfox.com/api/get_data.php?actions=team,logo&lang_code=en",
+    { cache: "no-store" }
   );
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
@@ -52,7 +54,23 @@ async function getTeamData() {
 
 async function getCounterData() {
   const res = await fetch(
-    "https://seenfox.com/api/get_data.php?actions=counter&lang_code=en"
+    "https://seenfox.com/api/get_data.php?actions=counter&lang_code=en",
+    { cache: "no-store" }
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+async function getPreferenceData() {
+  const res = await fetch(
+    "https://seenfox.com/api/get_data.php?actions=preference&lang_code=en",
+    { cache: "no-store" }
   );
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
@@ -68,7 +86,8 @@ async function getCounterData() {
 const datafetch = await getData();
 const team = await getTeamData();
 const counter = await getCounterData();
-
+const preference = await getPreferenceData();
+console.log(preference.preference[0]);
 const data = {
   heroServices: {
     title: "Comprehensive Digital Solutions",
@@ -705,6 +724,14 @@ The importance lies in knowing the fixed asset, so that you can work on the unst
   ],
   logos: team.logo,
   counter: counter.counter,
+  contactPreference: {
+    phone: preference.preference[0].preference_phone,
+    email: preference.preference[0].preference_email,
+    whatsappPhone: preference.preference[0].preference_whatsapp_phone,
+    locationLink: preference.preference[0].preference_location,
+    address: preference.preference[0].preference_address,
+    description: preference.preference[0].preference_desc,
+  },
 };
 
 export default data;

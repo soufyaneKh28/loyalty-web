@@ -13,6 +13,7 @@ import {
 import Link from "next/link";
 import { PhoneInput } from "react-international-phone";
 import { PhoneInputT } from "./ui/PhoneInputT";
+import data from "@/app/content-en";
 
 const socialMedia = [
   {
@@ -42,10 +43,7 @@ const Footer = () => {
             <Image src={logo2} alt="logo2" />
           </div>
           <p className=" text-white w-[350px] md:w-[220px]  mt-5 font-normal text-[15px]">
-            Established in 2013, our company specializes in branding, digital
-            marketing, and programming. We expanded to Turkey in 2014, becoming
-            an official entity under Turkish marketing laws in 2020.
-            Additionally, we have branches in Dubai, UAE, and the USA.
+            {data.contactPreference.description}
           </p>
         </div>
         <div className="col my-5 ">
@@ -60,8 +58,7 @@ const Footer = () => {
                 height={30}
               />
               <Link href={""} className="mx-2 text-white">
-                Maltepe, Cevizlibağ Köprüsü No:8 Kat:11 No:137 , 34010
-                Zeytinburnu, 34010 Maltepe/İstanbuls
+                {data.contactPreference.address}
               </Link>
             </div>
             <div className=" py-3  flex items-center">
@@ -73,7 +70,7 @@ const Footer = () => {
                 height={30}
               />
               <Link href={""} className="mx-2 text-white">
-                +90 546 544 41 96
+                {data.contactPreference.phone}
               </Link>
             </div>
             <div className=" py-3  flex items-center">
@@ -85,7 +82,7 @@ const Footer = () => {
                 height={30}
               />
               <Link href={""} className=" mx-2 text-white">
-                info@loyalty.com.tr
+                {data.contactPreference.email}
               </Link>
             </div>
           </div>
@@ -95,11 +92,36 @@ const Footer = () => {
             Company Information
           </h3>
           <div className="mt-5 flex flex-col text-white">
-            <Link href={"/en/home"}>Home</Link>
-            <Link href={"/en/about"}>About Us</Link>
-            <Link href={"/en/services"}>Services</Link>
-            <Link href={"/en/projects"}>Projects</Link>
-            <Link href={"/en/contactUs"}>Contact Us</Link>
+            <Link
+              href={"/en/home"}
+              className=" hover:text-secondary transition-colors"
+            >
+              Home
+            </Link>
+            <Link
+              href={"/en/about"}
+              className=" hover:text-secondary transition-colors"
+            >
+              About Us
+            </Link>
+            <Link
+              href={"/en/services"}
+              className=" hover:text-secondary transition-colors"
+            >
+              Services
+            </Link>
+            <Link
+              href={"/en/projects"}
+              className=" hover:text-secondary transition-colors"
+            >
+              Projects
+            </Link>
+            <Link
+              href={"/en/contactUs"}
+              className=" hover:text-secondary transition-colors"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
         <div className=" col my-5">

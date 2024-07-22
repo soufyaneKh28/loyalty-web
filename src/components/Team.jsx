@@ -7,11 +7,12 @@ import { memberTeam } from "../../public";
 
 async function getData() {
   const res = await fetch(
-    "https://seenfox.com/api/get_data.php?actions=team,client&lang_code=en"
+    "https://seenfox.com/api/get_data.php?actions=team&lang_code=en",
+    { cache: "no-store" }
   );
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
-
+  // console.log(res.json());
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
@@ -22,7 +23,7 @@ async function getData() {
 
 async function Team({ members }) {
   const datafetch = await getData();
-  // console.log(datafetch.team);
+  console.log(datafetch);
 
   return (
     <div className="container flex justify-center  ">

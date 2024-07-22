@@ -14,6 +14,7 @@ import Link from "next/link";
 import { PhoneInput } from "react-international-phone";
 import PhoneInputT from "./ui/PhoneInputT";
 import { cairoClass } from "@/app/font";
+import data from "@/app/content-ar";
 
 const socialMedia = [
   {
@@ -43,10 +44,7 @@ const FooterAr = () => {
             <Image src={logo2} alt="logo2" />
           </div>
           <p className=" text-white w-[280px] md:w-[220px]  mt-5 font-normal text-[15px]">
-            شركة تجارية متخصصة في التسويق والبرمجة. تأسست الشركة عام 2008 وتم
-            افتتاح فرع لها في تركيا عام 2014 لتصبح رسمياً شركة تجارية ذات
-            مسؤولية محدودة تعمل ضمن قوانين الجمهورية التركية للشركات التجارية
-            عام 2020.
+            {data.contactPreference.description}
           </p>
         </div>
         <div className="col my-5 ">
@@ -61,8 +59,7 @@ const FooterAr = () => {
                 height={30}
               />
               <Link href={""} className="mx-2 text-white">
-                Maltepe, Cevizlibağ Köprüsü No:8 Kat:11 No:137 , 34010
-                Zeytinburnu, 34010 Maltepe/İstanbuls
+                {data.contactPreference.address}
               </Link>
             </div>
             <div className=" py-3  flex items-center">
@@ -74,7 +71,7 @@ const FooterAr = () => {
                 height={30}
               />
               <Link href={""} dir="ltr" className="mx-2  text-white">
-                +90 546 544 41 96
+                {data.contactPreference.phone}
               </Link>
             </div>
             <div className=" py-3  flex items-center">
@@ -86,7 +83,7 @@ const FooterAr = () => {
                 height={30}
               />
               <Link href={""} className=" mx-2 text-white">
-                info@loyalty.com.tr
+                {data.contactPreference.email}
               </Link>
             </div>
           </div>

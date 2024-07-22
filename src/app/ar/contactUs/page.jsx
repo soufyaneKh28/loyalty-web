@@ -63,14 +63,14 @@ const page = () => {
                     <Image src={phone} alt="phone" width={30} />
                   </div>
                   <p className=" " dir=" ltr">
-                    +90 546 544 41 96
+                    {data.contactPreference.phone}
                   </p>
                 </div>
                 <div className="phone  my-2 flex items-center gap-2">
                   <div className=" bg-primaryDark w-[40px] h-[40px] rounded-full flex justify-center items-center p-2">
                     <Image src={email} alt="phone" width={30} />
                   </div>
-                  <p>info@loyalty.com.tr</p>
+                  <p>{data.contactPreference.email}</p>
                 </div>
               </div>
               <div className="social flex gap-2 mt-4">
@@ -111,8 +111,7 @@ const page = () => {
                     <Image src={location} alt="location" />
                   </div>
                   <p className=" max-w-[270px] md:max-w-[350px] font-bold">
-                    Maltepe, Cevizlibağ Köprüsü No:8 Kat:11 No:137 , 34010
-                    Zeytinburnu, 34010 Maltepe/İstanbuls
+                    {data.contactPreference.address}
                   </p>
                 </div>
               </div>
