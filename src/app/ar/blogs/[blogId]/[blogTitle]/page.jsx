@@ -90,12 +90,12 @@ async function Page({ params }) {
   const blogs = await getBlogsData();
   let blogObj = blogs.blog;
   let title = decodeURIComponent(params.blogTitle);
-  console.log("it iiiiiiiis gereratestatic ====>", title);
-  console.log("it is params=============>", params.blogTitle);
-  console.log(
-    "it is title with dashed=============>",
-    blogObj.blog_title.replaceAll(" ", "-")
-  );
+  // console.log("it iiiiiiiis gereratestatic ====>", title);
+  // console.log("it is params=============>", params.blogTitle);
+  // console.log(
+  //   "it is title with dashed=============>",
+  //   blogObj.blog_title.replaceAll(" ", "-")
+  // );
   // metadata.title = blogObj.title;
   //   const arrayOfStrings = params.projectTitle.split("-");
 

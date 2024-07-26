@@ -11,7 +11,7 @@ const Statis = ({ stats }) => {
     triggerOnce: true, // Trigger the animation only once
     threshold: 0.1, // Trigger when 10% of the component is in view
   });
-  console.log(stats);
+  // console.log(stats);
   return (
     <div className="container mt-8">
       <div className=" py-[50px] md:py-0 bg-primaryDark relative w-full  overflow-hidden rounded-[10px] flex flex-col">

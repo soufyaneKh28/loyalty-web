@@ -37,7 +37,7 @@ const SLIDE_COUNT = 6;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 function Services({ object, options }) {
-  console.log(object);
+  // console.log(object);
   return (
     <div className="container">
       {/* <Slider>

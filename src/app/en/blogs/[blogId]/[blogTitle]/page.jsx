@@ -12,7 +12,7 @@ import EmblaCarousel from "@/components/ui/EmblaCarousel";
 import Form from "@/components/Form";
 import Link from "next/link";
 import { facebook, instagram, linkedin, x } from "../../../../../../public";
-import { MotionLayout } from "@/components";
+import { Menubar, MotionLayout } from "@/components";
 
 // export const generateMetaData = ({ params }): Metadata => {
 //   return {
@@ -71,27 +71,29 @@ const socialMedia = [
 
 // }
 
-
 export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
   // const id = params.id
-//  console.log('its id ===== ', params.blogId)
-//  console.log('its id ===== ', params.blogTitle)
- // fetch data
- const product = await fetch(`https://seenfox.com/api/get_data.php?actions=blog&lang_code=en&blog_id=${params.blogId}`).then((res) => res.json())
- 
-//  console.log('its product ===== ', product)
+  //  console.log('its id ===== ', params.blogId)
+  //  console.log('its id ===== ', params.blogTitle)
+  // fetch data
+  const product = await fetch(
+    `https://seenfox.com/api/get_data.php?actions=blog&lang_code=en&blog_id=${params.blogId}`
+  ).then((res) => res.json());
+
+  //  console.log('its product ===== ', product)
   // optionally access and extend (rather than replace) parent metadata
   // const previousImages = (await parent).openGraph?.images || []
- if(product.blog === null){
-    redirect("/en/not-found")
- }
-  else {return {
-    title: product.blog.blog_title,
-    // openGraph: {
-    //   images: ['/some-specific-page-image.jpg', ...previousImages],
-    // },
-  }}
+  if (product.blog === null) {
+    redirect("/en/not-found");
+  } else {
+    return {
+      title: product.blog.blog_title,
+      // openGraph: {
+      //   images: ['/some-specific-page-image.jpg', ...previousImages],
+      // },
+    };
+  }
 }
 
 // export async function generateStaticParams({params}) {
@@ -106,10 +108,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 //   // };
 // }
 
-
 async function Page({ params }) {
-
-
   //   let exist = true;
   async function getBlogsData() {
     const res = await fetch(
@@ -128,16 +127,16 @@ async function Page({ params }) {
   }
   const blogs = await getBlogsData();
 
-  let title = decodeURIComponent(params.blogTitle)
+  let title = decodeURIComponent(params.blogTitle);
   let blogObj = blogs.blog;
   // metadata.title = `${blogObj.blog_title}`;
   // console.log('it is bloogs =========>' ,blogObj)
   //   console.log("Visual-Identity-Souq-alfurat");
-  
-  console.log("it iiiiiiiis gereratestatic ====>",  title)
-  console.log("it is params=============>" , params.blogTitle)
-  console.log("it is title with dashed=============>" , blogObj.blog_title.replaceAll(" ", "-") )
-  //   const arrayOfStrings = params.projectTitle.split("-");
+
+  // console.log("it iiiiiiiis gereratestatic ====>",  title)
+  // console.log("it is params=============>" , params.blogTitle)
+  // console.log("it is title with dashed=============>" , blogObj.blog_title.replaceAll(" ", "-") )
+  // //   const arrayOfStrings = params.projectTitle.split("-");
 
   //   console.log(arrayOfStrings);
   //   let Title = arrayOfStrings.join(" ");
@@ -149,16 +148,18 @@ async function Page({ params }) {
   // }
   if (
     blogObj === null ||
-     blogObj.blog_title.replaceAll(" ", "-").replace("?",'') !=  decodeURIComponent(params.blogTitle)
+    blogObj.blog_title.replaceAll(" ", "-").replace("?", "") !=
+      decodeURIComponent(params.blogTitle)
   ) {
     // exist = false;
     redirect(`/en/not-found`);
   }
   return (
     <>
-    {/* <Head>
+      {/* <Head>
       <meta title={blogObj.title} />
     </Head> */}
+      {/* <Menubar params={params} /> */}
       <main className={` pt-[100px] ${poppinsClass}`}>
         <MotionLayout>
           <section>

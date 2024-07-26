@@ -7,7 +7,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { logo, menu, close, downArrow, uk, ar } from "../../public";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 
 const links = [
   {
@@ -49,7 +49,7 @@ export default function Menubar({ params, searchParams }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const router = useRouter();
-
+  const [title, setTitle] = useState("");
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -68,18 +68,150 @@ export default function Menubar({ params, searchParams }) {
     }
   }
 
+  let id = pathname.split("/");
+  let path = pathname.split("/");
+  // async function IdFetchingEn() {
+  //   async function getBlogsDataen() {
+  //     const res = await fetch(
+  //       `https://seenfox.com/api/get_data.php?actions=blog&lang_code=en&blog_id=${id[3]}`,
+  //       { cache: "no-store" }
+  //     );
+  //     // The return value is *not* serialized
+  //     // You can return Date, Map, Set, etc.
+
+  //     if (!res.ok) {
+  //       // This will activate the closest `error.js` Error Boundary
+  //       throw new Error("Failed to fetch data");
+  //     }
+
+  //     return res.json();
+  //   }
+  //   const blogs = await getBlogsDataen();
+  //   console.log("this is the blooooog ===================", blogs);
+  //   console.log(
+  //     "this is the blooooog ENGLISH modified  ttttttttttttitle===================",
+  //     blogs.blog.blog_title.replaceAll(" ", "-")
+  //   );
+  //   setTitle(() => blogs.blog.blog_title);
+  //   console.log("this title staaaaaaaate =====", title);
+  //   // router.push(
+  //   //   `/en/blogs/${id[3]}/${blogs.blog.blog_title.replaceAll(" ", "-")}`
+  //   // );
+  // }
+  // async function IdFetchingAr() {
+  //   async function getBlogsData() {
+  //     const res = await fetch(
+  //       `https://seenfox.com/api/get_data.php?actions=blog&lang_code=ar&blog_id=${id[3]}`,
+  //       { cache: "no-store" }
+  //     );
+  //     // The return value is *not* serialized
+  //     // You can return Date, Map, Set, etc.
+
+  //     if (!res.ok) {
+  //       // This will activate the closest `error.js` Error Boundary
+  //       throw new Error("Failed to fetch data");
+  //     }
+
+  //     return res.json();
+  //   }
+  //   const blogs = await getBlogsData();
+  //   let blogObj = blogs.blog;
+  //   console.log("this is the blooooog ===================", blogs);
+  //   console.log(
+  //     "this is the ARABIC blooooog modified ttttttttttttitle===================",
+  //     blogs.blog.blog_title.replaceAll(" ", "-")
+  //   );
+  //   setTitle(() => blogs.blog.blog_title);
+  //   console.log("this title staaaaaaaate =====", title);
+  //   console.log("this is a path test", pathname.replace("", "////"));
+  //   // router.push(
+  //   //   `/ar/blogs/${id[3]}/${blogObj.blog_title.replaceAll(" ", "-")}`
+  //   // );
+  // }
+
   useEffect(
     function () {
       if (selectedLanguage) {
-        if (pathname.includes("ar")) {
-          const newPath = pathname.replace("ar", selectedLanguage);
+        if (path[1] === "ar") {
+          if (pathname.includes("blogs")) {
+            // async function IdFetchingEn() {
+            //   async function getBlogsDataen() {
+            //     const res = await fetch(
+            //       `https://seenfox.com/api/get_data.php?actions=blog&lang_code=en&blog_id=${id[3]}`,
+            //       { cache: "no-store" }
+            //     );
+            //     // The return value is *not* serialized
+            //     // You can return Date, Map, Set, etc.
 
-          router.push(newPath);
+            //     if (!res.ok) {
+            //       // This will activate the closest `error.js` Error Boundary
+            //       throw new Error("Failed to fetch data");
+            //     }
+
+            //     return res.json();
+            //   }
+            //   const blogs = await getBlogsDataen();
+            //   console.log("this is the blooooog ===================", blogs);
+            //   console.log(
+            //     "this is the blooooog ENGLISH modified  ttttttttttttitle===================",
+            //     blogs.blog.blog_title.replaceAll(" ", "-")
+            //   );
+
+            //   router.push(
+            //     `/en/blogs/${id[3]}/${blogs.blog.blog_title.replaceAll(
+            //       " ",
+            //       "-"
+            //     )}`
+            //   );
+            // }
+            // IdFetchingEn();
+            return;
+          } else {
+            // const newPath = pathname.replace("en", selectedLanguage);
+            // router.push(newPath);
+          }
         }
-        if (pathname.includes("en")) {
-          const newPath = pathname.replace("en", selectedLanguage);
+        if (path[1] === "en") {
+          if (pathname.includes("blogs")) {
+            async function IdFetchingAr() {
+              async function getBlogsData() {
+                const res = await fetch(
+                  `https://seenfox.com/api/get_data.php?actions=blog&lang_code=ar&blog_id=${id[3]}`,
+                  { cache: "no-store" }
+                );
+                // The return value is *not* serialized
+                // You can return Date, Map, Set, etc.
 
-          router.push(newPath);
+                if (!res.ok) {
+                  // This will activate the closest `error.js` Error Boundary
+                  throw new Error("Failed to fetch data");
+                }
+
+                return res.json();
+              }
+              const blogs = await getBlogsData();
+              let blogObj = blogs.blog;
+              // console.log("this is the blooooog ===================", blogs);
+              // console.log(
+              //   "this is the ARABIC blooooog modified ttttttttttttitle===================",
+              //   blogs.blog.blog_title.replaceAll(" ", "-")
+              // );
+              // setTitle(() => blogs.blog.blog_title);
+              // console.log("this title staaaaaaaate =====", title);
+              // console.log("this is a path test", pathname.replace("", "////"));
+              router.push(
+                `/ar/blogs/${id[3]}/${blogs.blog.blog_title.replaceAll(
+                  " ",
+                  "-"
+                )}`
+              );
+            }
+            IdFetchingAr();
+            return;
+          } else if (!pathname.includes("blogs")) {
+            const newPath = pathname.replace("en", selectedLanguage);
+            router.push(newPath);
+          }
         }
         if (pathname === "/") {
           const newPath = pathname.replace("/", `${selectedLanguage}/home`);
@@ -90,7 +222,10 @@ export default function Menubar({ params, searchParams }) {
     [selectedLanguage, pathname, router]
   );
 
-  console.log(searchParams);
+  // console.log(pathname);
+  // console.log(pathname.includes("blogs"));
+  // console.log(pathname.slice(10, 12));
+  // console.log(pathname.split("/"));
   return (
     <div className="container flex justify-center">
       <header

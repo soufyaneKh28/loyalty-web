@@ -54,7 +54,7 @@ export default function MenubarAr() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("ar");
+  const [selectedLanguage, setSelectedLanguage] = useState("");
   const router = useRouter();
   useEffect(() => {
     const handleScroll = () => {
@@ -72,16 +72,97 @@ export default function MenubarAr() {
     setSelectedLanguage(e.target.value);
   }
 
+  let id = pathname.split("/");
+  let path = pathname.split("/");
+
+  function handleLAnguageChange() {}
+
   useEffect(
     function () {
-      if (pathname.includes("ar")) {
-        const newPath = pathname.replace("ar", selectedLanguage);
-        console.log(newPath);
-        router.push(newPath);
-      }
-      if (pathname.includes("en")) {
-        const newPath = pathname.replace("en", selectedLanguage);
-        console.log(newPath);
+      if (selectedLanguage) {
+        if (path[1] === "ar") {
+          if (path[3] && path[2] == "blogs") {
+            async function IdFetchingEn() {
+              async function getBlogsDataen() {
+                const res = await fetch(
+                  `https://seenfox.com/api/get_data.php?actions=blog&lang_code=en&blog_id=${id[3]}`,
+                  { cache: "no-store" }
+                );
+                // The return value is *not* serialized
+                // You can return Date, Map, Set, etc.
+
+                if (!res.ok) {
+                  // This will activate the closest `error.js` Error Boundary
+                  throw new Error("Failed to fetch data");
+                }
+
+                return res.json();
+              }
+              const blogs = await getBlogsDataen();
+              // console.log("this is the blooooog ===================", blogs);
+              // console.log(
+              //   "this is the blooooog ENGLISH modified  ttttttttttttitle===================",
+              //   blogs.blog.blog_title.replaceAll(" ", "-")
+              // );
+
+              router.push(
+                `/en/blogs/${id[3]}/${blogs.blog.blog_title.replaceAll(
+                  " ",
+                  "-"
+                )}`
+              );
+            }
+            IdFetchingEn();
+          } else {
+            const newPath = pathname.replace("ar", selectedLanguage);
+            router.push(newPath);
+          }
+        }
+        if (path[1] === "en") {
+          if (pathname.includes("blogs")) {
+            //   async function IdFetchingAr() {
+            //     async function getBlogsData() {
+            //       const res = await fetch(
+            //         `https://seenfox.com/api/get_data.php?actions=blog&lang_code=ar&blog_id=${id[3]}`,
+            //         { cache: "no-store" }
+            //       );
+            //       // The return value is *not* serialized
+            //       // You can return Date, Map, Set, etc.
+            //       if (!res.ok) {
+            //         // This will activate the closest `error.js` Error Boundary
+            //         throw new Error("Failed to fetch data");
+            //       }
+            //       return res.json();
+            //     }
+            //     const blogs = await getBlogsData();
+            //     let blogObj = blogs.blog;
+            //     console.log("this is the blooooog ===================", blogs);
+            //     console.log(
+            //       "this is the ARABIC blooooog modified ttttttttttttitle===================",
+            //       blogs.blog.blog_title.replaceAll(" ", "-")
+            //     );
+            //     setTitle(() => blogs.blog.blog_title);
+            //     console.log("this title staaaaaaaate =====", title);
+            //     console.log("this is a path test", pathname.replace("", "////"));
+            //     router.push(
+            //       `/ar/blogs/${id[3]}/${blogs.blog.blog_title.replaceAll(
+            //         " ",
+            //         "-"
+            //       )}`
+            //     );
+            //   }
+            //   IdFetchingAr();
+            //   return;
+          } else if (!pathname.includes("blogs")) {
+            const newPath = pathname.replace("en", selectedLanguage);
+            router.push(newPath);
+          }
+        }
+
+        if (pathname === "/") {
+          const newPath = pathname.replace("/", `${selectedLanguage}/home`);
+          router.push(newPath);
+        }
       }
     },
     [selectedLanguage, pathname, router]
