@@ -7,6 +7,7 @@ import React from "react";
 import { nextSvg, project, projectDe } from "../../../../public";
 import Link from "next/link";
 import { delay } from "framer-motion";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Projects",
@@ -20,10 +21,11 @@ const pagesArray = [];
 for (let i = 1; i <= Math.ceil(productsLength / itemsPerPage); i++) {
   pagesArray.push(i);
 }
-const page = ({ searchParams }) => {
+
+async function page({ searchParams }) {
   console.log("hello");
 
-  const page = Number(searchParams.page ?? defaultPage);
+  const page = Number(searchParams.page ? searchParams.page : defaultPage);
   console.log(searchParams);
   console.log("page", page);
 
@@ -83,29 +85,30 @@ const page = ({ searchParams }) => {
                     .slice((page - 1) * itemsPerPage, page * itemsPerPage)
                     .map((project, i) => (
                       <MotionLayout delay={0.3 * i} key={i}>
-                        <div className="project rounded-[10px] overflow-hidden w-[333px] relative">
+                        <div className="project rounded-[10px] h-[416px] overflow-hidden w-[333px]  relative">
+                          <div className=" w-full h-[50%] absolute bottom-0 project z-10 "></div>
                           <Image
-                            src={project.img}
-                            alt={project.title}
-                            className=" hover:scale-110 transition-all"
+                            src={project.project_image}
+                            width={300}
+                            height={600}
+                            alt={project.project_image_alt}
+                            className=" hover:scale-110 w-full h-full transition-all"
                           />
-                          <div className="absolute bottom-[0px] px-3 translate-y-[-20%]">
+                          <div className="absolute bottom-[0px] z-30 px-3 translate-y-[-20%]">
                             <Link
-                              href={`/en/projects/${project.id}/${project.url}`}
+                              className=" relative z-30"
+                              href={`/en/projects/${
+                                project.project_id
+                              }/${project.project_name.replace(" ", "-")}`}
                             >
                               <h2 className=" text-white font-bold text-[28px] leading-[35px] hover:text-secondary transition-colors cursor-pointer">
-                                {project.title}
+                                {project.project_name}
                               </h2>
                             </Link>
                             <div className="tags mt-4 flex gap-2">
-                              {project.tags.map((tag, i) => (
-                                <div
-                                  className=" bg-white w-fit py-1 px-4 rounded-[5px] text-[14px] flex items-center font-semibold "
-                                  key={i}
-                                >
-                                  {tag.title}
-                                </div>
-                              ))}
+                              <div className=" bg-white w-fit py-1 px-4 rounded-[5px] text-[14px] flex items-center font-semibold ">
+                                {project.pcategory_lang_name}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -117,7 +120,7 @@ const page = ({ searchParams }) => {
             <div className="pagination my-10 flex justify-center ">
               <nav aria-label="" className="">
                 <ul class="inline-flex gap-1 -space-x-px text-sm">
-                  {Number(searchParams.page) === 1 ? null : (
+                  {Number(page) === 1 ? null : (
                     <li className=" overflow-hidden rounded-[5px]">
                       <Link
                         href={`/en/projects/?${new URLSearchParams({
@@ -138,16 +141,14 @@ const page = ({ searchParams }) => {
                       <Link
                         href={`/en/projects?page=${num}`}
                         className={` flex ${
-                          Number(searchParams.page) === num
-                            ? " text-secondary"
-                            : ""
+                          Number(page) === num ? " text-secondary" : ""
                         } items-center justify-center px-5 h-10 leading-tight rounded-[5px]  font-bold text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
                       >
                         {num}
                       </Link>
                     </li>
                   ))}
-                  {Number(searchParams.page) ===
+                  {Number(page) ===
                   Math.ceil(productsLength / itemsPerPage) ? null : (
                     <li className="rounded-[5px] overflow-hidden">
                       <Link

@@ -31,20 +31,39 @@ export const metadata = {
 //   };project.title
 
 // }
-const Page = ({ params }) => {
+async function Page({ params }) {
   let exist = true;
+  async function getInnovationData() {
+    const res = await fetch(
+      `https://seenfox.com/api/get_data.php?actions=innovation&lang_code=ar&innovations_id=${params.id}`,
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
 
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+  const innovation = await getInnovationData();
   console.log("Visual-Identity-Souq-alfurat");
 
-  let projectObj = data.innovations[Number(params.id) - 1];
+  let projectObj = innovation.innovation;
   // const arrayOfStrings = params.projectTitle.split("-");
-  metadata.title = `${projectObj.title}`;
+  // metadata.title = `${projectObj.title}`;
 
   // // console.log(arrayOfStrings);
   // let Title = arrayOfStrings.join(" ");
 
   // console.log(Title);
-  if (!projectObj || projectObj.url != params.innovTitle) {
+  if (
+    !projectObj.innovations_name ||
+    projectObj.innovations_name.replace(" ", "-") != params.innovTitle
+  ) {
     exist = false;
     redirect(`/en/not-found`);
   }
@@ -64,7 +83,7 @@ const Page = ({ params }) => {
               <div className=" my-5 md:w-[50%] flex-1">
                 <div className=" font-bold text-secondary">اقرأ </div>
                 <h1 className=" text-start leading-[118%] text-[50px] font-bold text-primaryDark">
-                  {projectObj.title}
+                  {projectObj.innovations_name}
                 </h1>
                 <p
                   className="max-w-[400px] my-3 leading-7 font-semibold
@@ -78,21 +97,19 @@ const Page = ({ params }) => {
               </div>
               <div className="project-images innovations  flex-1">
                 <EmblaCarousel2>
-                  {data.innovations[params.id - 1].images
-                    ? data.innovations[params.id - 1].images.map((innov, i) => (
-                        <div className=" mx-2  md:ms-10  " key={i}>
-                          <div className="transition-colors w-[350px] h-[300px] md:h-[438px] md:w-[420px] rounded-[10px] overflow-hidden">
-                            <Image
-                              src={innov.img}
-                              alt="img"
-                              className="w-[100%] h-[100%] object-cover"
-                              width={"100%"}
-                              height={"100%"}
-                            />
-                          </div>
-                        </div>
-                      ))
-                    : null}
+                  {projectObj.slider.map((innov, i) => (
+                    <div className=" mx-2  md:ms-10  " key={i}>
+                      <div className="transition-colors w-[350px] h-[300px] md:h-[438px] md:w-[420px] rounded-[10px] overflow-hidden">
+                        <Image
+                          src={innov.slider_image}
+                          alt={innov.slider_image_alt}
+                          className="w-[100%] h-[100%] object-cover"
+                          width={500}
+                          height={500}
+                        />
+                      </div>
+                    </div>
+                  ))}
                   {}
                 </EmblaCarousel2>
               </div>
@@ -133,10 +150,7 @@ const Page = ({ params }) => {
                             الفكرة
                           </h3>
                           <p className="mt-3 sm:mt-4 text-base text-gray-400 leading-7">
-                            ميدي كيوت أخبرنا العميل أنهم لا يملكون عيادة عادية،
-                            بل أنهم يحاولون إنشاء مكان لصناعة الجمال بأيدي
-                            الأطباء! لذلك جمعنا أوراقنا وأفكارنا وبدأنا بالبحث
-                            عن اسم يلبي طموحاتهم وأهدافهم. يبدو أننا فعلنا
+                            {projectObj.innovations_text1}
                           </p>
                         </div>
                         <div>
@@ -149,11 +163,7 @@ const Page = ({ params }) => {
                             التصميم
                           </h3>
                           <p className="mt-3 sm:mt-4 text-base text-gray-400 leading-7">
-                            كيف جاءت فكرة الاسم والعلامة التجارية؟ هل كانت مجرد
-                            صدفة؟ لا، تم إنشاؤها بعد تفكير دقيق ومعرفة واسعة.
-                            نحن نؤمن بجمال الشركة والمكان. قمنا بدمج رؤيتنا مع
-                            القدرة على استخدام البيانات والأدوات لتقديم اسم فريد
-                            وحصري للعملاء، مما يقودهم نحو النجاح والابتكار.
+                            {projectObj.innovations_text2}
                           </p>
                         </div>
                         <div>
@@ -166,13 +176,7 @@ const Page = ({ params }) => {
                             التطبيق
                           </h3>
                           <p className="mt-3 sm:mt-4 text-base text-gray-400 leading-7">
-                            لوحة الموناليزا التي رسمها الفنان الإيطالي دافنشي
-                            كانت وستظل لوحة أسطورية فريدة وجميلة لا تقدر بثمن.
-                            الجميع يعرفها ويضرب بها المثل. الجميع أيضا يعرف
-                            مدينة ريز ويضرب بها المثل لكونها ولاية طبيعية فريدة.
-                            لذا غيرنا حرفاً واحداً وحولنا الآخر إلى كلمة تركية
-                            صحيحة، وأصبح الاسم الفريد علامة تجارية بمعنى مختلف
-                            وقصة فريدة.
+                            {projectObj.innovations_text3}
                           </p>
                         </div>
                       </div>

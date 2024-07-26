@@ -94,26 +94,34 @@ const page = () => {
               >
                 <div className="innov-text my-5 flex flex-col items-start ">
                   <div>
-                    <Link href={`/ar/innovations/${i + 1}/${innov.url}`}>
+                    <Link
+                      href={`/ar/innovations/${innov.innovations_id}/${innov.innovations_name}`}
+                    >
                       <h2 className="text-[36px] text-white font-bold hover:text-secondary transition-colors">
-                        {innov.title}
+                        {innov.innovations_name}
                       </h2>
                     </Link>
                     <p className=" text-white max-w-[370px] leading-7 my-3 font-normal mt-4">
-                      {innov.description}
+                      {innov.innovations_desc}
                     </p>
                   </div>
                   <Button>
-                    <Link href={`/ar/innovations/${i + 1}/${innov.url}`}>
+                    <Link
+                      href={`/ar/innovations/${innov.innovations_id}/${innov.innovations_name}`}
+                    >
                       أكمل القصة
                     </Link>
                   </Button>
                 </div>
                 <div className="innov-img overflow-hidden max-w-[422px] h-[438px] rounded-[10px]">
-                  <Link href={`/ar/innovations/${i + 1}/${innov.url}`}>
+                  <Link
+                    href={`/ar/innovations/${innov.innovations_id}/${innov.innovations_name}`}
+                  >
                     <Image
-                      src={innov.img}
-                      alt="innov1"
+                      width={500}
+                      height={500}
+                      src={innov.innovations_image}
+                      alt={innov.innovations_image_alt}
                       className=" hover:scale-110 h-[100%] object-cover transition-all"
                     />
                   </Link>

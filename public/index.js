@@ -48,6 +48,7 @@ import soufyane3 from "./soufyane3.png";
 import downArrow from "./down-arrow.png";
 import uk from "./uk.png";
 import ar from "./ar.webp";
+import notFound from "./not-found.svg";
 export {
   logo,
   menu,
@@ -93,4 +94,5 @@ export {
   nextSvg,
   uk,
   ar,
+  notFound,
 };

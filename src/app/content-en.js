@@ -83,11 +83,77 @@ async function getPreferenceData() {
   return res.json();
 }
 
+async function getServicesData() {
+  const res = await fetch(
+    "https://seenfox.com/api/get_data.php?actions=service&lang_code=en",
+    { cache: "no-store" }
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+}
+
+async function getProjectsData() {
+  const res = await fetch(
+    "https://seenfox.com/api/get_data.php?actions=projects&lang_code=en",
+    { cache: "no-store" }
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+async function getInnovationData() {
+  const res = await fetch(
+    "https://seenfox.com/api/get_data.php?actions=innovations&lang_code=en",
+    { cache: "no-store" }
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+async function getBlogsData() {
+  const res = await fetch(
+    "https://seenfox.com/api/get_data.php?actions=blogs&lang_code=en",
+    { cache: "no-store" }
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
 const datafetch = await getData();
 const team = await getTeamData();
 const counter = await getCounterData();
 const preference = await getPreferenceData();
-console.log(preference.preference[0]);
+const services = await getServicesData();
+const projects = await getProjectsData();
+const innovations = await getInnovationData();
+const blogs = await getBlogsData();
+
+// console.log(preference.preference[0]);
 const data = {
   heroServices: {
     title: "Comprehensive Digital Solutions",
@@ -124,47 +190,7 @@ const data = {
     title: "Our Services",
     description: ` Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed
     ac sed. Aenean donec nulla sollicitudin`,
-    servicesItems: [
-      {
-        title: "Digital marketing",
-        imgDark: Marketing,
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
-      },
-      {
-        title: "Digital marketing",
-        imgDark: Marketing,
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
-      },
-      {
-        title: "Digital marketing",
-        imgDark: Marketing,
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
-      },
-      {
-        title: "Programmation Solution",
-        imgDark: Marketing,
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
-      },
-      //Second image url
-      {
-        title: "Design",
-        imgDark: Marketing,
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
-      },
-
-      //Third image url
-      {
-        title: "Mobile Application",
-        imgDark: Marketing,
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin ",
-      },
-    ],
+    servicesItems: services.service,
   },
   strategy: {
     smallTitle: "Workflow",
@@ -257,438 +283,10 @@ const data = {
     `,
     items: datafetch.client,
   },
-  innovations: [
-    {
-      url: "the-story-of-moarize",
-      title: "The Story Of Monarize",
-      description: `Monarisa! Or Mona Lisa?MonaRize A commercial
-       company working in the field of real estate and tourism, 
-       specifically located in Rize, Risa is the attractive city
-        and unique painting in the Turkish north, its mountains, plateaus, sea and sky, 
-        as well as the case in its weather and people. Actually, this city is a unique painting,
-         one of a kind in the natural creativity that it is in.
-  
-  `,
-      img: soufyane1,
-      images: [{ img: soufyane1 }, { img: soufyane2 }, { img: soufyane3 }],
-    },
-    {
-      url: "the-story-of-moarize",
-      title: "The Story Of Monarize",
-      description: `Monarisa! Or Mona Lisa?MonaRize A commercial
-       company working in the field of real estate and tourism, 
-       specifically located in Rize, Risa is the attractive city
-        and unique painting in the Turkish north, its mountains, plateaus, sea and sky, 
-        as well as the case in its weather and people. Actually, this city is a unique painting,
-         one of a kind in the natural creativity that it is in.
-  
-  `,
-      img: innov1,
+  innovations: innovations.innovations,
 
-      images: [{ img: innov1 }, { img: innov1 }, { img: innov1 }],
-    },
-  ],
-
-  projects: [
-    {
-      url: "Visual-Identity-Souq-alfurat",
-      id: "1",
-      title: "Visual Identity Souq alfurat",
-      tags: [
-        {
-          title: "Branding",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: project,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          {
-            type: "video",
-            img: "https://cdn.dribbble.com/userupload/2999497/file/large-438276ad83c25e3db171ff740589081e.mp4",
-          },
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-        ],
-      },
-    },
-    {
-      url: "Visual-Identity-soufyane",
-      id: "2",
-      title: "Visual Identity soufyane",
-      tags: [
-        {
-          title: "UI UX",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: soufyane,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          {
-            type: "video",
-            img: "https://cdn.dribbble.com/userupload/2999497/file/large-438276ad83c25e3db171ff740589081e.mp4",
-          },
-          { type: "img", img: soufyane1 },
-          { type: "img", img: soufyane2 },
-          { type: "img", img: soufyane3 },
-        ],
-      },
-    },
-    {
-      url: "Visual-Identity-Souq-alfurat",
-      id: "3",
-      title: "Visual Identity Souq alfurat",
-      tags: [
-        {
-          title: "Branding",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: project,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-        ],
-      },
-    },
-    {
-      url: "Visual-Identity-soufyane",
-      id: "4",
-      title: "Visual Identity soufyane",
-      tags: [
-        {
-          title: "UI UX",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: soufyane,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          { type: "img", img: soufyane1 },
-          { type: "img", img: soufyane2 },
-          { type: "img", img: soufyane3 },
-        ],
-      },
-    },
-    {
-      url: "Visual-Identity-Souq-alfurat",
-      id: "5",
-      title: "Visual Identity Souq alfurat",
-      tags: [
-        {
-          title: "Branding",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: project,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-        ],
-      },
-    },
-    {
-      url: "Visual-Identity-soufyane",
-      id: "6",
-      title: "Visual Identity soufyane",
-      tags: [
-        {
-          title: "UI UX",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: soufyane,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          { type: "img", img: soufyane1 },
-          { type: "img", img: soufyane2 },
-          { type: "img", img: soufyane3 },
-        ],
-      },
-    },
-    {
-      url: "Visual-Identity-Souq-alfurat",
-      id: "7",
-      title: "Visual Identity Souq alfurat",
-      tags: [
-        {
-          title: "Branding",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: project,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-        ],
-      },
-    },
-    {
-      url: "Visual-Identity-soufyane",
-      id: "8",
-      title: "Visual Identity soufyane",
-      tags: [
-        {
-          title: "UI UX",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: soufyane,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          { type: "img", img: soufyane1 },
-          { type: "img", img: soufyane2 },
-          { type: "img", img: soufyane3 },
-        ],
-      },
-    },
-    {
-      url: "Visual-Identity-Souq-alfurat",
-      id: "9",
-      title: "Visual Identity Souq alfurat",
-      tags: [
-        {
-          title: "Branding",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: project,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-        ],
-      },
-    },
-    {
-      url: "Visual-Identity-soufyane",
-      id: "10",
-      title: "Visual Identity soufyane",
-      tags: [
-        {
-          title: "UI UX",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: soufyane,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          { type: "img", img: soufyane1 },
-          { type: "img", img: soufyane2 },
-          { type: "img", img: soufyane3 },
-        ],
-      },
-    },
-    {
-      url: "Visual-Identity-Souq-alfurat",
-      id: "11",
-      title: "Visual Identity Souq alfurat",
-      tags: [
-        {
-          title: "Branding",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: project,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-          { type: "img", img: projectDe },
-        ],
-      },
-    },
-    {
-      url: "Visual-Identity-soufyane",
-      id: "12",
-      title: "Visual Identity soufyane",
-      tags: [
-        {
-          title: "UI UX",
-        },
-        {
-          title: "Design",
-        },
-      ],
-      img: soufyane,
-      details: {
-        client: "Souq alfurat",
-        services: "Branding Design",
-        duration: "03 Months",
-        images: [
-          { type: "img", img: soufyane1 },
-          { type: "img", img: soufyane2 },
-          { type: "img", img: soufyane3 },
-        ],
-      },
-    },
-  ],
-  blogs: [
-    {
-      id: 1,
-      url: "diffrence-between-marketing-and-digital-marketing",
-      img: soufyane1,
-      title: " Difference Between Marketing and Digital Marketing",
-      date: "Sunday, 12.08.2023",
-      tag: "Design",
-      description: `In the old days,companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
-Marketing definition
-
-
-Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
-What is the so important to know the difference between marketing and digital marketing?
-
-The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
-    },
-    {
-      id: 2,
-      url: "diffrence-between-marketing-and-digital-marketing",
-      img: soufyane1,
-      title: " Difference Between Marketing and Digital Marketing",
-      date: "Sunday, 12.08.2023",
-      tag: "Design",
-      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
-Marketing definition
-Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
-What is the so important to know the difference between marketing and digital marketing?
-
-The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
-    },
-    {
-      id: 3,
-      url: "diffrence-between-marketing-and-digital-marketing",
-      img: soufyane1,
-      title: " Difference Between Marketing and Digital Marketing",
-      date: "Sunday, 12.08.2023",
-      tag: "Design",
-      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
-Marketing definition
-Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
-What is the so important to know the difference between marketing and digital marketing?
-
-The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
-    },
-    {
-      id: 4,
-      url: "diffrence-between-marketing-and-digital-marketing",
-      img: soufyane1,
-      title: " Difference Between Marketing and Digital Marketing",
-      date: "Sunday, 12.08.2023",
-      tag: "Design",
-      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
-Marketing definition
-Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
-What is the so important to know the difference between marketing and digital marketing?
-
-The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
-    },
-    {
-      id: 5,
-      url: "diffrence-between-marketing-and-digital-marketing",
-      img: soufyane1,
-      title: " Difference Between Marketing and Digital Marketing",
-      date: "Sunday, 12.08.2023",
-      tag: "Design",
-      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
-Marketing definition
-Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
-What is the so important to know the difference between marketing and digital marketing?
-
-The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
-    },
-    {
-      id: 6,
-      url: "diffrence-between-marketing-and-digital-marketing",
-      img: soufyane1,
-      title: " Difference Between Marketing and Digital Marketing",
-      date: "Sunday, 12.08.2023",
-      tag: "Design",
-      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
-Marketing definition
-Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
-What is the so important to know the difference between marketing and digital marketing?
-
-The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
-    },
-    {
-      id: 7,
-      url: "soufyane-khalfallah",
-      img: projectDe,
-      title: "soufyane khalfallah",
-      date: "Sunday, 12.08.2023",
-      tag: "Design",
-      description: `In the old days, companies used to create a name for their company with prestige, power, and influence associated with government projects or they would try to control competitors by blackmailing them or buying their projects with huge amounts of money. After the humanitarian and intellectual development of the owners of large companies and pioneering projects, the appearance and the squeaky-clean image became all that the company had in order to have a good reputation in the market in order for its prestige or image at its best. “Image wise”, the place (location and aesthetic/decor) makes up half of the picture and the other half is the employees and their way of serving and dealing with customers, and this is the point of this article.
-Marketing definition
-Marketing is creating value for products or services and transforming it into a need or desire of customers. Marketing methods or channels for reaching customers may differ, but the goal remains the same, which is to create value and reach potential customers to turn them into serious customers.
-What is the so important to know the difference between marketing and digital marketing?
-
-The importance lies in knowing the fixed asset, so that you can work on the unstable dependents professionally, and when we talk about the origin, we mention marketing as a science and profession. When we talk about the unstable dependents, we mention digital and electronic marketing. Marketing cannot change, as it is a science that you can apply regardless of the different tools, while digital marketing may change in the event of a new electronic situation or an alternative to the Internet.`,
-    },
-  ],
+  projects: projects.projects,
+  blogs: blogs.blogs,
   form: {
     title: "Contact Us",
     fullName: "Full Name",

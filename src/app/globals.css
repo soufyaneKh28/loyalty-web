@@ -791,3 +791,7 @@
   display: flex;
   align-items: center;
 }
+
+.project {
+  background: linear-gradient(3deg, #27272F 34.73%, rgba(39, 39, 47, 0.71) 75.63%, rgba(39, 39, 47, 0.00) 97.93%);
+}

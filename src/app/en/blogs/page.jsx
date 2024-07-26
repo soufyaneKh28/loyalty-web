@@ -105,31 +105,37 @@ function Blogs({ searchParams }) {
                   .map((blog, i) => (
                     <MotionLayout delay={0.3 * i} key={i}>
                       <div className="blog m-2 max-w-[360px]">
-                        <div className=" h-[225px] overflow-hidden rounded-[20px]">
+                        <div className=" h-[225px] w-full overflow-hidden rounded-[20px]">
                           <Link
-                            href={`/en/blogs/${blog.id}/${blog.url}`}
+                            href={`/en/blogs/${
+                              blog.blog_id
+                            }/${blog.blog_title.replace(" ", "-")}`}
                             className="h-[100%] w-full block"
                           >
                             <Image
-                              src={blog.img}
-                              width={"100%"}
-                              height={"100%"}
-                              alt="alt"
-                              className=" h-[100%] object-cover hover:scale-110 transition-all cursor-pointer "
+                              src={`${blog.blog_image}`}
+                              width={400}
+                              height={200}
+                              alt={blog.blog_image_alt}
+                              className=" h-[100%] w-full object-cover hover:scale-110 transition-all cursor-pointer "
                             />
                           </Link>
                         </div>
-                        <Link href={`/en/blogs/${blog.id}/${blog.url}`}>
+                        <Link
+                          href={`/en/blogs/${
+                            blog.blog_id
+                          }/${blog.blog_title.replaceAll(" ", "-")}`}
+                        >
                           <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-bold">
-                            {blog.title}
+                            {blog.blog_title}
                           </h3>
                         </Link>
                         <div className=" flex justify-between mt-4 items-center">
                           <div className="date text-[#807B75] font-medium">
-                            {blog.date}
+                            {blog.blog_date}
                           </div>
                           <div className="tag bg-[#B0D9DF] px-3 py-1 texr-[#003642] font-medium rounded-[5px]">
-                            {blog.tag}
+                            {blog.category_lang_name}
                           </div>
                         </div>
                       </div>
@@ -195,29 +201,36 @@ function Blogs({ searchParams }) {
               <div>
                 <h4 className=" font-bold">RECENT POST</h4>
                 <div className="recent-blogs mt-3">
-                  {data.blogs.slice(-3).map((blog, i) => (
-                    <div className=" my-4 flex items-start" key={i}>
-                      <div className=" w-[82px] h-[82px] rounded-[5px] overflow-hidden">
-                        <Image
-                          src={blog.img}
-                          alt="project"
-                          width={"100%"}
-                          height={"100%"}
-                          className=" h-[100%] object-cover "
-                        />
-                      </div>
-                      <div className=" flex-1 flex-col justify-between ms-3">
-                        <Link href={`blogs/${blog.id}/${blog.url}`}>
-                          <p className="  font-semibold hover:text-secondary transition-all leading-5 cursor-pointer cur">
-                            {blog.title}
-                          </p>
-                        </Link>
-                        <div className="date text-[#807B75] font-medium mt-3">
-                          Sunday, 12.08.2023
+                  {[...data.blogs]
+                    .reverse()
+                    .slice(0, 3)
+                    .map((blog, i) => (
+                      <div className=" my-4 flex items-start" key={i}>
+                        <div className=" w-[82px] h-[82px] rounded-[5px] overflow-hidden">
+                          <Image
+                            src={`${blog.blog_image}`}
+                            alt="project"
+                            width={100}
+                            height={100}
+                            className=" h-[100%] w-full object-cover "
+                          />
+                        </div>
+                        <div className=" flex-1 flex-col justify-between ms-3">
+                          <Link
+                            href={`blogs/${
+                              blog.blog_id
+                            }/${blog.blog_title.replaceAll(" ", "-")}`}
+                          >
+                            <p className="  font-semibold hover:text-secondary transition-all leading-5 cursor-pointer cur">
+                              {blog.blog_title}
+                            </p>
+                          </Link>
+                          <div className="date text-[#807B75] font-medium mt-3">
+                            {blog.blog_date}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
                 </div>
               </div>
               <div className=" w-full h-[1px] bg-[#B9B9B9] my-5" />

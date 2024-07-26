@@ -37,6 +37,7 @@ const SLIDE_COUNT = 6;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 function Services({ object, options }) {
+  console.log(object);
   return (
     <div className="container">
       {/* <Slider>
@@ -64,15 +65,15 @@ function Services({ object, options }) {
               <div className="embla__slide__number transition-colors">
                 <div className=" img-container h-[60px] w-[60px] p-3 rounded-full bg-[#98E4E8]">
                   <Image
-                    src={service.imgDark}
-                    alt="img"
+                    src={service.service_image}
+                    alt={`${service.service_image_alt}`}
                     className="w-[100%] h-[100%] object-cover"
-                    width={"100%"}
-                    height={"100%"}
+                    width={100}
+                    height={100}
                   />
                 </div>
-                <h3 className="mt-2 font-bold ">{service.title}</h3>
-                <p className="mt-3 ltr:font-Roboto">{service.description}</p>
+                <h3 className="mt-2 font-bold ">{service.service_name}</h3>
+                <p className="mt-3 ltr:font-Roboto">{service.service_desc}</p>
               </div>
             </div>
           );

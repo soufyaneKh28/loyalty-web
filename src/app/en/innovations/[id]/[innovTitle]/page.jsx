@@ -30,20 +30,41 @@ export const metadata = {
 //   };project.title
 
 // }
-const Page = ({ params }) => {
+async function Page({ params }) {
+  async function getInnovationData() {
+    const res = await fetch(
+      `https://seenfox.com/api/get_data.php?actions=innovation&lang_code=en&innovations_id=${params.id}`,
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+
+  const innovation = await getInnovationData();
   let exist = true;
   // metadata.title = `${params.title.split("-").join(" ")}`;
 
   console.log("Visual-Identity-Souq-alfurat");
 
-  let projectObj = data.innovations[Number(params.id) - 1];
+  let projectObj = innovation.innovation;
   // const arrayOfStrings = params.projectTitle.split("-");
-  metadata.title = `${projectObj.title}`;
+  metadata.title = `${projectObj.innovations_name}`;
   // // console.log(arrayOfStrings);
   // let Title = arrayOfStrings.join(" ");
 
   // console.log(Title);
-  if (!projectObj || projectObj.url != params.innovTitle) {
+  if (
+    !projectObj.innovations_name ||
+    projectObj.innovations_name.replace(" ", "-") != params.innovTitle
+  ) {
     exist = false;
     redirect(`/en/not-found`);
   }
@@ -53,7 +74,7 @@ const Page = ({ params }) => {
       <main className={` pt-[100px] ${poppinsClass}`}>
         <MotionLayout>
           <section className="py-10 md:py-20  ">
-            <div className="container md:flex">
+            <div className="container md:flex md:items-center">
               {/* {!exist ? null : (
             // <div className=" ">
             //   product title :{params.projectId} {params.projectTitle}{" "}
@@ -63,7 +84,7 @@ const Page = ({ params }) => {
               <div className=" my-5 md:w-[50%] flex-1">
                 <div>Read The Story of</div>
                 <h1 className=" text-start leading-[118%] text-[50px] font-bold text-primaryDark">
-                  Azsoon
+                  {projectObj.innovations_name}
                 </h1>
                 <p
                   className="max-w-[400px] leading-6 my-3
@@ -77,23 +98,19 @@ const Page = ({ params }) => {
               </div>
               <div className="project-images innovations  flex-1">
                 <EmblaCarousel>
-                  {data.innovations[params.id - 1].images
-                    ? data.innovations[params.id - 1].images.map(
-                        (project, i) => (
-                          <div className=" mx-2  md:ms-10  " key={i}>
-                            <div className="transition-colors w-[350px] h-[300px] md:h-[438px] md:w-[420px] rounded-[10px] overflow-hidden">
-                              <Image
-                                src={project.img}
-                                alt="img"
-                                className="w-[100%] h-[100%] object-cover"
-                                width={"100%"}
-                                height={"100%"}
-                              />
-                            </div>
-                          </div>
-                        )
-                      )
-                    : null}
+                  {projectObj.slider.map((innov, i) => (
+                    <div className=" mx-2  md:ms-10  " key={i}>
+                      <div className="transition-colors w-[350px] h-[300px] md:h-[438px] md:w-[420px] rounded-[10px] overflow-hidden">
+                        <Image
+                          src={innov.slider_image}
+                          alt={innov.slider_image_alt}
+                          className="w-[100%] h-[100%] object-cover"
+                          width={500}
+                          height={500}
+                        />
+                      </div>
+                    </div>
+                  ))}
                   {}
                 </EmblaCarousel>
               </div>
@@ -135,12 +152,7 @@ const Page = ({ params }) => {
                               Idea
                             </h3>
                             <p className="mt-3 sm:mt-4 text-base text-gray-400">
-                              MediCute The client told us that they don’t have a
-                              regular clinic, but rather that they are trying to
-                              create a place for the beauty industry in the
-                              hands of doctors! So we gathered our papers and
-                              ideas and started searching for a name that meets
-                              their ambition and purpose. Seems like we did
+                              {projectObj.innovations_text1}
                             </p>
                           </div>
                         </MotionLayout>
@@ -155,14 +167,7 @@ const Page = ({ params }) => {
                               Design
                             </h3>
                             <p className="mt-3 sm:mt-4 text-base text-gray-400">
-                              How did the idea for the name and brand come
-                              about? Was it just a coincidence? No, it was
-                              created after thoughtful consideration and
-                              extensive knowledge. We believed in the beauty of
-                              the company and the place. We combined our vision
-                              with the ability to utilize data and tools to
-                              provide customers with a unique and exclusive
-                              name, driving them towards success and innovation.
+                              {projectObj.innovations_text2}
                             </p>
                           </div>
                         </MotionLayout>
@@ -177,16 +182,7 @@ const Page = ({ params }) => {
                               Application
                             </h3>
                             <p className="mt-3 sm:mt-4 text-base text-gray-400">
-                              The Mona Lisa, painted by the Italian artist da
-                              Vinci, was, is, and will remain a legendary,
-                              unique, beautiful, and priceless painting.
-                              Everyone knows it and strikes an example by it.
-                              Everyone also knows the city of Rize and sets the
-                              example for it being a unique natural state. So we
-                              changed one letter and turned the other into a
-                              correct Turkish word, and the unique name became a
-                              trademark with a different meaning and unique
-                              story.
+                              {projectObj.innovations_text3}
                             </p>
                           </div>
                         </MotionLayout>

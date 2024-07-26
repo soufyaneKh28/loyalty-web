@@ -33,15 +33,33 @@ export const metadata = {
 //   };project.title
 
 // }
-const Page = ({ params }) => {
+async function Page({ params }) {
+  async function getProjectsData() {
+    const res = await fetch(
+      `https://seenfox.com/api/get_data.php?actions=project&lang_code=ar&project_id=${params.projectId}`,
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+  const project = await getProjectsData();
+
   let exist = true;
-  metadata.title = data.projects[params.projectId - 1].title;
+  metadata.title = `${params.projectTitle.split("-").join(" ")}`;
   // metadata.title = decodeURIComponent(params.projectTitle).split("-").join(" ");
 
   console.log(params.projectTitle);
   console.log(decodeURIComponent(params.projectTitle));
 
-  let projectObj = data.projects[Number(params.projectId) - 1];
+  let projectObj = project.project;
   const arrayOfStrings = decodeURIComponent(params.projectTitle).split("-");
 
   // console.log(arrayOfStrings);
@@ -49,7 +67,10 @@ const Page = ({ params }) => {
   // let Title = arrayOfStrings.join(" ");
 
   // console.log(Title);
-  if (!projectObj || projectObj.url != params.projectTitle) {
+  if (
+    !projectObj.service ||
+    projectObj.project_name.replace(" ", "-") != params.projectTitle
+  ) {
     exist = false;
     redirect(`/en/not-found`);
   }
@@ -68,7 +89,7 @@ const Page = ({ params }) => {
           )} */}
               <div>
                 <h1 className=" text-center leading-[118%] text-[40px] md:text-[50px] font-black text-primaryDark">
-                  {projectObj.title}
+                  {projectObj.project_name}
                 </h1>
 
                 <div className="project-details my-10 flex justify-center items-start gap-7 md:gap-[5rem]">
@@ -77,7 +98,7 @@ const Page = ({ params }) => {
                       العميل
                     </h4>
                     <h6 className=" text-primaryDark font-bold text-center">
-                      {projectObj.details.client}
+                      {projectObj.project_client}
                     </h6>
                   </div>
                   <div className="client flex flex-col items-center  ">
@@ -85,7 +106,7 @@ const Page = ({ params }) => {
                       الخدمات
                     </h4>
                     <h6 className=" text-primaryDark font-bold text-center">
-                      {projectObj.details.services}
+                      {projectObj.service.service_name}
                     </h6>
                   </div>
                   <div className="client flex flex-col items-center ">
@@ -93,7 +114,7 @@ const Page = ({ params }) => {
                       المدة الزمنية
                     </h4>
                     <h6 className=" text-primaryDark font-bold text-center">
-                      {projectObj.details.duration}
+                      {projectObj.project_keyword}
                     </h6>
                   </div>
                 </div>
@@ -101,23 +122,19 @@ const Page = ({ params }) => {
             </div>
             <div className="project-images flex justify-end  ">
               <EmblaCarousel2>
-                {data.projects[params.projectId - 1].details.images
-                  ? data.projects[params.projectId - 1].details.images.map(
-                      (project, i) => (
-                        <div className=" mx-2 ms-[15px]  md:ms-[50px] " key={i}>
-                          <div className="transition-colors  w-[350px] h-[250px] md:h-[535px] md:w-[800px] rounded-[10px] overflow-hidden">
-                            <Image
-                              src={project.img}
-                              alt="img"
-                              className="w-[100%] h-[100%] object-cover"
-                              width={"100%"}
-                              height={"100%"}
-                            />
-                          </div>
-                        </div>
-                      )
-                    )
-                  : null}
+                {projectObj.slider.map((project, i) => (
+                  <div className=" mx-2 ms-[15px]  md:ms-[50px] " key={i}>
+                    <div className="transition-colors  w-[350px] h-[250px] md:h-[535px] md:w-[800px] rounded-[10px] overflow-hidden">
+                      <Image
+                        src={project.slider_image}
+                        alt={project.slider_image_alt}
+                        className="w-[100%] h-[100%] object-cover"
+                        width={1000}
+                        height={500}
+                      />
+                    </div>
+                  </div>
+                ))}
                 {}
 
                 {/* <div className=" mx-2">
@@ -149,24 +166,14 @@ const Page = ({ params }) => {
             <div className="container">
               <div className="text-white my-6 flex flex-col md:flex-row md:justify-between">
                 <h3 className=" text-[26px] font-bold">التحدي الذي يواجهنا</h3>
-                <p className="mt-3 max-w-[600px]">
-                  لوريم إيبسوم دولور سيت أميت كونسيكتيتور. ليكتس ليو تينسيدنت
-                  إيبسوم ليبرو بلاسيرات. ليو ميتوس بورس تيمبور ليكتس. فيتاي
-                  أدبيسسينغ سيت كواس لوريت تيلوس مونتيس. إد إن فيفيرا سيد
-                  سينيكتوس أركو سيت.
-                  <br />
-                  <br />
-                  أدبيسسينغ سيت كواس لوريت تيلوس مونتيس. إد إن فيفيرا سيد
-                  سينيكتوس أركو سيت.
+                <p className="mt-3 w-full md:w-[600px]">
+                  {projectObj.project_text1}
                 </p>
               </div>
               <div className="text-white my-20 flex flex-col md:flex-row md:justify-between">
                 <h3 className=" text-[26px] font-bold">الحل والنتيجة</h3>
-                <p className="mt-3 max-w-[600px]">
-                  لوريم إيبسوم دولور سيت أميت كونسيكتيتور. ليكتس ليو تينسيدنت
-                  إيبسوم ليبرو بلاسيرات. ليو ميتوس بورس تيمبور ليكتس. فيتاي
-                  أدبيسسينغ سيت كواس لوريت تيلوس مونتيس. إد إن فيفيرا سيد
-                  سينيكتوس أركو سيت.
+                <p className="mt-3 w-full md:w-[600px]">
+                  {projectObj.project_text2}
                 </p>
               </div>
             </div>
@@ -179,31 +186,31 @@ const Page = ({ params }) => {
                 <div className=" flex flex-col items-center md:flex-row md:justify-center gap-8">
                   {[...data.projects].slice(-3).map((project, i) => (
                     <div
-                      className="project rounded-[10px] overflow-hidden w-[333px] relative"
+                      className="project rounded-[10px] h-[416px] overflow-hidden w-[333px] relative"
                       key={i}
                     >
+                      <div className=" w-full h-[50%] absolute bottom-0 project z-10 "></div>
                       <Image
-                        src={project.img}
-                        alt={project.title}
-                        className=" hover:scale-110 transition-all"
+                        src={project.project_image}
+                        width={300}
+                        height={600}
+                        alt={project.project_image_alt}
+                        className=" hover:scale-110  w-full h-full transition-all"
                       />
-                      <div className="absolute bottom-[0px] px-3 translate-y-[-20%]">
+                      <div className="absolute bottom-[0px] z-20 px-3 translate-y-[-20%]">
                         <Link
-                          href={`/ar/projects/${project.id}/${project.url}`}
+                          href={`/ar/projects/${
+                            project.project_id
+                          }/${project.project_name.replace(" ", "-")}`}
                         >
                           <h2 className=" text-white font-bold text-[28px] hover:text-secondary transition-colors cursor-pointer">
-                            {project.title}
+                            {project.project_name}
                           </h2>
                         </Link>
                         <div className="tags mt-4 flex gap-2">
-                          {project.tags.map((tag, i) => (
-                            <div
-                              className=" bg-white w-fit py-1 px-4 rounded-[5px] text-[14px] flex items-center font-semibold "
-                              key={i}
-                            >
-                              {tag.title}
-                            </div>
-                          ))}
+                          <div className=" bg-white w-fit py-1 px-4 rounded-[5px] text-[14px] flex items-center font-semibold ">
+                            {project.pcategory_lang_name}
+                          </div>
                         </div>
                       </div>
                     </div>
