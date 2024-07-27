@@ -82,6 +82,46 @@ export default function MenubarAr() {
       if (selectedLanguage) {
         if (path[1] === "ar") {
 
+          if (path[3] && path[2] === "innovations") {
+            async function IdFetchingAr() {
+              async function getBlogsData() {
+                const res = await fetch(
+                  `https://seenfox.com/api/get_data.php?actions=innovation&lang_code=en&innovations_id=${id[3]}`,
+                  { cache: "no-store" }
+                );
+                // The return value is *not* serialized
+                // You can return Date, Map, Set, etc.
+
+                if (!res.ok) {
+                  // This will activate the closest `error.js` Error Boundary
+                  throw new Error("Failed to fetch data");
+                }
+                //
+                return res.json();
+              }
+              const innovation = await getBlogsData();
+              // let blogObj = blogs.blog;
+              // console.log("this is the blooooog ===================", project);
+              // console.log(
+              //   "this is the ARABIC blooooog modified ttttttttttttitle===================",
+              //   project.project.project_name.replaceAll(" ", "-")
+              // );
+              // // setTitle(() => blogs.blog.blog_title);
+              // console.log("this title staaaaaaaate =====", title);
+              // console.log("this is a path test", pathname.replace("", "////"));
+              router.push(
+                `/en/innovations/${
+                  id[3]
+                }/${innovation.innovation.innovations_name.replaceAll(
+                  " ",
+                  "-"
+                )}`
+              );
+            }
+            IdFetchingAr();
+            return;
+          }
+
           if (path[3] && path[2] === "projects") {
             async function IdFetchingAr() {
               async function getBlogsData() {

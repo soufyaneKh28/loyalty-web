@@ -90,7 +90,7 @@ async function Page({ params }) {
                   className="max-w-[400px] leading-6 my-3
                 "
                 >
-                  {projectObj.description}
+                  {projectObj.innovations_desc}
                 </p>
                 <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
                   Get Started

@@ -50,7 +50,7 @@ async function Page({ params }) {
   let projectObj = project.project;
   const arrayOfStrings = params.projectTitle.split("-");
 
-  console.log(arrayOfStrings);
+  // console.log(arrayOfStrings);
   let Title = arrayOfStrings.join(" ");
 
   console.log("its projectObj:", projectObj);

@@ -62,10 +62,11 @@ async function Page({ params }) {
   // console.log(Title);
   if (
     !projectObj.innovations_name ||
-    projectObj.innovations_name.replace(" ", "-") != params.innovTitle
+    projectObj.innovations_name.replaceAll(" ", "-") !=
+      decodeURIComponent(params.innovTitle)
   ) {
     exist = false;
-    redirect(`/en/not-found`);
+    redirect(`/ar/not-found`);
   }
 
   return (
@@ -89,7 +90,7 @@ async function Page({ params }) {
                   className="max-w-[400px] my-3 leading-7 font-semibold
                 "
                 >
-                  {projectObj.description}
+                  {projectObj.innovations_desc}
                 </p>
                 <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
                   Get Started

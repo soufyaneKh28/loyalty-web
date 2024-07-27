@@ -659,7 +659,7 @@
 .react-international-phone-input-container input {
   height: 100% !important;
   width: 100%;
-  font-weight: bold; 
+  font-weight: 500; 
   font-size: 18px !important;
   border-radius: 0px 10px 10px 0px !important; 
 }

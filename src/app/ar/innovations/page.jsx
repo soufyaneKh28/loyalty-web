@@ -95,7 +95,9 @@ const page = () => {
                 <div className="innov-text my-5 flex flex-col items-start ">
                   <div>
                     <Link
-                      href={`/ar/innovations/${innov.innovations_id}/${innov.innovations_name}`}
+                      href={`/ar/innovations/${
+                        innov.innovations_id
+                      }/${innov.innovations_name.replaceAll(" ", "-")}`}
                     >
                       <h2 className="text-[36px] text-white font-bold hover:text-secondary transition-colors">
                         {innov.innovations_name}
@@ -107,7 +109,9 @@ const page = () => {
                   </div>
                   <Button>
                     <Link
-                      href={`/ar/innovations/${innov.innovations_id}/${innov.innovations_name}`}
+                      href={`/ar/innovations/${
+                        innov.innovations_id
+                      }/${innov.innovations_name.replaceAll(" ", "-")}`}
                     >
                       أكمل القصة
                     </Link>
@@ -115,7 +119,9 @@ const page = () => {
                 </div>
                 <div className="innov-img overflow-hidden max-w-[422px] h-[438px] rounded-[10px]">
                   <Link
-                    href={`/ar/innovations/${innov.innovations_id}/${innov.innovations_name}`}
+                    href={`/ar/innovations/${
+                      innov.innovations_id
+                    }/${innov.innovations_name.replaceAll(" ", "-")}`}
                   >
                     <Image
                       width={500}
