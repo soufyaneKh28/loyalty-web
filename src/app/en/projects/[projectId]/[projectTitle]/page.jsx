@@ -56,7 +56,7 @@ async function Page({ params }) {
   console.log("its projectObj:", projectObj);
   if (
     !projectObj.service ||
-    projectObj.project_name.replace(" ", "-") != params.projectTitle
+    projectObj.project_name.replaceAll(" ", "-") != params.projectTitle
   ) {
     exist = false;
     redirect(`/en/not-found`);
@@ -189,7 +189,7 @@ async function Page({ params }) {
                         <Link
                           href={`/en/projects/${
                             project.project_id
-                          }/${project.project_name.replace(" ", "-")}`}
+                          }/${project.project_name.replaceAll(" ", "-")}`}
                         >
                           <h2 className=" text-white font-bold text-[28px] leading-[35px] hover:text-secondary transition-colors cursor-pointer">
                             {project.project_name}

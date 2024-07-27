@@ -98,7 +98,7 @@ async function getServicesData() {
 }
 async function getProjectsData() {
   const res = await fetch(
-    `https://seenfox.com/api/get_data.php?actions=projects&lang_code=en`,
+    `https://seenfox.com/api/get_data.php?actions=projects&lang_code=ar`,
     { cache: "no-store" }
   );
   // The return value is *not* serialized

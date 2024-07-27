@@ -172,6 +172,42 @@ export default function Menubar({ params, searchParams }) {
           }
         }
         if (path[1] === "en") {
+          if (path[3] && path[2] === "projects") {
+            async function IdFetchingAr() {
+              async function getBlogsData() {
+                const res = await fetch(
+                  `https://seenfox.com/api/get_data.php?actions=project&lang_code=ar&project_id=${id[3]}`,
+                  { cache: "no-store" }
+                );
+                // The return value is *not* serialized
+                // You can return Date, Map, Set, etc.
+
+                if (!res.ok) {
+                  // This will activate the closest `error.js` Error Boundary
+                  throw new Error("Failed to fetch data");
+                }
+                //
+                return res.json();
+              }
+              const project = await getBlogsData();
+              // let blogObj = blogs.blog;
+              // console.log("this is the blooooog ===================", project);
+              // console.log(
+              //   "this is the ARABIC blooooog modified ttttttttttttitle===================",
+              //   project.project.project_name.replaceAll(" ", "-")
+              // );
+              // // setTitle(() => blogs.blog.blog_title);
+              // console.log("this title staaaaaaaate =====", title);
+              // console.log("this is a path test", pathname.replace("", "////"));
+              router.push(
+                `/ar/projects/${
+                  id[3]
+                }/${project.project.project_name.replaceAll(" ", "-")}`
+              );
+            }
+            IdFetchingAr();
+            return;
+          }
           if (pathname.includes("blogs")) {
             async function IdFetchingAr() {
               async function getBlogsData() {
@@ -208,7 +244,10 @@ export default function Menubar({ params, searchParams }) {
             }
             IdFetchingAr();
             return;
-          } else if (!pathname.includes("blogs")) {
+          } else if (
+            !pathname.includes("blogs") ||
+            !pathname.includes("projects")
+          ) {
             const newPath = pathname.replace("en", selectedLanguage);
             router.push(newPath);
           }
