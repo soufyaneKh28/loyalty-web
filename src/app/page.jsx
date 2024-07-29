@@ -157,7 +157,7 @@ export default async function Home() {
                 {data.services.description}
               </p>
             </div>
-            <Services object={services.services} />
+            <Services object={services.service} />
           </MotionLayout>
         </section>
         <section className="py-5 bg-primaryDark">
@@ -205,7 +205,7 @@ export default async function Home() {
                 {data.stats.description}
               </p>
             </div>
-            <Statis stats={counter.counter} />
+            <Statis stats={data.counter} />
           </MotionLayout>
         </section>
         <section className="py-10">
