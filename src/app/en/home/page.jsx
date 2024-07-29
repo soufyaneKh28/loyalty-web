@@ -20,6 +20,8 @@ import {
 import Team from "@/components/Team";
 import { motionContainer } from "@/components/ui/motionContainer";
 import { poppinsClass } from "@/app/font";
+import { redirect } from "next/dist/server/api-utils";
+import Link from "next/link";
 // import data from "@/app/content-en";
 export const metadata = {
   title:
@@ -30,13 +32,7 @@ export const metadata = {
     "Loyalty Agency, brand development, digital marketing, programming, Turkey, Dubai, USA, business success",
 };
 
-
-
-
-
-
 export default async function Home() {
-
   return (
     <main className={`${poppinsClass}`}>
       <section className={`"flex  pb-5 pt-[100px] `}>
@@ -62,7 +58,9 @@ export default async function Home() {
                 and programming. Discover how we can elevate your business to
                 new heights
               </p>
-              <Button>Get Started</Button>
+              <Button>
+                <Link href={"/en/contactUs"}>Get Started</Link>
+              </Button>
             </div>
           </MotionContainer>
           <div className=" flex justify-end relative">
@@ -161,7 +159,7 @@ export default async function Home() {
               {data.clients.description}
             </p>
           </div>
-          <Clients clients={data.clients.items}/>
+          <Clients clients={data.clients.items} />
         </MotionLayout>
       </section>
       <section className="py-5 pb-10 bg-primaryDark">

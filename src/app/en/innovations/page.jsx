@@ -45,7 +45,9 @@ async function page() {
                   clients ahead in the digital landscape. Innovation is at the
                   heart of what we do.
                 </p>
-                <Button>Get Started</Button>
+                <Button>
+                  <Link href={"/en/contactUs"}>Get Started</Link>
+                </Button>
               </div>
             </MotionContainer>
             <div className=" flex justify-end relative mt-10">

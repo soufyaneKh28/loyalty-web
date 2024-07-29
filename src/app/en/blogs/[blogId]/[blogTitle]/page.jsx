@@ -87,10 +87,11 @@ export async function generateMetadata({ params, searchParams }, parent) {
   if (product.blog === null) {
     redirect("/en/not-found");
   } else {
+    console.log("this is the description", product.blog.blog_desc);
     return {
       title: product.blog.blog_title,
-      // description: product.blog.pageseo_desc,
-      keywords: product.blog.pageseo_keywords,
+      description: `${product.blog.blog_desc}`,
+      keywords: ` ${product.blog.blog_keyword}`,
 
       // openGraph: {
       //   images: ['/some-specific-page-image.jpg', ...previousImages],

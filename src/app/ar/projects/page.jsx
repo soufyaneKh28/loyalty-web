@@ -16,80 +16,6 @@ export const metadata = {
     "المشاريع، قصص النجاح، تطوير العلامة التجارية، التسويق الرقمي، البرمجة، وكالة لويالتي، تركيا، دبي، الولايات المتحدة الأمريكية",
 };
 
-const projects = [
-  {
-    title: "Visual Identity Souq alfurat ",
-    tags: [
-      {
-        title: "Branding",
-      },
-      {
-        title: "Design",
-      },
-    ],
-    img: project,
-  },
-  {
-    title: "Visual Identity Souq alfurat ",
-    tags: [
-      {
-        title: "Branding",
-      },
-      {
-        title: "Design",
-      },
-    ],
-    img: project,
-  },
-  {
-    title: "Visual Identity Souq alfurat ",
-    tags: [
-      {
-        title: "Branding",
-      },
-      {
-        title: "Design",
-      },
-    ],
-    img: project,
-  },
-  {
-    title: "Visual Identity Souq alfurat ",
-    tags: [
-      {
-        title: "Branding",
-      },
-      {
-        title: "Design",
-      },
-    ],
-    img: project,
-  },
-  {
-    title: "Visual Identity Souq alfurat ",
-    tags: [
-      {
-        title: "Branding",
-      },
-      {
-        title: "Design",
-      },
-    ],
-    img: project,
-  },
-  {
-    title: "Visual Identity Souq alfurat ",
-    tags: [
-      {
-        title: "Branding",
-      },
-      {
-        title: "Design",
-      },
-    ],
-    img: project,
-  },
-];
 
 export const productsLength = dataAr.projects.length;
 export const defaultPage = 1;
@@ -136,7 +62,9 @@ const page = ({ searchParams }) => {
                   ألق نظرة على مجموعتنا من المشاريع الناجحة. كل منها شهادة على
                   تفانينا وإبداعنا وخبرتنا.
                 </p>
-                <Button>{dataAr.heroAbout.cta}</Button>
+                <Button>
+                  <Link href={"/ar/contactUs"}>{dataAr.heroAbout.cta}</Link>
+                </Button>
               </MotionContainer>
             </div>
           </div>

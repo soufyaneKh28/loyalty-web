@@ -13,6 +13,8 @@ import React from "react";
 import { Marketing, contact, message, star, vision } from "../../../../public";
 import Team from "@/components/Team";
 import { animate, delay } from "framer-motion";
+import Link from "next/link";
+// import { Link } from "next/link";
 
 export const metadata = {
   title: " About Loyalty Agency | Your Global Partner in Digital Solutions",
@@ -21,7 +23,6 @@ export const metadata = {
   keywords:
     "about Loyalty Agency, digital solutions, brand development, digital marketing, programming, global partner, Turkey, Dubai, USA",
 };
-
 
 async function Page() {
   return (
@@ -46,7 +47,9 @@ async function Page() {
               <p className="  mt-3 max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
                 {data.heroAbout.description}
               </p>
-              <Button>{data.heroAbout.cta}</Button>
+              <Button>
+                <Link href={"/en/contactUs"}>{data.heroAbout.cta}</Link>
+              </Button>
             </MotionContainer>
           </div>
         </div>

@@ -12,6 +12,7 @@ import React from "react";
 import dataAr from "@/app/content-ar";
 import { cairoClass } from "@/app/font";
 import { contact, message, star, vision } from "../../../../public";
+import Link from "next/link";
 
 export const metadata = {
   title: "عن وكالة لويالتي | شريكك العالمي في الحلول الرقمية",
@@ -44,7 +45,9 @@ function Page() {
               <p className=" mt-3 max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px] font-semibold leading-[27px]">
                 {dataAr.heroAbout.description}
               </p>
-              <Button>{dataAr.heroAbout.cta}</Button>
+              <Button>
+                <Link href={"/ar/contactUs"}>{dataAr.heroAbout.cta}</Link>
+              </Button>
             </MotionContainer>
           </div>
         </div>

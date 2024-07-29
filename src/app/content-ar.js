@@ -291,6 +291,8 @@ const data = {
     fullName: "الاسم الكامل",
     email: "البريد الإلكتروني",
     phone: "رقم الهاتف",
+    service: "نوع الخدمة",
+    project: "أريد مشروع مثل",
     btn: "send",
   },
   timeline: [

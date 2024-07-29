@@ -11,6 +11,7 @@ import {
 } from "@/components";
 import React from "react";
 import data from "../../content-en";
+import Link from "next/link";
 
 export const metadata = {
   title: "Our Services | Digital Marketing, Brand Development, and Programming",
@@ -19,7 +20,6 @@ export const metadata = {
   keywords:
     "services, digital marketing, brand development, programming, Loyalty Agency, Turkey, Dubai, USA, elevate your brand",
 };
-
 
 async function getData() {
   const res = await fetch(
@@ -63,7 +63,9 @@ async function page() {
                 <p className=" mt-[10px] max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
                   {data.heroServices.description}
                 </p>
-                <Button>{data.heroServices.cta}</Button>
+                <Button>
+                  <Link href={"/en/contactUs"}>{data.heroServices.cta}</Link>
+                </Button>
               </MotionContainer>
             </div>
           </div>

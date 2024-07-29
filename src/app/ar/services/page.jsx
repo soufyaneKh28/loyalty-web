@@ -11,6 +11,7 @@ import {
   Strategy,
 } from "@/components";
 import React from "react";
+import Link from "next/link";
 
 export const metadata = {
   title: "خدماتنا | التسويق الرقمي، تطوير العلامة التجارية، والبرمجة",
@@ -44,7 +45,9 @@ const page = () => {
                 <p className=" mt-3 max-w-[350px] md:max-w-[700px] text-[#686567] text-[16px]  font-semibold leading-[27px]">
                   {dataAr.heroServices.description}
                 </p>
-                <Button>{dataAr.heroServices.cta}</Button>
+                <Button>
+                  <Link href={"/ar/contactUs"}>{dataAr.heroServices.cta}</Link>
+                </Button>
               </MotionContainer>
             </div>
           </div>

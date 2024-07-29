@@ -20,6 +20,7 @@ import {
   MotionLayout,
 } from "@/components";
 import { cairoClass } from "@/app/font";
+import Link from "next/link";
 
 export const metadata = {
   title: "وكالة لويالتي | تطوير العلامة التجارية، التسويق الرقمي، والبرمجة",
@@ -54,7 +55,9 @@ export default async function Home() {
                 لويلتي هي شريكك في تطوير العلامات التجارية والتسويق الرقمي
                 والبرمجة. اكتشف كيف يمكننا رفع عملك إلى آفاق جديدة
               </p>
-              <Button>تواصل معنا</Button>
+              <Button>
+                <Link href={"/ar/contactUs"}>تواصل معنا</Link>
+              </Button>
             </div>
           </MotionContainer>
           <div className=" flex justify-end relative mt-10 md:mt-0">

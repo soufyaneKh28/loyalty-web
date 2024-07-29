@@ -45,7 +45,9 @@ const page = () => {
                   اكتشف الحلول المبتكرة التي طورناها للحفاظ على تقدم عملائنا في
                   العالم الرقمي. الابتكار هو جوهر ما نقوم به.
                 </p>
-                <Button>تواصل معنا </Button>
+                <Button>
+                  <Link href={"/ar/contactUs"}>تواصل معنا</Link>
+                </Button>
               </div>
             </MotionContainer>
             <div className=" flex justify-end mt-10 md:mt-0 relative">
