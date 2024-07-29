@@ -19,31 +19,16 @@ import facebook from "./facebook.webp";
 import instagram from "./instagram.webp";
 import linkedin from "./linkedin.png";
 import x from "./TwitterX.png";
-import memberTeam from "./memberTeam.webp";
-import sou from "./sou.png";
+
 import right from "./RightArrow.png";
 import left from "./LeftArrow.png";
 import circles from "./StatisCircle.png";
 import prize from "./Prize.png";
-import google from "./google.webp";
-import Iso from "./Iso.webp";
-import ce from "./ce.webp";
-import wipo from "./wipo.png";
-import zoho from "./zoho.png";
 
 import message from "./message.png";
 import star from "./star.png";
 import vision from "./vision.png";
 import innovaition from "./innovation.webp";
-import innov1 from "./innov-1.png";
-
-import project from "./project.png";
-import projectDe from "./projectDe.png";
-
-import soufyane from "./soufyane.png";
-import soufyane1 from "./soufyane1.png";
-import soufyane2 from "./soufyane2.png";
-import soufyane3 from "./soufyane3.png";
 
 import downArrow from "./down-arrow.png";
 import uk from "./uk.png";
@@ -67,29 +52,15 @@ export {
   instagram,
   linkedin,
   x,
-  memberTeam,
-  sou,
   right,
   left,
   circles,
   prize,
-  google,
-  Iso,
-  ce,
-  wipo,
-  zoho,
   message,
   star,
   vision,
   next,
   innovaition,
-  innov1,
-  project,
-  projectDe,
-  soufyane,
-  soufyane1,
-  soufyane2,
-  soufyane3,
   downArrow,
   nextSvg,
   uk,

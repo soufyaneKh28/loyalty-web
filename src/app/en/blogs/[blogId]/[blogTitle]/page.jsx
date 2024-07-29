@@ -89,6 +89,9 @@ export async function generateMetadata({ params, searchParams }, parent) {
   } else {
     return {
       title: product.blog.blog_title,
+      // description: product.blog.pageseo_desc,
+      keywords: product.blog.pageseo_keywords,
+
       // openGraph: {
       //   images: ['/some-specific-page-image.jpg', ...previousImages],
       // },
@@ -156,9 +159,19 @@ async function Page({ params }) {
   }
   return (
     <>
-      {/* <Head>
-      <meta title={blogObj.title} />
-    </Head> */}
+      <Head>
+        <title>
+          iPhone 12 XS Max For Sale in Colorado - Big Discounts | Apple
+        </title>
+        <meta
+          name="description"
+          content="Check out iPhone 12 XR Pro and iPhone 12 Pro Max. Visit your local store and for expert advice."
+          key="desc"
+        />
+      </Head>
+      {/* <head>
+        <meta name="description" content={`${blogObj.pageseo_keywords}`} />
+      </head> */}
       {/* <Menubar params={params} /> */}
       <main className={` pt-[100px] ${poppinsClass}`}>
         <MotionLayout>

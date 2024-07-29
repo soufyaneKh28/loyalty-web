@@ -39,6 +39,15 @@ import Map from "@/components/Map";
 import Form from "@/components/Form";
 import data from "@/app/content-ar";
 
+export const metadata = {
+  title: " اتصل بوكالة لويالتي | لنبدأ رحلة نجاحك",
+  description:
+    "تواصل مع وكالة لويالتي. مع مكاتب في تركيا، دبي، والولايات المتحدة الأمريكية، نحن جاهزون لمناقشة احتياجاتك في تطوير العلامة التجارية، التسويق الرقمي، والبرمجة. لنبدأ رحلة نجاحك اليوم!",
+  keywords:
+    "اتصل بنا، وكالة لويالتي، تطوير العلامة التجارية، التسويق الرقمي، البرمجة، تركيا، دبي، الولايات المتحدة الأمريكية، رحلة النجاح",
+};
+
+
 const page = () => {
   return (
     <main className={`mt-[60px] ${cairoClass}`}>
