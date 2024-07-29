@@ -7,6 +7,7 @@ import { useState } from "react";
 import Select from "react-tailwindcss-select";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
+import { Alert } from "@mui/material";
 const ServiceTypeOptions = [
   { value: "fox", label: "🦊 Fox" },
   { value: "Butterfly", label: "🦋 Butterfly" },
@@ -24,11 +25,13 @@ const projectOptions = [
 
 const Form = ({ object }) => {
   const [services, setServices] = useState(null);
-  const [services2, setServices2] = useState();
+  const [services2, setServices2] = useState([]);
   const [project, setProject] = useState(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [sent, setSent] = useState(false);
+  const [visible, setVisible] = useState(false);
   // const [Phone, setPhone]  = useState('')
 
   const submitData = {
@@ -36,45 +39,71 @@ const Form = ({ object }) => {
     fullname: name,
     email: email,
     mobile: phone,
-    services: ["webis", "app"],
+    services: [...services2],
 
-    projects: ["paris", "devno"],
+    projects: [project],
   };
+
+  // function service(){
+  //   setServices((services)=> services.map)
+
+  //   }
+
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // const submitData = { name, age };
-
+    if (
+      !name ||
+      name.length < 3 ||
+      !email ||
+      email.length < 5 ||
+      !phone ||
+      phone.length < 5 ||
+      !services
+    ) {
+      setVisible(true);
+      setTimeout(() => {
+        setVisible(false);
+      }, 5000);
+      return;
+    }
     try {
       const res = await fetch("https://seenfox.com/api/actions.php", {
         method: "POST",
+
         // mode: "no-cors",
         body: JSON.stringify(submitData),
         headers: {
           "content-type": "application/json",
         },
       });
-      console.log(res);
+      console.log("this is submitdata", submitData);
       if (res.ok) {
         console.log("Yeai!");
         const data = await res.json(); // Parse response as JSON
         console.log("Response Data:", data); // Log the parsed data
         console.log("Yeai! Data sent successfully.");
+        setSent(true);
+        setTimeout(() => {
+          setSent(false);
+        }, 4000);
       } else {
         console.log("Oops! Something is wrong.");
       }
     } catch (error) {
       console.log(error);
     }
-    // setName("");
+    setName("");
+    setEmail("");
+    setPhone("");
+    setProject(null);
+    setServices(null);
     // setAge("");
   };
 
   const handleServiceChange = (value) => {
-    console.log(
-      "value:"
-      // value.map((value) => value.value)
-    );
     setServices(value);
     console.log("service value:", value);
 
@@ -93,8 +122,21 @@ const Form = ({ object }) => {
   return (
     <form
       action=""
-      className=" bg-primaryDark text-white p-5 flex flex-col py-12 w-full  rounded-[20px]"
+      className=" relative bg-primaryDark text-white p-5 flex flex-col py-12 w-full  rounded-[20px]"
     >
+      {sent && (
+        <Alert
+          severity="success"
+          className=" absolute top-[-10px] right-[20px] "
+        >
+          we have recived your message
+        </Alert>
+      )}
+      {visible && (
+        <Alert severity="error" className=" absolute top-[-10px] right-[20px] ">
+          Please fill the required fields
+        </Alert>
+      )}
       <h3 className=" text-[28px] text-center font-semibold">{object.title}</h3>
       <div className=" flex flex-col my-2">
         <label htmlFor="name">{object.fullName}</label>
