@@ -55,6 +55,8 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
   return {
     title: product.blog.blog_title,
+    description: `${product.blog.blog_desc}`,
+    keywords: ` ${product.blog.blog_keyword}`,
     // openGraph: {
     //   images: ['/some-specific-page-image.jpg', ...previousImages],
     // },
