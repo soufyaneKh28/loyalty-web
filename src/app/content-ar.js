@@ -36,8 +36,8 @@ async function getData() {
 
 async function getCounterData() {
   const res = await fetch(
-    `https://seenfox.com/api/get_data.php?actions=counter&lang_code=en`
-    // { cache: "no-store" }
+    `https://seenfox.com/api/get_data.php?actions=counter&lang_code=ar`,
+    { cache: "no-store" }
   );
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
