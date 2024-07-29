@@ -641,7 +641,7 @@
 
 .dropdown:hover .dropdown-menu {
   display: block;
-  animation: myAnim 0.7s ease 0s 1 normal forwards;
+  animation: myAnim 0.3s ease 0s 1 normal forwards;
 }
 .react-international-phone-input-container {
   height: 50px;
@@ -694,7 +694,7 @@
 }
 .language:hover ul {
   display: flex;
-  animation: myAnim 0.7s ease 0s 1 normal forwards;
+  animation: myAnim 0.3s ease 0s 1 normal forwards;
 
 }
 
