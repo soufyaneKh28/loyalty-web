@@ -21,25 +21,56 @@ export const metadata = {
     "services, digital marketing, brand development, programming, Loyalty Agency, Turkey, Dubai, USA, elevate your brand",
 };
 
-async function getData() {
-  const res = await fetch(
-    "https://seenfox.com/api/get_data.php?actions=team,logo&lang_code=en"
-  );
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+// async function getData() {
+//   const res = await fetch(
+//     "https://seenfox.com/api/get_data.php?actions=team,logo&lang_code=en"
+//   );
+//   // The return value is *not* serialized
+//   // You can return Date, Map, Set, etc.
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
+//   if (!res.ok) {
+//     // This will activate the closest `error.js` Error Boundary
+//     throw new Error("Failed to fetch data");
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 async function page() {
-  const datafetch = await getData();
-  console.log(datafetch);
+  async function getServicesData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=service&lang_code=en",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
 
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+    return res.json();
+  }
+
+  const services = await getServicesData();
+
+
+  async function getTeamData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=team,logo&lang_code=en",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+  const team = await getTeamData();
   return (
     <main className={`${poppinsClass}`}>
       <MotionLayout delay={0.3}>
@@ -87,7 +118,7 @@ async function page() {
               {data.services.description}
             </p>
           </div>
-          <Services object={data.services.servicesItems} />
+          <Services object={services.service} />
         </section>
         <section className="py-5 bg-primaryDark">
           <Strategy object={data.strategy} />
@@ -126,7 +157,7 @@ async function page() {
               {data.partners.description}
             </p>
           </div>
-          <IconsSlider logos={data.logos} />
+          <IconsSlider logos={team.logo} />
         </section>
       </MotionLayout>
     </main>

@@ -21,7 +21,41 @@ export const metadata = {
     "الخدمات، التسويق الرقمي، تطوير العلامة التجارية، البرمجة، وكالة لويالتي، تركيا، دبي، الولايات المتحدة الأمريكية، رفع مستوى العلامة التجارية",
 };
 
-const page = () => {
+async function page() {
+  async function getServicesData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=service&lang_code=ar",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+    return res.json();
+  }
+
+  const services = await getServicesData();
+
+  async function getTeamData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=team,logo&lang_code=ar",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+  const team = await getTeamData();
+
   return (
     <main className={`${cairoClass}`}>
       <MotionLayout>
@@ -67,7 +101,7 @@ const page = () => {
               {dataAr.services.description}
             </p>
           </div>
-          <Services object={dataAr.services.servicesItems} options={"rtl"} />
+          <Services object={services.service} options={"rtl"} />
         </section>
         <section className="py-5 bg-primaryDark">
           <Strategy object={dataAr.strategy} />
@@ -108,7 +142,7 @@ const page = () => {
               {dataAr.partners.description}
             </p>
           </div>
-          <IconsSlider logos={dataAr.logos} />
+          <IconsSlider logos={team.logo} />
         </section>
       </MotionLayout>
     </main>

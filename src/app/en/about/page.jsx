@@ -25,6 +25,41 @@ export const metadata = {
 };
 
 async function Page() {
+
+  
+  async function getTeamData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=team,logo&lang_code=en",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+  const team = await getTeamData();
+
+  async function getCounterData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=counter&lang_code=en",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+  const counter = await getCounterData();
   return (
     <main className={`${poppinsClass}`}>
       <section className={`"flex  pb-5 py-[150px] `}>
@@ -204,7 +239,7 @@ async function Page() {
               {data.stats.description}
             </p>
           </div>
-          <Statis object={data.stats} stats={data.counter} />
+          <Statis object={data.stats} stats={counter.counter} />
         </MotionLayout>
       </section>
       <section className=" bg-primaryDark py-2.5">
@@ -254,7 +289,7 @@ async function Page() {
               {data.members.btn}
             </Button>
           </div>
-          <Team members={data.members.items} />
+          <Team members={team.team} />
         </MotionLayout>
       </section>
       <CallTo object={data} />
@@ -273,7 +308,7 @@ async function Page() {
             {data.partners.description}
           </p>
         </div>
-        <IconsSlider logos={data.logos} />
+        <IconsSlider logos={team.logo} />
       </section>
     </main>
   );

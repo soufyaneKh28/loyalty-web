@@ -50,7 +50,58 @@ export default async function Home() {
   }
 
   const services = await getServicesData();
-  console.log("this is serviiices", services);
+
+  async function getTeamData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=team,logo&lang_code=en",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+  const team = await getTeamData();
+
+  async function getCounterData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=counter&lang_code=en",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+  const counter = await getCounterData();
+
+  async function getData() {
+    const res = await fetch(
+      `https://seenfox.com/api/get_data.php?actions=client&lang_code=en`,
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+
+  const clients = await getData();
   return (
     <main className={`${poppinsClass}`}>
       <section className={`"flex  pb-5 pt-[100px] `}>
@@ -158,7 +209,7 @@ export default async function Home() {
               {data.stats.description}
             </p>
           </div>
-          <Statis object={data.stats} stats={data.counter} />
+          <Statis object={data.stats} stats={counter.counter} />
         </MotionLayout>
       </section>
       <section className="py-10">
@@ -177,7 +228,7 @@ export default async function Home() {
               {data.clients.description}
             </p>
           </div>
-          <Clients clients={data.clients.items} />
+          <Clients clients={clients.client} />
         </MotionLayout>
       </section>
       <section className="py-5 pb-10 bg-primaryDark">
@@ -197,7 +248,7 @@ export default async function Home() {
             </p>
             <Button>{data.members.btn}</Button>
           </div>
-          <Team members={data.members.items} />
+          <Team members={team.team} />
         </MotionLayout>
       </section>
       <CallTo object={data} />
@@ -218,7 +269,7 @@ export default async function Home() {
             {data.partners.description}
           </p>
         </div>
-        <IconsSlider logos={data.logos} />
+        <IconsSlider logos={team.logo} />
       </section>
     </main>
   );

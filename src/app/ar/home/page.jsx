@@ -32,6 +32,76 @@ export const metadata = {
 
 
 export default async function Home() {
+
+  async function getServicesData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=service&lang_code=ar",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+    return res.json();
+  }
+
+  const services = await getServicesData();
+
+  async function getTeamData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=team,logo&lang_code=ar",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+  const team = await getTeamData();
+
+  async function getCounterData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=counter&lang_code=ar",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+  const counter = await getCounterData();
+
+  async function getData() {
+    const res = await fetch(
+      `https://seenfox.com/api/get_data.php?actions=client&lang_code=ar`,
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+
+  const clients = await getData();
+
   return (
     <main dir="rtl" className={` ${cairoClass}`}>
       <section className={`"flex  py-5 pt-[100px]  `}>
@@ -96,7 +166,7 @@ export default async function Home() {
               {dataAr.services.description}
             </p>
           </div>
-          <Services object={dataAr.services.servicesItems} options={"rtl"} />
+          <Services object={services.service} options={"rtl"} />
         </MotionLayout>
       </section>
       <section className="py-5 bg-primaryDark">
@@ -146,7 +216,7 @@ export default async function Home() {
               {dataAr.stats.description}
             </p>
           </div>
-          <Statis stats={dataAr.counter} />
+          <Statis stats={counter.counter} />
         </MotionLayout>
       </section>
       <section className="py-10">
@@ -165,7 +235,7 @@ export default async function Home() {
               {dataAr.clients.description}{" "}
             </p>
           </div>
-          <Clients clients={dataAr.clients.items} />
+          <Clients clients={clients.client} />
         </MotionLayout>
       </section>
       <section className="py-10 bg-primaryDark">
@@ -185,7 +255,7 @@ export default async function Home() {
             </p>
             <Button>{dataAr.members.btn} </Button>
           </div>
-          <Team members={dataAr.members.items} />
+          <Team members={team.team} />
         </MotionLayout>
       </section>
 
@@ -205,7 +275,7 @@ export default async function Home() {
             {dataAr.partners.description}
           </p>
         </div>
-        <IconsSlider logos={dataAr.logos} />
+        <IconsSlider logos={team.logo} />
       </section>
     </main>
   );

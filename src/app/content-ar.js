@@ -14,10 +14,6 @@ const {
   soufyane3,
 } = require("../../public");
 
-
-
-
-
 async function getData() {
   const res = await fetch(
     `https://seenfox.com/api/get_data.php?actions=client&lang_code=ar`,
