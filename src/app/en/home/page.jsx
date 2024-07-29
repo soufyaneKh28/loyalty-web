@@ -32,7 +32,25 @@ export const metadata = {
     "Loyalty Agency, brand development, digital marketing, programming, Turkey, Dubai, USA, business success",
 };
 
+
 export default async function Home() {
+  async function getServicesData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=service&lang_code=en",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+    return res.json();
+  }
+
+  const services = await getServicesData();
+  console.log("this is serviiices", services);
   return (
     <main className={`${poppinsClass}`}>
       <section className={`"flex  pb-5 pt-[100px] `}>
@@ -92,7 +110,7 @@ export default async function Home() {
               {data.services.description}
             </p>
           </div>
-          <Services object={data.services.servicesItems} />
+          <Services object={services.service} />
         </MotionLayout>
       </section>
       <section className="py-5 bg-primaryDark">
