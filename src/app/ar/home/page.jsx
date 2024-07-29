@@ -171,7 +171,7 @@ export default async function Home() {
       </section>
       <section className="py-5 bg-primaryDark">
         <MotionLayout>
-          <StrategyAr />
+          <StrategyAr object={dataAr.strategy} />
 
           <div className="container flex flex-col md:flex-row md:justify-between md:items-center">
             <div className=" flex flex-col py-4 ">

@@ -44,7 +44,10 @@ const FooterAr = () => {
             <Image src={logo2} alt="logo2" />
           </div>
           <p className=" text-white w-[280px] md:w-[220px]  mt-5 font-normal text-[15px]">
-            {data.contactPreference.description}
+            تأسست شركتنا في عام 2013، ونتخصص في العلامات التجارية والتسويق
+            الرقمي والبرمجة. توسعنا إلى تركيا في 2014، وأصبحنا رسميين بموجب
+            قوانين التسويق التركية في 2020، ولنا أيضًا فروع في دبي والولايات
+            المتحدة.
           </p>
         </div>
         <div className="col my-5 ">

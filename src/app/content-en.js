@@ -189,8 +189,7 @@ const data = {
   services: {
     smallTitle: "What we do ?",
     title: "Our Services",
-    description: ` Lorem ipsum dolor sit amet consectetur. Sed egestas adipiscing sed
-    ac sed. Aenean donec nulla sollicitudin`,
+    description: ` Explore our range of services designed to elevate your business. From strategic planning and market research to implementation and data-driven solutions, we provide expertise and tailored strategies to achieve your goals.`,
     servicesItems: services.service,
   },
   strategy: {
@@ -201,20 +200,17 @@ const data = {
     items: {
       item1: {
         title: "Search and Analysis",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Cursus eu nunc ultricies sapien.",
+        description: `Our specialized researchers continuously analyze the market and projects to fully support our clients' needs.`,
         num: "01",
       },
       item2: {
         title: "Planning",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Cursus eu nunc ultricies sapien.",
+        description: `We offer detailed planning to achieve your goals, including strategic planning, implementation, and marketing.`,
         num: "02",
       },
       item3: {
         title: "Implementation",
-        description:
-          "Lorem ipsum dolor sit amet consectetur. Cursus eu nunc ultricies sapien.",
+        description: `We implement plans based on solid evidence, thorough research, and statistical data to ensure effective results.`,
         num: "03",
       },
     },
@@ -249,15 +245,13 @@ const data = {
   stats: {
     smallTitle: "Who Are We ?",
     title: "Your Work Grows With Us",
-    description: `Lorem ipsum dolor sit amet consectetur. 
-    Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudin`,
+    description: `Explore our impact through key statistics, highlighting the number of clients we’ve served, our years of activity, and the dedicated employees driving our success.`,
     numbers: counter,
   },
   members: {
     smallTitle: "Our Team",
     title: "Get To Know Our Team",
-    description: ` Lorem ipsum dolor sit amet consectetur. 
-    Sed egestas adipiscing sed ac sed. Aenean donec nulla sollicitudi `,
+    description: ` Our team, like a well-organized beehive, brings together top specialists from various industries to produce outstanding results. We stand out through our unity, order, and dedication. Ready to experience the difference?`,
     btn: "Join Our Team",
 
     items: team.team,

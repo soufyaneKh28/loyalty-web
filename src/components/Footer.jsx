@@ -44,7 +44,10 @@ const Footer = () => {
             <Image src={logo2} alt="logo2" />
           </div>
           <p className=" text-white w-[350px] md:w-[220px]  mt-5 font-normal text-[15px]">
-            {data.contactPreference.description}
+            Founded in 2013, our company specializes in brand development,
+            digital marketing, and programming. We expanded to Turkey in 2014,
+            became official under Turkish marketing laws in 2020, and have
+            branches in Dubai and the U.S.
           </p>
         </div>
         <div className="col my-5 ">

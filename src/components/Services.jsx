@@ -64,7 +64,7 @@ function Services({ object, options }) {
         {object.map((service, index) => {
           return (
             <div className="embla__slide" key={index}>
-              <div className="embla__slide__number transition-colors">
+              <div className="embla__slide__number min-h-[416px] transition-colors">
                 <div className=" img-container h-[60px] w-[60px] p-3 rounded-full bg-[#98E4E8]">
                   <Image
                     src={service.service_image}

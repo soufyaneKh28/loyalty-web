@@ -18,19 +18,19 @@ import dynamic from "next/dynamic";
 const socialMedia = [
   {
     icon: facebook,
-    link: "",
+    link: "https://www.facebook.com/loyaltysocial",
   },
   {
     icon: instagram,
-    link: "",
+    link: "https://www.facebook.com/loyaltysocial",
   },
   {
     icon: linkedin,
-    link: "",
+    link: "https://www.facebook.com/loyaltysocial",
   },
   {
     icon: x,
-    link: "",
+    link: "https://www.facebook.com/loyaltysocial",
   },
 ];
 
@@ -47,6 +47,24 @@ export const metadata = {
 };
 
 async function page() {
+  async function getPreferenceData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=preference&lang_code=ar",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+
+  const preference = await getPreferenceData();
+
   return (
     <main className={`mt-[60px] ${poppinsClass}`}>
       <MotionLayout>
@@ -57,24 +75,20 @@ async function page() {
                 Get in Touch
               </h1>
               <p className=" max-w-[500px]">
-                Reach out to Loyalty Company for top-notch marketing, software,
-                and design solutions. Based in Istanbul with branches worldwide,
-                including the UAE and USA, we pride ourselves on being your
-                ideal partner. Let us help you achieve your goals with smart
-                marketing and software development to international standards.
+                {preference.preference[0].preference_desc}
               </p>
               <div className="contact my-6">
                 <div className="phone my-2 flex items-center gap-2">
                   <div className=" bg-primaryDark w-[40px] h-[40px] rounded-full flex justify-center items-center p-2">
                     <Image src={phone} alt="phone" width={30} />
                   </div>
-                  <p>{data.contactPreference.phone}</p>
+                  <p>{preference.preference[0].preference_phone}</p>
                 </div>
                 <div className="phone  my-2 flex items-center gap-2">
                   <div className=" bg-primaryDark w-[40px] h-[40px] rounded-full flex justify-center items-center p-2">
                     <Image src={email} alt="phone" width={30} />
                   </div>
-                  <p>{data.contactPreference.email}</p>
+                  <p>{preference.preference[0].preference_email}</p>
                 </div>
               </div>
               <div className="social flex gap-2 mt-4">
@@ -115,7 +129,7 @@ async function page() {
                     <Image src={location} alt="location" />
                   </div>
                   <p className=" max-w-[270px] md:max-w-[350px]">
-                    {data.contactPreference.address}
+                    {preference.preference[0].preference_address}
                   </p>
                 </div>
               </div>

@@ -19,19 +19,19 @@ import dynamic from "next/dynamic";
 const socialMedia = [
   {
     icon: facebook,
-    link: "",
+    link: "https://www.facebook.com/loyaltysocial",
   },
   {
     icon: instagram,
-    link: "",
+    link: "https://www.facebook.com/loyaltysocial",
   },
   {
     icon: linkedin,
-    link: "",
+    link: "https://www.facebook.com/loyaltysocial",
   },
   {
     icon: x,
-    link: "",
+    link: "https://www.facebook.com/loyaltysocial",
   },
 ];
 
@@ -47,8 +47,24 @@ export const metadata = {
     "اتصل بنا، وكالة لويالتي، تطوير العلامة التجارية، التسويق الرقمي، البرمجة، تركيا، دبي، الولايات المتحدة الأمريكية، رحلة النجاح",
 };
 
+async function page() {
+  async function getPreferenceData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=preference&lang_code=en",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
 
-const page = () => {
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+
+  const preference = await getPreferenceData();
   return (
     <main className={`mt-[60px] ${cairoClass}`}>
       <MotionLayout>
@@ -59,12 +75,7 @@ const page = () => {
                 تواصل معنا
               </h1>
               <p className=" max-w-[500px] leading-7 font-semibold">
-                تواصل مع شركة Loyalty للحصول على أفضل الحلول التسويقية
-                والبرمجيات والتصميمية. يقع مقرنا الرئيسي في إسطنبول ولدينا فروع
-                في جميع أنحاء العالم، بما في ذلك الإمارات العربية المتحدة
-                والولايات المتحدة الأمريكية، ونفخر بأن نكون شريكك المثالي. دعنا
-                نساعدك في تحقيق أهدافك من خلال التسويق الذكي وتطوير البرمجيات
-                وفقًا للمعايير الدولية.
+                {preference.preference[0].preference_desc}
               </p>
               <div className="contact my-6">
                 <div className="phone my-2 flex items-center gap-2">
@@ -72,14 +83,14 @@ const page = () => {
                     <Image src={phone} alt="phone" width={30} />
                   </div>
                   <p className=" " dir=" ltr">
-                    {data.contactPreference.phone}
+                    {preference.preference[0].preference_phone}
                   </p>
                 </div>
                 <div className="phone  my-2 flex items-center gap-2">
                   <div className=" bg-primaryDark w-[40px] h-[40px] rounded-full flex justify-center items-center p-2">
                     <Image src={email} alt="phone" width={30} />
                   </div>
-                  <p>{data.contactPreference.email}</p>
+                  <p>{preference.preference[0].preference_email}</p>
                 </div>
               </div>
               <div className="social flex gap-2 mt-4">
@@ -120,7 +131,7 @@ const page = () => {
                     <Image src={location} alt="location" />
                   </div>
                   <p className=" max-w-[270px] md:max-w-[350px] font-bold">
-                    {data.contactPreference.address}
+                    {preference.preference[0].preference_address}
                   </p>
                 </div>
               </div>
