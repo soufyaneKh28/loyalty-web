@@ -5,20 +5,20 @@ import EmblaCarouselClients from "./ui/EmblaCarouselClients";
 import Image from "next/image";
 import { sou } from "../../public";
 
-async function getData() {
-  const res = await fetch(
-    `https://seenfox.com/api/get_data.php?actions=client&lang_code=en`
-  );
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+// async function getData() {
+//   const res = await fetch(
+//     `https://seenfox.com/api/get_data.php?actions=client&lang_code=en`
+//   );
+//   // The return value is *not* serialized
+//   // You can return Date, Map, Set, etc.
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
+//   if (!res.ok) {
+//     // This will activate the closest `error.js` Error Boundary
+//     throw new Error("Failed to fetch data");
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 async function Clients({ clients }) {
   // const datafetch = await getData();
@@ -39,7 +39,7 @@ async function Clients({ clients }) {
                   <Image
                     src={`${client.client_image}`}
                     alt={client.client_image_alt}
-                    className=" rounded-full"
+                    className=" rounded-full h-full w-full"
                     width={300}
                     height={300}
                   />
