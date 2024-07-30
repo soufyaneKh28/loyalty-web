@@ -22,23 +22,31 @@ import { MotionLayout } from "@/components";
 // };
 export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
-  // // const id = params.id
-  // console.log("its id ===== ", params.blogId);
-  // console.log("its id ===== ", params.blogTitle);
+  // const id = params.id
+  //  console.log('its id ===== ', params.blogId)
+  //  console.log('its id ===== ', params.blogTitle)
   // fetch data
   const product = await fetch(
     `https://seenfox.com/api/get_data.php?actions=project&lang_code=ar&project_id=${params.projectId}`
   ).then((res) => res.json());
 
+  //  console.log('its product ===== ', product)
   // optionally access and extend (rather than replace) parent metadata
   // const previousImages = (await parent).openGraph?.images || []
+  if (product.project === null) {
+    redirect("/en/not-found");
+  } else {
+    // console.log("this is the description", product.blog.blog_desc);
+    return {
+      title: product.project.project_name,
+      description: `${product.project.project_descc}`,
+      keywords: ` ${product.project.project_keyword}`,
 
-  return {
-    title: product.project.project_name,
-    // openGraph: {
-    //   images: ['/some-specific-page-image.jpg', ...previousImages],
-    // },
-  };
+      // openGraph: {
+      //   images: ['/some-specific-page-image.jpg', ...previousImages],
+      // },
+    };
+  }
 }
 async function Page({ params }) {
   async function getProjectsData() {
@@ -122,7 +130,7 @@ async function Page({ params }) {
                       المدة الزمنية
                     </h4>
                     <h6 className=" text-primaryDark font-bold text-center">
-                      {projectObj.project_keyword}
+                      {projectObj.project_duration}
                     </h6>
                   </div>
                 </div>
