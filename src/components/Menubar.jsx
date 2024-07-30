@@ -247,7 +247,7 @@ export default function Menubar({ params, searchParams }) {
             IdFetchingAr();
             return;
           }
-          if (pathname.includes("blogs")) {
+          if (path[3] && path[2] === "blogs") {
             async function IdFetchingAr() {
               async function getBlogsData() {
                 const res = await fetch(
