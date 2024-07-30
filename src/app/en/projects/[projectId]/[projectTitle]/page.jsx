@@ -109,19 +109,21 @@ async function Page({ params }) {
             </div>
             <div className="project-images flex justify-end">
               <EmblaCarousel>
-                {projectObj.slider.map((project, i) => (
-                  <div className=" mx-2 ms-[15px] md:ms-[50px] " key={i}>
-                    <div className="transition-colors w-[350px] h-[250px] md:h-[535px] md:w-[800px] rounded-[10px] overflow-hidden">
-                      <Image
-                        src={project.slider_image}
-                        alt={project.slider_image_alt}
-                        className="w-[100%] h-[100%] object-cover"
-                        width={1000}
-                        height={500}
-                      />
+                {projectObj.slider.map((project, i) =>
+                  project.slider_image ? (
+                    <div className=" mx-2 ms-[15px] md:ms-[50px] " key={i}>
+                      <div className="transition-colors w-[350px] h-[250px] md:h-[535px] md:w-[800px] rounded-[10px] overflow-hidden">
+                        <Image
+                          src={project.slider_image}
+                          alt={project.slider_image_alt}
+                          className="w-[100%] h-[100%] object-cover"
+                          width={1000}
+                          height={500}
+                        />
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ) : null
+                )}
                 {}
 
                 {/* <div className=" mx-2">

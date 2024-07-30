@@ -92,8 +92,8 @@ const page = ({ searchParams }) => {
                           <div className=" w-full h-[50%] absolute bottom-0 project z-10 "></div>
                           <Image
                             src={project.project_image}
-                            width={300}
-                            height={600}
+                            width={333}
+                            height={437}
                             alt={project.project_image_alt}
                             className=" hover:scale-110 w-full h-full transition-all"
                           />
