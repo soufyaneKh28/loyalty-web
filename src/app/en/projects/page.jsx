@@ -91,11 +91,11 @@ async function page({ searchParams }) {
                     .map((project, i) => (
                       <MotionLayout delay={0.3 * i} key={i}>
                         <div className="project rounded-[10px] h-[416px] overflow-hidden w-[333px]  relative">
-                          <div className=" w-full h-[50%] absolute bottom-0 project z-10 "></div>
+                          {/* <div className=" w-full h-[50%] absolute bottom-0 project z-10 "></div> */}
                           <Image
                             src={project.project_image}
-                            width={300}
-                            height={600}
+                            width={500}
+                            height={1000}
                             alt={project.project_image_alt}
                             className=" hover:scale-110 w-full h-full transition-all"
                           />
@@ -104,7 +104,7 @@ async function page({ searchParams }) {
                               className=" relative z-30"
                               href={`/en/projects/${
                                 project.project_id
-                              }/${project.project_name.replace(" ", "-")}`}
+                              }/${project.project_name.replaceAll(" ", "-")}`}
                             >
                               <h2 className=" text-white font-bold text-[28px] leading-[35px] hover:text-secondary transition-colors cursor-pointer">
                                 {project.project_name}
