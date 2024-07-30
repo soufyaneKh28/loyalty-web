@@ -22,9 +22,9 @@ import { MotionLayout } from "@/components";
 // };
 export async function generateMetadata({ params, searchParams }, parent) {
   // read route params
-  // const id = params.id
-  console.log("its id ===== ", params.blogId);
-  console.log("its id ===== ", params.blogTitle);
+  // // const id = params.id
+  // console.log("its id ===== ", params.blogId);
+  // console.log("its id ===== ", params.blogTitle);
   // fetch data
   const product = await fetch(
     `https://seenfox.com/api/get_data.php?actions=project&lang_code=ar&project_id=${params.projectId}`
@@ -62,8 +62,8 @@ async function Page({ params }) {
   let exist = true;
   // metadata.title = decodeURIComponent(params.projectTitle).split("-").join(" ");
 
-  console.log(params.projectTitle);
-  console.log(decodeURIComponent(params.projectTitle));
+  // console.log(params.projectTitle);
+  // console.log(decodeURIComponent(params.projectTitle));
 
   let projectObj = project.project;
   // metadata.title = `${projectObj.project_name}`;

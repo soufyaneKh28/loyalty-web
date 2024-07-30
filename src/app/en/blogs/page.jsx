@@ -53,12 +53,12 @@ function Blogs({ searchParams }) {
   // console.log(data.blogs.reverse());
 
   const page = Number(searchParams.page ?? defaultPage);
-  console.log(searchParams);
-  console.log("page", page);
+  // console.log(searchParams);
+  // console.log("page", page);
 
-  console.log("length", productsLength);
-  console.log("itemsparpage", itemsPerPage);
-  console.log("array", pagesArray);
+  // console.log("length", productsLength);
+  // console.log("itemsparpage", itemsPerPage);
+  // console.log("array", pagesArray);
   // i should solve the problem here
   if (page < 1 || page > Math.ceil(productsLength / itemsPerPage)) {
     redirect(`/en/not-found`);

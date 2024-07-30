@@ -25,15 +25,34 @@ for (let i = 1; i <= Math.ceil(productsLength / itemsPerPage); i++) {
   pagesArray.push(i);
 }
 //${encodeURIComponent(arabicText)}
-const page = ({ searchParams }) => {
+async function page({ searchParams }) {
   const page = Number(searchParams.page ? searchParams.page : defaultPage);
-  console.log(searchParams);
-  console.log("page", page);
+  // console.log(searchParams);
+  // console.log("page", page);
 
-  console.log("length", productsLength);
-  console.log("itemsparpage", itemsPerPage);
-  console.log("array", pagesArray);
+  // console.log("length", productsLength);
+  // console.log("itemsparpage", itemsPerPage);
+  // console.log("array", pagesArray);
   // i should solve the problem here
+
+  async function getProjectsData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=projects&lang_code=ar",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+
+  const projects = await getProjectsData();
+
   if (page < 1 || page > Math.ceil(productsLength / itemsPerPage)) {
     redirect(`/ar/not-found`);
   }
@@ -83,7 +102,7 @@ const page = ({ searchParams }) => {
             <div className="projects my-10">
               <div className="projects-btn">
                 <div className="projects-container flex flex-col items-center md:flex-row  justify-center gap-5 flex-wrap">
-                  {[...dataAr.projects]
+                  {[...projects.projects]
                     .reverse()
                     .slice((page - 1) * itemsPerPage, page * itemsPerPage)
                     .map((project, i) => (
