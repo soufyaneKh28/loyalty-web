@@ -108,7 +108,7 @@ async function page({ searchParams }) {
                     .map((project, i) => (
                       <MotionLayout delay={0.3 * i} key={i}>
                         <div className="project rounded-[10px]  h-[416px] overflow-hidden w-[333px] relative">
-                          <div className=" w-full h-[50%] absolute bottom-0 project z-10 "></div>
+                          {/* <div className=" w-full h-[50%] absolute bottom-0 project z-10 "></div> */}
                           <Image
                             src={project.project_image}
                             width={333}
