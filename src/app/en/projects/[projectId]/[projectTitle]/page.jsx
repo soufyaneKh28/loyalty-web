@@ -80,10 +80,16 @@ async function Page({ params }) {
   console.log("its projectObj:", projectObj);
   if (
     !projectObj.service ||
-    projectObj.project_name.replaceAll(" ", "-") != params.projectTitle
+    projectObj.project_name.replaceAll(" ", "-") !=
+      decodeURIComponent(params.projectTitle)
   ) {
     exist = false;
-    redirect(`/en/not-found`);
+    console.log(
+      "tyhis is project name ",
+      projectObj.project_name.replaceAll(" ", "-")
+    );
+    console.log("tyhis is project params.projectTitle ", params.projectTitle);
+    // redirect(`/en/not-found`);
   }
   console.log("its project", project);
   return (
