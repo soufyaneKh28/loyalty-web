@@ -160,16 +160,6 @@ async function Page({ params }) {
   }
   return (
     <>
-      <Head>
-        <title>
-          iPhone 12 XS Max For Sale in Colorado - Big Discounts | Apple
-        </title>
-        <meta
-          name="description"
-          content="Check out iPhone 12 XR Pro and iPhone 12 Pro Max. Visit your local store and for expert advice."
-          key="desc"
-        />
-      </Head>
       {/* <head>
         <meta name="description" content={`${blogObj.pageseo_keywords}`} />
       </head> */}
@@ -178,16 +168,16 @@ async function Page({ params }) {
         <MotionLayout>
           <section>
             <div className=" container  my-10 mb-[200px] flex  gap-5  flex-col md:flex-row">
-              <div className="blogs-cont w-full md:w-[90%] flex-wrap flex flex-col md:flex-row items-center md:items-start justify-start">
+              <div className="blogs-cont w-full flex-wrap flex flex-col md:flex-row items-center md:items-start justify-start">
                 <MotionLayout>
-                  <div className="blog m-2  ">
-                    <div className=" h-[325px]  overflow-hidden rounded-[20px]">
+                  <div className="blog m-2 w-full  ">
+                    <div className=" h-[325px] w-full  overflow-hidden rounded-[20px]">
                       <Image
                         src={`${blogObj.blog_image}`}
                         width={500}
                         height={300}
                         alt={`${blogObj.blog_image_alt}`}
-                        className=" h-[100%] w-full object-cover hover:scale-110 transition-all cursor-pointer "
+                        className=" h-[100%] w-full object-cover hover:scale-110 transition-all  "
                       />
                     </div>
                     <h3 className="  text-[28px] leading-8 mt-5 transition-all font-bold">
@@ -202,15 +192,16 @@ async function Page({ params }) {
                       </div> */}
                     </div>
 
-                    <div className=" my-5 leading-7">
+                    <div className=" my-5 leading-7 ">
                       <div
+                        className="max-w-[700px]"
                         dangerouslySetInnerHTML={{ __html: blogObj.blog_descc }}
                       ></div>
                     </div>
                   </div>
                 </MotionLayout>
               </div>
-              <div className="side-bar  ">
+              <div className="side-bar max-w-[400px] ">
                 <div>
                   <h4 className=" font-bold">RECENT POST</h4>
                   <div className="recent-blogs mt-3">

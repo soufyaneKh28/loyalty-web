@@ -108,7 +108,7 @@ function Blogs({ searchParams }) {
                   .map((blog, i) => (
                     <MotionLayout delay={0.3 * i} key={i}>
                       <div className="blog m-2 max-w-[360px]">
-                        <div className=" h-[225px] w-full overflow-hidden rounded-[20px]">
+                        <div className=" h-[225px] w-[360px]  overflow-hidden rounded-[20px]">
                           <Link
                             href={`/en/blogs/${
                               blog.blog_id
