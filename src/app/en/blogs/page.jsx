@@ -112,7 +112,7 @@ function Blogs({ searchParams }) {
                           <Link
                             href={`/en/blogs/${
                               blog.blog_id
-                            }/${blog.blog_title.replace(" ", "-")}`}
+                            }/${blog.blog_title.replaceAll(" ", "-")}`}
                             className="h-[100%] w-full block"
                           >
                             <Image
