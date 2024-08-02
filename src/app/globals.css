@@ -608,9 +608,29 @@
 }
 
 .project-images   .embla__controls {
-  display: none;
+  /* display: none; */
+  top: 10px !important;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: start;
 }
 
+ .rtl .project-images   .embla__controls .embla__buttons  {
+  /* display: none; */
+  top: 10px !important;
+  display: flex;
+  transform: rotate(180deg);
+  /* flex-direction: column; */
+  justify-content: start;
+}
+.project-images   .embla__controls .embla__buttons button {
+background-color: #6e6e6e7e;
+  border-radius: 5px ;
+}
+.project-images   .embla__controls .embla__buttons button:hover {
+background-color: #9797977e;
+  border-radius: 5px ;
+}
 .project-images .embla {
   max-width: 80%;
   margin: 0;
