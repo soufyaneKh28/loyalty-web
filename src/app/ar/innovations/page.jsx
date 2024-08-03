@@ -110,9 +110,11 @@ async function page() {
               </div> */}
             {innovations.innovations.map((innov, i) => (
               <div
-                className={`innov-container flex flex-col my-10  ${
-                  (i + 1) % 2 === 0 ? " md:flex-row-reverse" : "md:flex-row"
-                } items-center justify-between `}
+                className={`innov-container flex  my-10  ${
+                  i % 2 === 0
+                    ? " md:flex-row-reverse flex-col-reverse"
+                    : "md:flex-row flex-col"
+                }  justify-around `}
                 key={i}
               >
                 <div className="innov-text my-5 flex flex-col items-start ">

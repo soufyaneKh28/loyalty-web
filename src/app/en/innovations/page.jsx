@@ -90,7 +90,7 @@ async function page() {
                     i % 2 === 0
                       ? " md:flex-row-reverse flex-col-reverse"
                       : "md:flex-row flex-col"
-                  } items-start justify-around `}
+                  }  justify-around `}
                   key={i}
                 >
                   <div className="innov-text my-5 flex flex-col items-start justify-center ">
