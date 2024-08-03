@@ -19,7 +19,25 @@ export const metadata = {
     "الابتكارات، حلول متطورة، تطوير العلامة التجارية، التسويق الرقمي، البرمجة، وكالة لويالتي، تعزيز الأعمالك",
 };
 
-const page = () => {
+async function page() {
+  async function getInnovationData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=innovations&lang_code=ar",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+
+  const innovations = await getInnovationData();
+
   return (
     <main className={`${cairoClass}`}>
       <MotionLayout>
@@ -90,7 +108,7 @@ const page = () => {
               />
               </div>
               </div> */}
-            {data.innovations.map((innov, i) => (
+            {innovations.innovations.map((innov, i) => (
               <div
                 className={`innov-container flex flex-col my-10  ${
                   (i + 1) % 2 === 0 ? " md:flex-row-reverse" : "md:flex-row"

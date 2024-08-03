@@ -63,7 +63,8 @@ async function Page({ params }) {
   // console.log(Title);
   if (
     !projectObj.innovations_name ||
-    projectObj.innovations_name.replace(" ", "-") != params.innovTitle
+    projectObj.innovations_name.replaceAll(" ", "-") !=
+      decodeURIComponent(params.innovTitle)
   ) {
     exist = false;
     redirect(`/en/not-found`);

@@ -15,6 +15,7 @@ import { PhoneInput } from "react-international-phone";
 import PhoneInputT from "./ui/PhoneInputT";
 import { cairoClass } from "@/app/font";
 import data from "@/app/content-ar";
+import Email from "./ui/Email";
 
 const socialMedia = [
   {
@@ -105,19 +106,8 @@ const FooterAr = () => {
           </div>
         </div>
         <div className=" col my-5">
-          <form action="" className=" flex flex-col">
-            <input
-              type="phone"
-              className=" py-3 px-3 border-none rounded-[10px]"
-            />
-            {/* <PhoneInputT /> */}
-            <button
-              type="submit"
-              className=" bg-secondary py-3 rounded-full my-3 text-white font-semibold "
-            >
-              إشترك الآن{" "}
-            </button>
-          </form>
+          <Email>تواصل معنا</Email>
+          {/* <PhoneInputT /> */}
         </div>
       </div>
       <div className="container">

@@ -20,6 +20,24 @@ export const metadata = {
 };
 
 async function page() {
+
+  async function getInnovationData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=innovations&lang_code=en",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+
+  const innovations = await getInnovationData();
   return (
     <main className={`${poppinsClass}`}>
       <MotionLayout>
@@ -65,21 +83,21 @@ async function page() {
         </section>
         <section className=" bg-primaryDark py-10 md:mt-[100px]">
           <div className="container">
-            {data.innovations.map((innov, i) => (
+            {innovations.innovations.map((innov, i) => (
               <MotionLayout delay={0.3 * i} key={i}>
                 <div
                   className={`innov-container flex  my-10  ${
                     i % 2 === 0
                       ? " md:flex-row-reverse flex-col-reverse"
                       : "md:flex-row flex-col"
-                  } items-start justify-between `}
+                  } items-start justify-around `}
                   key={i}
                 >
                   <div className="innov-text my-5 flex flex-col items-start justify-center ">
                     <Link
                       href={`/en/innovations/${
                         innov.innovations_id
-                      }/${innov.innovations_name.replace(" ", "-")}`}
+                      }/${innov.innovations_name.replaceAll(" ", "-")}`}
                     >
                       <h2 className=" text-[28px] md:text-[36px] text-white font-bold hover:text-secondary transition-colors">
                         {innov.innovations_name}
@@ -92,7 +110,7 @@ async function page() {
                       <Link
                         href={`/en/innovations/${
                           innov.innovations_id
-                        }/${innov.innovations_name.replace(" ", "-")}`}
+                        }/${innov.innovations_name.replaceAll(" ", "-")}`}
                       >
                         Continue Story
                       </Link>
@@ -102,7 +120,7 @@ async function page() {
                     <Link
                       href={`/en/innovations/${
                         innov.innovations_id
-                      }/${innov.innovations_name.replace(" ", "-")}`}
+                      }/${innov.innovations_name.replaceAll(" ", "-")}`}
                       className=" w-full"
                     >
                       <Image

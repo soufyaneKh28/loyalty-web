@@ -50,7 +50,7 @@ export const metadata = {
 async function page() {
   async function getPreferenceData() {
     const res = await fetch(
-      "https://seenfox.com/api/get_data.php?actions=preference&lang_code=en",
+      "https://seenfox.com/api/get_data.php?actions=preference&lang_code=ar",
       { cache: "no-store" }
     );
     // The return value is *not* serialized

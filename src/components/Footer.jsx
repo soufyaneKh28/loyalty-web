@@ -129,7 +129,7 @@ const Footer = () => {
           </div>
         </div>
         <div className=" col my-5">
-          <Email />
+          <Email>Subscribe Now</Email>
         </div>
       </div>
       <div className="container">

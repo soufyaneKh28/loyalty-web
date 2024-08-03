@@ -3,7 +3,7 @@
 import { Alert } from "@mui/material";
 import React, { useState } from "react";
 
-function Email() {
+function Email({ children }) {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
   const [visible, setVisible] = useState(false);
@@ -107,7 +107,7 @@ function Email() {
         onClick={handleSubmit}
         className=" bg-secondary py-3 rounded-full my-3 text-white font-semibold "
       >
-        Subscribe Now
+        {children}
       </button>
     </form>
   );
