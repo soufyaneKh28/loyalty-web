@@ -9,11 +9,19 @@ import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { Alert } from "@mui/material";
 const ServiceTypeOptions = [
-  { value: "fox", label: "🦊 Fox" },
-  { value: "Butterfly", label: "🦋 Butterfly" },
-  { value: "Honeybee", label: "🐝 Honeybee" },
-  { value: "Honeybe", label: "🐝 Honeybe" },
-  { value: "Honeye", label: "🐝 Honeye" },
+  {
+    value: "Marketing through social media",
+    label: "Marketing through social media",
+  },
+  { value: "Content Marketing", label: "Content Marketing" },
+  { value: "Digital Marketing", label: "Digital Marketing" },
+  { value: "Landing pages", label: "Landing pages" },
+  { value: "Logo & Visual Identity", label: "Logo & Visual Identity" },
+  { value: "Mobile Application", label: "Mobile Application" },
+  { value: "Production Services", label: "Production Services" },
+  { value: "Search Engine Optimization", label: "Search Engine Optimization" },
+  { value: "SWebsites", label: "Websites" },
+  { value: "Other", label: "Other" },
 ];
 const projectOptions = [
   { value: "fox", label: "🦊 Fox" },
