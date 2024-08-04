@@ -47,8 +47,27 @@ const pagesArray = [];
 for (let i = 1; i <= Math.ceil(productsLength / itemsPerPage); i++) {
   pagesArray.push(i);
 }
-function Blogs({ searchParams }) {
+async function Blogs({ searchParams }) {
   // console.log(data.blogs.reverse());
+
+  async function getBlogsData() {
+    const res = await fetch(
+      "https://seenfox.com/api/get_data.php?actions=blogs&lang_code=ar",
+      { cache: "no-store" }
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+  }
+
+  const blogs = await getBlogsData();
+
   const page = Number(searchParams.page ? searchParams.page : defaultPage);
   console.log(searchParams);
   console.log("page", page);
@@ -96,7 +115,7 @@ function Blogs({ searchParams }) {
           <div className=" container my-10 mb-[200px] flex flex-col md:flex-row justify-between">
             <div>
               <div className="blogs-cont  flex-wrap flex flex-col md:flex-row items-center md:items-start justify-start">
-                {[...data.blogs]
+                {[...blogs.blogs]
                   .reverse()
                   .slice((page - 1) * itemsPerPage, page * itemsPerPage)
                   .map((blog, i) => (
@@ -104,9 +123,10 @@ function Blogs({ searchParams }) {
                       <div className="blog m-2 max-w-[368px]">
                         <div className=" h-[225px] overflow-hidden rounded-[20px]">
                           <Link
-                            href={`/ar/blogs/${
-                              blog.blog_id
-                            }/${blog.blog_title.replaceAll(" ", "-")}`}
+                            href={`/ar/blogs/${blog.blog_id}/${
+                              blog.blog_title &&
+                              blog.blog_title.replaceAll(" ", "-")
+                            }`}
                             className="h-[100%] w-full block"
                           >
                             <Image
@@ -119,9 +139,10 @@ function Blogs({ searchParams }) {
                           </Link>
                         </div>
                         <Link
-                          href={`/ar/blogs/${
-                            blog.blog_id
-                          }/${blog.blog_title.replaceAll(" ", "-")}`}
+                          href={`/ar/blogs/${blog.blog_id}/${
+                            blog.blog_title &&
+                            blog.blog_title.replaceAll(" ", "-")
+                          }`}
                         >
                           <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-black">
                             {blog.blog_title}
