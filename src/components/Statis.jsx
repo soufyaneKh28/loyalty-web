@@ -34,7 +34,7 @@ const Statis = ({ stats }) => {
                   {inView && (
                     <CountUp
                       duration={3}
-                      start={100}
+                      start={0}
                       end={Number(count.counter_number)}
                     />
                   )}
