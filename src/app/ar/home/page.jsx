@@ -125,9 +125,7 @@ export default async function Home() {
                 لويلتي هي شريكك في تطوير العلامات التجارية والتسويق الرقمي
                 والبرمجة. اكتشف كيف يمكننا رفع عملك إلى آفاق جديدة
               </p>
-              <Button>
-                <Link href={"/ar/contactUs"}>تواصل معنا</Link>
-              </Button>
+              <Button href={"/ar/contactUs"}>تواصل معنا</Button>
             </div>
           </MotionContainer>
           <div className=" flex justify-end relative mt-10 md:mt-0">
@@ -183,7 +181,7 @@ export default async function Home() {
               <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-3 font-semibold">
                 {dataAr.grow.description}
               </p>
-              <Button>{dataAr.grow.btn}</Button>
+              <Button href={"/ar/contactUs"}>{dataAr.grow.btn}</Button>
             </div>
             <div className=" flex justify-end relative mt-4 md:mt-0 ">
               <Image
@@ -253,7 +251,7 @@ export default async function Home() {
             <p className="text-center max-w-[550px] leading-7 font-normal text-white mt-3">
               {dataAr.members.description}
             </p>
-            <Button>{dataAr.members.btn} </Button>
+            {/* <Button>{dataAr.members.btn} </Button> */}
           </div>
           <Team members={team.team} />
         </MotionLayout>

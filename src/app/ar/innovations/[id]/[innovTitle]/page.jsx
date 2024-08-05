@@ -92,9 +92,9 @@ async function Page({ params }) {
                 >
                   {projectObj.innovations_desc}
                 </p>
-                <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
+                {/* <button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
                   Get Started
-                </button>
+                </button> */}
               </div>
               <div className="project-images innovations  flex-1">
                 <EmblaCarousel2>

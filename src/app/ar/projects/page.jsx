@@ -81,9 +81,7 @@ async function page({ searchParams }) {
                   ألق نظرة على مجموعتنا من المشاريع الناجحة. كل منها شهادة على
                   تفانينا وإبداعنا وخبرتنا.
                 </p>
-                <Button>
-                  <Link href={"/ar/contactUs"}>{dataAr.heroAbout.cta}</Link>
-                </Button>
+                <Button href={"/ar/contactUs"}>{dataAr.heroAbout.cta}</Button>
               </MotionContainer>
             </div>
           </div>

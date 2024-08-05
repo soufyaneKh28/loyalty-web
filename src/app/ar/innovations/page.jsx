@@ -63,9 +63,7 @@ async function page() {
                   اكتشف الحلول المبتكرة التي طورناها للحفاظ على تقدم عملائنا في
                   العالم الرقمي. الابتكار هو جوهر ما نقوم به.
                 </p>
-                <Button>
-                  <Link href={"/ar/contactUs"}>تواصل معنا</Link>
-                </Button>
+                <Button href={"/ar/contactUs"}>تواصل معنا</Button>
               </div>
             </MotionContainer>
             <div className=" flex justify-end mt-10 md:mt-0 relative">
@@ -132,14 +130,12 @@ async function page() {
                       {innov.innovations_desc}
                     </p>
                   </div>
-                  <Button>
-                    <Link
-                      href={`/ar/innovations/${
-                        innov.innovations_id
-                      }/${innov.innovations_name.replaceAll(" ", "-")}`}
-                    >
-                      أكمل القصة
-                    </Link>
+                  <Button
+                    href={`/ar/innovations/${
+                      innov.innovations_id
+                    }/${innov.innovations_name.replaceAll(" ", "-")}`}
+                  >
+                    أكمل القصة
                   </Button>
                 </div>
                 <div className="innov-img overflow-hidden max-w-[422px] h-[438px] rounded-[10px]">

@@ -82,9 +82,7 @@ async function Page() {
               <p className="  mt-3 max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px]  font-medium leading-[27px]">
                 {data.heroAbout.description}
               </p>
-              <Button>
-                <Link href={"/en/contactUs"}>{data.heroAbout.cta}</Link>
-              </Button>
+              <Button href={"/en/contactUs"}>{data.heroAbout.cta}</Button>
             </MotionContainer>
           </div>
         </div>
@@ -254,9 +252,7 @@ async function Page() {
               <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
                 {data.grow.description}
               </p>
-              <Button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
-                {data.grow.btn}
-              </Button>
+              <Button href={"/en/contactUs"}>{data.grow.btn}</Button>
             </div>
             <div className=" flex justify-end relative mt-4 md:mt-0 ">
               <Image
@@ -285,9 +281,9 @@ async function Page() {
             <p className="text-center max-w-[550px] font-normal text-white">
               {data.members.description}
             </p>
-            <Button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
+            {/* <Button className="w-fit text-primary text-[14px] font-medium mt-4  bg-secondary rounded-full px-9 py-3">
               {data.members.btn}
-            </Button>
+            </Button> */}
           </div>
           <Team members={team.team} />
         </MotionLayout>

@@ -127,9 +127,7 @@ export default async function Home() {
                 and programming. Discover how we can elevate your business to
                 new heights
               </p>
-              <Button>
-                <Link href={"/en/contactUs"}>Get Started</Link>
-              </Button>
+              <Button href={"/en/contactUs"}>Get Started</Button>
             </div>
           </MotionContainer>
           <div className=" flex justify-end relative">
@@ -177,7 +175,7 @@ export default async function Home() {
               <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
                 {data.grow.description}
               </p>
-              <Button>{data.grow.btn}</Button>
+              <Button href={"/en/contactUs"}>{data.grow.btn}</Button>
             </div>
             <div className=" flex justify-end relative mt-4 md:mt-0 ">
               <Image
@@ -246,7 +244,7 @@ export default async function Home() {
             <p className="text-center max-w-[550px] font-normal text-white mt-3">
               {data.members.description}
             </p>
-            <Button>{data.members.btn}</Button>
+            {/* <Button>{data.members.btn}</Button> */}
           </div>
           <Team members={team.team} />
         </MotionLayout>

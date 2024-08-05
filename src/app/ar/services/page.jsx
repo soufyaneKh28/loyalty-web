@@ -79,8 +79,8 @@ async function page() {
                 <p className=" mt-3 max-w-[350px] md:max-w-[700px] text-[#686567] text-[16px]  font-semibold leading-[27px]">
                   {dataAr.heroServices.description}
                 </p>
-                <Button>
-                  <Link href={"/ar/contactUs"}>{dataAr.heroServices.cta}</Link>
+                <Button href={"/ar/contactUs"}>
+                  {dataAr.heroServices.cta}
                 </Button>
               </MotionContainer>
             </div>

@@ -82,9 +82,7 @@ async function page({ searchParams }) {
                   Take a look at our portfolio of successful projects. Each one
                   a testament to our dedication, creativity, and expertise.
                 </p>
-                <Button>
-                  <Link href={"/en/contactUs"}>{data.heroAbout.cta}</Link>
-                </Button>
+                <Button href={"/en/contactUs"}>{data.heroAbout.cta}</Button>
               </MotionContainer>
             </div>
           </div>

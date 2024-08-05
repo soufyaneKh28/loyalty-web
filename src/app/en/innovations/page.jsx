@@ -63,9 +63,7 @@ async function page() {
                   clients ahead in the digital landscape. Innovation is at the
                   heart of what we do.
                 </p>
-                <Button>
-                  <Link href={"/en/contactUs"}>Get Started</Link>
-                </Button>
+                <Button href={"/en/contactUs"}>Get Started</Button>
               </div>
             </MotionContainer>
             <div className=" flex justify-end relative mt-10">
@@ -106,14 +104,12 @@ async function page() {
                     <p className=" text-white max-w-[370px] font-normal mt-4 leading-7">
                       {innov.innovations_desc}
                     </p>
-                    <Button>
-                      <Link
-                        href={`/en/innovations/${
-                          innov.innovations_id
-                        }/${innov.innovations_name.replaceAll(" ", "-")}`}
-                      >
-                        Continue Story
-                      </Link>
+                    <Button
+                      href={`/en/innovations/${
+                        innov.innovations_id
+                      }/${innov.innovations_name.replaceAll(" ", "-")}`}
+                    >
+                      Continue Story
                     </Button>
                   </div>
                   <div className="innov-img overflow-hidden w-[100%] md:max-w-[422px] h-[438px] rounded-[10px]">

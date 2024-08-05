@@ -79,9 +79,7 @@ async function Page() {
               <p className=" mt-3 max-w-[300px] md:max-w-[700px] text-[#686567] text-[16px] font-semibold leading-[27px]">
                 {dataAr.heroAbout.description}
               </p>
-              <Button>
-                <Link href={"/ar/contactUs"}>{dataAr.heroAbout.cta}</Link>
-              </Button>
+              <Button href={"/ar/contactUs"}>{dataAr.heroAbout.cta}</Button>
             </MotionContainer>
           </div>
         </div>
@@ -256,7 +254,7 @@ async function Page() {
               <p className=" text-white  w-[270px] md:w-[385px]  text-[16px] mt-4">
                 {dataAr.grow.description}
               </p>
-              <Button>{dataAr.grow.btn}</Button>
+              <Button href={"/ar/contactUs"}>{dataAr.grow.btn}</Button>
             </div>
             <div className=" flex justify-end relative mt-4 md:mt-0 ">
               <Image
@@ -285,7 +283,7 @@ async function Page() {
             <p className="text-center max-w-[550px] font-normal text-white">
               {dataAr.members.description}
             </p>
-            <Button>{dataAr.members.btn}</Button>
+            {/* <Button>{dataAr.members.btn}</Button> */}
           </div>
           <Team members={team.team} />
         </MotionLayout>
