@@ -61,22 +61,6 @@ const CallTo = ({ object }) => {
           action=""
           className=" relative bg-secondary flex flex-col justify-between md:flex-row items-center px-5 py-8 rounded-[10px]"
         >
-          {sent && (
-            <Alert
-              severity="success"
-              className=" absolute top-[-30px] right-[15px] "
-            >
-              we have recived your message
-            </Alert>
-          )}
-          {visible && (
-            <Alert
-              severity="error"
-              className=" absolute top-[-30px] right-[15px] "
-            >
-              Please fill the required fields
-            </Alert>
-          )}
           <div className="text  ">
             <h2 className=" text-white text-[26px] md:text-[32px] font-bold text-center">
               {object.callto.title}
@@ -85,7 +69,23 @@ const CallTo = ({ object }) => {
               {object.callto.subTitle}
             </p>
           </div>
-          <div className=" flex flex-col w-full mt-6 md:mt-0 max-w-[400px] flex-1 md:ms-5">
+          <div className=" flex flex-col w-full mt-6 md:mt-0 max-w-[400px] flex-1 md:ms-5 relative">
+            {sent && (
+              <Alert
+                severity="success"
+                className=" absolute top-[-50px] right-[10px] "
+              >
+                we have recived your message
+              </Alert>
+            )}
+            {visible && (
+              <Alert
+                severity="error"
+                className=" absolute top-[-50px] right-[10px] "
+              >
+                Please fill the required fields
+              </Alert>
+            )}
             <div>
               {/* <label htmlFor="phone">Phone</label> */}
               <PhoneInput

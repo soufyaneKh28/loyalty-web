@@ -23,15 +23,15 @@ const socialMedia = [
   },
   {
     icon: instagram,
-    link: "https://www.facebook.com/loyaltysocial",
+    link: "https://www.instagram.com/LOYALTYSOCIAL/",
   },
   {
     icon: linkedin,
-    link: "https://www.facebook.com/loyaltysocial",
+    link: "https://www.linkedin.com/company/loyaltysocial",
   },
   {
     icon: x,
-    link: "https://www.facebook.com/loyaltysocial",
+    link: "https://x.com/loyaltysocial",
   },
 ];
 

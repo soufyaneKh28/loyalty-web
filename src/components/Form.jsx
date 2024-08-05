@@ -47,7 +47,7 @@ const Form = ({ object }) => {
     fullname: name,
     email: email,
     mobile: phone,
-    services: [...services2],
+    services: services2 && [...services2],
 
     projects: [project],
   };
@@ -135,13 +135,16 @@ const Form = ({ object }) => {
       {sent && (
         <Alert
           severity="success"
-          className=" absolute top-[-10px] right-[20px] "
+          className=" absolute bottom-[-10px] right-[20px] "
         >
           we have recived your message
         </Alert>
       )}
       {visible && (
-        <Alert severity="error" className=" absolute top-[-10px] right-[20px] ">
+        <Alert
+          severity="error"
+          className=" absolute bottom-[-10px] right-[20px] "
+        >
           Please fill the required fields
         </Alert>
       )}
