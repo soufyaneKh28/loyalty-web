@@ -47,26 +47,31 @@ const pagesArray = [];
 for (let i = 1; i <= Math.ceil(productsLength / itemsPerPage); i++) {
   pagesArray.push(i);
 }
+
+
+
+
+
+async function getBlogsData() {
+  const res = await fetch(
+    "https://seenfox.com/api/get_data.php?actions=blogs&lang_code=ar",
+    { cache: "no-store" }
+  );
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return res.json();
+}
+
 async function Blogs({ searchParams }) {
   // console.log(data.blogs.reverse());
 
-  async function getBlogsData() {
-    const res = await fetch(
-      "https://seenfox.com/api/get_data.php?actions=blogs&lang_code=ar",
-      { cache: "no-store" }
-    );
-    // The return value is *not* serialized
-    // You can return Date, Map, Set, etc.
-
-    if (!res.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error("Failed to fetch data");
-    }
-
-    return res.json();
-  }
-
-  const blogs = await getBlogsData();
+  let blogs = await getBlogsData();
 
   const page = Number(searchParams.page ? searchParams.page : defaultPage);
   console.log(searchParams);
@@ -115,50 +120,51 @@ async function Blogs({ searchParams }) {
           <div className=" container my-10 mb-[200px] flex flex-col md:flex-row justify-between">
             <div>
               <div className="blogs-cont  flex-wrap flex flex-col md:flex-row items-center md:items-start justify-start">
-                {[...blogs.blogs]
-                  .reverse()
-                  .slice((page - 1) * itemsPerPage, page * itemsPerPage)
-                  .map((blog, i) => (
-                    <MotionLayout delay={0.3 * i} key={i}>
-                      <div className="blog m-2 max-w-[368px]">
-                        <div className=" h-[225px] overflow-hidden rounded-[20px]">
+                {blogs &&
+                  [...blogs.blogs]
+                    .reverse()
+                    .slice((page - 1) * itemsPerPage, page * itemsPerPage)
+                    .map((blog, i) => (
+                      <MotionLayout delay={0.3 * i} key={i}>
+                        <div className="blog m-2 max-w-[368px]">
+                          <div className=" h-[225px] overflow-hidden rounded-[20px]">
+                            <Link
+                              href={`/ar/blogs/${blog.blog_id}/${
+                                blog.blog_title &&
+                                blog.blog_title.replaceAll(" ", "-")
+                              }`}
+                              className="h-[100%] w-full block"
+                            >
+                              <Image
+                                src={`${blog.blog_image}`}
+                                width={400}
+                                height={200}
+                                alt={blog.blog_image_alt}
+                                className=" h-[100%] object-cover hover:scale-110 transition-all cursor-pointer "
+                              />
+                            </Link>
+                          </div>
                           <Link
                             href={`/ar/blogs/${blog.blog_id}/${
                               blog.blog_title &&
                               blog.blog_title.replaceAll(" ", "-")
                             }`}
-                            className="h-[100%] w-full block"
                           >
-                            <Image
-                              src={`${blog.blog_image}`}
-                              width={400}
-                              height={200}
-                              alt={blog.blog_image_alt}
-                              className=" h-[100%] object-cover hover:scale-110 transition-all cursor-pointer "
-                            />
+                            <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-black">
+                              {blog.blog_title}
+                            </h3>
                           </Link>
-                        </div>
-                        <Link
-                          href={`/ar/blogs/${blog.blog_id}/${
-                            blog.blog_title &&
-                            blog.blog_title.replaceAll(" ", "-")
-                          }`}
-                        >
-                          <h3 className=" max-w-[368px] text-[22px] leading-8 mt-3 cursor-pointer hover:text-secondary transition-all font-black">
-                            {blog.blog_title}
-                          </h3>
-                        </Link>
-                        <div className=" flex justify-between mt-4 items-center">
-                          <div className="date text-[#807B75] font-medium">
-                            {blog.blog_date}
-                          </div>
-                          <div className="tag bg-[#B0D9DF] px-3 py-1 texr-[#003642] font-medium rounded-[5px]">
-                            {blog.category_lang_name}
+                          <div className=" flex justify-between mt-4 items-center">
+                            <div className="date text-[#807B75] font-medium">
+                              {blog.blog_date}
+                            </div>
+                            <div className="tag bg-[#B0D9DF] px-3 py-1 texr-[#003642] font-medium rounded-[5px]">
+                              {blog.category_lang_name}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </MotionLayout>
-                  ))}
+                      </MotionLayout>
+                    ))}
               </div>
               <div className="pagination my-10 flex justify-center md:justify-start">
                 <nav aria-label="" className="">
@@ -216,36 +222,37 @@ async function Blogs({ searchParams }) {
               <div>
                 <h4 className=" font-bold">المنشورات الأخيرة</h4>
                 <div className="recent-blogs mt-3">
-                  {[...blogs.blogs]
-                    .reverse()
-                    .slice(0, 3)
-                    .map((blog, i) => (
-                      <div className=" my-4 flex items-start" key={i}>
-                        <div className=" w-[82px] h-[82px] rounded-[5px] overflow-hidden">
-                          <Image
-                            src={`${blog.blog_image}`}
-                            alt="project"
-                            width={100}
-                            height={100}
-                            className=" h-[100%] w-full object-cover "
-                          />
-                        </div>
-                        <div className=" flex-1 flex-col justify-between ms-3">
-                          <Link
-                            href={`blogs/${
-                              blog.blog_id
-                            }/${blog.blog_title.replaceAll(" ", "-")}`}
-                          >
-                            <p className="  font-bold hover:text-secondary transition-all leading-5 cursor-pointer cur">
-                              {blog.blog_title}
-                            </p>
-                          </Link>
-                          <div className="date text-[#807B75] font-medium mt-3">
-                            {blog.blog_date}
+                  {blogs &&
+                    [...blogs.blogs]
+                      .reverse()
+                      .slice(0, 3)
+                      .map((blog, i) => (
+                        <div className=" my-4 flex items-start" key={i}>
+                          <div className=" w-[82px] h-[82px] rounded-[5px] overflow-hidden">
+                            <Image
+                              src={`${blog.blog_image}`}
+                              alt="project"
+                              width={100}
+                              height={100}
+                              className=" h-[100%] w-full object-cover "
+                            />
+                          </div>
+                          <div className=" flex-1 flex-col justify-between ms-3">
+                            <Link
+                              href={`blogs/${
+                                blog.blog_id
+                              }/${blog.blog_title.replaceAll(" ", "-")}`}
+                            >
+                              <p className="  font-bold hover:text-secondary transition-all leading-5 cursor-pointer cur">
+                                {blog.blog_title}
+                              </p>
+                            </Link>
+                            <div className="date text-[#807B75] font-medium mt-3">
+                              {blog.blog_date}
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
                 </div>
               </div>
               <div className=" w-full h-[1px] bg-[#B9B9B9] my-5" />
